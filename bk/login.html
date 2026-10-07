@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../font/css/bkbulmatpro.css">
+        <link rel="stylesheet" href="../font/css/sdgothicneo.css">
+        <link rel="stylesheet" href="../font/css/pretendardvariable.css">
+        <link rel="stylesheet" href="../css/default.css">
+        <title>버거킹 로그인 화면</title>
+        <style>
+            :root {
+                --font: "Sandoll GothicNeoRound", sans-serif;
+                --font-Pre: "Pretendard Variable", sans-serif;
+                --font-BKR: "BKR", sans-serif;
+                --primary: #512314;
+                --disabledBg: #DDCDBE;
+                --focus: #D62302;
+                --baseBorder: #D9CFC6;
+                --baseBg: #FFFCF9;
+                --button: #E9DDCD;
+                --errorColor: #C54734;
+                --placeholder: #EBE6E2;
+                --text: #766053;
+                --bg: #f4ebdc;
+            }
+            html {
+                font-size: 62.5%;
+            }
+            /* 전체 텍스트 속성 */
+            body {
+                font-family: var(--font);
+                font-size: 1.6rem;
+                color: var(--primary)
+            }
+            a {
+                color:inherit;
+            }
+            #wrap {
+                background-color: var(--bg);
+            }
+            h1 {
+                font-size: 2.0rem;
+            }
+            .title {
+                font-family: var(--font-BKR);
+            }
+            .title span:first-child {
+                font-size: 2.5rem;
+            }
+            .title > span:last-child {
+                font-size: 3.5rem;
+            }
+            input {
+                border: 1px solid var(--baseBorder);
+                background-color: var(--baseBg);    
+            }
+            input {
+                font-family: inherit;
+                font-size: inherit;
+                color: inherit;
+            }
+            input::placeholder {
+                color: var(--placeholder)
+            }
+            .email {
+                font-size: 1.5rem;
+            }
+            /*button 요소는 기본적으로 상속이 불가하며 상속에 관현된 값을 따로 넣어야함 */
+            .login_btn {
+                font-family: inherit;
+                font-size: inherit;
+                color: var(--placeholder);
+                background-color: var(--primary);
+                border: none;
+                opacity: 0.2;
+            }
+            a {
+                text-decoration: none;
+            }
+            .login_btn {
+                width: 350px;
+                height: 50px;
+                border-radius: 22px;
+                font-family: inherit;
+                font-size: inherit;
+                color: var(--placeholder);
+                background-color: var(--primary);
+                border: none;
+                opacity: 0.2;
+            }
+            .sns_login > p {
+                font-size: 1.3rem;
+                color:var(--text)
+            }
+            input[type="email"], 
+            input[type="password"] {
+                width: 350px;
+                height: 50px;
+                padding-left: 20px;
+                padding-right: 20px;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+        <body>
+            <div id="wrap">
+                <!-- 로그인 폼 내용 -->
+                <header>
+                    <h1>로그인</h1>
+                    <button class="prev_btn"><span>이전버튼</span></button>
+                </header>
+                <main>
+                    <h2 class="title">
+                    <span>안녕하세요:)</span>
+                    <span>버거킹입니다</span>
+                    </h2>
+                    <form action="">
+                        <!--이메일 로그인-->
+                        <fieldset>
+                            <legend class="biind">로그인화면</legend>
+                            <!--아이디-->
+                            <label for="email" class>이메일 로그인</label>
+                            <div class="input_box">
+                                <input type="email" name="email"
+                                placeholder="아이디(이메일)을 입력해 주세요.">
+                            </div>
+                            <!--비밀번호-->
+                            <div class="input_box">
+                                <input type="password" name="password"
+                                placeholder="비밀번호를 입력해 주세요">
+                                <button type="button"
+                                class="pw_btn"><span>비밀번호 보기</span></button>
+                            </div>
+                            <div class="login_option">
+                                <label>
+                                    <input type="checkbox" checked>
+                                    <span>자동로그인</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox">
+                                    <span>아이디 저장</span>
+                                </label>
+                            </div>
+                            <button type="submit" class="login_btn">로그인</button>
+                        </fieldset>
+                    </form>
+                    <div class="login_link">
+                        <a href="#">아이디 찾기</a>
+                        <a href="#">비밀번호 재설정</a>
+                        <a href="#">회원가입</a>
+                    </div>
+                    <div class="sns_login">
+                        <p>SNS으로 간편하게 로그인</p>
+                        <div class="sns_list">
+                            <a href="#"><span>카카오로그인</span></a>
+                            <a href="#"><span>네이버로그인</span></a>
+                            <a href="#"><span>애플로그인</span></a>
+                            <a href="#"><span>삼성카드로그인</span></a>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </body>
+</html>
