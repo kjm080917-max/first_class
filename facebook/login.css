@@ -2,15 +2,12 @@
 
 :root {
     --font: "Pretendard Variable", sans-serif;
-    --primary: #003CDA;
-    --active: #343B46;
-    --disabled-bg: #D6D8DA;
-    --base-border: #E9E9F0;
-    --placeholder: #E0E1E8;
-    --text: #343B46;
-    --sub-text: #8B93A1;
-    --divider: #F5F5F5;
-    --bg: #FFFFFF;
+    --primary: #1877f2;
+    --text: #1c1e21;
+    --sub-text: #65676b;
+    --border: #dddfe2;
+    --placeholder: #8a8d91;
+    --bg: #ffffff;
 }
 
 * {
@@ -24,32 +21,27 @@ html {
 }
 
 body {
+    min-width: 360px;
+    min-height: 100vh;
     font-family: var(--font);
     font-size: 1.6rem;
     color: var(--text);
+    background: #f0f2f5;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
 }
 
 a {
     color: inherit;
     text-decoration: none;
-}
-
-button {
-    border: 0;
-    background: none;
-    font: inherit;
-    color: inherit;
-    cursor: pointer;
-}
-
-input {
-    font-family: inherit;
-    font-size: inherit;
-    color: inherit;
-}
-
-input::placeholder {
-    color: var(--placeholder);
 }
 
 .sr-only {
@@ -66,52 +58,61 @@ input::placeholder {
 
 #wrap {
     width: 100%;
-    max-width: 1024px;
-    min-width: 360px;
-    min-height: 100dvh;
+    max-width: 480px;
+    min-height: 100vh;
     margin: 0 auto;
-    background-color: var(--bg);
+    background: var(--bg);
 }
 
 header {
     position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 48px;
+    justify-content: center;
+    height: 52px;
+    border-bottom: 1px solid #f0f0f0;
+    background: #fff;
 }
 
 header h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    font-weight: 700;
 }
 
 .prev_btn {
     position: absolute;
-    left: 0;
+    left: 10px;
+    top: 2px;
     width: 48px;
     height: 48px;
-    background: url("./img/back_icon.svg") no-repeat center / auto;
+    background: url("./img/back_icon.svg") no-repeat center / 22px;
 }
 
 main {
-    padding: 48px 20px 90px;
+    padding: 56px 20px 48px;
+}
+
+.login_content {
+    width: 100%;
 }
 
 .title {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    margin-bottom: 50px;
+    gap: 8px;
+    margin-bottom: 40px;
 }
 
 .title span:first-child {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    line-height: 1.25;
     font-weight: 700;
 }
 
 .title span:last-child {
-    font-size: 3.5rem;
-    font-weight: 700;
+    font-size: 3.2rem;
+    line-height: 1.15;
+    font-weight: 800;
     color: var(--primary);
 }
 
@@ -121,66 +122,79 @@ main {
 
 .email_label {
     display: block;
-    font-size: 1.5rem;
-    line-height: 1;
+    margin-bottom: 8px;
+    font-size: 1.4rem;
     font-weight: 700;
 }
 
 .input_box {
-    margin-top: 8px;
+    position: relative;
+    width: 100%;
+}
+
+.input_box + .input_box {
+    margin-top: 10px;
 }
 
 .input_box input {
     display: block;
     width: 100%;
-    height: 50px;
-    padding: 0 20px;
-    border: 1px solid var(--base-border);
-    border-radius: 10px;
-    background-color: var(--bg);
+    height: 52px;
+    padding: 0 18px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: 0;
+    background: #fff;
+    color: var(--text);
 }
 
-.password_box {
-    position: relative;
-    margin-top: 10px;
+.input_box input:focus {
+    border-color: var(--primary);
+}
+
+.input_box input::placeholder {
+    color: var(--placeholder);
 }
 
 .password_box input {
-    padding-right: 56px;
+    padding-right: 54px;
 }
 
 .pw_btn {
     position: absolute;
     top: 50%;
-    right: 16px;
-    width: 26px;
-    height: 26px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
     transform: translateY(-50%);
-    background: url("./img/eye_icon.svg") no-repeat center / auto;
+    background: url("./img/eye_icon.svg") no-repeat center / 24px;
 }
 
 .login_option {
     display: flex;
-    gap: 30px;
-    margin-top: 12px;
+    align-items: center;
+    gap: 24px;
+    margin-top: 14px;
 }
 
 .login_option label {
     display: inline-flex;
+    align-items: center;
     cursor: pointer;
 }
 
 .login_option span {
     display: inline-flex;
     align-items: center;
-    column-gap: 6px;
+    gap: 6px;
+    font-size: 1.4rem;
 }
 
-.login_option .check + span::before {
+.login_option span::before {
     content: "";
-    display: inline-block;
-    width: 30px;
-    height: 30px;
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
     background: url("./img/checkbox_disabled.svg") no-repeat center / contain;
 }
 
@@ -189,48 +203,54 @@ main {
 }
 
 .login_btn {
+    display: block;
     width: 100%;
-    height: 50px;
+    height: 52px;
     margin-top: 22px;
-    border-radius: 22px;
+    border-radius: 8px;
+    background: var(--primary);
+    color: #fff;
     font-size: 1.5rem;
     font-weight: 700;
-    color: #FFFFFF;
-    background-color: var(--active);
+}
+
+.login_btn:hover {
+    opacity: 0.9;
 }
 
 .login_link {
     display: flex;
     justify-content: center;
-    margin-top: 28px;
+    align-items: center;
+    margin-top: 24px;
 }
 
 .login_link a {
     position: relative;
-    padding: 0 15px;
-    font-size: 1.4rem;
+    padding: 0 12px;
     color: var(--sub-text);
+    font-size: 1.3rem;
 }
 
 .login_link a + a::before {
     content: "";
     position: absolute;
-    top: 50%;
     left: 0;
+    top: 50%;
     width: 1px;
     height: 12px;
     transform: translateY(-50%);
-    background-color: var(--base-border);
+    background: #ddd;
 }
 
 .sns_login {
-    margin-top: 60px;
+    margin-top: 64px;
     text-align: center;
 }
 
 .sns_login h2 {
     font-size: 1.4rem;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--sub-text);
 }
 
@@ -242,10 +262,12 @@ main {
 }
 
 .sns_list a {
+    display: block;
     width: 48px;
     height: 48px;
-    border: 1px solid var(--base-border);
+    border: 1px solid var(--border);
     border-radius: 50%;
+    background-color: #fff;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 24px;
@@ -265,4 +287,23 @@ main {
 
 .samsung_login {
     background-image: url("./img/samsung_logo_icon.svg");
+}
+
+@media (max-width: 420px) {
+    main {
+        padding: 42px 20px 40px;
+    }
+
+    .title span:last-child {
+        font-size: 2.8rem;
+    }
+
+    .login_link a {
+        padding: 0 8px;
+        font-size: 1.2rem;
+    }
+
+    .sns_login {
+        margin-top: 52px;
+    }
 }
