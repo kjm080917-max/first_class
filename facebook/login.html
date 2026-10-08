@@ -4,10 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="../font/css/sdgothicneo.css">
-        <link rel="stylesheet" href="../font/css/pretendardvariable.css">
-        <link rel="stylesheet" href="../css/default.css">
-        <link rel="stylesheet" href="./login.css">
+        <link rel="stylesheet" href="../font/css/sdgothicneo.css?v=2">
+        <link rel="stylesheet" href="../font/css/pretendardvariable.css?v=2">
+        <link rel="stylesheet" href="../css/default.css?v=2">
+        <link rel="stylesheet" href="./login.css?v=2">
 
         <title>페이스북 로그인 화면</title>
     </head>
@@ -49,9 +49,7 @@
                                     name="password"
                                     placeholder="비밀번호를 입력해 주세요"
                                 >
-                                <button type="button" class="pw_btn">
-                                    <span class="sr-only">비밀번호 보기</span>
-                                </button>
+                                <button type="button" class="pw_btn" aria-label="비밀번호 보기"></button>
                             </div>
 
                             <div class="login_option">
@@ -78,18 +76,10 @@
                     <section class="sns_login">
                         <h2>SNS으로 간편하게 로그인</h2>
                         <div class="sns_list">
-                            <a href="#" class="kakao_login">
-                                <span class="sr-only">카카오 로그인</span>
-                            </a>
-                            <a href="#" class="naver_login">
-                                <span class="sr-only">네이버 로그인</span>
-                            </a>
-                            <a href="#" class="apple_login">
-                                <span class="sr-only">애플 로그인</span>
-                            </a>
-                            <a href="#" class="samsung_login">
-                                <span class="sr-only">삼성카드 로그인</span>
-                            </a>
+                            <a href="#" class="kakao_login" aria-label="카카오 로그인"></a>
+                            <a href="#" class="naver_login" aria-label="네이버 로그인"></a>
+                            <a href="#" class="apple_login" aria-label="애플 로그인"></a>
+                            <a href="#" class="samsung_login" aria-label="삼성카드 로그인"></a>
                         </div>
                     </section>
                 </section>
