@@ -1,23 +1,18 @@
 @charset "utf-8";
 
-/* ---------- 변수 설정 (페이스북 컬러) ---------- */
 :root {
     --font: "Pretendard Variable", sans-serif;
-    --font-Pre: "Pretendard Variable", sans-serif;
     --primary: #003CDA;
     --active: #343B46;
-    --disabledBg: #D6D8DA;
-    --focus: #343B46;
-    --baseBorder: #E9E9F0;
-    --errorColor: #C54734;
+    --disabled-bg: #D6D8DA;
+    --base-border: #E9E9F0;
     --placeholder: #E0E1E8;
     --text: #343B46;
-    --subText: #8B93A1;
+    --sub-text: #8B93A1;
     --divider: #F5F5F5;
     --bg: #FFFFFF;
 }
 
-/* ---------- 초기화 및 기본 스타일 ---------- */
 * {
     margin: 0;
     padding: 0;
@@ -40,7 +35,7 @@ a {
 }
 
 button {
-    border: none;
+    border: 0;
     background: none;
     font: inherit;
     color: inherit;
@@ -51,8 +46,6 @@ input {
     font-family: inherit;
     font-size: inherit;
     color: inherit;
-    border: 1px solid var(--baseBorder);
-    background-color: var(--bg);
 }
 
 input::placeholder {
@@ -71,17 +64,15 @@ input::placeholder {
     border: 0;
 }
 
-/* ---------- 레이아웃 ---------- */
 #wrap {
     width: 100%;
-    background-color: var(--bg);
     max-width: 1024px;
     min-width: 360px;
-    margin: 0 auto;
     min-height: 100dvh;
+    margin: 0 auto;
+    background-color: var(--bg);
 }
 
-/* ---------- 헤더 ---------- */
 header {
     position: relative;
     display: flex;
@@ -91,8 +82,7 @@ header {
 }
 
 header h1 {
-    font-size: 2.0rem;
-    order: 2;
+    font-size: 2rem;
 }
 
 .prev_btn {
@@ -100,10 +90,9 @@ header h1 {
     left: 0;
     width: 48px;
     height: 48px;
-    background: url(img/back_icon.svg) no-repeat center / auto;
+    background: url("./img/back_icon.svg") no-repeat center / auto;
 }
 
-/* ---------- 메인 영역 ---------- */
 main {
     padding: 48px 20px 90px;
 }
@@ -120,18 +109,18 @@ main {
     font-weight: 700;
 }
 
-.title > span:last-child {
+.title span:last-child {
     font-size: 3.5rem;
     font-weight: 700;
     color: var(--primary);
 }
 
-/* ---------- 폼 요소 ---------- */
-fieldset {
-    border: none;
+.login_form fieldset {
+    border: 0;
 }
 
-.email {
+.email_label {
+    display: block;
     font-size: 1.5rem;
     line-height: 1;
     font-weight: 700;
@@ -141,13 +130,14 @@ fieldset {
     margin-top: 8px;
 }
 
-input[type="email"], 
-input[type="password"] {
+.input_box input {
+    display: block;
     width: 100%;
     height: 50px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0 20px;
+    border: 1px solid var(--base-border);
     border-radius: 10px;
+    background-color: var(--bg);
 }
 
 .password_box {
@@ -156,7 +146,6 @@ input[type="password"] {
 }
 
 .password_box input {
-    display: block;
     padding-right: 56px;
 }
 
@@ -164,24 +153,21 @@ input[type="password"] {
     position: absolute;
     top: 50%;
     right: 16px;
-    transform: translateY(-50%);
     width: 26px;
     height: 26px;
-    background: url(img/eye_icon.svg) no-repeat center / auto;
+    transform: translateY(-50%);
+    background: url("./img/eye_icon.svg") no-repeat center / auto;
 }
 
-/* ---------- 로그인 옵션 (체크박스) ---------- */
 .login_option {
+    display: flex;
+    gap: 30px;
     margin-top: 12px;
 }
 
 .login_option label {
     display: inline-flex;
     cursor: pointer;
-}
-
-.login_option label:first-child {
-    margin-right: 30px;
 }
 
 .login_option span {
@@ -195,35 +181,88 @@ input[type="password"] {
     display: inline-block;
     width: 30px;
     height: 30px;
-    background: url(img/checkbox_disabled.svg) no-repeat center / contain;
+    background: url("./img/checkbox_disabled.svg") no-repeat center / contain;
 }
 
 .login_option .check:checked + span::before {
-    content: "";
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    background: url(img/checkbox_active.svg) no-repeat center / contain;
+    background-image: url("./img/checkbox_active.svg");
 }
 
-/* ---------- 로그인 버튼 ---------- */
 .login_btn {
     width: 100%;
     height: 50px;
     margin-top: 22px;
     border-radius: 22px;
-    font-family: inherit;
     font-size: 1.5rem;
     font-weight: 700;
     color: #FFFFFF;
     background-color: var(--active);
 }
 
-.login_btn:disabled {
-    background-color: var(--disabledBg);
-    cursor: default;
+.login_link {
+    display: flex;
+    justify-content: center;
+    margin-top: 28px;
 }
 
-/* ---------- 하단 링크 ---------- */
-.login_link {
-    margin-top:
+.login_link a {
+    position: relative;
+    padding: 0 15px;
+    font-size: 1.4rem;
+    color: var(--sub-text);
+}
+
+.login_link a + a::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 1px;
+    height: 12px;
+    transform: translateY(-50%);
+    background-color: var(--base-border);
+}
+
+.sns_login {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.sns_login h2 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--sub-text);
+}
+
+.sns_list {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.sns_list a {
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--base-border);
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px;
+}
+
+.kakao_login {
+    background-image: url("./img/kakao_logo_icon.svg");
+}
+
+.naver_login {
+    background-image: url("./img/naver_logo_icon.svg");
+}
+
+.apple_login {
+    background-image: url("./img/apple_logo_icon.svg");
+}
+
+.samsung_login {
+    background-image: url("./img/samsung_logo_icon.svg");
+}
