@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../font/css/sdgothicneo.css">
+        <link rel="stylesheet" href="../font/css/pretendardvariable.css">
+        <link rel="stylesheet" href="../css/default.css">
+        <title>페이스북 로그인 화면</title>
+        <style>
+            :root {
+                --font: "Pretendard Variable", sans-serif;
+                --font-Pre: "Pretendard Variable", sans-serif;
+                --primary: #003CDA;
+                --active: #343B46;
+                --disabledBg: #D6D8DA;
+                --focus: #343B46;
+                --baseBorder: #E9E9F0;
+                --errorColor: #C54734;
+                --placeholder: #E0E1E8;
+                --text: #343B46;
+                --subText: #8B93A1;
+                --divider: #F5F5F5;
+                --bg: #FFFFFF;
+            }
+            html {
+                font-size: 62.5%;
+            }
+            /* 전체 텍스트 속성 */
+            body {
+                font-family: var(--font);
+                font-size: 1.6rem;
+                color: var(--text);
+            }
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+            #wrap {
+                width: 100%;
+                max-width: 1024px;
+                min-width: 360px;
+                margin: 0 auto;
+                background-color: var(--bg);
+                min-height: 100dvh;
+            }
+            header {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                height: 73px;
+            }
+            header h1 img {
+                display: block;
+                width: 50px;
+                height: 50px;
+            }
+            .prev_btn {
+                position: absolute;
+                left: 0;
+                top: 8px;
+                width: 48px;
+                height: 48px;
+                background: url(img/back_icon.svg) no-repeat center / auto;
+            }
+            main {
+                padding: 20px 20px 40px;
+            }
+            .title {
+                display: flex;
+                flex-direction: column;
+                padding: 0 5px;
+            }
+            .title span:first-child {
+                font-size: 2.0rem;
+                font-weight: 700;
+                line-height: 26px;
+            }
+            .title span:last-child {
+                font-size: 1.3rem;
+                line-height: 18px;
+                color: var(--subText);
+            }
+            form {
+                margin-top: 87px;
+            }
+            fieldset {
+                border: none;
+            }
+            .email {
+                display: block;
+                margin-bottom: 8px;
+                font-size: 1.5rem;
+                font-weight: 700;
+                line-height: 22px;
+            }
+            .input_box {
+                position: relative;
+                margin-bottom: 10px;
+            }
+            input[type="email"],
+            input[type="password"] {
+                width: 100%;
+                height: 50px;
+                padding: 0 20px;
+                border: 1px solid var(--baseBorder);
+                border-radius: 12px;
+                background-color: var(--bg);
+                font-family: inherit;
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: var(--text);
+                outline: none;
+            }
+            input::placeholder {
+                font-weight: 400;
+                color: var(--placeholder);
+            }
+            /* 비밀번호 점 간격 */
+            input[type="password"]:not(:placeholder-shown) {
+                letter-spacing: 4px;
+            }
+            /* 입력 중 */
+            input[type="email"]:focus,
+            input[type="password"]:focus {
+                border-color: var(--focus);
+            }
+            /* 지우기 버튼 (입력 중일 때만 보임) */
+            .clear_btn {
+                display: none;
+                position: absolute;
+                top: 16px;
+                right: 16px;
+                width: 18px;
+                height: 18px;
+                background: url(img/clear_icon.svg) no-repeat center / contain;
+            }
+            .input_box.has_value:focus-within .clear_btn {
+                display: block;
+            }
+            /* 에러 상태 */
+            .input_box.error {
+                margin-bottom: 4px;
+            }
+            .input_box.error input[type="email"] {
+                height: 44px;
+            }
+            .error_txt {
+                margin-top: 6px;
+                padding-left: 11px;
+                font-size: 1.2rem;
+                line-height: 16px;
+                color: var(--errorColor);
+            }
+            .login_option {
+                display: flex;
+                align-items: center;
+                column-gap: 26px;
+                margin-top: 14px;
+            }
+            .login_option label {
+                display: inline-flex;
+                font-size: 1.5rem;
+                font-weight: 600;
+                cursor: pointer;
+            }
+            .login_option span {
+                display: inline-flex;
+                align-items: center;
+                column-gap: 8px;
+            }
+            .login_option .check + span::before {
+                content: "";
+                display: inline-block;
+                width: 26px;
+                height: 26px;
+                background: url(img/checkbox_disabled.svg) no-repeat center / contain;
+            }
+            .login_option .check:checked + span::before {
+                background: url(img/checkbox_active.svg) no-repeat center / contain;
+            }
+            /*button 요소는 기본적으로 상속이 불가하며 상속에 관련된 값을 따로 넣어야함 */
+            .login_btn {
+                display: block;
+                width: 100%;
+                height: 50px;
+                margin-top: 22px;
+                border: none;
+                border-radius: 25px;
+                font-family: inherit;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #fff;
+                background-color: var(--active);
+            }
+            .login_btn:disabled {
+                background-color: var(--disabledBg);
+            }
+            .login_link {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+                font-family: var(--font-Pre);
+                font-weight: 500;
+                font-size: 1.3rem;
+                line-height: 14px;
+            }
+            .login_link a {
+                display: inline-flex;
+                align-items: center;
+                column-gap: 12px;
+            }
+            .login_link a + a {
+                margin-left: 12px;
+            }
+            .login_link a::after {
+                content: "";
+                display: inline-block;
+                width: 1px;
+                height: 12px;
+                background-color: var(--baseBorder);
+            }
+            .login_link a:last-child::after {
+                display: none;
+            }
+            .sns_login {
+                margin-top: 88px;
+            }
+            /* 에러 문구가 생겨도 SNS 영역 위치는 그대로 */
+            form.error + .login_link + .sns_login {
+                margin-top: 78px;
+            }
+            .sns_login > p {
+                display: flex;
+                align-items: center;
+                column-gap: 11px;
+                margin-bottom: 33px;
+                font-size: 1.3rem;
+                font-weight: 700;
+                line-height: 18px;
+                white-space: nowrap;
+            }
+            .sns_login > p::before,
+            .sns_login > p::after {
+                content: "";
