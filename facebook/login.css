@@ -85,19 +85,7 @@ header h1 {
     top: 2px;
     width: 48px;
     height: 48px;
-    background: transparent;
-}
-
-.prev_btn::before {
-    content: "";
-    position: absolute;
-    left: 18px;
-    top: 17px;
-    width: 12px;
-    height: 12px;
-    border-left: 2px solid var(--text);
-    border-bottom: 2px solid var(--text);
-    transform: rotate(45deg);
+    background: url("./img/back_icon.svg") no-repeat center / 22px;
 }
 
 main {
@@ -179,29 +167,7 @@ main {
     width: 32px;
     height: 32px;
     transform: translateY(-50%);
-    background: transparent;
-}
-
-.pw_btn::before {
-    content: "";
-    position: absolute;
-    left: 5px;
-    top: 8px;
-    width: 22px;
-    height: 14px;
-    border: 1.5px solid var(--sub-text);
-    border-radius: 50% / 65%;
-}
-
-.pw_btn::after {
-    content: "";
-    position: absolute;
-    left: 13px;
-    top: 13px;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--sub-text);
+    background: url("./img/eye_icon.svg") no-repeat center / 24px;
 }
 
 .login_option {
@@ -229,15 +195,11 @@ main {
     width: 22px;
     height: 22px;
     flex: 0 0 22px;
-    border: 1px solid #c8ccd1;
-    border-radius: 5px;
-    background: #fff;
+    background: url("./img/checkbox_disabled.svg") no-repeat center / contain;
 }
 
 .login_option .check:checked + span::before {
-    border-color: var(--primary);
-    background: var(--primary);
-    box-shadow: inset 0 0 0 4px #fff;
+    background-image: url("./img/checkbox_active.svg");
 }
 
 .login_btn {
@@ -300,39 +262,31 @@ main {
 }
 
 .sns_list a {
-    position: relative;
     display: block;
     width: 48px;
     height: 48px;
     border: 1px solid var(--border);
     border-radius: 50%;
     background-color: #fff;
-    font-size: 1.7rem;
-    font-weight: 700;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px;
 }
 
-.sns_list a::before {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.kakao_login {
+    background-image: url("./img/kakao_logo_icon.svg");
 }
 
-.kakao_login::before {
-    content: "K";
+.naver_login {
+    background-image: url("./img/naver_logo_icon.svg");
 }
 
-.naver_login::before {
-    content: "N";
+.apple_login {
+    background-image: url("./img/apple_logo_icon.svg");
 }
 
-.apple_login::before {
-    content: "●";
-}
-
-.samsung_login::before {
-    content: "S";
+.samsung_login {
+    background-image: url("./img/samsung_logo_icon.svg");
 }
 
 @media (max-width: 420px) {
