@@ -25,7 +25,7 @@ body {
     position: absolute;
     z-index: 5;
     right: 13.5%;
-    bottom: 2.5%;
+    bottom: 1%;
     left: 13.5%;
     display: flex;
     align-items: center;
@@ -105,17 +105,17 @@ body {
     background: none;
     color: currentColor;
     font-family: Arial, sans-serif;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 300;
     line-height: 1;
 }
 
 .hero-arrows .swiper-button-prev::after {
-    content: "‹";
+    content: "<";
 }
 
 .hero-arrows .swiper-button-next::after {
-    content: "›";
+    content: ">";
 }
 
 @media (max-width: 1024px) {
@@ -141,7 +141,7 @@ body {
 
     .hero-controls {
         right: 20px;
-        bottom: 12px;
+        bottom: 6px;
         left: 20px;
         gap: 12px;
     }
