@@ -25,11 +25,11 @@ body {
     position: absolute;
     z-index: 5;
     right: 13.5%;
-    bottom: 7.5%;
+    bottom: 5%;
     left: 13.5%;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
 }
 
 /* 진행 바 */
@@ -41,7 +41,7 @@ body {
     left: auto;
     flex: 1 1 auto;
     width: auto;
-    height: 2px;
+    height: 3px;
     border-radius: 0;
     background: rgba(255, 255, 255, 0.4);
     opacity: 1;
@@ -60,7 +60,7 @@ body {
     flex: 0 0 auto;
     width: auto;
     color: #fff;
-    font-size: 8px;
+    font-size: 11px;
     font-weight: 500;
     line-height: 1;
     text-align: left;
@@ -68,27 +68,27 @@ body {
 }
 
 .hero-controls .fraction-divider {
-    margin: 0 2px;
+    margin: 0 3px;
 }
 
 /* 이전 / 다음 화살표 */
 .hero-arrows {
     display: flex;
-    flex: 0 0 22px;
+    flex: 0 0 30px;
     align-items: center;
     justify-content: space-between;
-    width: 22px;
-    height: 16px;
+    width: 30px;
+    height: 22px;
 }
 
 .hero-arrows .swiper-button-prev,
 .hero-arrows .swiper-button-next {
     position: static;
     display: flex;
-    flex: 0 0 8px;
+    flex: 0 0 11px;
     align-items: center;
     justify-content: center;
-    width: 8px;
+    width: 11px;
     height: 16px;
     margin: 0;
     color: #fff;
@@ -99,8 +99,8 @@ body {
 .hero-arrows .swiper-button-next::after {
     content: "";
     display: block;
-    width: 5px;
-    height: 5px;
+    width: 7px;
+    height: 7px;
     font-family: inherit;
     font-size: 0;
 }
@@ -140,7 +140,7 @@ body {
 
     .hero-controls {
         right: 20px;
-        bottom: 32px;
+        bottom: 24px;
         left: 20px;
         gap: 12px;
     }
