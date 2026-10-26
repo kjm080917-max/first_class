@@ -1,0 +1,38 @@
+body {
+    background-color: yellow;
+    font-family:
+    "pretendard", sans-serif;
+}
+.mo {
+    display: none;
+}
+.hero-sec .swiper {
+    width: 100%;
+    height: 780px;
+}
+/*높이를 고정하고 싶은 경우는 px 값 적용*/
+/*반응형에 따라 높이값이 점점 줄어들값바라면 높이값 주지않기 max -height 정도는 가능*/
+.hero-sec .swiper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+    .pc {
+        display: none;
+    }
+    .mo {
+        display: block;
+    }
+    header {
+        position: fixed;
+        width: 100%;
+        height: 60px;
+        background-color: orange;
+        z-index: 10;
+    }
+    .hero-sec .swiper {
+        height: 96dvh;
+    }
+}
