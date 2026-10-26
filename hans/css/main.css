@@ -20,16 +20,16 @@ body {
     object-fit: cover;
 }
 
-/* 피그마 하단 컨트롤: 진행 바 + 페이지 번호 + 좌우 화살표 */
+/* 피그마 하단 컨트롤: 진행 바는 길게, 번호와 화살표는 오른쪽에 */
 .hero-controls {
     position: absolute;
     z-index: 5;
-    right: 30px;
-    bottom: 97px;
-    left: 30px;
+    right: 13.5%;
+    bottom: 7.5%;
+    left: 13.5%;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 8px;
 }
 
 /* 진행 바 */
@@ -60,7 +60,7 @@ body {
     flex: 0 0 auto;
     width: auto;
     color: #fff;
-    font-size: 16px;
+    font-size: 8px;
     font-weight: 500;
     line-height: 1;
     text-align: left;
@@ -68,28 +68,28 @@ body {
 }
 
 .hero-controls .fraction-divider {
-    margin: 0 3px;
+    margin: 0 2px;
 }
 
 /* 이전 / 다음 화살표 */
 .hero-arrows {
     display: flex;
-    flex: 0 0 60px;
+    flex: 0 0 22px;
     align-items: center;
     justify-content: space-between;
-    width: 60px;
-    height: 34px;
+    width: 22px;
+    height: 16px;
 }
 
 .hero-arrows .swiper-button-prev,
 .hero-arrows .swiper-button-next {
     position: static;
     display: flex;
-    flex: 0 0 17px;
+    flex: 0 0 8px;
     align-items: center;
     justify-content: center;
-    width: 17px;
-    height: 34px;
+    width: 8px;
+    height: 16px;
     margin: 0;
     color: #fff;
     transform: none;
@@ -99,8 +99,8 @@ body {
 .hero-arrows .swiper-button-next::after {
     content: "";
     display: block;
-    width: 10px;
-    height: 10px;
+    width: 5px;
+    height: 5px;
     font-family: inherit;
     font-size: 0;
 }
@@ -108,13 +108,13 @@ body {
 .hero-arrows .swiper-button-prev::after {
     border-bottom: 1.5px solid currentColor;
     border-left: 1.5px solid currentColor;
-    transform: translateX(2px) rotate(45deg);
+    transform: translateX(1px) rotate(45deg);
 }
 
 .hero-arrows .swiper-button-next::after {
     border-top: 1.5px solid currentColor;
     border-right: 1.5px solid currentColor;
-    transform: translateX(-2px) rotate(45deg);
+    transform: translateX(-1px) rotate(45deg);
 }
 
 @media (max-width: 1024px) {
