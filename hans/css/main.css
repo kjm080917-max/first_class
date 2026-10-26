@@ -106,21 +106,22 @@ body {
 .hero-arrows .swiper-button-next::before {
     content: "";
     display: block;
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     border: 0;
     border-color: currentColor;
     border-style: solid;
 }
 
+/* PNG 참고 이미지처럼 꺾임 하나씩 표시 */
 .hero-arrows .swiper-button-prev::before {
-    border-width: 2px 0 0 2px;
-    transform: rotate(-45deg);
+    border-width: 0 0 3px 3px;
+    transform: rotate(45deg);
 }
 
 .hero-arrows .swiper-button-next::before {
-    border-width: 0 2px 2px 0;
-    transform: rotate(-45deg);
+    border-width: 3px 3px 0 0;
+    transform: rotate(45deg);
 }
 
 @media (max-width: 1024px) {
