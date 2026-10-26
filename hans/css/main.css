@@ -25,7 +25,7 @@ body {
     position: absolute;
     z-index: 5;
     right: 13.5%;
-    bottom: 1%;
+    bottom: 0%;
     left: 13.5%;
     display: flex;
     align-items: center;
@@ -71,7 +71,7 @@ body {
     margin: 0 3px;
 }
 
-/* 이전 / 다음 화살표 */
+/* 이전 / 다음 화살표: 버튼마다 꺾임 하나만 표시 */
 .hero-arrows {
     display: flex;
     flex: 0 0 34px;
@@ -95,27 +95,32 @@ body {
     transform: none;
 }
 
+/* Swiper 기본 화살표 문양은 끄고, CSS 선으로 단일 화살표 생성 */
 .hero-arrows .swiper-button-prev::after,
 .hero-arrows .swiper-button-next::after {
+    content: none !important;
+    display: none !important;
+}
+
+.hero-arrows .swiper-button-prev::before,
+.hero-arrows .swiper-button-next::before {
     content: "";
     display: block;
-    width: auto;
-    height: auto;
+    width: 8px;
+    height: 8px;
     border: 0;
-    background: none;
-    color: currentColor;
-    font-family: Arial, sans-serif;
-    font-size: 24px;
-    font-weight: 300;
-    line-height: 1;
+    border-color: currentColor;
+    border-style: solid;
 }
 
-.hero-arrows .swiper-button-prev::after {
-    content: "<";
+.hero-arrows .swiper-button-prev::before {
+    border-width: 0 0 1.5px 1.5px;
+    transform: rotate(45deg);
 }
 
-.hero-arrows .swiper-button-next::after {
-    content: ">";
+.hero-arrows .swiper-button-next::before {
+    border-width: 1.5px 1.5px 0 0;
+    transform: rotate(45deg);
 }
 
 @media (max-width: 1024px) {
@@ -141,7 +146,7 @@ body {
 
     .hero-controls {
         right: 20px;
-        bottom: 6px;
+        bottom: 0px;
         left: 20px;
         gap: 12px;
     }
