@@ -18,30 +18,26 @@
         <header>제목공간</header>
         <main>
             <div class="visual hero-sec">
-                <!-- Slider main container -->
                 <div class="swiper">
-                    <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
-                        <!-- Slides -->
                         <div class="swiper-slide">
-                            <img src="img\cake.png" alt="Slide 1"class="pc">
+                            <img src="img\\cake.png" alt="Slide 1" class="pc">
                             <img src="img/cake_m.jpg" alt="Slide 1_m" class="mo">
                         </div>
                         <div class="swiper-slide">
-                            <img src="img\hero.png" alt="Slide 2" class="pc">
+                            <img src="img\\hero.png" alt="Slide 2" class="pc">
                             <img src="img/hero_m.jpg" alt="Slide 2_m" class="mo">
                         </div>
                     </div>
 
-                    <!-- If we need pagination -->
-                    <div class="swiper-pagination"></div>
-
-                    <!-- If we need navigation buttons -->
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-
-                    <!-- If we need scrollbar -->
-                    <div class="swiper-scrollbar"></div>
+                    <div class="hero-controls">
+                        <div class="swiper-scrollbar" aria-label="슬라이드 진행 상태"></div>
+                        <div class="swiper-pagination" aria-label="현재 슬라이드"></div>
+                        <div class="hero-arrows">
+                            <button type="button" class="swiper-button-prev" aria-label="이전 슬라이드"></button>
+                            <button type="button" class="swiper-button-next" aria-label="다음 슬라이드"></button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
@@ -54,6 +50,13 @@
 
             pagination: {
                 el: '.swiper-pagination',
+                type: 'fraction',
+                formatFractionCurrent: (number) => number,
+                formatFractionTotal: (number) => number,
+                renderFraction: (currentClass, totalClass) =>
+                    '<span class="' + currentClass + '"></span>' +
+                    '<span class="fraction-divider"> | </span>' +
+                    '<span class="' + totalClass + '"></span>',
             },
 
             navigation: {
@@ -63,6 +66,7 @@
 
             scrollbar: {
                 el: '.visual .swiper-scrollbar',
+                draggable: true,
             },
         });
     </script>
