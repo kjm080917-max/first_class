@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한스리뉴얼포트폴리오</title>
+    <link rel="stylesheet" href="../css/default.css">
+    <link rel="stylesheet" href="../font/css/pretendardvariable.css">
+    <link rel="stylesheet" href="../npm/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="../npm/swiper/swiper-bundle.min.js"></script>
+    <style>
+        #wrap {background-color: yellow;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>제목공간</header>
+        <main>
+            <div class="visual hero-sec">
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <img src="img\cake.png" alt="Slide 1"class="pc">
+                            <img src="img/3.jpg" alt="Slide 1_m" class="mo">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img\hero.png" alt="Slide 2" class="pc">
+                            <img src="img/2.jpg" alt="Slide 2_m" class="mo">
+                        </div>
+                    </div>
+
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
+                    <!-- If we need scrollbar -->
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
+        </main>
+        <footer>&copy; </footer>
+    </div>
+    <script>
+        const swiper = new Swiper('.hero-sec > .swiper', {
+            direction: 'horizontal',
+            loop: true,
+
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            scrollbar: {
+                el: '.visual .swiper-scrollbar',
+            },
+        });
+    </script>
+</body>
+</html>
