@@ -71,7 +71,7 @@ body {
     margin: 0 3px;
 }
 
-/* 이전 / 다음 화살표: 버튼마다 꺾임 하나만 표시 */
+/* 이전 / 다음 화살표: 단일 < 와 > 모양 */
 .hero-arrows {
     display: flex;
     flex: 0 0 34px;
@@ -95,7 +95,7 @@ body {
     transform: none;
 }
 
-/* Swiper 기본 화살표 문양은 끄고, CSS 선으로 단일 화살표 생성 */
+/* Swiper 기본 문양을 끄고, 버튼마다 < 또는 > 하나만 표시 */
 .hero-arrows .swiper-button-prev::after,
 .hero-arrows .swiper-button-next::after {
     content: none !important;
@@ -106,21 +106,21 @@ body {
 .hero-arrows .swiper-button-next::before {
     content: "";
     display: block;
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
     border: 0;
     border-color: currentColor;
     border-style: solid;
 }
 
 .hero-arrows .swiper-button-prev::before {
-    border-width: 0 0 1.5px 1.5px;
-    transform: rotate(45deg);
+    border-width: 1.5px 0 0 1.5px;
+    transform: rotate(-45deg);
 }
 
 .hero-arrows .swiper-button-next::before {
-    border-width: 1.5px 1.5px 0 0;
-    transform: rotate(45deg);
+    border-width: 0 1.5px 1.5px 0;
+    transform: rotate(-45deg);
 }
 
 @media (max-width: 1024px) {
