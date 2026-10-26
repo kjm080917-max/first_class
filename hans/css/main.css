@@ -25,7 +25,7 @@ body {
     position: absolute;
     z-index: 5;
     right: 13.5%;
-    bottom: 0%;
+    bottom: -4px;
     left: 13.5%;
     display: flex;
     align-items: center;
@@ -71,7 +71,7 @@ body {
     margin: 0 4px;
 }
 
-/* 이전 / 다음 화살표: 단일 < 와 > 모양 */
+/* 이전 / 다음 화살표: 한쪽 방향마다 기호 하나만 표시 */
 .hero-arrows {
     display: flex;
     flex: 0 0 44px;
@@ -95,33 +95,30 @@ body {
     transform: none;
 }
 
-/* Swiper 기본 문양을 끄고, 버튼마다 < 또는 > 하나만 표시 */
+/* Swiper 기본 화살표는 완전히 숨김 */
 .hero-arrows .swiper-button-prev::after,
 .hero-arrows .swiper-button-next::after {
     content: none !important;
     display: none !important;
 }
 
+/* 사용자 요청대로 < 와 > 문자 하나씩 표시 */
 .hero-arrows .swiper-button-prev::before,
 .hero-arrows .swiper-button-next::before {
-    content: "";
     display: block;
-    width: 12px;
-    height: 12px;
-    border: 0;
-    border-color: currentColor;
-    border-style: solid;
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1;
+    color: #fff;
 }
 
-/* PNG 참고 이미지처럼 꺾임 하나씩 표시 */
 .hero-arrows .swiper-button-prev::before {
-    border-width: 0 0 3px 3px;
-    transform: rotate(45deg);
+    content: "<";
 }
 
 .hero-arrows .swiper-button-next::before {
-    border-width: 3px 3px 0 0;
-    transform: rotate(45deg);
+    content: ">";
 }
 
 @media (max-width: 1024px) {
@@ -147,7 +144,7 @@ body {
 
     .hero-controls {
         right: 20px;
-        bottom: 0px;
+        bottom: -4px;
         left: 20px;
         gap: 16px;
     }
