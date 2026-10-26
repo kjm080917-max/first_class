@@ -29,7 +29,7 @@ body {
     left: 13.5%;
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
 }
 
 /* 진행 바 */
@@ -41,7 +41,7 @@ body {
     left: auto;
     flex: 1 1 auto;
     width: auto;
-    height: 4px;
+    height: 3px;
     border-radius: 0;
     background: rgba(255, 255, 255, 0.4);
     opacity: 1;
@@ -60,7 +60,7 @@ body {
     flex: 0 0 auto;
     width: auto;
     color: #fff;
-    font-size: 14px;
+    font-size: 11px;
     font-weight: 500;
     line-height: 1;
     text-align: left;
@@ -68,28 +68,28 @@ body {
 }
 
 .hero-controls .fraction-divider {
-    margin: 0 4px;
+    margin: 0 3px;
 }
 
 /* 이전 / 다음 화살표: 버튼마다 꺾임 하나만 표시 */
 .hero-arrows {
     display: flex;
-    flex: 0 0 44px;
+    flex: 0 0 34px;
     align-items: center;
     justify-content: space-between;
-    width: 44px;
-    height: 30px;
+    width: 34px;
+    height: 24px;
 }
 
 .hero-arrows .swiper-button-prev,
 .hero-arrows .swiper-button-next {
     position: static;
     display: flex;
-    flex: 0 0 18px;
+    flex: 0 0 14px;
     align-items: center;
     justify-content: center;
-    width: 18px;
-    height: 30px;
+    width: 14px;
+    height: 24px;
     margin: 0;
     color: #fff;
     transform: none;
@@ -106,20 +106,20 @@ body {
 .hero-arrows .swiper-button-next::before {
     content: "";
     display: block;
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border: 0;
     border-color: currentColor;
     border-style: solid;
 }
 
 .hero-arrows .swiper-button-prev::before {
-    border-width: 0 0 2px 2px;
+    border-width: 0 0 1.5px 1.5px;
     transform: rotate(45deg);
 }
 
 .hero-arrows .swiper-button-next::before {
-    border-width: 2px 2px 0 0;
+    border-width: 1.5px 1.5px 0 0;
     transform: rotate(45deg);
 }
 
@@ -148,15 +148,15 @@ body {
         right: 20px;
         bottom: 0px;
         left: 20px;
-        gap: 16px;
+        gap: 12px;
     }
 
     .hero-controls .swiper-pagination {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .hero-arrows {
-        flex-basis: 44px;
-        width: 44px;
+        flex-basis: 34px;
+        width: 34px;
     }
 }
