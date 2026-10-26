@@ -1,38 +1,154 @@
 body {
     background-color: yellow;
-    font-family:
-    "pretendard", sans-serif;
+    font-family: "pretendard", sans-serif;
 }
+
 .mo {
     display: none;
 }
+
 .hero-sec .swiper {
+    position: relative;
     width: 100%;
     height: 780px;
 }
-/*높이를 고정하고 싶은 경우는 px 값 적용*/
-/*반응형에 따라 높이값이 점점 줄어들값바라면 높이값 주지않기 max -height 정도는 가능*/
+
+/* 슬라이드 이미지 */
 .hero-sec .swiper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
+/* 피그마 하단 컨트롤: 진행 바 + 페이지 번호 + 좌우 화살표 */
+.hero-controls {
+    position: absolute;
+    z-index: 5;
+    right: 30px;
+    bottom: 97px;
+    left: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* 진행 바 */
+.hero-controls .swiper-scrollbar {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    flex: 1 1 auto;
+    width: auto;
+    height: 2px;
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+}
+
+.hero-controls .swiper-scrollbar-drag {
+    border-radius: 0;
+    background: #fff;
+}
+
+/* 현재 슬라이드 | 전체 슬라이드 */
+.hero-controls .swiper-pagination {
+    position: static;
+    flex: 0 0 auto;
+    width: auto;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.hero-controls .fraction-divider {
+    margin: 0 3px;
+}
+
+/* 이전 / 다음 화살표 */
+.hero-arrows {
+    display: flex;
+    flex: 0 0 60px;
+    align-items: center;
+    justify-content: space-between;
+    width: 60px;
+    height: 34px;
+}
+
+.hero-arrows .swiper-button-prev,
+.hero-arrows .swiper-button-next {
+    position: static;
+    display: flex;
+    flex: 0 0 17px;
+    align-items: center;
+    justify-content: center;
+    width: 17px;
+    height: 34px;
+    margin: 0;
+    color: #fff;
+    transform: none;
+}
+
+.hero-arrows .swiper-button-prev::after,
+.hero-arrows .swiper-button-next::after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    font-family: inherit;
+    font-size: 0;
+}
+
+.hero-arrows .swiper-button-prev::after {
+    border-bottom: 1.5px solid currentColor;
+    border-left: 1.5px solid currentColor;
+    transform: translateX(2px) rotate(45deg);
+}
+
+.hero-arrows .swiper-button-next::after {
+    border-top: 1.5px solid currentColor;
+    border-right: 1.5px solid currentColor;
+    transform: translateX(-2px) rotate(45deg);
+}
+
 @media (max-width: 1024px) {
     .pc {
         display: none;
     }
+
     .mo {
         display: block;
     }
+
     header {
         position: fixed;
+        z-index: 10;
         width: 100%;
         height: 60px;
         background-color: orange;
-        z-index: 10;
     }
+
     .hero-sec .swiper {
         height: 96dvh;
+    }
+
+    .hero-controls {
+        right: 20px;
+        bottom: 32px;
+        left: 20px;
+        gap: 12px;
+    }
+
+    .hero-controls .swiper-pagination {
+        font-size: 14px;
+    }
+
+    .hero-arrows {
+        flex-basis: 52px;
+        width: 52px;
     }
 }
