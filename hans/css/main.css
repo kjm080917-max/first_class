@@ -88,8 +88,6 @@ body {
     width: 32px;
     height: 32px;
     margin: 0;
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
     color: #fff;
     background: transparent;
     font: inherit;
@@ -101,12 +99,6 @@ body {
 .hero-arrows .swiper-button-prev::after,
 .hero-arrows .swiper-button-next::after {
     content: none;
-}
-
-.hero-arrows .swiper-button-prev:hover,
-.hero-arrows .swiper-button-next:hover {
-    color: #222;
-    background: #fff;
 }
 
 @media (max-width: 1024px) {
