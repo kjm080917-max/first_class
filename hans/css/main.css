@@ -25,7 +25,7 @@ body {
     position: absolute;
     z-index: 5;
     right: 13.5%;
-    bottom: -4px;
+    bottom: 8px;
     left: 13.5%;
     display: flex;
     align-items: center;
@@ -104,11 +104,13 @@ body {
 
 /* 화살표는 HTML 문자로 표시 */
 .hero-arrows .swiper-button-prev {
-    font-size: 0;
+    font-size: 12px;
+    line-height: 1;
 }
 
 .hero-arrows .swiper-button-next {
-    font-size: 0;
+    font-size: 12px;
+    line-height: 1;
 }
 
 .hero-arrows .swiper-button-prev {
@@ -142,7 +144,7 @@ body {
 
     .hero-controls {
         right: 20px;
-        bottom: -4px;
+        bottom: 8px;
         left: 20px;
         gap: 16px;
     }
