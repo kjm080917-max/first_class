@@ -76,7 +76,7 @@ body {
     display: flex;
     flex: 0 0 auto;
     align-items: center;
-    gap: 8px;
+    gap: 0;
 }
 
 .hero-arrows .hero-prev,
