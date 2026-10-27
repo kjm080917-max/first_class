@@ -76,24 +76,42 @@ body {
     display: flex;
     flex: 0 0 auto;
     align-items: center;
-    gap: 8px;
+    gap: 14px;
 }
 
 .hero-arrows .hero-prev,
 .hero-arrows .hero-next {
     position: static;
     display: flex;
+    flex: 0 0 auto;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     margin: 0;
-    color: #fff;
-    background: transparent;
-    font: inherit;
-    font-size: 18px;
-    line-height: 1;
+    padding: 0;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.24);
+    border-radius: 50%;
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.65));
     cursor: pointer;
+}
+
+.hero-arrows .hero-prev svg,
+.hero-arrows .hero-next svg {
+    display: block;
+    width: 26px;
+    height: 26px;
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.hero-arrows .hero-prev::after,
+.hero-arrows .hero-next::after {
+    content: none;
 }
 
 .hero-arrows .hero-prev::after,
@@ -134,12 +152,18 @@ body {
     }
 
     .hero-arrows {
-        gap: 6px;
+        gap: 10px;
     }
 
     .hero-arrows .hero-prev,
     .hero-arrows .hero-next {
-        width: 30px;
-        height: 30px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .hero-arrows .hero-prev svg,
+    .hero-arrows .hero-next svg {
+        width: 24px;
+        height: 24px;
     }
 }
