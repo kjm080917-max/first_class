@@ -20,7 +20,7 @@ body {
     object-fit: cover;
 }
 
-/* 하단 컨트롤: 진행 바와 슬라이드 번호 */
+/* 하단 컨트롤: 진행 바, 슬라이드 번호, 이전/다음 버튼 */
 .hero-controls {
     position: absolute;
     z-index: 5;
@@ -71,6 +71,44 @@ body {
     margin: 0 4px;
 }
 
+/* 이전/다음 버튼 */
+.hero-arrows {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 8px;
+}
+
+.hero-arrows .swiper-button-prev,
+.hero-arrows .swiper-button-next {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    margin: 0;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    color: #fff;
+    background: transparent;
+    font: inherit;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.hero-arrows .swiper-button-prev::after,
+.hero-arrows .swiper-button-next::after {
+    content: none;
+}
+
+.hero-arrows .swiper-button-prev:hover,
+.hero-arrows .swiper-button-next:hover {
+    color: #222;
+    background: #fff;
+}
+
 @media (max-width: 1024px) {
     .pc {
         display: none;
@@ -96,10 +134,20 @@ body {
         right: 20px;
         bottom: 8px;
         left: 20px;
-        gap: 16px;
+        gap: 12px;
     }
 
     .hero-controls .swiper-pagination {
         font-size: 16px;
+    }
+
+    .hero-arrows {
+        gap: 6px;
+    }
+
+    .hero-arrows .swiper-button-prev,
+    .hero-arrows .swiper-button-next {
+        width: 30px;
+        height: 30px;
     }
 }
