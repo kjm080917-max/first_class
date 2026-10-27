@@ -97,6 +97,23 @@ body {
     cursor: pointer;
 }
 
+.hero-arrows .hero-prev,
+.hero-arrows .hero-next,
+.hero-arrows .hero-prev:hover,
+.hero-arrows .hero-next:hover,
+.hero-arrows .hero-prev:focus,
+.hero-arrows .hero-next:focus,
+.hero-arrows .hero-prev:active,
+.hero-arrows .hero-next:active,
+.hero-arrows .hero-prev:focus-visible,
+.hero-arrows .hero-next:focus-visible {
+    outline: none;
+    border: none;
+    box-shadow: none;
+    background-image: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
 .hero-arrows .hero-prev svg,
 .hero-arrows .hero-next svg {
     display: block;
