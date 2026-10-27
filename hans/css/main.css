@@ -79,8 +79,8 @@ body {
     gap: 8px;
 }
 
-.hero-arrows .swiper-button-prev,
-.hero-arrows .swiper-button-next {
+.hero-arrows .hero-prev,
+.hero-arrows .hero-next {
     position: static;
     display: flex;
     align-items: center;
@@ -96,8 +96,8 @@ body {
     cursor: pointer;
 }
 
-.hero-arrows .swiper-button-prev::after,
-.hero-arrows .swiper-button-next::after {
+.hero-arrows .hero-prev::after,
+.hero-arrows .hero-next::after {
     content: none;
 }
 
@@ -137,8 +137,8 @@ body {
         gap: 6px;
     }
 
-    .hero-arrows .swiper-button-prev,
-    .hero-arrows .swiper-button-next {
+    .hero-arrows .hero-prev,
+    .hero-arrows .hero-next {
         width: 30px;
         height: 30px;
     }
