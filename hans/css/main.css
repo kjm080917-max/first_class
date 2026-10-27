@@ -20,7 +20,7 @@ body {
     object-fit: cover;
 }
 
-/* 피그마 하단 컨트롤: 진행 바는 길게, 번호와 화살표는 오른쪽에 */
+/* 하단 컨트롤: 진행 바와 슬라이드 번호 */
 .hero-controls {
     position: absolute;
     z-index: 5;
@@ -101,10 +101,5 @@ body {
 
     .hero-controls .swiper-pagination {
         font-size: 16px;
-    }
-
-    .hero-arrows {
-        flex-basis: 44px;
-        width: 44px;
     }
 }
