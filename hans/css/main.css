@@ -71,40 +71,6 @@ body {
     margin: 0 4px;
 }
 
-/* 이전 / 다음 화살표 */
-.hero-arrows {
-    display: flex;
-    flex: 0 0 44px;
-    align-items: center;
-    justify-content: space-between;
-    width: 44px;
-    height: 30px;
-}
-
-.hero-arrows .swiper-button-prev,
-.hero-arrows .swiper-button-next {
-    position: static;
-    display: flex;
-    flex: 0 0 18px;
-    align-items: center;
-    justify-content: center;
-    width: 18px;
-    height: 30px;
-    margin: 0;
-    color: #fff;
-    transform: none;
-}
-
-/* Swiper 기본 화살표 숨김 */
-.hero-arrows .swiper-button-prev::after,
-.hero-arrows .swiper-button-next::after {
-    content: none !important;
-    display: none !important;
-}
-
-/* 화살표는 HTML 문자로 표시 */
-
-}
 @media (max-width: 1024px) {
     .pc {
         display: none;
