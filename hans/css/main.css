@@ -532,3 +532,53 @@ body {
         transition: none;
     }
 }
+
+
+/* Hero 문구 오버레이: 기존 Swiper와 컨트롤은 수정하지 않음 */
+.hero-sec {
+    position: relative;
+}
+
+.hero-copy {
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    left: 50%;
+    width: min(90%, 900px);
+    color: #fff;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.hero-copy h1 {
+    margin: 0 0 12px;
+    font-size: clamp(42px, 6.3vw, 120px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: 0.01em;
+}
+
+.hero-copy p {
+    margin: 0;
+    font-size: clamp(16px, 1.5vw, 28px);
+    font-weight: 600;
+    line-height: 1.5;
+    word-break: keep-all;
+}
+
+@media (max-width: 1024px) {
+    .hero-copy {
+        top: 48%;
+        width: calc(100% - 40px);
+    }
+
+    .hero-copy h1 {
+        margin-bottom: 10px;
+        font-size: clamp(38px, 9vw, 64px);
+    }
+
+    .hero-copy p {
+        font-size: clamp(15px, 3.8vw, 20px);
+    }
+}
