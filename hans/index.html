@@ -155,6 +155,25 @@
                 hide: false,
             },
         });
+    
+        const navToggle = document.querySelector('.site-header__toggle');
+        const siteNav = document.querySelector('#site-nav');
+
+        navToggle.addEventListener('click', () => {
+            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', String(!isExpanded));
+            navToggle.setAttribute('aria-label', isExpanded ? '메뉴 열기' : '메뉴 닫기');
+            siteNav.classList.toggle('is-open', !isExpanded);
+        });
+
+        siteNav.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.setAttribute('aria-label', '메뉴 열기');
+                siteNav.classList.remove('is-open');
+            });
+        });
+
     </script>
 </body>
 </html>
