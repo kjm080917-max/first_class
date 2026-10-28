@@ -398,15 +398,22 @@ body {
     text-align: center;
 }
 
+/* 메뉴 이미지 영역 (<img> 태그 컨트롤용) */
 .hans-menu__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     max-width: 364px;
     height: 346px;
     margin-bottom: 35px;
     background-color: var(--color-bage);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+}
+
+.hans-menu__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .hans-menu__image--chocolate {
@@ -509,10 +516,7 @@ body {
         height: 300px;
         margin-top: 0;
         margin-bottom: 24px;
-    }
-
-    .hans-menu__text h3 {
-        font-size: 22px;
+        background-color: transparent;
     }
 
     .hans-menu__more {
@@ -599,7 +603,7 @@ body {
     object-fit: contain;
 }
 
-/* 메인 메뉴 (그리드 레이아웃 적용) */
+/* 메인 메뉴 */
 .site-nav {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -644,7 +648,7 @@ body {
     color: var(--text-brand);
 }
 
-/* 메가 메뉴 (하위 메뉴 정렬 미세 조정 적용) */
+/* 메가 메뉴 */
 .site-mega {
     display: none;
     width: 100%;
@@ -659,7 +663,7 @@ body {
     width: 600px;
     margin: 0 auto;
     padding: 24px 0 35px;
-    transform: translateX(-15px); /* 💡 하위 메뉴 전체를 왼쪽으로 살짝 이동 */
+    transform: translateX(-15px);
 }
 
 .site-mega__column {
