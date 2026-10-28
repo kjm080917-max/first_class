@@ -348,3 +348,187 @@ body {
     }
 }
 
+
+/* 한스 메뉴: Figma 51:63 기준 */
+.hans-menu {
+    position: relative;
+    min-height: 1082px;
+    padding: 112px max(3.6vw, 24px);
+    overflow: hidden;
+    background: var(--color-white);
+}
+
+.hans-menu__background {
+    position: absolute;
+    top: 185px;
+    left: 50%;
+    margin: 0;
+    color: var(--text-default);
+    font-size: clamp(180px, 25vw, 300px);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.06em;
+    transform: translateX(-50%);
+    pointer-events: none;
+    user-select: none;
+}
+
+.hans-menu__inner {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 1782px);
+    margin: 0 auto;
+}
+
+.hans-menu__title {
+    margin: 0 0 38px;
+    color: var(--color-warm-gray);
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.hans-menu__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    align-items: stretch;
+}
+
+.hans-menu__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 0;
+    padding: 30px 28px 52px;
+    text-align: center;
+}
+
+.hans-menu__image {
+    width: 100%;
+    max-width: 364px;
+    height: 346px;
+    margin-bottom: 35px;
+    background-color: var(--color-bage);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.hans-menu__image--chocolate {
+    max-width: 417px;
+    height: 412px;
+    margin-top: 93px;
+    margin-bottom: 35px;
+    background-color: transparent;
+}
+
+.hans-menu__image--almond {
+    max-width: 286px;
+    height: 340px;
+    margin-top: 0;
+    margin-bottom: 35px;
+    background-color: transparent;
+}
+
+.hans-menu__text {
+    width: min(100%, 288px);
+}
+
+.hans-menu__text h3 {
+    margin: 0 0 4px;
+    color: var(--text-primary);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    word-break: keep-all;
+}
+
+.hans-menu__text p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    word-break: keep-all;
+}
+
+.hans-menu__more {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    width: fit-content;
+    margin: 48px 0 0 auto;
+    padding-bottom: 5px;
+    border-bottom: 1px solid currentColor;
+    color: var(--text-primary);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.hans-menu__more span {
+    color: var(--text-brand);
+    font-size: 20px;
+    transition: transform 0.2s ease;
+}
+
+.hans-menu__more:hover span {
+    transform: translateX(4px);
+}
+
+.hans-menu__more:focus-visible {
+    outline: 2px solid var(--color-brand-orange);
+    outline-offset: 5px;
+}
+
+@media (max-width: 1024px) {
+    .hans-menu {
+        min-height: auto;
+        padding: 76px 24px 64px;
+    }
+
+    .hans-menu__background {
+        top: 190px;
+        font-size: clamp(130px, 32vw, 240px);
+    }
+
+    .hans-menu__title {
+        margin-bottom: 28px;
+        font-size: clamp(38px, 7vw, 56px);
+    }
+
+    .hans-menu__list {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .hans-menu__card {
+        padding: 20px 16px 28px;
+    }
+
+    .hans-menu__image,
+    .hans-menu__image--chocolate,
+    .hans-menu__image--almond {
+        width: min(100%, 340px);
+        height: 300px;
+        margin-top: 0;
+        margin-bottom: 24px;
+    }
+
+    .hans-menu__text h3 {
+        font-size: 22px;
+    }
+
+    .hans-menu__more {
+        margin-top: 30px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hans-menu__more span {
+        transition: none;
+    }
+}
