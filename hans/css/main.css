@@ -1034,7 +1034,7 @@ body {
 }
 .hans-menu .menu-reveal:hover {
     transform: translateY(-6px);
-    box-shadow: 0 14px 34px rgba(34, 34, 34, .10);
+    box-shadow: none;
 }
 .hans-brand__line--top img,
 .hans-special__image img,
