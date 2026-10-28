@@ -782,3 +782,14 @@ body {
         transition: none;
     }
 }
+
+/* 고정 헤더 높이만큼 Hero 시작 위치 확보 */
+.hero-sec {
+    margin-top: 90px;
+}
+
+@media (max-width: 1024px) {
+    .hero-sec {
+        margin-top: 60px;
+    }
+}
