@@ -822,38 +822,37 @@ body {
 }
 
 
-/* Hans Menu: 부드러운 등장 및 마우스 인터랙션 */
-@keyframes hans-menu-fade-up {
-    from {
-        opacity: 0;
-        transform: translateY(28px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Hans Menu: 스크롤 진입 시 은은한 인트로 모션 */
+.menu-reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition:
+        opacity .65s ease,
+        transform .65s cubic-bezier(.2, .7, .3, 1);
+    transition-delay: var(--reveal-delay, 0ms);
 }
 
-.hans-menu__title {
-    animation: hans-menu-fade-up .75s ease-out both;
+.menu-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
+/* 카드 호버 인터랙션 */
 .hans-menu__card {
     border-radius: 2px;
-    transition: transform .35s ease, box-shadow .35s ease;
+    transition: transform .35s ease;
 }
 
 .hans-menu__card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
 }
 
 .hans-menu__image img {
     transition: transform .45s cubic-bezier(.2, .7, .3, 1);
-    will-change: transform;
 }
 
 .hans-menu__card:hover .hans-menu__image img {
-    transform: scale(1.045);
+    transform: scale(1.04);
 }
 
 .hans-menu__text h3 {
@@ -865,10 +864,11 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .hans-menu__title,
+    .menu-reveal,
     .hans-menu__card,
     .hans-menu__image img,
     .hans-menu__text h3 {
+        opacity: 1;
         animation: none;
         transition: none;
         transform: none;
