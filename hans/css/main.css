@@ -535,6 +535,7 @@ body {
 
 
 /* Hero 문구 오버레이: 텍스트 위치/크기만 조정, Swiper는 유지 */
+/* Hero 문구 오버레이: 텍스트 위치/크기만 조정, Swiper는 유지 */
 .hero-sec {
     position: relative;
 }
@@ -542,7 +543,7 @@ body {
 .hero-copy {
     position: absolute;
     z-index: 4;
-    top: 64%;
+    top: 76%;          /* 💡 PC 화면: 64%에서 76%로 내려서 케이크 아래쪽으로 이동 */
     left: 50%;
     width: min(90%, 1100px);
     color: #fff;
@@ -570,7 +571,7 @@ body {
 
 @media (max-width: 1024px) {
     .hero-copy {
-        top: 52%;
+        top: 68%;      /* 💡 모바일 화면: 52%에서 68%로 내려서 이동 */
         width: calc(100% - 40px);
     }
 
@@ -583,4 +584,3 @@ body {
         margin-top: 12px;
         font-size: clamp(15px, 3.8vw, 20px);
     }
-}
