@@ -416,6 +416,11 @@ body {
     object-fit: contain;
 }
 
+/* 딸기 생크림 케이크 이미지 뒤의 베이지 배경 제거 */
+.hans-menu__image--strawberry {
+    background-color: transparent;
+}
+
 .hans-menu__image--chocolate {
     max-width: 417px;
     height: 412px;
