@@ -199,3 +199,153 @@ body {
         height: 24px;
     }
 }
+
+/* 매장찾기 · 가맹문의: Hero 아래에 추가한 섹션 */
+.store-franchise {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    min-height: 460px;
+}
+
+.store-franchise__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+    min-height: 460px;
+    padding: 80px max(5vw, 32px) 50px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: filter 0.25s ease;
+}
+
+.store-franchise__item::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+    pointer-events: none;
+    background: radial-gradient(ellipse at 80% 20%, rgba(255,255,255,.22), transparent 52%);
+}
+
+.store-franchise__item:hover {
+    filter: brightness(0.97);
+}
+
+.store-franchise__store {
+    color: var(--color-bage);
+    background-color: var(--color-brand-orange);
+}
+
+.store-franchise__franchise {
+    color: var(--text-brand);
+    background-color: var(--color-peach);
+}
+
+.store-franchise__content,
+.store-franchise__arrow {
+    position: relative;
+    z-index: 1;
+}
+
+.store-franchise__content {
+    width: min(100%, 790px);
+    margin-inline: auto;
+}
+
+.store-franchise__content h2 {
+    margin: 0 0 16px;
+    font-size: clamp(36px, 3.34vw, 64px);
+    font-weight: 800;
+    line-height: 1.2;
+    word-break: keep-all;
+}
+
+.store-franchise__content p {
+    margin: 0;
+    font-size: clamp(18px, 1.67vw, 32px);
+    font-weight: 500;
+    line-height: 1.5;
+    word-break: keep-all;
+}
+
+.store-franchise__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
+    width: 60px;
+    height: 60px;
+    margin-right: max(calc((100% - 815px) / 2), 0px);
+    border-radius: 50%;
+    transition: transform 0.25s ease;
+}
+
+.store-franchise__store .store-franchise__arrow {
+    color: var(--color-brand-orange);
+    background-color: var(--color-peach);
+}
+
+.store-franchise__franchise .store-franchise__arrow {
+    color: var(--color-peach);
+    background-color: var(--color-brand-orange);
+}
+
+.store-franchise__arrow svg {
+    width: 28px;
+    height: 28px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.store-franchise__item:hover .store-franchise__arrow {
+    transform: translateX(5px);
+}
+
+.store-franchise__item:focus-visible {
+    outline: 3px solid var(--color-black);
+    outline-offset: -6px;
+}
+
+@media (max-width: 1024px) {
+    .store-franchise {
+        grid-template-columns: 1fr;
+    }
+
+    .store-franchise__item {
+        min-height: 300px;
+        padding: 48px 24px 28px;
+    }
+
+    .store-franchise__content h2 {
+        margin-bottom: 12px;
+        font-size: clamp(36px, 8vw, 48px);
+    }
+
+    .store-franchise__content p {
+        font-size: clamp(18px, 4.2vw, 24px);
+    }
+
+    .store-franchise__arrow {
+        width: 48px;
+        height: 48px;
+        margin-right: 0;
+    }
+
+    .store-franchise__arrow svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .store-franchise__item,
+    .store-franchise__arrow {
+        transition: none;
+    }
+}
+
