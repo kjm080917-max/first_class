@@ -15,7 +15,33 @@
 </head>
 <body>
     <div id="wrap">
-        <header>제목공간</header>
+        <header class="site-header">
+            <div class="site-header__inner">
+                <a class="site-header__logo" href="#top" aria-label="HANS CAKE 홈">
+                    <span>HANS</span>
+                    <small>CAKE</small>
+                </a>
+
+                <nav class="site-nav" id="site-nav" aria-label="주요 메뉴">
+                    <a href="#menu">MENU</a>
+                    <a href="#store">STORE</a>
+                    <a class="is-current" href="#brand">HANS STORY</a>
+                    <a href="#event">EVENT</a>
+                    <a href="#special">SPECIAL</a>
+                </nav>
+
+                <div class="site-header__links">
+                    <a href="#store">매장찾기</a>
+                    <a href="#franchise">가맹문의</a>
+                </div>
+
+                <button class="site-header__toggle" type="button" aria-label="메뉴 열기" aria-controls="site-nav" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
         <main>
             <div class="visual hero-sec">
                 <div class="hero-copy" aria-live="polite">
