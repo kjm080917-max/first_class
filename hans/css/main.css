@@ -569,7 +569,7 @@ body {
     word-break: keep-all;
 }
 
-/* 상단 고정 헤더 및 메가 메뉴 */
+/* 상단 고정 헤더 및 메가 메뉴 (정렬 완벽 수정본) */
 .site-header {
     position: fixed;
     z-index: 100;
@@ -577,6 +577,7 @@ body {
     left: 0;
     width: 100%;
     background: var(--color-white);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05); /* 경계선 구분을 위한 미세한 그림자 */
 }
 
 .site-header__bar {
@@ -595,9 +596,9 @@ body {
 
 .site-header__logo {
     display: flex;
-    flex: 0 0 109px;
+    flex: 0 0 auto;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .site-header__logo img {
@@ -607,13 +608,13 @@ body {
     object-fit: contain;
 }
 
+/* 메인 메뉴 영역 */
 .site-nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: clamp(24px, 5.5vw, 106px);
-    margin-left: auto;
-    margin-right: clamp(28px, 4vw, 70px);
+    gap: clamp(20px, 4vw, 60px);
+    margin: 0 auto; /* 중앙 정렬 */
 }
 
 .site-nav a,
@@ -625,8 +626,10 @@ body {
     line-height: 1;
     text-decoration: none;
     white-space: nowrap;
+    transition: color 0.2s ease;
 }
 
+.site-nav a:hover,
 .site-nav a.is-current {
     color: var(--text-brand);
     font-weight: 600;
@@ -636,47 +639,58 @@ body {
     display: flex;
     flex: 0 0 auto;
     align-items: center;
-    gap: 31px;
+    gap: 24px;
 }
 
 .site-header__links a {
     font-size: 16px;
-    opacity: .8;
+    opacity: 0.8;
 }
 
+.site-header__links a:hover {
+    opacity: 1;
+    color: var(--text-brand);
+}
+
+/* 드롭다운 메가 메뉴 영역 수정 */
 .site-mega {
     display: none;
     width: 100%;
     background: var(--color-white);
     border-top: 1px solid #eeeeee;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
 }
 
 .site-mega__inner {
-    display: grid;
-    grid-template-columns: 109px repeat(5, minmax(0, 1fr)) 180px;
-    gap: 0;
+    display: flex;
+    justify-content: center;
+    gap: clamp(20px, 4vw, 60px); /* 상단 site-nav의 gap과 동일하게 맞춰서 상하 정렬 맞춤 */
     width: min(calc(100% - 40px), 1720px);
     margin: 0 auto;
-    padding: 24px 0 30px;
+    padding: 30px 0 40px;
 }
 
 .site-mega__column {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+    align-items: center; /* 서브메뉴 텍스트 중앙 정렬 (필요시 flex-start로 변경 가능) */
+    gap: 12px;
+    min-width: 90px;   /* 메인 메뉴 글자 폭과 균형을 맞춤 */
 }
 
 .site-mega__column a {
     color: var(--text-secondary);
     font-family: "Pretendard Variable", sans-serif;
-    font-size: 13px;
-    line-height: 1.35;
+    font-size: 14px;
+    line-height: 1.4;
     text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.15s ease;
 }
 
 .site-mega__column a:hover {
     color: var(--text-brand);
+    font-weight: 600;
 }
 
 @media (min-width: 1025px) {
@@ -699,6 +713,7 @@ body {
     display: none;
 }
 
+/* 모바일 화면 (1024px 이하) */
 @media (max-width: 1024px) {
     .site-header__bar {
         height: 60px;
