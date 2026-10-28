@@ -148,11 +148,6 @@ body {
     content: none;
 }
 
-.hero-arrows .hero-prev::after,
-.hero-arrows .hero-next::after {
-    content: none;
-}
-
 @media (max-width: 1024px) {
     .pc {
         display: none;
@@ -184,7 +179,6 @@ body {
     .hero-controls .swiper-pagination {
         font-size: 16px;
     }
-
 
     .hero-arrows .hero-prev,
     .hero-arrows .hero-next {
@@ -322,7 +316,7 @@ body {
 
     .store-franchise__content h2 {
         margin-bottom: 12px;
-        font-size: clamp(36px, 8vw, 48px);
+        font-size: clamp(38px, 8vw, 48px);
     }
 
     .store-franchise__content p {
@@ -347,7 +341,6 @@ body {
         transition: none;
     }
 }
-
 
 /* 한스 메뉴: Figma 51:63 기준 */
 .hans-menu {
@@ -533,7 +526,6 @@ body {
     }
 }
 
-
 /* Hero 문구 오버레이 */
 .hero-sec {
     position: relative;
@@ -607,13 +599,13 @@ body {
     object-fit: contain;
 }
 
-/* 메인 메뉴 (그리드 레이아웃 적용으로 서브메뉴와 완벽 일치시킴) */
+/* 메인 메뉴 (그리드 레이아웃 적용) */
 .site-nav {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr)); /* 메뉴 개수 5개 기준 동등 분할 */
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     align-items: center;
     justify-items: center;
-    width: 600px; /* 메인 메뉴가 차지하는 전체 폭 ( 필요시 조절 가능 ) */
+    width: 600px;
     margin: 0 auto;
 }
 
@@ -652,7 +644,7 @@ body {
     color: var(--text-brand);
 }
 
-/* 메가 메뉴 (상단 메뉴와 동일한 5개 그리드 적용) */
+/* 메가 메뉴 (하위 메뉴 정렬 미세 조정 적용) */
 .site-mega {
     display: none;
     width: 100%;
@@ -663,16 +655,17 @@ body {
 
 .site-mega__inner {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr)); /* 상단 .site-nav와 칸 수를 정확히 일치시킴 */
-    width: 600px; /* 상단 .site-nav의 width 값과 똑같이 맞춰서 정렬 고정 */
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    width: 600px;
     margin: 0 auto;
     padding: 24px 0 35px;
+    transform: translateX(-15px); /* 💡 하위 메뉴 전체를 왼쪽으로 살짝 이동 */
 }
 
 .site-mega__column {
     display: flex;
     flex-direction: column;
-    align-items: center; /* 각 메뉴 칸 안에서 서브메뉴들을 중앙 정렬 */
+    align-items: center;
     gap: 10px;
 }
 
