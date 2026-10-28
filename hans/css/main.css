@@ -569,7 +569,7 @@ body {
     word-break: keep-all;
 }
 
-/* 상단 고정 헤더 및 메가 메뉴 (정렬 완벽 수정본) */
+/* 상단 고정 헤더 */
 .site-header {
     position: fixed;
     z-index: 100;
@@ -577,7 +577,7 @@ body {
     left: 0;
     width: 100%;
     background: var(--color-white);
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05); /* 경계선 구분을 위한 미세한 그림자 */
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
 }
 
 .site-header__bar {
@@ -598,7 +598,6 @@ body {
     display: flex;
     flex: 0 0 auto;
     align-items: center;
-    justify-content: flex-start;
 }
 
 .site-header__logo img {
@@ -608,13 +607,14 @@ body {
     object-fit: contain;
 }
 
-/* 메인 메뉴 영역 */
+/* 메인 메뉴 (그리드 레이아웃 적용으로 서브메뉴와 완벽 일치시킴) */
 .site-nav {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr)); /* 메뉴 개수 5개 기준 동등 분할 */
     align-items: center;
-    justify-content: center;
-    gap: clamp(20px, 4vw, 60px);
-    margin: 0 auto; /* 중앙 정렬 */
+    justify-items: center;
+    width: 600px; /* 메인 메뉴가 차지하는 전체 폭 ( 필요시 조절 가능 ) */
+    margin: 0 auto;
 }
 
 .site-nav a,
@@ -652,7 +652,7 @@ body {
     color: var(--text-brand);
 }
 
-/* 드롭다운 메가 메뉴 영역 수정 */
+/* 메가 메뉴 (상단 메뉴와 동일한 5개 그리드 적용) */
 .site-mega {
     display: none;
     width: 100%;
@@ -662,20 +662,18 @@ body {
 }
 
 .site-mega__inner {
-    display: flex;
-    justify-content: center;
-    gap: clamp(20px, 4vw, 60px); /* 상단 site-nav의 gap과 동일하게 맞춰서 상하 정렬 맞춤 */
-    width: min(calc(100% - 40px), 1720px);
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr)); /* 상단 .site-nav와 칸 수를 정확히 일치시킴 */
+    width: 600px; /* 상단 .site-nav의 width 값과 똑같이 맞춰서 정렬 고정 */
     margin: 0 auto;
-    padding: 30px 0 40px;
+    padding: 24px 0 35px;
 }
 
 .site-mega__column {
     display: flex;
     flex-direction: column;
-    align-items: center; /* 서브메뉴 텍스트 중앙 정렬 (필요시 flex-start로 변경 가능) */
-    gap: 12px;
-    min-width: 90px;   /* 메인 메뉴 글자 폭과 균형을 맞춤 */
+    align-items: center; /* 각 메뉴 칸 안에서 서브메뉴들을 중앙 정렬 */
+    gap: 10px;
 }
 
 .site-mega__column a {
@@ -776,6 +774,7 @@ body {
         display: none;
         flex-direction: column;
         align-items: stretch;
+        width: 100%;
         gap: 0;
         margin: 0;
         padding: 10px 24px 18px;
@@ -817,11 +816,5 @@ body {
     .hero-copy p {
         margin-top: 12px;
         font-size: clamp(15px, 3.8vw, 20px);
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .site-header__toggle span {
-        transition: none;
     }
 }
