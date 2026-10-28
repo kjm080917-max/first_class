@@ -209,6 +209,39 @@
             menuRevealItems.forEach((item) => item.classList.add('is-visible'));
         }
 
+        // 페이지 전반의 스크롤 등장 애니메이션
+        const motionTargets = document.querySelectorAll(
+            '.store-franchise > *, .hans-menu > *, .hans-brand__inner > *, ' +
+            '.hans-special h2, .hans-special__image, .hans-special__more, ' +
+            '.hans-news > h2, .hans-news__card, .site-footer__inner > *'
+        );
+
+        motionTargets.forEach((item, index) => {
+            item.classList.add('motion-reveal');
+            if (item.matches('.hans-news__card')) {
+                item.style.setProperty('--motion-delay', `${(index % 4) * 70}ms`);
+            }
+        });
+
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!reduceMotion && 'IntersectionObserver' in window) {
+            const motionObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('motion-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.12,
+                rootMargin: '0px 0px -35px 0px'
+            });
+
+            motionTargets.forEach((item) => motionObserver.observe(item));
+        } else {
+            motionTargets.forEach((item) => item.classList.add('motion-visible'));
+        }
+
         const navToggle = document.querySelector('.site-header__toggle');
         const siteHeader = document.querySelector('.site-header');
 
