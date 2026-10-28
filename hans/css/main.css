@@ -534,23 +534,23 @@ body {
 }
 
 
-/* Hero 문구 오버레이: 텍스트 위치/크기만 조정, Swiper는 유지 */
-/* Hero 문구 오버레이: 텍스트 위치/크기만 조정, Swiper는 유지 */
+/* Hero 문구 오버레이 */
 .hero-sec {
     position: relative;
+    margin-top: 90px;
 }
 
 .hero-copy {
     position: absolute;
     z-index: 4;
-    top: 76%;          /* 💡 PC 화면: 64%에서 76%로 내려서 케이크 아래쪽으로 이동 */
+    top: 76%;
     left: 50%;
     width: min(90%, 1100px);
     color: #fff;
     text-align: center;
     transform: translate(-50%, -50%);
     pointer-events: none;
-    text-shadow: 0 0 18px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 0 18px rgba(0, 0, 0, .2);
 }
 
 .hero-copy h1 {
@@ -558,7 +558,7 @@ body {
     font-size: clamp(42px, 6.25vw, 120px);
     font-weight: 800;
     line-height: 1;
-    letter-spacing: 0.01em;
+    letter-spacing: .01em;
 }
 
 .hero-copy p {
@@ -569,39 +569,26 @@ body {
     word-break: keep-all;
 }
 
-@media (max-width: 1024px) {
-    .hero-copy {
-        top: 68%;      /* 💡 모바일 화면: 52%에서 68%로 내려서 이동 */
-        width: calc(100% - 40px);
-    }
-
-    .hero-copy h1 {
-        margin-bottom: 10px;
-        font-size: clamp(38px, 9vw, 64px);
-    }
-
-    .hero-copy p {
-        margin-top: 12px;
-        font-size: clamp(15px, 3.8vw, 20px);
-    }
-
-
-/* 상단 네비게이션: Figma 헤더 기준 */
+/* 상단 고정 헤더 및 메가 메뉴 */
 .site-header {
     position: fixed;
     z-index: 100;
     top: 0;
     left: 0;
     width: 100%;
+    background: var(--color-white);
+}
+
+.site-header__bar {
     height: 90px;
-    background-color: var(--color-white);
+    background: var(--color-white);
 }
 
 .site-header__inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: min(100% - 40px, 1720px);
+    width: min(calc(100% - 40px), 1720px);
     height: 100%;
     margin: 0 auto;
 }
@@ -609,27 +596,15 @@ body {
 .site-header__logo {
     display: flex;
     flex: 0 0 109px;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: var(--text-primary);
-    text-decoration: none;
-    line-height: .85;
-    letter-spacing: -.06em;
 }
 
-.site-header__logo span {
-    font-family: Arial, sans-serif;
-    font-size: 27px;
-    font-weight: 900;
-}
-
-.site-header__logo small {
-    margin-top: 5px;
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: .32em;
+.site-header__logo img {
+    display: block;
+    width: 109px;
+    height: 64px;
+    object-fit: contain;
 }
 
 .site-nav {
@@ -650,17 +625,11 @@ body {
     line-height: 1;
     text-decoration: none;
     white-space: nowrap;
-    transition: color .2s ease;
 }
 
 .site-nav a.is-current {
     color: var(--text-brand);
     font-weight: 600;
-}
-
-.site-nav a:hover,
-.site-header__links a:hover {
-    color: var(--text-brand);
 }
 
 .site-header__links {
@@ -675,39 +644,78 @@ body {
     opacity: .8;
 }
 
-.site-header__toggle {
+.site-mega {
     display: none;
+    width: 100%;
+    background: var(--color-white);
+    border-top: 1px solid #eeeeee;
+}
+
+.site-mega__inner {
+    display: grid;
+    grid-template-columns: 109px repeat(5, minmax(0, 1fr)) 180px;
+    gap: 0;
+    width: min(calc(100% - 40px), 1720px);
+    margin: 0 auto;
+    padding: 24px 0 30px;
+}
+
+.site-mega__column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.site-mega__column a {
+    color: var(--text-secondary);
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 13px;
+    line-height: 1.35;
+    text-decoration: none;
+}
+
+.site-mega__column a:hover {
+    color: var(--text-brand);
+}
+
+@media (min-width: 1025px) {
+    .site-header:hover .site-mega,
+    .site-header:focus-within .site-mega {
+        display: block;
+    }
 }
 
 .site-nav a:focus-visible,
 .site-header__links a:focus-visible,
 .site-header__logo:focus-visible,
-.site-header__toggle:focus-visible {
+.site-header__toggle:focus-visible,
+.site-mega__column a:focus-visible {
     outline: 2px solid var(--color-brand-orange);
-    outline-offset: 5px;
+    outline-offset: 4px;
+}
+
+.site-header__toggle {
+    display: none;
 }
 
 @media (max-width: 1024px) {
-    .site-header {
+    .site-header__bar {
         height: 60px;
     }
 
     .site-header__inner {
-        width: calc(100% - 40px);
+        width: calc(100% - 32px);
     }
 
     .site-header__logo {
         flex-basis: 78px;
-        align-items: flex-start;
+        justify-content: flex-start;
     }
 
-    .site-header__logo span {
-        font-size: 22px;
-    }
-
-    .site-header__logo small {
-        margin-top: 4px;
-        font-size: 9px;
+    .site-header__logo img {
+        width: 78px;
+        height: 48px;
     }
 
     .site-header__toggle {
@@ -755,41 +763,50 @@ body {
         align-items: stretch;
         gap: 0;
         margin: 0;
-        padding: 10px 20px 18px;
+        padding: 10px 24px 18px;
         background: var(--color-white);
         border-top: 1px solid var(--color-light-gray);
-        box-shadow: 0 8px 18px rgba(34, 34, 34, .08);
     }
 
-    .site-nav.is-open {
+    .site-header.is-open .site-nav {
         display: flex;
     }
 
     .site-nav a {
-        padding: 15px 0;
-        font-size: 16px;
+        padding: 13px 0;
+        font-size: 15px;
     }
 
     .site-header__links {
         display: none;
     }
-}
 
-@media (prefers-reduced-motion: reduce) {
-    .site-nav a,
-    .site-header__links a,
-    .site-header__toggle span {
-        transition: none;
+    .site-mega {
+        display: none !important;
+    }
+
+    .hero-sec {
+        margin-top: 60px;
+    }
+
+    .hero-copy {
+        top: 68%;
+        width: calc(100% - 40px);
+    }
+
+    .hero-copy h1 {
+        margin-bottom: 10px;
+        font-size: clamp(38px, 9vw, 64px);
+    }
+
+    .hero-copy p {
+        margin-top: 12px;
+        font-size: clamp(15px, 3.8vw, 20px);
     }
 }
 
-/* 고정 헤더 높이만큼 Hero 시작 위치 확보 */
-.hero-sec {
-    margin-top: 90px;
-}
-
-@media (max-width: 1024px) {
-    .hero-sec {
-        margin-top: 60px;
+@media (prefers-reduced-motion: reduce) {
+    .site-header__toggle span {
+        transition: none;
     }
 }
