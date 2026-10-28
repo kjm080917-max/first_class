@@ -820,3 +820,57 @@ body {
         font-size: clamp(15px, 3.8vw, 20px);
     }
 }
+
+
+/* Hans Menu: 부드러운 등장 및 마우스 인터랙션 */
+@keyframes hans-menu-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hans-menu__title {
+    animation: hans-menu-fade-up .75s ease-out both;
+}
+
+.hans-menu__card {
+    border-radius: 2px;
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.hans-menu__card:hover {
+    transform: translateY(-8px);
+}
+
+.hans-menu__image img {
+    transition: transform .45s cubic-bezier(.2, .7, .3, 1);
+    will-change: transform;
+}
+
+.hans-menu__card:hover .hans-menu__image img {
+    transform: scale(1.045);
+}
+
+.hans-menu__text h3 {
+    transition: color .25s ease;
+}
+
+.hans-menu__card:hover .hans-menu__text h3 {
+    color: var(--text-brand);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hans-menu__title,
+    .hans-menu__card,
+    .hans-menu__image img,
+    .hans-menu__text h3 {
+        animation: none;
+        transition: none;
+        transform: none;
+    }
+}
