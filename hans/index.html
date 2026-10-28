@@ -16,30 +16,53 @@
 <body>
     <div id="wrap">
         <header class="site-header">
-            <div class="site-header__inner">
-                <a class="site-header__logo" href="#top" aria-label="HANS CAKE 홈">
-                    <span>HANS</span>
-                    <small>CAKE</small>
-                </a>
+            <div class="site-header__bar">
+                <div class="site-header__inner">
+                    <a class="site-header__logo" href="#top" aria-label="HANS 홈">
+                        <img src="https://www.figma.com/api/mcp/asset/123ed5bd-4a5d-4226-aabf-0924cd3f1df3.png" alt="HANS 케이크 로고">
+                    </a>
 
-                <nav class="site-nav" id="site-nav" aria-label="주요 메뉴">
-                    <a href="#menu">MENU</a>
-                    <a href="#store">STORE</a>
-                    <a class="is-current" href="#brand">HANS STORY</a>
-                    <a href="#event">EVENT</a>
-                    <a href="#special">SPECIAL</a>
-                </nav>
+                    <nav class="site-nav" id="site-nav" aria-label="주요 메뉴">
+                        <a href="#menu">MENU</a>
+                        <a href="#store">STORE</a>
+                        <a class="is-current" href="#brand">HANS STORY</a>
+                        <a href="#event">EVENT</a>
+                        <a href="#special">SPECIAL</a>
+                    </nav>
 
-                <div class="site-header__links">
-                    <a href="#store">매장찾기</a>
-                    <a href="#franchise">가맹문의</a>
+                    <div class="site-header__links">
+                        <a href="#store">매장찾기</a>
+                        <a href="#franchise">가맹문의</a>
+                    </div>
+
+                    <button class="site-header__toggle" type="button" aria-label="메뉴 열기" aria-controls="site-nav" aria-expanded="false">
+                        <span></span><span></span><span></span>
+                    </button>
                 </div>
-
-                <button class="site-header__toggle" type="button" aria-label="메뉴 열기" aria-controls="site-nav" aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+            </div>
+            <div class="site-mega" aria-label="전체 메뉴">
+                <div class="site-mega__inner">
+                    <div class="site-mega__column">
+                        <a href="#menu">전체메뉴</a>
+                        <a href="#menu">신메뉴</a>
+                        <a href="#menu">케이크</a>
+                        <a href="#menu">디저트</a>
+                        <a href="#menu">선물세트</a>
+                    </div>
+                    <div class="site-mega__column">
+                        <a href="#store">매장찾기</a>
+                    </div>
+                    <div class="site-mega__column">
+                        <a href="#brand">한스소개</a>
+                        <a href="#brand">한스이야기</a>
+                    </div>
+                    <div class="site-mega__column">
+                        <a href="#event">공지사항</a>
+                    </div>
+                    <div class="site-mega__column">
+                        <a href="#special">스페셜케이크 안내</a>
+                    </div>
+                </div>
             </div>
         </header>
         <main>
@@ -157,21 +180,13 @@
         });
     
         const navToggle = document.querySelector('.site-header__toggle');
-        const siteNav = document.querySelector('#site-nav');
+        const siteHeader = document.querySelector('.site-header');
 
         navToggle.addEventListener('click', () => {
             const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
             navToggle.setAttribute('aria-expanded', String(!isExpanded));
             navToggle.setAttribute('aria-label', isExpanded ? '메뉴 열기' : '메뉴 닫기');
-            siteNav.classList.toggle('is-open', !isExpanded);
-        });
-
-        siteNav.querySelectorAll('a').forEach((link) => {
-            link.addEventListener('click', () => {
-                navToggle.setAttribute('aria-expanded', 'false');
-                navToggle.setAttribute('aria-label', '메뉴 열기');
-                siteNav.classList.remove('is-open');
-            });
+            siteHeader.classList.toggle('is-open', !isExpanded);
         });
 
     </script>
