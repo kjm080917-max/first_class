@@ -9,9 +9,7 @@
     <link rel="stylesheet" href="../npm/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="../npm/swiper/swiper-bundle.min.js"></script>
-    <style>
-        #wrap {background-color: yellow;}
-    </style>
+
 </head>
 <body>
     <div id="wrap">
@@ -66,7 +64,7 @@
             </div>
         </header>
         <main>
-            <div class="visual hero-sec">
+            <div class="visual hero-sec" id="top">
                 <div class="hero-copy" aria-live="polite">
                     <h1>HANS CAKE</h1>
                     <p>한스케이크 생크림 딸기 케이크</p>
@@ -102,7 +100,7 @@
                 </div>
             </div>
             <section class="store-franchise" aria-label="매장찾기 및 가맹문의">
-                <a class="store-franchise__item store-franchise__store" href="#store">
+                <a class="store-franchise__item store-franchise__store" id="store" href="#store">
                     <div class="store-franchise__content">
                         <h2>매장찾기</h2>
                         <p>달콤한 케이크가 필요할 때, 내 주변 매장은?</p>
@@ -111,7 +109,7 @@
                         <svg viewBox="0 0 24 24" focusable="false"><path d="M4 12h15M12 5l7 7-7 7"/></svg>
                     </span>
                 </a>
-                <a class="store-franchise__item store-franchise__franchise" href="#franchise">
+                <a class="store-franchise__item store-franchise__franchise" id="franchise" href="#franchise">
                     <div class="store-franchise__content">
                         <h2>가맹문의</h2>
                         <p>HANS의 파트너가 되어주시겠어요?</p>
@@ -122,7 +120,7 @@
                 </a>
             </section>
 
-            <section class="hans-menu" aria-labelledby="hans-menu-title">
+            <section class="hans-menu" id="menu" aria-labelledby="hans-menu-title">
                 <p class="hans-menu__background" aria-hidden="true">HANS</p>
                 <div class="hans-menu__inner">
                     <h2 class="hans-menu__title menu-reveal" id="hans-menu-title">Hans Menu</h2>
@@ -152,31 +150,16 @@
                     <a class="hans-menu__more" href="#menu">메뉴 전체 보기 <span aria-hidden="true">→</span></a>
                 </div>
             </section>
+        
+            <section class="hans-brand" id="brand" aria-labelledby="hans-brand-title"><div class="hans-brand__inner"><div class="hans-brand__line hans-brand__line--top"><h2 id="hans-brand-title">특별한 날의 <em>케이크</em></h2><img src="https://www.figma.com/api/mcp/asset/eba884a8-bfce-42df-ad09-c76e46346dca.png" alt="" aria-hidden="true"></div><div class="hans-brand__line hans-brand__line--middle"><p><span>평범한 하루</span>의</p></div><p class="hans-brand__last">작은 행복이 되도록.</p></div></section>
+            <section class="hans-special" id="special" aria-labelledby="hans-special-title"><div class="hans-special__inner"><h2 id="hans-special-title"><span>HANS</span> TASTE</h2><div class="hans-special__image"><img src="https://www.figma.com/api/mcp/asset/82bb358c-d3be-426e-a947-90281f479ee4.png" alt="한스 스페셜 케이크"></div><a class="hans-special__more" href="#menu">view more</a></div></section>
+            <section class="hans-news" id="event" aria-labelledby="hans-news-title"><h2 id="hans-news-title">HANS News &amp; Event</h2><div class="hans-news__grid">
+                <a class="hans-news__card hans-news__instagram" href="https://www.instagram.com/hans_cake/" target="_blank" rel="noopener noreferrer" aria-label="한스케이크 인스타그램 열기"><img src="https://www.figma.com/api/mcp/asset/4ee1ab1e-8c12-4c2c-92ed-57d989921cf9.png" alt="" aria-hidden="true"><span class="hans-news__script">Instagram</span><span class="hans-news__handle">@hans_cake</span></a>
+                <a class="hans-news__card" href="https://www.instagram.com/hans_cake/" target="_blank" rel="noopener noreferrer"><img src="https://www.figma.com/api/mcp/asset/b990080f-4b3b-4fe2-943e-4bacc0f04a19.png" alt="한스케이크 게시물"></a><a class="hans-news__card" href="https://www.instagram.com/hans_cake/" target="_blank" rel="noopener noreferrer"><img src="https://www.figma.com/api/mcp/asset/8cb495e9-992e-4569-b945-1877505aae78.png" alt="한스케이크 게시물"></a><a class="hans-news__card" href="https://www.instagram.com/hans_cake/" target="_blank" rel="noopener noreferrer"><img src="https://www.figma.com/api/mcp/asset/0eecfdeb-e235-4b1f-a7d9-94fa2d4c3310.png" alt="한스케이크 게시물"></a>
+                <a class="hans-news__card" href="https://www.instagram.com/hans_cake/" target="_blank" rel="noopener noreferrer"><img src="https://www.figma.com/api/mcp/asset/3807ccda-7871-4bce-ba01-66165807ecc6.png" alt="한스케이크 게시물"></a><a class="hans-news__card" href="https://www.instagram.com/hans_cake/" target="_blank" rel="noopener noreferrer"><img src="https://www.figma.com/api/mcp/asset/00d757e3-bfa4-46c0-a685-0398ab5c4235.png" alt="한스케이크 게시물"></a><a class="hans-news__card" href="https://www.instagram.com/hans_cake/" target="_blank" rel="noopener noreferrer"><img src="https://www.figma.com/api/mcp/asset/b34532e6-e779-4359-8072-d25dae66f542.png" alt="한스케이크 게시물"></a><a class="hans-news__card" href="https://www.instagram.com/hans_cake/" target="_blank" rel="noopener noreferrer"><img src="https://www.figma.com/api/mcp/asset/53f8dd44-095b-4a00-9373-a25fcaccf80a.png" alt="한스케이크 게시물"></a>
+            </div></section>
         </main>
-        <footer class="site-footer">
-            <div class="site-footer__inner">
-                <div class="site-footer__top">
-                    <a class="site-footer__logo" href="#top" aria-label="HANS CAKE 홈">
-                        <img src="img/image.png" alt="HANS 케이크 로고">
-                    </a>
-                    <nav class="site-footer__nav" aria-label="푸터 메뉴">
-                        <a href="#brand">한스소개</a>
-                        <a href="#menu">메뉴</a>
-                        <a href="#store">매장찾기</a>
-                        <a href="#franchise">가맹문의</a>
-                        <a href="#event">공지사항</a>
-                    </nav>
-                </div>
-                <div class="site-footer__divider"></div>
-                <div class="site-footer__bottom">
-                    <div class="site-footer__info">
-                        <p>주식회사 한스</p>
-                        <p>케이크로 전하는 달콤한 일상</p>
-                    </div>
-                    <p class="site-footer__copyright">© HANS CAKE. ALL RIGHTS RESERVED.</p>
-                </div>
-            </div>
-        </footer>
+        <footer class="site-footer"><div class="site-footer__inner"><div class="site-footer__company"><a class="site-footer__logo" href="#top" aria-label="HANS 홈"><img src="https://www.figma.com/api/mcp/asset/fccf74f2-8248-45bb-b838-f576cbeac359.png" alt="HANS CAKE"></a><div class="site-footer__info"><p>케이크로 전하는 특별한 순간, HANS</p><p>제품 및 매장 정보는 한스케이크 공식 홈페이지에서 확인하실 수 있습니다.</p><p>HANS CAKE&nbsp; | &nbsp;브랜드 및 매장 안내</p><p class="site-footer__copyright">Copyright 2011 HANS CAKE. All Rights Reserved.</p></div></div><nav class="site-footer__nav" aria-label="푸터 메뉴"><a href="#menu">Menu</a><a href="#store">Store</a><a href="#brand">Hans Story</a><a href="#event">Event</a><a href="#special">Special</a><a class="site-footer__privacy" href="#privacy">개인정보처리방침</a></nav></div></footer>
     </div>
     <script>
         const swiper = new Swiper('.hero-sec > .swiper', {
