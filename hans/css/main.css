@@ -1,6 +1,24 @@
+:root {
+    /* Figma Variable - Text */
+    --text-primary: #222222;
+    --text-brand: #ff552e;
+    --text-default: #f5f5f5;
+    --text-secondary: #4b4746;
+
+    /* Figma Variable - Color */
+    --color-white: #ffffff;
+    --color-bage: #f6f3f0;
+    --color-brand-orange: #ff552e;
+    --color-peach: #fff0e5;
+    --color-warm-gray: #4b4746;
+    --color-black: #222222;
+    --color-light-gray: #f5f5f5;
+    --color-cream: #e9dcd3;
+}
+
 body {
     background-color: yellow;
-    font-family: "pretendard", sans-serif;
+    font-family: "Pretendard Variable", sans-serif;
 }
 
 .mo {
