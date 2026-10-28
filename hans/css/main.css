@@ -874,3 +874,133 @@ body {
         transform: none;
     }
 }
+
+
+/* 푸터 */
+.site-footer {
+    padding: 58px 24px 34px;
+    background: var(--color-bage);
+    color: var(--text-secondary);
+}
+
+.site-footer__inner {
+    width: min(100%, 1720px);
+    margin: 0 auto;
+}
+
+.site-footer__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding-bottom: 34px;
+}
+
+.site-footer__logo {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.site-footer__logo img {
+    display: block;
+    width: 109px;
+    height: 64px;
+    object-fit: contain;
+}
+
+.site-footer__nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+.site-footer__nav a {
+    color: var(--text-primary);
+    font-size: 15px;
+    text-decoration: none;
+    transition: color .2s ease;
+}
+
+.site-footer__nav a:hover {
+    color: var(--text-brand);
+}
+
+.site-footer__divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(75, 71, 70, .2);
+}
+
+.site-footer__bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    padding-top: 24px;
+}
+
+.site-footer__info p {
+    margin: 0 0 7px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.site-footer__copyright {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: right;
+}
+
+.site-footer a:focus-visible {
+    outline: 2px solid var(--color-brand-orange);
+    outline-offset: 4px;
+}
+
+@media (max-width: 1024px) {
+    .site-footer {
+        padding: 38px 20px 26px;
+    }
+
+    .site-footer__top {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 24px;
+        padding-bottom: 26px;
+    }
+
+    .site-footer__logo img {
+        width: 88px;
+        height: 52px;
+    }
+
+    .site-footer__nav {
+        justify-content: flex-start;
+        gap: 16px 22px;
+    }
+
+    .site-footer__nav a {
+        font-size: 14px;
+    }
+
+    .site-footer__bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+        padding-top: 20px;
+    }
+
+    .site-footer__copyright {
+        text-align: left;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-footer__nav a {
+        transition: none;
+    }
+}
