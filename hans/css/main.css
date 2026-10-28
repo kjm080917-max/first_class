@@ -584,3 +584,201 @@ body {
         margin-top: 12px;
         font-size: clamp(15px, 3.8vw, 20px);
     }
+
+
+/* 상단 네비게이션: Figma 헤더 기준 */
+.site-header {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background-color: var(--color-white);
+}
+
+.site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: min(100% - 40px, 1720px);
+    height: 100%;
+    margin: 0 auto;
+}
+
+.site-header__logo {
+    display: flex;
+    flex: 0 0 109px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    text-decoration: none;
+    line-height: .85;
+    letter-spacing: -.06em;
+}
+
+.site-header__logo span {
+    font-family: Arial, sans-serif;
+    font-size: 27px;
+    font-weight: 900;
+}
+
+.site-header__logo small {
+    margin-top: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .32em;
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(24px, 5.5vw, 106px);
+    margin-left: auto;
+    margin-right: clamp(28px, 4vw, 70px);
+}
+
+.site-nav a,
+.site-header__links a {
+    color: var(--text-primary);
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color .2s ease;
+}
+
+.site-nav a.is-current {
+    color: var(--text-brand);
+    font-weight: 600;
+}
+
+.site-nav a:hover,
+.site-header__links a:hover {
+    color: var(--text-brand);
+}
+
+.site-header__links {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 31px;
+}
+
+.site-header__links a {
+    font-size: 16px;
+    opacity: .8;
+}
+
+.site-header__toggle {
+    display: none;
+}
+
+.site-nav a:focus-visible,
+.site-header__links a:focus-visible,
+.site-header__logo:focus-visible,
+.site-header__toggle:focus-visible {
+    outline: 2px solid var(--color-brand-orange);
+    outline-offset: 5px;
+}
+
+@media (max-width: 1024px) {
+    .site-header {
+        height: 60px;
+    }
+
+    .site-header__inner {
+        width: calc(100% - 40px);
+    }
+
+    .site-header__logo {
+        flex-basis: 78px;
+        align-items: flex-start;
+    }
+
+    .site-header__logo span {
+        font-size: 22px;
+    }
+
+    .site-header__logo small {
+        margin-top: 4px;
+        font-size: 9px;
+    }
+
+    .site-header__toggle {
+        display: flex;
+        flex: 0 0 40px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    .site-header__toggle span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--text-primary);
+        transition: transform .2s ease, opacity .2s ease;
+    }
+
+    .site-header__toggle[aria-expanded="true"] span:first-child {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .site-header__toggle[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .site-header__toggle[aria-expanded="true"] span:last-child {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .site-nav {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        left: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        margin: 0;
+        padding: 10px 20px 18px;
+        background: var(--color-white);
+        border-top: 1px solid var(--color-light-gray);
+        box-shadow: 0 8px 18px rgba(34, 34, 34, .08);
+    }
+
+    .site-nav.is-open {
+        display: flex;
+    }
+
+    .site-nav a {
+        padding: 15px 0;
+        font-size: 16px;
+    }
+
+    .site-header__links {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-nav a,
+    .site-header__links a,
+    .site-header__toggle span {
+        transition: none;
+    }
+}
