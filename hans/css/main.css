@@ -1082,3 +1082,92 @@ body {
         opacity: 1;
     }
 }
+
+
+/* HANS STORY 이미지 및 문구 배열 */
+.hans-brand__inner {
+    width: min(100%, 1240px);
+}
+.hans-brand__line--top {
+    justify-content:space-between;
+    gap:clamp(20px,4vw,64px);
+}
+.hans-brand__line--top h2 {
+    font-size:clamp(38px,5vw,88px);
+}
+.hans-brand__image {
+    display:block;
+    object-fit:contain;
+    flex:0 1 auto;
+    height:auto;
+}
+.hans-brand__image--cake {
+    width:clamp(130px,20vw,300px);
+    max-height:300px;
+}
+.hans-brand__line--middle {
+    align-items:center;
+    justify-content:space-between;
+    gap:clamp(20px,5vw,80px);
+    margin-top:-8px;
+}
+.hans-brand__image--macaron {
+    width:clamp(120px,17vw,245px);
+    max-height:220px;
+}
+.hans-brand__line--middle p {
+    margin-left:auto;
+}
+.hans-brand__last {
+    margin-top:14px;
+    margin-left:25%;
+}
+@media(max-width:1024px) {
+    .hans-brand__line--top {
+        align-items:center;
+    }
+    .hans-brand__image--cake {
+        width:clamp(110px,24vw,220px);
+    }
+    .hans-brand__line--middle {
+        margin-top:18px;
+    }
+    .hans-brand__image--macaron {
+        width:clamp(100px,22vw,180px);
+    }
+    .hans-brand__last {
+        margin-top:18px;
+    }
+}
+@media(max-width:600px) {
+    .hans-brand__inner {
+        width:100%;
+    }
+    .hans-brand__line--top {
+        gap:8px;
+    }
+    .hans-brand__line--top h2 {
+        font-size:clamp(29px,7.6vw,42px);
+    }
+    .hans-brand__image--cake {
+        width:30%;
+        max-height:120px;
+    }
+    .hans-brand__line--middle {
+        gap:8px;
+        margin-top:18px;
+    }
+    .hans-brand__image--macaron {
+        width:26%;
+        max-height:105px;
+    }
+    .hans-brand__line--middle p {
+        font-size:clamp(28px,7.2vw,40px);
+        white-space:normal;
+    }
+    .hans-brand__last {
+        margin-top:12px;
+        font-size:clamp(28px,7.2vw,40px);
+        white-space:normal;
+    }
+}
