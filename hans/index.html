@@ -23,7 +23,7 @@
                     <nav class="site-nav" id="site-nav" aria-label="주요 메뉴">
                         <a href="#menu">MENU</a>
                         <a href="#store">STORE</a>
-                        <a class="is-current" href="#brand">HANS STORY</a>
+                        <a href="#brand">HANS STORY</a>
                         <a href="#event">EVENT</a>
                         <a href="#special">SPECIAL</a>
                     </nav>
@@ -71,15 +71,15 @@
                 </div>
                 <div class="swiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
+                        <div class="swiper-slide" data-title="HANS STORY" data-desc="케이크는 언제부터 우리에게 ‘힐링푸드’가 되었을까요?">
                             <img src="img/hero.png" alt="Slide 1" class="pc">
                             <img src="img/hero_m.jpg" alt="Slide 1_m" class="mo">
                         </div>
-                        <div class="swiper-slide">
+                        <div class="swiper-slide" data-title="HANS CAKE" data-desc="한스케이크 생크림 딸기 케이크">
                             <img src="img/jeminai.png" alt="Slide 2" class="pc">
                             <img src="img/jeminai_m.jpg" alt="Slide 2_m" class="mo">
                         </div>
-                         <div class="swiper-slide">
+                         <div class="swiper-slide" data-title="HANS MENU" data-desc="정성을 담아 만든 한스의 케이크">
                             <img src="img/cake.png" alt="Slide 3" class="pc">
                             <img src="img/cake_m.png" alt="Slide 3_m" class="mo">
                         </div>
@@ -124,32 +124,35 @@
                 <p class="hans-menu__background" aria-hidden="true">HANS</p>
                 <div class="hans-menu__inner">
                     <h2 class="hans-menu__title menu-reveal" id="hans-menu-title">Hans Menu</h2>
-                    <div class="hans-menu__list">
-                        <article class="hans-menu__card hans-menu__card--strawberry menu-reveal" style="--reveal-delay: 100ms;">
+                    <div class="hans-menu__list swiper hans-menu__swiper">
+                        <div class="swiper-wrapper">
+                        <article class="hans-menu__card swiper-slide hans-menu__card--strawberry menu-reveal" style="--reveal-delay: 100ms;">
                             <div class="hans-menu__image hans-menu__image--strawberry"><img src="img/Strawberrycake.png" alt="딸기 생크림 케이크"></div>
                             <div class="hans-menu__text">
                                 <h3>딸기 생크림 케이크</h3>
                                 <p>부드러운 화이트 시트와 달콤한 커스터드 크림, 새콤한 산딸기 콩포트가 어우러진 케이크</p>
                             </div>
                         </article>
-                        <article class="hans-menu__card hans-menu__card--chocolate menu-reveal" style="--reveal-delay: 220ms;">
+                        <article class="hans-menu__card swiper-slide hans-menu__card--chocolate menu-reveal" style="--reveal-delay: 220ms;">
                             <div class="hans-menu__image hans-menu__image--chocolate"><img src="img/chocolate.png" alt="아몬드 쇼콜라"></div>
                             <div class="hans-menu__text">
                                 <h3>아몬드쇼콜라</h3>
                                 <p>품질 좋은 초콜릿으로 정성을 담아 만든 수제 초콜릿</p>
                             </div>
                         </article>
-                        <article class="hans-menu__card hans-menu__card--almond menu-reveal" style="--reveal-delay: 340ms;">
+                        <article class="hans-menu__card swiper-slide hans-menu__card--almond menu-reveal" style="--reveal-delay: 340ms;">
                             <div class="hans-menu__image hans-menu__image--almond"><img src="img/cookies.png" alt="아몬드 딜라이트"></div>
                             <div class="hans-menu__text">
                                 <h3>아몬드 딜라이트</h3>
                                 <p>고소한 아몬드와 버터향이 가득한 고급스러운 쿠키</p>
                             </div>
                         </article>
+                        </div>
                     </div>
-                    <a class="hans-menu__more" href="#menu" aria-label="메뉴 전체 보기">
+                    <div class="hans-menu__dots" aria-label="메뉴 페이지"></div>
+                    <button class="hans-menu__more hans-menu__next" type="button" aria-label="다음 메뉴">
                         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15M12 5l7 7-7 7"/></svg>
-                    </a>
+                    </button>
                 </div>
             </section>
         
@@ -177,105 +180,9 @@
         </main>
         <footer class="site-footer"><div class="site-footer__inner"><div class="site-footer__company"><a class="site-footer__logo" href="#top" aria-label="HANS 홈"><img src="https://www.figma.com/api/mcp/asset/fccf74f2-8248-45bb-b838-f576cbeac359.png" alt="HANS CAKE"></a><div class="site-footer__info"><p>케이크로 전하는 특별한 순간, HANS</p><p>제품 및 매장 정보는 한스케이크 공식 홈페이지에서 확인하실 수 있습니다.</p><p>HANS CAKE&nbsp; | &nbsp;브랜드 및 매장 안내</p><p class="site-footer__copyright">Copyright 2011 HANS CAKE. All Rights Reserved.</p></div></div><nav class="site-footer__nav" aria-label="푸터 메뉴"><a href="#menu">Menu</a><a href="#store">Store</a><a class="is-current" href="#brand">Hans Story</a><a href="#event">Event</a><a href="#special">Special</a><a class="site-footer__privacy" href="#">개인정보처리방침</a></nav></div></footer>
     </div>
-    <script>
-        const swiper = new Swiper('.hero-sec > .swiper', {
-            direction: 'horizontal',
-            loop: true,
-
-            navigation: {
-                nextEl: '.hero-next',
-                prevEl: '.hero-prev',
-            },
-
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'fraction',
-                formatFractionCurrent: (number) => number,
-                formatFractionTotal: (number) => number,
-                renderFraction: (currentClass, totalClass) =>
-                    '<span class="' + currentClass + '"></span>' +
-                    '<span class="fraction-divider"> | </span>' +
-                    '<span class="' + totalClass + '"></span>',
-            },
-
-            scrollbar: {
-                el: '.visual .swiper-scrollbar',
-                draggable: true,
-                hide: false,
-            },
-        });
-    
-        const menuRevealItems = document.querySelectorAll('.menu-reveal');
-
-        if ('IntersectionObserver' in window) {
-            const menuRevealObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.15,
-                rootMargin: '0px 0px -40px 0px'
-            });
-
-            menuRevealItems.forEach((item) => menuRevealObserver.observe(item));
-        } else {
-            menuRevealItems.forEach((item) => item.classList.add('is-visible'));
-        }
-
-        // 페이지 전반의 스크롤 등장 애니메이션
-        const motionTargets = document.querySelectorAll(
-            '.store-franchise > *, .hans-menu > *, .hans-brand__inner > *, ' +
-            '.hans-special h2, .hans-special__image, .hans-special__more, ' +
-            '.hans-news > h2, .hans-news__card, .site-footer__inner > *'
-        );
-
-        motionTargets.forEach((item, index) => {
-            item.classList.add('motion-reveal');
-            if (item.matches('.hans-news__card')) {
-                item.style.setProperty('--motion-delay', `${(index % 4) * 70}ms`);
-            }
-        });
-
-        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (!reduceMotion && 'IntersectionObserver' in window) {
-            const motionObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('motion-visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.12,
-                rootMargin: '0px 0px -35px 0px'
-            });
-
-            motionTargets.forEach((item) => motionObserver.observe(item));
-        } else {
-            motionTargets.forEach((item) => item.classList.add('motion-visible'));
-        }
-
-        const navToggle = document.querySelector('.site-header__toggle');
-        const siteHeader = document.querySelector('.site-header');
-
-        const setNav = (open) => {
-            navToggle.setAttribute('aria-expanded', String(open));
-            navToggle.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
-            siteHeader.classList.toggle('is-open', open);
-        };
-
-        navToggle.addEventListener('click', () => {
-            setNav(navToggle.getAttribute('aria-expanded') !== 'true');
-        });
-
-        // 모바일에서 메뉴 링크를 누르면 메뉴를 닫음
-        document.querySelectorAll('.site-nav a').forEach((link) => {
-            link.addEventListener('click', () => setNav(false));
-        });
-
-    </script>
+    <button class="to-top" type="button" aria-label="맨 위로 이동">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
+    <script src="js/main.js"></script>
 </body>
 </html>
