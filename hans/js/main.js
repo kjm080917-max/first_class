@@ -50,6 +50,8 @@ const swiper = new Swiper('.hero-sec > .swiper', {
 });
 
 const menuRevealItems = document.querySelectorAll('.menu-reveal');
+// 메뉴 카드가 많아도 넘길 때 오래 비어 보이지 않도록 딜레이를 3개 단위로 반복
+menuRevealItems.forEach((item, i) => item.style.setProperty('--reveal-delay', `${(i % 3) * 120}ms`));
 
 if ('IntersectionObserver' in window) {
     const menuRevealObserver = new IntersectionObserver((entries, observer) => {
