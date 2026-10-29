@@ -1059,3 +1059,88 @@ body {
         margin-block: -12px;
     }
 }
+
+
+/* 헤더: 스크롤 내리면 숨김, 올리면 다시 표시 */
+.site-header {
+    transition: transform .35s ease;
+}
+
+.site-header.is-hidden {
+    transform: translateY(-100%);
+}
+
+/* 히어로 문구 전환 */
+.hero-copy h1,
+.hero-copy p {
+    transition: opacity .35s ease, transform .35s ease;
+}
+
+.hero-copy.is-changing h1,
+.hero-copy.is-changing p {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+/* 맨 위로 버튼 */
+.to-top {
+    position: fixed;
+    z-index: 90;
+    right: 24px;
+    bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    color: var(--color-white);
+    background: var(--color-brand-orange);
+    box-shadow: 0 6px 18px rgba(255, 85, 46, .35);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity .3s ease, transform .3s ease, visibility .3s;
+}
+
+.to-top.is-show {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+}
+
+.to-top svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.to-top:focus-visible {
+    outline: 2px solid var(--color-black);
+    outline-offset: 3px;
+}
+
+@media (max-width: 1024px) {
+    .to-top {
+        right: 16px;
+        bottom: 16px;
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-header,
+    .hero-copy h1,
+    .hero-copy p,
+    .to-top {
+        transition: none;
+    }
+}
