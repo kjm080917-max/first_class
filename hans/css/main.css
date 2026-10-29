@@ -354,18 +354,18 @@ body {
 .hans-menu__background {
     position: absolute;
     top: 185px;
-    left: 50%;
-    margin: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     color: var(--text-default);
     font-size: clamp(180px, 25vw, 300px);
     font-weight: 800;
     line-height: 1;
-    letter-spacing: 0.02em;
-    transform: translateX(-50%);
+    letter-spacing: -0.06em;
     text-align: center;
-    width: 100%;
     pointer-events: none;
     user-select: none;
+    transform: none; /* 이전 찌꺼기 변형 제거 */
 }
 
 .hans-menu__inner {
