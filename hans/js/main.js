@@ -9,8 +9,9 @@ function updateHeroCopy(index) {
     heroCopy.classList.add('is-changing');
     clearTimeout(heroTimer);
     heroTimer = setTimeout(() => {
-        heroCopy.querySelector('h1').textContent = slide.dataset.title;
-        heroCopy.querySelector('p').textContent = slide.dataset.desc;
+        // data-title / data-desc가 없는 슬라이드는 기존 문구 유지
+        if (slide.dataset.title) heroCopy.querySelector('h1').textContent = slide.dataset.title;
+        if (slide.dataset.desc) heroCopy.querySelector('p').textContent = slide.dataset.desc;
         heroCopy.classList.remove('is-changing');
     }, 350);
 }
@@ -169,4 +170,18 @@ toTop.addEventListener('click', () => {
 // Esc 키로 모바일 메뉴 닫기
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') setNav(false);
+});
+
+// Hans Menu 슬라이더: 화살표 = 다음, 하단 동그라미 = 페이지
+// PC는 3개씩 보임 → 메뉴 카드(.swiper-slide)를 추가하면 동그라미가 자동으로 늘어남
+new Swiper('.hans-menu__swiper', {
+    slidesPerView: 1.15,
+    spaceBetween: 12,
+    rewind: true,
+    watchOverflow: false,
+    navigation: { nextEl: '.hans-menu__next' },
+    pagination: { el: '.hans-menu__dots', clickable: true },
+    breakpoints: {
+        1025: { slidesPerView: 3, spaceBetween: 10 },
+    },
 });
