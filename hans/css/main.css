@@ -1184,3 +1184,31 @@ body {
         transition: none;
     }
 }
+
+
+/* 한스 메뉴 다음 화살표: 반응형 위치와 터치 조작 */
+.hans-menu__next {
+    z-index: 3;
+    touch-action: manipulation;
+}
+
+.hans-menu__next:active {
+    transform: scale(.96);
+}
+
+.hans-menu__next:disabled {
+    cursor: not-allowed;
+    opacity: .55;
+}
+
+@media (max-width: 1024px) {
+    .hans-menu__next {
+        margin-top: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hans-menu__next {
+        transition: none;
+    }
+}
