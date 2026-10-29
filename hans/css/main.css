@@ -227,7 +227,7 @@ body {
     color: var(--color-bage);
     background-color: var(--color-brand-orange);
     /* 매장찾기 배경 이미지: hans/img/orange.png */
-    background-image: linear-gradient(rgba(255, 85, 46, .68), rgba(255, 85, 46, .68)), url("../img/orange.png");
+    background-image: url("../img/orange.png");
     background-size: cover;
     background-position: center;
 }
@@ -236,7 +236,7 @@ body {
     color: var(--text-brand);
     background-color: var(--color-peach);
     /* 가맹문의 배경 이미지: hans/img/cream.png */
-    background-image: linear-gradient(rgba(255, 240, 229, .68), rgba(255, 240, 229, .68)), url("../img/cream.png");
+    background-image: url("../img/cream.png");
     background-size: cover;
     background-position: center;
 }
