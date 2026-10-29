@@ -553,7 +553,7 @@ body {
 .hero-copy {
     position: absolute;
     z-index: 4;
-    top: 57%;
+    top: 76%;
     left: 50%;
     width: min(90%, 1100px);
     color: #fff;
