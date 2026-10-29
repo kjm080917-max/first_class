@@ -1212,3 +1212,239 @@ body {
         transition: none;
     }
 }
+
+
+/* =====================================================
+   고급스러운 디테일 레이어 (기존 스타일 위에 덧입힘)
+   - 지우면 이전 디자인으로 돌아감
+   ===================================================== */
+
+/* 공통 */
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+::selection {
+    color: var(--color-white);
+    background: var(--color-brand-orange);
+}
+
+.store-franchise__content h2,
+.hans-menu__title,
+.hans-news > h2 {
+    letter-spacing: -0.03em;
+}
+
+/* 헤더: 반투명 유리 + 메뉴 밑줄 애니메이션 */
+.site-header {
+    background: rgba(255, 255, 255, .86);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+    backdrop-filter: saturate(180%) blur(14px);
+    box-shadow: 0 1px 0 rgba(34, 34, 34, .06);
+}
+
+.site-header__bar {
+    background: transparent;
+}
+
+.site-mega {
+    background: rgba(255, 255, 255, .94);
+    box-shadow: 0 18px 30px rgba(34, 34, 34, .06);
+}
+
+@media (min-width: 1025px) {
+    .site-nav a {
+        position: relative;
+        padding: 8px 0;
+    }
+
+    .site-nav a::after {
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        content: "";
+        background: var(--color-brand-orange);
+        transition: width .3s ease, left .3s ease;
+    }
+
+    .site-nav a:hover::after,
+    .site-nav a.is-current::after {
+        left: 0;
+        width: 100%;
+    }
+}
+
+/* 히어로: 아래쪽 은은한 그라데이션 + 천천히 줌아웃 */
+.hero-sec .swiper::after {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    content: "";
+    pointer-events: none;
+    background: linear-gradient(to top, rgba(34, 34, 34, .32), rgba(34, 34, 34, 0) 48%);
+}
+
+.hero-sec .swiper-slide {
+    overflow: hidden;
+}
+
+.hero-sec .swiper-slide-active img {
+    animation: hero-settle 7s ease-out both;
+}
+
+@keyframes hero-settle {
+    from { transform: scale(1.08); }
+    to { transform: scale(1); }
+}
+
+.hero-copy h1 {
+    letter-spacing: .02em;
+    text-shadow: 0 4px 30px rgba(34, 34, 34, .25);
+}
+
+.hero-copy p {
+    letter-spacing: .02em;
+    text-shadow: 0 2px 14px rgba(34, 34, 34, .3);
+}
+
+/* 매장찾기 / 가맹문의: 호버 시 글자가 살짝 이동 */
+.store-franchise__content h2,
+.store-franchise__content p {
+    transition: transform .4s cubic-bezier(.2, .7, .2, 1);
+}
+
+.store-franchise__item:hover .store-franchise__content h2 {
+    transform: translateX(8px);
+}
+
+.store-franchise__item:hover .store-franchise__content p {
+    transform: translateX(8px);
+    transition-delay: .05s;
+}
+
+/* 섹션 제목 위 작은 영문 라벨 */
+.hans-menu__title,
+.hans-news > h2 {
+    position: relative;
+}
+
+.hans-menu__title::before,
+.hans-news > h2::before {
+    position: absolute;
+    top: -36px;
+    right: 0;
+    left: 0;
+    color: var(--color-brand-orange);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .4em;
+    text-indent: .4em;
+    text-align: center;
+}
+
+.hans-menu__title::before {
+    content: "OUR SIGNATURE";
+}
+
+.hans-news > h2::before {
+    content: "FOLLOW US";
+}
+
+/* 메뉴: 제품 이미지에 부드러운 그림자 */
+.hans-menu__image img {
+    filter: drop-shadow(0 22px 22px rgba(75, 71, 70, .16));
+}
+
+.hans-menu__card:hover .hans-menu__image img {
+    filter: drop-shadow(0 30px 28px rgba(75, 71, 70, .22));
+}
+
+.hans-menu__text h3 {
+    letter-spacing: -.03em;
+}
+
+.hans-menu__dots .swiper-pagination-bullet:hover {
+    background: rgba(255, 85, 46, .35);
+}
+
+.hans-menu__dots .swiper-pagination-bullet-active:hover {
+    background: var(--color-brand-orange);
+}
+
+/* HANS TASTE: view more 버튼에 화살표 */
+.hans-special__more {
+    gap: 14px;
+    letter-spacing: .02em;
+}
+
+.hans-special__more::after {
+    content: "\2192";
+    font-size: .9em;
+    transition: transform .3s ease;
+}
+
+.hans-special__more:hover::after {
+    transform: translateX(6px);
+}
+
+/* 뉴스 & 이벤트: 호버 시 어두운 막 + VIEW 라벨 */
+.hans-news__card::after {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: "VIEW";
+    color: var(--color-white);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .4em;
+    text-indent: .4em;
+    background: rgba(34, 34, 34, .4);
+    opacity: 0;
+    transition: opacity .35s ease;
+    pointer-events: none;
+}
+
+.hans-news__card:hover::after,
+.hans-news__card:focus-visible::after {
+    opacity: 1;
+}
+
+.hans-news__instagram::after {
+    content: none;
+}
+
+/* 푸터: 위쪽 가는 선 */
+.site-footer {
+    border-top: 1px solid rgba(255, 255, 255, .06);
+}
+
+@media (max-width: 1024px) {
+    .hans-menu__title::before,
+    .hans-news > h2::before {
+        top: -28px;
+        font-size: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-sec .swiper-slide-active img,
+    .store-franchise__content h2,
+    .store-franchise__content p,
+    .site-nav a::after,
+    .hans-news__card::after,
+    .hans-special__more::after {
+        animation: none;
+        transition: none;
+    }
+
+    .store-franchise__item:hover .store-franchise__content h2,
+    .store-franchise__item:hover .store-franchise__content p {
+        transform: none;
+    }
+}
