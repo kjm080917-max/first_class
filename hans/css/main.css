@@ -360,8 +360,10 @@ body {
     font-size: clamp(180px, 25vw, 300px);
     font-weight: 800;
     line-height: 1;
-    letter-spacing: -0.06em;
+    letter-spacing: 0.02em;
     transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
     pointer-events: none;
     user-select: none;
 }
