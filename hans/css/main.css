@@ -226,11 +226,19 @@ body {
 .store-franchise__store {
     color: var(--color-bage);
     background-color: var(--color-brand-orange);
+    /* 사진: hans/img/store.jpg (없으면 주황색만 보임) */
+    background-image: linear-gradient(rgba(255, 85, 46, .88), rgba(255, 85, 46, .88)), url("../img/store.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 .store-franchise__franchise {
     color: var(--text-brand);
     background-color: var(--color-peach);
+    /* 사진: hans/img/franchise.jpg (없으면 연한 살구색만 보임) */
+    background-image: linear-gradient(rgba(255, 240, 229, .88), rgba(255, 240, 229, .88)), url("../img/franchise.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 .store-franchise__content,
@@ -382,10 +390,42 @@ body {
 }
 
 .hans-menu__list {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 10px;
-    align-items: stretch;
+    overflow: hidden;
+}
+
+.hans-menu__list .swiper-slide {
+    height: auto;
+}
+
+/* 메뉴 슬라이드 하단 동그라미(페이지네이션) */
+.hans-menu__dots {
+    display: flex;
+    justify-content: flex-end;
+    gap: 14px;
+    margin-top: 24px;
+    padding-right: 12%;
+}
+
+.hans-menu__dots .swiper-pagination-bullet {
+    width: 14px;
+    height: 14px;
+    margin: 0;
+    border: 1px solid var(--color-brand-orange);
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+    cursor: pointer;
+    transition: background-color .25s ease;
+}
+
+.hans-menu__dots .swiper-pagination-bullet-active {
+    background: var(--color-brand-orange);
+}
+
+.hans-menu__more {
+    border: 0;
+    padding: 0;
+    cursor: pointer;
 }
 
 .hans-menu__card {
@@ -511,11 +551,6 @@ body {
         font-size: clamp(38px, 7vw, 56px);
     }
 
-    .hans-menu__list {
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
-
     .hans-menu__card {
         padding: 20px 16px 28px;
     }
@@ -534,7 +569,12 @@ body {
         position: static;
         width: 48px;
         height: 48px;
-        margin: 30px 0 0 auto;
+        margin: -34px 0 0 auto;
+    }
+
+    .hans-menu__dots {
+        justify-content: center;
+        padding-right: 0;
     }
 }
 
