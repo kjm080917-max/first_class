@@ -172,16 +172,41 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') setNav(false);
 });
 
-// Hans Menu 슬라이더: 화살표 = 다음, 하단 동그라미 = 페이지
-// PC는 3개씩 보임 → 메뉴 카드(.swiper-slide)를 추가하면 동그라미가 자동으로 늘어남
-new Swiper('.hans-menu__swiper', {
-    slidesPerView: 1.15,
-    spaceBetween: 12,
-    rewind: true,
-    watchOverflow: false,
-    navigation: { nextEl: '.hans-menu__next' },
-    pagination: { el: '.hans-menu__dots', clickable: true },
-    breakpoints: {
-        1025: { slidesPerView: 3, spaceBetween: 10 },
-    },
-});
+// Hans Menu 슬라이더: 화살표와 페이지 표시를 화면 크기에 맞게 작동
+const hansMenuSlider = document.querySelector('.hans-menu__swiper');
+const hansMenuNext = document.querySelector('.hans-menu__next');
+const hansMenuDots = document.querySelector('.hans-menu__dots');
+
+if (hansMenuSlider) {
+    const hansMenuSwiper = new Swiper(hansMenuSlider, {
+        slidesPerView: 1.15,
+        slidesPerGroup: 1,
+        spaceBetween: 12,
+        rewind: true,
+        watchOverflow: false,
+        navigation: {
+            nextEl: hansMenuNext,
+        },
+        pagination: {
+            el: hansMenuDots,
+            clickable: true,
+        },
+        breakpoints: {
+            600: {
+                slidesPerView: 2,
+                slidesPerGroup: 2,
+                spaceBetween: 16,
+            },
+            1025: {
+                slidesPerView: 3,
+                slidesPerGroup: 3,
+                spaceBetween: 10,
+            },
+        },
+    });
+
+    // 키보드·터치 환경에서도 동일하게 다음 메뉴로 이동
+    if (hansMenuNext) {
+        hansMenuNext.addEventListener('click', () => hansMenuSwiper.slideNext());
+    }
+}
