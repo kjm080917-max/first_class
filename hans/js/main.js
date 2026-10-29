@@ -205,8 +205,4 @@ if (hansMenuSlider) {
         },
     });
 
-    // 키보드·터치 환경에서도 동일하게 다음 메뉴로 이동
-    if (hansMenuNext) {
-        hansMenuNext.addEventListener('click', () => hansMenuSwiper.slideNext());
-    }
 }
