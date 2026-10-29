@@ -193,12 +193,12 @@ body {
     }
 }
 
-/* 매장찾기 · 가맹문의: 요청사항 반영 완료 (min-height 400px 및 min-height 제거) */
+/* 매장찾기 · 가맹문의: Hero 아래에 추가한 섹션 */
 .store-franchise {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     width: 100%;
-    min-height: 400px;
+    min-height: 460px;
 }
 
 .store-franchise__item {
@@ -207,6 +207,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     min-width: 0;
+    min-height: 460px;
     padding: 80px max(5vw, 32px) 50px;
     overflow: hidden;
     text-decoration: none;
@@ -248,7 +249,7 @@ body {
 
 .store-franchise__content h2 {
     margin: 0 0 16px;
-    font-size: clamp(36px, 3.34vw, 54px);
+    font-size: clamp(36px, 3.34vw, 64px);
     font-weight: 800;
     line-height: 1.2;
     word-break: keep-all;
@@ -256,7 +257,7 @@ body {
 
 .store-franchise__content p {
     margin: 0;
-    font-size: clamp(18px, 1.67vw, 26px);
+    font-size: clamp(18px, 1.67vw, 32px);
     font-weight: 500;
     line-height: 1.5;
     word-break: keep-all;
@@ -309,12 +310,13 @@ body {
     }
 
     .store-franchise__item {
+        min-height: 300px;
         padding: 48px 24px 28px;
     }
 
     .store-franchise__content h2 {
         margin-bottom: 12px;
-        font-size: clamp(36px, 8vw, 48px);
+        font-size: clamp(38px, 8vw, 48px);
     }
 
     .store-franchise__content p {
@@ -1016,7 +1018,7 @@ body {
 @media(prefers-reduced-motion:reduce){.hans-special__more,.hans-news__card>img,.site-footer__nav a{transition:none}}
 
 
-/* 페이지 전체 모션: 스크롤 등장, 이미지 호버, CTA 반응 (요청하신 센터 정렬 반영) */
+/* 페이지 전체 모션: 스크롤 등장, 이미지 호버, CTA 반응 */
 .motion-reveal {
     opacity: 0;
     transform: translateY(26px);
@@ -1026,11 +1028,6 @@ body {
 .motion-reveal.motion-visible {
     opacity: 1;
     transform: translateY(0);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
 }
 .hans-menu .menu-reveal {
     transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease;
