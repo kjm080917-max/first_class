@@ -16,6 +16,11 @@
     --color-cream: #e9dcd3;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
 body {
     font-family: "Pretendard Variable", sans-serif;
 }
@@ -27,7 +32,7 @@ body {
 .hero-sec .swiper {
     position: relative;
     width: 100%;
-    height: 780px;
+    height: 720px;
 }
 
 /* 슬라이드 이미지 */
@@ -42,7 +47,7 @@ body {
     position: absolute;
     z-index: 5;
     right: 13.5%;
-    bottom: 8px;
+    bottom: 50px;
     left: 13.5%;
     display: flex;
     align-items: center;
@@ -155,14 +160,6 @@ body {
 
     .mo {
         display: block;
-    }
-
-    header {
-        position: fixed;
-        z-index: 10;
-        width: 100%;
-        height: 60px;
-        background-color: orange;
     }
 
     .hero-sec .swiper {
@@ -346,19 +343,19 @@ body {
 .hans-menu {
     position: relative;
     min-height: 1082px;
-    padding: 112px max(3.6vw, 24px);
+    padding: 150px max(3.6vw, 24px) 112px;
     overflow: hidden;
     background: var(--color-white);
 }
 
 .hans-menu__background {
     position: absolute;
-    top: 185px;
+    top: 335px;
     left: 0;
     right: 0;
     margin: 0 auto;
     color: var(--text-default);
-    font-size: clamp(180px, 25vw, 300px);
+    font-size: clamp(180px, 18.75vw, 360px);
     font-weight: 800;
     line-height: 1;
     letter-spacing: -0.06em;
@@ -376,7 +373,7 @@ body {
 }
 
 .hans-menu__title {
-    margin: 0 0 38px;
+    margin: 0 0 45px;
     color: var(--color-warm-gray);
     font-size: 64px;
     font-weight: 800;
@@ -426,7 +423,7 @@ body {
 .hans-menu__image--chocolate {
     max-width: 417px;
     height: 412px;
-    margin-top: 93px;
+    margin-top: 113px;
     margin-bottom: 35px;
     background-color: transparent;
 }
@@ -434,7 +431,7 @@ body {
 .hans-menu__image--almond {
     max-width: 286px;
     height: 340px;
-    margin-top: 0;
+    margin-top: -30px;
     margin-bottom: 35px;
     background-color: transparent;
 }
@@ -463,26 +460,33 @@ body {
 }
 
 .hans-menu__more {
+    position: absolute;
+    top: 388px;
+    right: 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 18px;
-    width: fit-content;
-    margin: 48px 0 0 auto;
-    padding-bottom: 5px;
-    border-bottom: 1px solid currentColor;
-    color: var(--text-primary);
-    font-size: 14px;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: var(--color-white);
+    background-color: var(--color-brand-orange);
     text-decoration: none;
+    transition: transform 0.25s ease, filter 0.25s ease;
 }
 
-.hans-menu__more span {
-    color: var(--text-brand);
-    font-size: 20px;
-    transition: transform 0.2s ease;
+.hans-menu__more svg {
+    width: 28px;
+    height: 28px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
-.hans-menu__more:hover span {
+.hans-menu__more:hover {
+    filter: brightness(0.95);
     transform: translateX(4px);
 }
 
@@ -527,12 +531,15 @@ body {
     }
 
     .hans-menu__more {
-        margin-top: 30px;
+        position: static;
+        width: 48px;
+        height: 48px;
+        margin: 30px 0 0 auto;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .hans-menu__more span {
+    .hans-menu__more {
         transition: none;
     }
 }
@@ -546,7 +553,7 @@ body {
 .hero-copy {
     position: absolute;
     z-index: 4;
-    top: 76%;
+    top: 57%;
     left: 50%;
     width: min(90%, 1100px);
     color: #fff;
@@ -824,21 +831,6 @@ body {
 }
 
 
-/* Hans Menu: 스크롤 진입 시 은은한 인트로 모션 */
-.menu-reveal {
-    opacity: 0;
-    transform: translateY(22px);
-    transition:
-        opacity .65s ease,
-        transform .65s cubic-bezier(.2, .7, .3, 1);
-    transition-delay: var(--reveal-delay, 0ms);
-}
-
-.menu-reveal.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 /* 카드 호버 인터랙션 */
 .hans-menu__card {
     border-radius: 2px;
@@ -878,197 +870,77 @@ body {
 }
 
 
-/* 푸터 */
-.site-footer {
-    padding: 58px 24px 34px;
-    background: var(--color-bage);
-    color: var(--text-secondary);
-}
-
-.site-footer__inner {
-    width: min(100%, 1720px);
-    margin: 0 auto;
-}
-
-.site-footer__top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 32px;
-    padding-bottom: 34px;
-}
-
-.site-footer__logo {
-    display: inline-flex;
-    flex: 0 0 auto;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.site-footer__logo img {
-    display: block;
-    width: 109px;
-    height: 64px;
-    object-fit: contain;
-}
-
-.site-footer__nav {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 30px;
-}
-
-.site-footer__nav a {
-    color: var(--text-primary);
-    font-size: 15px;
-    text-decoration: none;
-    transition: color .2s ease;
-}
-
-.site-footer__nav a:hover {
-    color: var(--text-brand);
-}
-
-.site-footer__divider {
-    width: 100%;
-    height: 1px;
-    background: rgba(75, 71, 70, .2);
-}
-
-.site-footer__bottom {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 24px;
-    padding-top: 24px;
-}
-
-.site-footer__info p {
-    margin: 0 0 7px;
-    font-size: 13px;
-    line-height: 1.6;
-}
-
-.site-footer__copyright {
-    margin: 0;
-    font-size: 12px;
-    line-height: 1.5;
-    text-align: right;
-}
-
-.site-footer a:focus-visible {
-    outline: 2px solid var(--color-brand-orange);
-    outline-offset: 4px;
-}
-
-@media (max-width: 1024px) {
-    .site-footer {
-        padding: 38px 20px 26px;
-    }
-
-    .site-footer__top {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 24px;
-        padding-bottom: 26px;
-    }
-
-    .site-footer__logo img {
-        width: 88px;
-        height: 52px;
-    }
-
-    .site-footer__nav {
-        justify-content: flex-start;
-        gap: 16px 22px;
-    }
-
-    .site-footer__nav a {
-        font-size: 14px;
-    }
-
-    .site-footer__bottom {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 14px;
-        padding-top: 20px;
-    }
-
-    .site-footer__copyright {
-        text-align: left;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .site-footer__nav a {
-        transition: none;
-    }
-}
-
 /* Figma 기반 브랜드 섹션 */
-.hans-brand{display:flex;align-items:center;justify-content:center;min-height:881px;padding:70px 20px 100px;overflow:hidden;background:var(--color-white)}.hans-brand__inner{width:min(100%,1136px);color:var(--text-primary);font-weight:700;line-height:1.15}.hans-brand__line--top{display:flex;align-items:center;gap:28px}.hans-brand__line--top h2{flex:0 0 auto;margin:0;font-size:clamp(44px,5.2vw,100px);letter-spacing:-.055em;white-space:nowrap}.hans-brand__line--top h2 em{color:var(--text-brand);font-style:normal}.hans-brand__line--top img{display:block;width:clamp(120px,21vw,330px);max-height:280px;object-fit:contain}.hans-brand__line--middle{display:flex;justify-content:flex-end;margin-top:-15px}.hans-brand__line--middle p{margin:0;font-size:clamp(44px,5.2vw,100px);letter-spacing:-.055em;white-space:nowrap}.hans-brand__last{margin:0 0 0 4%;font-size:clamp(42px,5.2vw,100px);letter-spacing:-.055em;white-space:nowrap}
 /* Figma 기반 스페셜 섹션 */
-.hans-special{display:flex;justify-content:center;min-height:912px;padding:52px 24px 45px;overflow:hidden;background:linear-gradient(90deg,var(--color-cream) 0 50%,var(--color-bage) 50% 100%)}.hans-special__inner{display:flex;flex-direction:column;align-items:center;width:min(100%,1426px)}.hans-special h2{z-index:2;margin:0 0 -214px;color:var(--color-cream);font-size:clamp(72px,12vw,230px);font-weight:300;letter-spacing:-.06em;line-height:1;white-space:nowrap}.hans-special h2 span{color:var(--text-brand)}.hans-special__image{width:min(100%,1265px);height:684px;overflow:hidden}.hans-special__image img{display:block;width:100%;height:100%;object-fit:cover}.hans-special__more{display:flex;align-items:center;justify-content:center;width:295px;min-height:67px;margin-top:55px;border-radius:80px;background:var(--color-black);color:var(--color-white);font-size:30px;text-decoration:none;transition:background .2s ease,transform .2s ease}.hans-special__more:hover{background:var(--text-brand);transform:translateY(-3px)}
+.hans-special{display:flex;justify-content:center;min-height:912px;padding:75px 24px 45px;overflow:hidden;background:linear-gradient(90deg,var(--color-cream) 0 50%,var(--color-bage) 50% 100%)}.hans-special__inner{display:flex;flex-direction:column;align-items:center;width:min(100%,1426px)}.hans-special h2{position:relative;z-index:1;margin:0 0 -214px;color:var(--color-cream);font-size:clamp(72px,12vw,230px);font-weight:200;letter-spacing:-.06em;line-height:1;white-space:nowrap}.hans-special h2 span{color:var(--text-brand)}.hans-special__image{position:relative;z-index:2;width:min(100%,1265px);height:684px;overflow:hidden}.hans-special__image img{display:block;width:100%;height:100%;object-fit:cover}.hans-special__more{display:flex;align-items:center;justify-content:center;width:295px;min-height:67px;margin-top:55px;border-radius:80px;background:var(--color-black);color:var(--color-white);font-size:30px;text-decoration:none;transition:background .2s ease,transform .2s ease}.hans-special__more:hover{background:var(--text-brand);transform:translateY(-3px)}
 /* HANS News & Event */
 .hans-news{display:flex;flex-direction:column;align-items:center;gap:100px;padding:150px 24px;background:var(--color-white)}.hans-news>h2{margin:0;color:var(--text-brand);font-size:clamp(36px,4vw,64px);font-weight:700;line-height:1.2;text-align:center}.hans-news__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px 16px;width:min(100%,1528px)}.hans-news__card{position:relative;display:flex;aspect-ratio:1;align-items:center;justify-content:center;overflow:hidden;background:var(--color-light-gray)}.hans-news__card>img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s ease}.hans-news__card:hover>img{transform:scale(1.04)}.hans-news__instagram{flex-direction:column;gap:18px;color:var(--text-primary);text-decoration:none}.hans-news__instagram>img{width:78px;height:78px;object-fit:contain}.hans-news__script{font-family:Georgia,serif;font-size:38px}.hans-news__handle{font-size:11px}
 /* Figma 푸터 */
-.site-footer{min-height:479px;padding:128px max(24px,calc((100% - 1636px)/2));background:#202020;color:rgba(140,140,140,.85)}.site-footer__inner{display:flex;align-items:flex-start;justify-content:space-between;gap:48px;width:100%;max-width:1636px;margin:0 auto}.site-footer__company{width:min(100%,378px)}.site-footer__logo{display:flex;align-items:center;justify-content:center;width:261px;min-height:114px;margin-bottom:12px}.site-footer__logo img{display:block;width:161px;height:114px;object-fit:contain}.site-footer__info p{margin:0 0 9px;font-size:12px;font-weight:400;line-height:1.5}.site-footer__info .site-footer__copyright{margin-top:21px;color:rgba(115,115,115,.9);font-size:11px}.site-footer__nav{display:flex;flex-direction:column;align-items:flex-start;gap:18px;min-width:98px;padding-top:5px}.site-footer__nav a{color:#878787;font-size:15px;line-height:1.2;text-decoration:none;transition:color .2s ease}.site-footer__nav a:hover{color:var(--color-white)}.site-footer__nav .site-footer__privacy{margin-top:16px;color:#b0b0b0;font-size:13px}.site-footer a:focus-visible{outline:2px solid var(--color-brand-orange);outline-offset:4px}
-@media(max-width:1024px){.hans-brand{min-height:580px;padding:70px 24px}.hans-brand__line--top{gap:12px}.hans-brand__line--top h2{white-space:normal}.hans-brand__line--top img{width:24vw}.hans-brand__line--middle{margin-top:12px}.hans-brand__last{margin-left:0}.hans-special{min-height:auto;padding:70px 20px 45px}.hans-special h2{margin-bottom:-7vw;font-size:clamp(54px,12vw,120px)}.hans-special__image{height:auto;aspect-ratio:1.85/1}.hans-special__more{width:230px;min-height:56px;margin-top:35px;font-size:23px}.hans-news{gap:48px;padding:80px 20px}.hans-news__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.hans-news__script{font-size:clamp(24px,5vw,38px)}.site-footer{min-height:auto;padding:64px 24px}.site-footer__inner{flex-direction:column;gap:36px}.site-footer__logo{justify-content:flex-start;width:200px;min-height:90px}.site-footer__logo img{width:130px;height:90px}.site-footer__nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 32px}.site-footer__nav .site-footer__privacy{margin-top:0}}
-@media(max-width:480px){.hans-brand{min-height:430px;padding:50px 18px}.hans-brand__line--top{align-items:flex-start}.hans-brand__line--top h2{font-size:clamp(34px,8.4vw,44px)}.hans-brand__line--top img{width:25vw;max-height:130px}.hans-brand__line--middle p,.hans-brand__last{font-size:clamp(32px,8vw,42px);white-space:normal}.hans-brand__line--middle{justify-content:flex-start}.hans-special h2{font-size:clamp(42px,12vw,58px)}.hans-special__more{width:190px;min-height:50px;font-size:20px}.hans-news{padding:60px 14px}}
+.site-footer{min-height:479px;padding:128px max(24px,calc((100% - 1636px)/2));background:#202020;color:rgba(140,140,140,.85)}.site-footer__inner{display:flex;align-items:flex-start;justify-content:space-between;gap:48px;width:100%;max-width:1636px;margin:0 auto}.site-footer__company{width:min(100%,378px)}.site-footer__logo{display:flex;align-items:center;justify-content:center;width:261px;min-height:114px;margin-bottom:12px}.site-footer__logo img{display:block;width:161px;height:114px;object-fit:contain}.site-footer__info p{margin:0 0 9px;font-size:12px;font-weight:400;line-height:1.5}.site-footer__info .site-footer__copyright{margin-top:21px;color:rgba(115,115,115,.9);font-size:11px}.site-footer__nav{display:flex;flex-direction:column;align-items:flex-start;gap:18px;min-width:98px;padding-top:5px}.site-footer__nav a{color:#878787;font-size:15px;line-height:1.2;text-decoration:none;transition:color .2s ease}.site-footer__nav a:hover{color:var(--color-white)}.site-footer__nav a.is-current{color:var(--color-white)}.site-footer__nav .site-footer__privacy{margin-top:16px;color:var(--text-brand);font-size:13px}.site-footer a:focus-visible{outline:2px solid var(--color-brand-orange);outline-offset:4px}
+@media(max-width:1024px){.hans-special{min-height:auto;padding:70px 20px 45px}.hans-special h2{margin-bottom:-7vw;font-size:clamp(54px,12vw,120px)}.hans-special__image{height:auto;aspect-ratio:1.85/1}.hans-special__more{width:230px;min-height:56px;margin-top:35px;font-size:23px}.hans-news{gap:48px;padding:80px 20px}.hans-news__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.hans-news__script{font-size:clamp(24px,5vw,38px)}.site-footer{min-height:auto;padding:64px 24px}.site-footer__inner{flex-direction:column;gap:36px}.site-footer__logo{justify-content:flex-start;width:200px;min-height:90px}.site-footer__logo img{width:130px;height:90px}.site-footer__nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 32px}.site-footer__nav .site-footer__privacy{margin-top:0}}
+@media(max-width:480px){.hans-special h2{font-size:clamp(42px,12vw,58px)}.hans-special__more{width:190px;min-height:50px;font-size:20px}.hans-news{padding:60px 14px}}
 @media(prefers-reduced-motion:reduce){.hans-special__more,.hans-news__card>img,.site-footer__nav a{transition:none}}
 
 
-/* 페이지 전체 모션: 스크롤 등장, 이미지 호버, CTA 반응 */
+/* 스크롤 등장 모션
+   transition 대신 animation 사용: 호버 transition·딜레이와 서로 덮어쓰지 않음 */
+.menu-reveal,
 .motion-reveal {
     opacity: 0;
-    transform: translateY(26px);
-    transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);
-    transition-delay: var(--motion-delay, 0ms);
 }
+
+.menu-reveal.is-visible,
 .motion-reveal.motion-visible {
     opacity: 1;
-    transform: translateY(0);
+    animation: reveal-up .7s cubic-bezier(.2, .7, .2, 1) backwards;
+    animation-delay: var(--motion-delay, var(--reveal-delay, 0ms));
 }
-.hans-menu .menu-reveal {
-    transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease;
+
+@keyframes reveal-up {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
 }
-.hans-menu .menu-reveal:hover {
-    transform: translateY(-6px);
-    box-shadow: none;
-}
-.hans-brand__line--top img,
+
+.hans-brand__image,
 .hans-special__image img,
 .hans-news__card > img {
-    transition: transform .65s cubic-bezier(.2,.7,.2,1);
+    transition: transform .65s cubic-bezier(.2, .7, .2, 1);
 }
-.hans-brand__line--top img:hover,
+
+.hans-brand__image:hover,
 .hans-special__image:hover img,
 .hans-news__card:hover > img {
     transform: scale(1.035);
 }
+
 .hans-special__more {
     transition: background .25s ease, transform .25s ease, box-shadow .25s ease;
 }
+
 .hans-special__more:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 24px rgba(34, 34, 34, .16);
 }
+
 .site-footer__nav a {
     transition: color .2s ease, transform .2s ease;
 }
+
 .site-footer__nav a:hover {
     transform: translateX(3px);
 }
-.site-header__toggle span {
-    transition: transform .25s ease, opacity .2s ease;
-}
+
 @media (prefers-reduced-motion: reduce) {
-    .motion-reveal,
+    .menu-reveal,
+    .motion-reveal {
+        opacity: 1;
+    }
+
+    .menu-reveal.is-visible,
     .motion-reveal.motion-visible,
-    .hans-menu .menu-reveal,
-    .hans-brand__line--top img,
+    .hans-brand__image,
     .hans-special__image img,
     .hans-news__card > img,
     .hans-special__more,
@@ -1078,96 +950,112 @@ body {
         transition: none !important;
         transform: none !important;
     }
-    .motion-reveal {
-        opacity: 1;
-    }
 }
 
+/* HANS STORY 브랜드 문구 (시안: 3줄 가운데 정렬, 이미지가 줄 사이로 살짝 겹침) */
+.hans-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 881px;
+    padding: 70px 20px 100px;
+    overflow: hidden;
+    background: var(--color-white);
+}
 
-/* HANS STORY 이미지 및 문구 배열 */
 .hans-brand__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: min(100%, 1240px);
+    color: var(--text-primary);
+    font-size: clamp(38px, 4.6vw, 88px);
+    font-weight: 700;
+    letter-spacing: -.055em;
+    line-height: 1.5;
+    word-break: keep-all;
 }
-.hans-brand__line--top {
-    justify-content:space-between;
-    gap:clamp(20px,4vw,64px);
+
+.hans-brand__inner h2,
+.hans-brand__inner p {
+    margin: 0;
+    font: inherit;
+    letter-spacing: inherit;
 }
-.hans-brand__line--top h2 {
-    font-size:clamp(38px,5vw,88px);
+
+.hans-brand__line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(16px, 2.4vw, 46px);
+    white-space: nowrap;
 }
+
+.hans-brand em {
+    color: var(--text-brand);
+    font-style: normal;
+}
+
 .hans-brand__image {
-    display:block;
-    object-fit:contain;
-    flex:0 1 auto;
-    height:auto;
+    display: block;
+    flex: 0 0 auto;
+    height: auto;
+    object-fit: contain;
 }
+
 .hans-brand__image--cake {
-    width:clamp(130px,20vw,300px);
-    max-height:300px;
+    width: clamp(130px, 14.5vw, 280px);
+    margin-block: -70px;
 }
-.hans-brand__line--middle {
-    align-items:center;
-    justify-content:space-between;
-    gap:clamp(20px,5vw,80px);
-    margin-top:-8px;
-}
+
 .hans-brand__image--macaron {
-    width:clamp(120px,17vw,245px);
-    max-height:220px;
+    width: clamp(110px, 10.5vw, 200px);
+    margin-block: -30px;
 }
-.hans-brand__line--middle p {
-    margin-left:auto;
-}
+
 .hans-brand__last {
-    margin-top:14px;
-    margin-left:25%;
+    margin-top: 8px;
+    white-space: nowrap;
 }
-@media(max-width:1024px) {
-    .hans-brand__line--top {
-        align-items:center;
+
+@media (max-width: 1024px) {
+    .hans-brand {
+        min-height: 580px;
+        padding: 70px 24px;
     }
+
     .hans-brand__image--cake {
-        width:clamp(110px,24vw,220px);
+        width: 22vw;
+        margin-block: -40px;
     }
-    .hans-brand__line--middle {
-        margin-top:18px;
-    }
+
     .hans-brand__image--macaron {
-        width:clamp(100px,22vw,180px);
-    }
-    .hans-brand__last {
-        margin-top:18px;
+        width: 18vw;
+        margin-block: -20px;
     }
 }
-@media(max-width:600px) {
+
+@media (max-width: 600px) {
+    .hans-brand {
+        min-height: 430px;
+        padding: 50px 16px;
+    }
+
     .hans-brand__inner {
-        width:100%;
+        font-size: clamp(24px, 7vw, 40px);
     }
-    .hans-brand__line--top {
-        gap:8px;
+
+    .hans-brand__line {
+        gap: 8px;
     }
-    .hans-brand__line--top h2 {
-        font-size:clamp(29px,7.6vw,42px);
-    }
+
     .hans-brand__image--cake {
-        width:30%;
-        max-height:120px;
+        width: 21vw;
+        margin-block: -24px;
     }
-    .hans-brand__line--middle {
-        gap:8px;
-        margin-top:18px;
-    }
+
     .hans-brand__image--macaron {
-        width:26%;
-        max-height:105px;
-    }
-    .hans-brand__line--middle p {
-        font-size:clamp(28px,7.2vw,40px);
-        white-space:normal;
-    }
-    .hans-brand__last {
-        margin-top:12px;
-        font-size:clamp(28px,7.2vw,40px);
-        white-space:normal;
+        width: 18vw;
+        margin-block: -12px;
     }
 }
