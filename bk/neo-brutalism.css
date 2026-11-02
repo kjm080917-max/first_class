@@ -1,0 +1,131 @@
+/* Neo Brutalism - Burger King 로그인 화면 */
+.neo-brutalism {
+    --neo-black: #171717;
+    --neo-yellow: #FFE500;
+    --neo-pink: #FF6B9A;
+    --neo-blue: #63DDF2;
+    background-color: var(--neo-yellow);
+    color: var(--neo-black);
+}
+
+#wrap.neo-brutalism {
+    background-color: var(--neo-yellow);
+    border-left: 3px solid var(--neo-black);
+    border-right: 3px solid var(--neo-black);
+}
+
+.neo-brutalism header {
+    border-bottom: 3px solid var(--neo-black);
+    background-color: var(--neo-pink);
+}
+
+.neo-brutalism h1 {
+    font-weight: 900;
+    letter-spacing: -0.06em;
+}
+
+.neo-brutalism main {
+    background-color: var(--neo-yellow);
+}
+
+.neo-brutalism .title {
+    padding: 18px;
+    border: 3px solid var(--neo-black);
+    background-color: var(--neo-blue);
+    box-shadow: 6px 6px 0 var(--neo-black);
+    gap: 10px;
+}
+
+.neo-brutalism .title span:first-child {
+    font-size: 2.2rem;
+}
+
+.neo-brutalism .title > span:last-child {
+    font-size: 3.4rem;
+    font-weight: 900;
+    letter-spacing: -0.07em;
+}
+
+.neo-brutalism fieldset {
+    border: 3px solid var(--neo-black);
+    padding: 18px;
+    background-color: #fff;
+    box-shadow: 6px 6px 0 var(--neo-black);
+}
+
+.neo-brutalism fieldset > label {
+    display: inline-block;
+    margin-bottom: 12px;
+    font-weight: 800;
+}
+
+.neo-brutalism input[type="email"],
+.neo-brutalism input[type="password"] {
+    border: 3px solid var(--neo-black);
+    border-radius: 0;
+    background-color: #fff;
+    box-shadow: 3px 3px 0 var(--neo-black);
+    color: var(--neo-black);
+}
+
+.neo-brutalism input::placeholder {
+    color: #777;
+}
+
+.neo-brutalism .login_option {
+    font-weight: 700;
+}
+
+.neo-brutalism .login_btn {
+    margin-top: 18px;
+    border: 3px solid var(--neo-black);
+    border-radius: 0;
+    background-color: var(--neo-pink);
+    color: var(--neo-black);
+    font-weight: 900;
+    opacity: 1;
+    box-shadow: 5px 5px 0 var(--neo-black);
+}
+
+.neo-brutalism .login_btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: 1px 1px 0 var(--neo-black);
+}
+
+.neo-brutalism .login_link {
+    font-weight: 800;
+}
+
+.neo-brutalism .login_link a::after {
+    width: 3px;
+    background-color: var(--neo-black);
+}
+
+.neo-brutalism .sns_login > p {
+    color: var(--neo-black);
+    font-weight: 800;
+}
+
+.neo-brutalism .sns_login > p::before,
+.neo-brutalism .sns_login > p::after {
+    height: 3px;
+    background-color: var(--neo-black);
+    opacity: 1;
+}
+
+.neo-brutalism .sns_list > a {
+    border: 3px solid var(--neo-black);
+    border-radius: 0;
+    background-color: #fff;
+    box-shadow: 4px 4px 0 var(--neo-black);
+}
+
+@media (max-width: 480px) {
+    .neo-brutalism main {
+        padding: 32px 16px 72px;
+    }
+
+    .neo-brutalism .title {
+        padding: 14px;
+    }
+}
