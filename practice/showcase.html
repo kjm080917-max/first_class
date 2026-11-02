@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Theme Playground</title>
+  <link rel="stylesheet" href="showcase.css">
+  <link id="theme-style" rel="stylesheet" href="themes/neo-brutalism.css">
+</head>
+<body class="theme-neo">
+  <header class="site-header">
+    <a class="brand" href="../index.html">KJM<span>LAB</span></a>
+    <p>DESIGN THEME PLAYGROUND</p>
+    <a href="../index.html" class="home-link">INDEX ↗</a>
+  </header>
+
+  <main>
+    <section class="selector-area">
+      <div>
+        <p class="eyebrow">STYLE SWITCHER / 01</p>
+        <h1>Choose<br>your vibe.</h1>
+        <p class="subcopy">테마를 선택하면 같은 콘텐츠가 해당 디자인 스타일로 바뀝니다.</p>
+      </div>
+      <label class="select-wrap" for="theme-select">
+        <span>SELECT A THEME</span>
+        <select id="theme-select">
+          <option value="neo">Neo Brutalism</option>
+          <option value="kinetic">Kinetic Typography</option>
+          <option value="y2k">Y2K Chrome</option>
+          <option value="glass">Glassmorphism</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="demo" id="demo">
+      <div class="demo-top"><span>THEME PREVIEW</span><span id="theme-number">01 / 04</span></div>
+      <div class="demo-hero">
+        <p class="demo-kicker">A PLAYGROUND FOR VISUAL IDEAS</p>
+        <h2 id="demo-title">MAKE<br>IT <em>BOLD.</em></h2>
+        <p class="demo-description">디자인은 분위기를 만들고, 분위기는 경험을 바꿉니다.</p>
+        <a href="#details" class="demo-button">EXPLORE THE STYLE <span>↗</span></a>
+        <span class="decor decor-one">✳</span><span class="decor decor-two">✦</span>
+      </div>
+      <div class="demo-cards" id="details">
+        <article class="demo-card"><small>01 / COLOR</small><h3>COLOR<br>MOOD</h3><p>컬러로 첫인상을 설계해요.</p></article>
+        <article class="demo-card"><small>02 / TYPE</small><h3>TYPE<br>ENERGY</h3><p>글자의 형태와 움직임을 느껴요.</p></article>
+        <article class="demo-card"><small>03 / SHAPE</small><h3>VISUAL<br>PLAY</h3><p>형태와 질감으로 개성을 표현해요.</p></article>
+      </div>
+    </section>
+    <p class="theme-note" id="theme-note">굵은 테두리와 강한 색, 딱 떨어지는 그림자가 특징입니다.</p>
+  </main>
+  <footer>DESIGN PRACTICE · KJM LAB</footer>
+
+  <script>
+    const themeSelect = document.querySelector('#theme-select');
+    const themeStyle = document.querySelector('#theme-style');
+    const body = document.body;
+    const title = document.querySelector('#demo-title');
+    const number = document.querySelector('#theme-number');
+    const note = document.querySelector('#theme-note');
+
+    const themes = {
+      neo: {
+        css: 'themes/neo-brutalism.css',
+        className: 'theme-neo',
+        title: 'MAKE<br>IT <em>BOLD.</em>',
+        number: '01 / 04',
+        note: '굵은 테두리와 강한 색, 딱 떨어지는 그림자가 특징입니다.'
+      },
+      kinetic: {
+        css: 'themes/kinetic-typography.css',
+        className: 'theme-kinetic',
+        title: 'MOVE<br><em>YOUR MIND.</em>',
+        number: '02 / 04',
+        note: '크기와 배치, 움직임으로 글자를 시각적인 경험으로 만듭니다.'
+      },
+      y2k: {
+        css: 'themes/y2k-chrome.css',
+        className: 'theme-y2k',
+        title: 'FUTURE<br><em>IS NOW.</em>',
+        number: '03 / 04',
+        note: '메탈릭한 광택과 디지털 감성, 2000년대의 미래 이미지를 표현합니다.'
+      },
+      glass: {
+        css: 'themes/glassmorphism.css',
+        className: 'theme-glass',
+        title: 'SOFT<br><em>TRANSPARENCY.</em>',
+        number: '04 / 04',
+        note: '반투명한 카드와 배경 블러, 부드러운 빛으로 깊이감을 만듭니다.'
+      }
+    };
+
+    themeSelect.addEventListener('change', () => {
+      const selected = themes[themeSelect.value];
+      themeStyle.href = selected.css;
+      body.className = selected.className;
+      title.innerHTML = selected.title;
+      number.textContent = selected.number;
+      note.textContent = selected.note;
+    });
+  </script>
+</body>
+</html>
