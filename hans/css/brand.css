@@ -1,0 +1,54 @@
+/* HANS Brand Story Subpage — Design.md의 색상/폰트/헤더/푸터 규칙을 계승 */
+.brand-visual{position:relative;min-height:clamp(560px,72vw,820px);margin-top:90px;overflow:hidden;background:var(--color-peach);display:flex;align-items:center}
+.brand-visual__image{position:absolute;inset:0 0 0 38%;display:flex;align-items:center;justify-content:center;background:var(--color-cream);color:var(--text-secondary);font-size:14px;letter-spacing:.12em}
+.brand-visual__image:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--color-peach),rgba(255,240,229,.08) 45%,rgba(34,34,34,.08))}
+.brand-visual__copy{position:relative;z-index:1;width:min(100% - 48px,1500px);margin:0 auto;padding:90px 0;color:var(--text-primary)}
+.brand-eyebrow{margin:0 0 22px;color:var(--text-brand);font-size:14px;font-weight:700;letter-spacing:.12em}
+.brand-visual h1{margin:0;font-size:clamp(64px,10vw,150px);font-weight:800;line-height:.88;letter-spacing:-.07em}
+.brand-visual h1 em,.brand-section-heading h2 em{color:var(--text-brand);font-style:normal}
+.brand-visual__copy>p:last-child{margin:30px 0 0;font-size:clamp(18px,2vw,28px);font-weight:500;line-height:1.55;word-break:keep-all}
+.brand-visual__scroll{position:absolute;z-index:2;bottom:34px;left:max(calc((100% - 1500px)/2),24px);display:flex;gap:14px;align-items:center;color:var(--text-primary);font-size:12px;font-weight:600;letter-spacing:.1em;text-decoration:none}
+.brand-visual__scroll span{color:var(--text-brand);font-size:20px}
+.brand-subnav{position:sticky;top:90px;z-index:8;display:flex;justify-content:center;gap:clamp(28px,7vw,100px);padding:22px 24px;background:rgba(255,255,255,.94);border-bottom:1px solid var(--color-bage);backdrop-filter:blur(8px)}
+.brand-subnav a{color:var(--text-secondary);font-size:14px;font-weight:600;letter-spacing:.08em;text-decoration:none;transition:color .2s}
+.brand-subnav a:hover,.brand-subnav a.is-active{color:var(--text-brand)}
+.section-shell{width:min(100% - 48px,1240px);margin:0 auto;padding:clamp(90px,12vw,160px) 0}
+.brand-section-heading h2{margin:0;font-size:clamp(42px,5vw,72px);font-weight:800;line-height:1.12;letter-spacing:-.045em;word-break:keep-all}
+.brand-section-heading__desc{margin:22px 0 0;color:var(--text-secondary);font-size:16px;line-height:1.6;word-break:keep-all}
+.brand-story__content{display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:clamp(36px,7vw,100px);margin-top:70px}
+.brand-image-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:var(--color-bage);color:var(--text-secondary);font-size:12px;font-weight:600;letter-spacing:.12em;text-align:center}
+.brand-image-placeholder small{font-size:11px;font-weight:400;letter-spacing:0}
+.brand-image-placeholder--story{aspect-ratio:4/3;min-height:280px}
+.brand-story__text{max-width:490px}
+.brand-lead{margin:0 0 22px;font-size:clamp(22px,2.4vw,32px);font-weight:700;line-height:1.45;letter-spacing:-.03em;word-break:keep-all}
+.brand-story__text>p:not(.brand-lead){margin:0;color:var(--text-secondary);font-size:16px;line-height:1.8;word-break:keep-all}
+.brand-text-link{display:inline-flex;gap:12px;margin-top:34px;padding-bottom:8px;border-bottom:1px solid var(--text-brand);color:var(--text-brand);font-size:14px;font-weight:700;text-decoration:none}
+.brand-value{padding:clamp(90px,12vw,150px) 0;background:var(--color-bage)}
+.brand-section-heading--center{text-align:center}
+.brand-value__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:64px}
+.brand-value-card{position:relative;min-width:0;padding:24px;background:var(--color-white)}
+.brand-value-card__number{display:block;margin-bottom:18px;color:var(--text-brand);font-size:14px;font-weight:700}
+.brand-image-placeholder--value{aspect-ratio:4/3}
+.brand-value-card h3{margin:26px 0 10px;font-size:clamp(24px,2.4vw,32px);font-weight:800;letter-spacing:-.03em}
+.brand-value-card p{margin:0;color:var(--text-secondary);font-size:15px;line-height:1.7;word-break:keep-all}
+.brand-history{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(36px,8vw,120px);align-items:start}
+.brand-history .brand-section-heading__desc{max-width:320px}
+.brand-history__note{grid-column:2;margin:0 0 28px;padding:24px 28px;background:var(--color-peach);display:flex;align-items:center;gap:18px}
+.brand-history__mark{display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;border-radius:50%;background:var(--color-brand-orange);color:#fff;font-size:20px;font-weight:800}
+.brand-history__note p{margin:0;color:var(--text-secondary);font-size:14px;line-height:1.6;word-break:keep-all}
+.brand-timeline{grid-column:2;list-style:none;margin:0;padding:0;border-top:1px solid var(--color-cream)}
+.brand-timeline li{display:grid;grid-template-columns:76px 1fr;gap:24px;position:relative;padding:30px 0;border-bottom:1px solid var(--color-cream)}
+.brand-timeline__year{color:var(--text-brand);font-size:14px;font-weight:800;letter-spacing:.05em}
+.brand-timeline h3{margin:0 0 10px;font-size:20px;font-weight:700}
+.brand-timeline p{margin:0;color:var(--text-secondary);font-size:14px;line-height:1.7;word-break:keep-all}
+.brand-timeline__placeholder{grid-column:2;margin-top:8px;color:#999;font-size:12px}
+.brand-bottom-cta{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:clamp(48px,7vw,90px) max(24px,calc((100% - 1240px)/2));background:var(--color-cream)}
+.brand-bottom-cta p{margin:0;font-size:clamp(24px,3vw,42px);font-weight:800;letter-spacing:-.04em;word-break:keep-all}
+.brand-bottom-cta a{display:inline-flex;align-items:center;gap:24px;flex-shrink:0;padding:18px 24px;background:var(--color-brand-orange);color:#fff;font-size:14px;font-weight:700;text-decoration:none;transition:transform .25s ease,filter .25s ease}
+.brand-bottom-cta a:hover{transform:translateY(-3px);filter:brightness(.96)}
+.brand-bottom-cta a:focus-visible,.brand-text-link:focus-visible,.brand-subnav a:focus-visible{outline:2px solid var(--color-brand-orange);outline-offset:5px}
+.brand-reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.3,1)}
+.brand-reveal.is-visible{opacity:1;transform:translateY(0)}
+@media(max-width:1024px){.brand-visual{min-height:680px;margin-top:60px}.brand-visual__image{inset:0 0 0 20%}.brand-visual__copy{width:calc(100% - 48px)}.brand-visual__scroll{left:24px}.brand-subnav{top:60px}.brand-story__content{grid-template-columns:1fr;gap:32px;margin-top:48px}.brand-story__text{max-width:720px}.brand-value__grid{gap:16px}.brand-value-card{padding:18px}.brand-history{grid-template-columns:1fr;gap:36px}.brand-history__note,.brand-timeline{grid-column:1}.brand-history__note{margin:0}.brand-timeline li{grid-template-columns:64px 1fr}}
+@media(max-width:600px){.brand-visual{min-height:620px;align-items:flex-end}.brand-visual__image{inset:0 0 25% 0}.brand-visual__image:before{background:linear-gradient(0deg,var(--color-peach),rgba(255,240,229,.08) 65%)}.brand-visual__copy{padding:40px 0 100px}.brand-visual h1{font-size:clamp(58px,17vw,96px)}.brand-visual__copy>p:last-child{margin-top:22px;font-size:18px}.brand-eyebrow{margin-bottom:16px}.brand-subnav{gap:0;justify-content:space-around;padding:18px 12px}.brand-subnav a{font-size:12px}.section-shell{width:calc(100% - 48px);padding:76px 0}.brand-section-heading h2{font-size:clamp(38px,11vw,52px)}.brand-story__content{margin-top:36px}.brand-image-placeholder--story{min-height:220px}.brand-lead{font-size:24px}.brand-story__text>p:not(.brand-lead){font-size:15px}.brand-value{padding:76px 0}.brand-value__grid{grid-template-columns:1fr;margin-top:40px;gap:14px}.brand-value-card{padding:20px}.brand-image-placeholder--value{aspect-ratio:16/9}.brand-value-card h3{margin-top:20px}.brand-history{padding-top:76px}.brand-history__note{padding:18px}.brand-timeline li{grid-template-columns:52px 1fr;gap:16px;padding:24px 0}.brand-timeline h3{font-size:18px}.brand-bottom-cta{align-items:flex-start;flex-direction:column;padding:48px 24px}.brand-bottom-cta p{font-size:28px}.brand-bottom-cta a{padding:16px 20px}}
+@media(prefers-reduced-motion:reduce){.brand-reveal,.brand-bottom-cta a{transition:none}.brand-reveal{opacity:1;transform:none}}
