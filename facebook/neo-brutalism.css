@@ -1,0 +1,109 @@
+/* Neo Brutalism - Facebook 로그인 화면 */
+#wrap.neo-brutalism {
+    --neo-black: #171717;
+    --neo-yellow: #FFE500;
+    --neo-pink: #FF6B9A;
+    --neo-blue: #63DDF2;
+    background: var(--neo-yellow);
+    color: var(--neo-black);
+    border-left: 3px solid var(--neo-black);
+    border-right: 3px solid var(--neo-black);
+}
+
+.neo-brutalism header {
+    border-bottom: 3px solid var(--neo-black);
+    background: var(--neo-pink);
+}
+
+.neo-brutalism header h1 {
+    font-weight: 900;
+    letter-spacing: -0.05em;
+}
+
+.neo-brutalism main {
+    background: var(--neo-yellow);
+}
+
+.neo-brutalism .title {
+    padding: 18px;
+    border: 3px solid var(--neo-black);
+    background: var(--neo-blue);
+    box-shadow: 6px 6px 0 var(--neo-black);
+}
+
+.neo-brutalism .title span:last-child {
+    color: var(--neo-black);
+    font-weight: 900;
+    letter-spacing: -0.06em;
+}
+
+.neo-brutalism .login_form fieldset {
+    padding: 18px;
+    border: 3px solid var(--neo-black);
+    background: #fff;
+    box-shadow: 6px 6px 0 var(--neo-black);
+}
+
+.neo-brutalism .email_label {
+    font-weight: 900;
+}
+
+.neo-brutalism .input_box input {
+    border: 3px solid var(--neo-black);
+    border-radius: 0;
+    box-shadow: 3px 3px 0 var(--neo-black);
+}
+
+.neo-brutalism .input_box input:focus {
+    border-color: var(--neo-black);
+    outline: 2px solid var(--neo-blue);
+}
+
+.neo-brutalism .login_option {
+    font-weight: 700;
+}
+
+.neo-brutalism .login_btn {
+    border: 3px solid var(--neo-black);
+    border-radius: 0;
+    background: var(--neo-pink);
+    color: var(--neo-black);
+    font-weight: 900;
+    box-shadow: 5px 5px 0 var(--neo-black);
+}
+
+.neo-brutalism .login_btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: 1px 1px 0 var(--neo-black);
+}
+
+.neo-brutalism .login_link a {
+    color: var(--neo-black);
+    font-weight: 800;
+}
+
+.neo-brutalism .login_link a + a::before {
+    width: 3px;
+    background: var(--neo-black);
+}
+
+.neo-brutalism .sns_login h2 {
+    color: var(--neo-black);
+    font-weight: 800;
+}
+
+.neo-brutalism .sns_list a {
+    border: 3px solid var(--neo-black);
+    border-radius: 0;
+    box-shadow: 4px 4px 0 var(--neo-black);
+}
+
+@media (max-width: 420px) {
+    .neo-brutalism .title {
+        padding: 14px;
+    }
+
+    .neo-brutalism .login_form fieldset {
+        padding: 14px;
+    }
+}
