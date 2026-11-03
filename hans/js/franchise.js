@@ -1,0 +1,5 @@
+// FRANCHISE 페이지: 모바일 메뉴, 문의 폼 입력 확인(실제 전송 없음), 맨 위로
+const header=document.querySelector('.site-header'),toggle=document.querySelector('.site-header__toggle');
+if(header&&toggle){const setMenu=open=>{toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'메뉴 닫기':'메뉴 열기');header.classList.toggle('is-open',open)};toggle.addEventListener('click',()=>setMenu(toggle.getAttribute('aria-expanded')!=='true'));document.querySelectorAll('.site-nav a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)})}
+const form=document.querySelector('#franchise-form');if(form)form.addEventListener('submit',e=>{e.preventDefault();const feedback=form.querySelector('.franchise-form__feedback');feedback.textContent='입력 내용을 확인했습니다. 현재 페이지는 시안이며 문의가 실제 전송되지는 않습니다.';});
+const topButton=document.querySelector('.to-top');if(topButton){const update=()=>topButton.classList.toggle('is-show',window.scrollY>600);window.addEventListener('scroll',update,{passive:true});update();topButton.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}))}
