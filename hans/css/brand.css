@@ -54,6 +54,5 @@
 @media(prefers-reduced-motion:reduce){.brand-reveal,.brand-bottom-cta a{transition:none}.brand-reveal{opacity:1;transform:none}}
 
 /* 메인 페이지의 둥근 모서리 스타일을 서브페이지에도 적용 */
-#wrap{border-radius:24px;overflow:hidden}
-.brand-visual,.brand-image-placeholder,.brand-value-card,.brand-history__note,.brand-bottom-cta{border-radius:24px;overflow:hidden}
+.brand-visual,.brand-image-placeholder,.brand-value-card,.brand-history__note{border-radius:24px;overflow:hidden}
 .brand-bottom-cta a{border-radius:999px}
