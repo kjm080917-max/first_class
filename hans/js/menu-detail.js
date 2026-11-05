@@ -12,3 +12,7 @@ document.getElementById("detail-type").textContent=item.type;
 document.getElementById("detail-title").textContent=item.title;
 document.getElementById("detail-description").textContent=item.description;
 document.title=item.title+" | HANS CAKE";
+const menuOrder=["strawberry","almond-chocolate","almond-delight","cake-menu","season-cake","dessert-menu"];
+const moveMenu=(direction)=>{const current=menuOrder.indexOf(key);const next=(current+direction+menuOrder.length)%menuOrder.length;location.href="menu-detail.html?item="+menuOrder[next]};
+document.querySelector(".menu-detail__arrow--prev")?.addEventListener("click",()=>moveMenu(-1));
+document.querySelector(".menu-detail__arrow--next")?.addEventListener("click",()=>moveMenu(1));
