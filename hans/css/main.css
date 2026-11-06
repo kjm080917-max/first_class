@@ -724,6 +724,7 @@ body {
     grid-template-columns: repeat(5, minmax(0, 1fr));
     width: 600px;
     margin: 0 auto;
+    transform: translateX(-30px);
     padding: 24px 0 35px;
 }
 
