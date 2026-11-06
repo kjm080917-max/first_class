@@ -1,0 +1,4 @@
+// EVENT 페이지: 모바일 메뉴 및 맨 위로
+const header=document.querySelector('.site-header'),toggle=document.querySelector('.site-header__toggle');
+if(header&&toggle){const setMenu=open=>{toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'메뉴 닫기':'메뉴 열기');header.classList.toggle('is-open',open)};toggle.addEventListener('click',()=>setMenu(toggle.getAttribute('aria-expanded')!=='true'));document.querySelectorAll('.site-nav a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)})}
+const topButton=document.querySelector('.to-top');if(topButton){const update=()=>topButton.classList.toggle('is-show',window.scrollY>600);window.addEventListener('scroll',update,{passive:true});update();topButton.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}))}
