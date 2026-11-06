@@ -667,10 +667,9 @@ body {
 
 /* 메인 메뉴 */
 .site-nav {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    display: flex;
     align-items: center;
-    justify-items: center;
+    justify-content: space-between;
     width: 600px;
     margin: 0 auto;
 }
