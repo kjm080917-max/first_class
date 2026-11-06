@@ -670,8 +670,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 56px;
-    width: auto;
+    width: 600px;
+    flex: 0 0 600px;
     margin: 0 auto;
 }
 
@@ -691,6 +691,11 @@ body {
 .site-nav a.is-current {
     color: var(--text-brand);
     font-weight: 600;
+}
+
+.site-nav a {
+    flex: 1;
+    text-align: center;
 }
 
 .site-header__links {
@@ -725,7 +730,6 @@ body {
     width: 600px;
     margin: 0 auto;
     padding: 24px 0 35px;
-    transform: translateX(-15px);
 }
 
 .site-mega__column {
