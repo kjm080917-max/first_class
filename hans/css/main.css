@@ -669,8 +669,9 @@ body {
 .site-nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 600px;
+    justify-content: center;
+    gap: 56px;
+    width: auto;
     margin: 0 auto;
 }
 
