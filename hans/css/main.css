@@ -667,11 +667,11 @@ body {
 
 /* 메인 메뉴 */
 .site-nav {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     align-items: center;
-    justify-content: center;
+    justify-items: center;
     width: 600px;
-    flex: 0 0 600px;
     margin: 0 auto;
 }
 
@@ -691,11 +691,6 @@ body {
 .site-nav a.is-current {
     color: var(--text-brand);
     font-weight: 600;
-}
-
-.site-nav a {
-    flex: 1;
-    text-align: center;
 }
 
 .site-header__links {
