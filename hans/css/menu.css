@@ -210,30 +210,13 @@
 .menu-page .site-footer {
   min-height: 0;
   padding: 96px 24px;
-  background: var(--color-warm-gray);
-  color: var(--color-bage);
+  background: var(--color-black);
+  color: rgba(140, 140, 140, .85);
 }
 .menu-page .site-footer__inner {
   width: min(1200px, 100%);
   max-width: 1200px;
   margin-inline: auto;
-}
-.menu-page .site-footer__info p {
-  color: var(--color-bage);
-  font-size: 14px;
-}
-.menu-page .site-footer__info .site-footer__copyright {
-  color: var(--color-cream);
-  font-size: 13px;
-}
-.menu-page .site-footer__nav a,
-.menu-page .site-footer__nav .site-footer__privacy {
-  color: var(--color-bage);
-  font-size: 14px;
-}
-.menu-page .site-footer__nav a.is-current,
-.menu-page .site-footer__nav a:hover {
-  color: var(--color-white);
 }
 .menu-page .site-footer__logo {
   justify-content: flex-start;
