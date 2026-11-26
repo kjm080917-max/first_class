@@ -30,7 +30,7 @@
 .menu-filter button{min-width:112px;padding:13px 22px;border:1px solid #e4d9d1;border-radius:999px;background:var(--color-white);color:var(--text-secondary);font-size:14px;font-weight:700;transition:background .2s,color .2s,border-color .2s}
 .menu-filter button:hover,.menu-filter button.is-active{border-color:var(--color-brand-orange);background:var(--color-brand-orange);color:#fff}
 .menu-product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px 20px}
-.menu-product[hidden]{display:none}
+.menu-product[hidden]{display:none !important}
 .menu-product{min-width:0;background:var(--color-white);border-radius:14px;overflow:hidden;transition:transform .25s,box-shadow .25s}
 .menu-product:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(70,48,35,.08)}
 .menu-product .menu-thumb{aspect-ratio:1/1}
@@ -167,4 +167,15 @@
   .menu-product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 10px}
   .menu-product .menu-thumb{aspect-ratio:1/1}
   .menu-product .menu-card-copy{min-height:120px}
+}
+
+
+/* 필터링된 메뉴 카드가 Grid 공간을 차지하지 않도록 보장 */
+.menu-product-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  grid-auto-flow:row;
+}
+.menu-product[hidden]{
+  display:none !important;
 }
