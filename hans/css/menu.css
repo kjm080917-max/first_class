@@ -290,3 +290,28 @@
     transform:translate(-50%,-50%);
   }
 }
+
+
+/* MENU HERO: 메인 페이지 배너의 실제 문구 높이에 맞춤 */
+.menu-hero .hero-copy{
+  top:60%;
+  left:50%;
+  bottom:auto;
+  padding:0;
+  width:min(90%,1100px);
+  text-align:center;
+  transform:translate(-50%,-50%);
+}
+@media(max-width:1024px){
+  .menu-hero .hero-copy{top:60%}
+}
+@media(max-width:600px){
+  .menu-hero .hero-copy{
+    top:68%;
+    left:50%;
+    width:calc(100% - 40px);
+    padding:0;
+    text-align:center;
+    transform:translate(-50%,-50%);
+  }
+}
