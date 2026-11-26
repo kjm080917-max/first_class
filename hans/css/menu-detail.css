@@ -7,3 +7,6 @@
 .menu-detail__arrow{position:static;flex:0 0 48px;transform:none}
 .menu-detail__arrow:hover{transform:scale(1.06)}
 @media(max-width:760px){.menu-detail__visual-wrap{gap:8px}.menu-detail__arrow{flex-basis:36px;width:36px;height:36px;font-size:26px}}
+
+.menu-detail__visual.has-product-image{overflow:hidden;background:#f7f3f0}
+.menu-detail__visual.has-product-image img{display:block;width:100%;height:100%;object-fit:contain}
