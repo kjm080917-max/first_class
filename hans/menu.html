@@ -1,72 +1,84 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="한스케이크 메뉴를 소개합니다."><title>MENU | HANS CAKE</title>
-<link rel="stylesheet" href="../css/default.css"><link rel="stylesheet" href="../font/css/pretendardvariable.css">
-<link rel="stylesheet" href="../npm/swiper/swiper-bundle.min.css"><link rel="stylesheet" href="css/main.css"><link rel="stylesheet" href="css/menu.css">
-<script src="../npm/swiper/swiper-bundle.min.js"></script>
-</head><body><div id="wrap"><header class="site-header">
-            <div class="site-header__bar">
-                <div class="site-header__inner">
-                    <a class="site-header__logo" href="index.html">
-                        <img src="/first_class/hans/img/logo.png" alt="HANS 케이크 로고">
-                    </a>
+:root{
+  --pink:#E8707C;
+  --pink-soft:#FDE6E8;
+  --cream:#FFFAF7;
+  --box:#F6EEEA;
+  --ink:#3B2B2B;
+  --sub:#8A7777;
+  --line:#EADFDB;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Pretendard','Noto Sans KR','Malgun Gothic',sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+img{display:block;max-width:100%}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--pink);outline-offset:3px}
 
-                    <nav class="site-nav" id="site-nav" aria-label="주요 메뉴">
-                        <a class="is-current" href="menu.html">MENU</a>
-                        <a href="store.html">STORE</a>
-                        <a href="brand.html">HANS STORY</a>
-                        <a href="event.html">EVENT</a>
-                        <a href="special.html">SPECIAL</a>
-                    </nav>
+/* header */
+.header{display:flex;align-items:center;justify-content:space-between;max-width:1240px;margin:0 auto;padding:18px 24px}
+.logo img{height:44px}
+.gnb{display:flex;gap:44px;font-weight:600;font-size:15px}
+.gnb a{padding:6px 0;border-bottom:2px solid transparent}
+.gnb a:hover,.gnb a.on{color:var(--pink);border-color:var(--pink)}
+.util{display:flex;gap:16px;font-size:13px;color:var(--sub)}
 
-                    <div class="site-header__links">
-                        <a href="store.html">매장찾기</a>
-                        <a href="franchise.html">가맹문의</a>
-                    </div>
+/* title */
+.page-title{background:var(--cream);text-align:center;padding:56px 24px 48px}
+.page-title h1{font-size:40px;letter-spacing:.08em}
+.page-title p{margin-top:10px;color:var(--sub)}
 
-                    <button class="site-header__toggle" type="button" aria-label="메뉴 열기" aria-controls="site-nav" aria-expanded="false">
-                        <span></span><span></span><span></span>
-                    </button>
-                </div>
-            </div>
-            <div class="site-mega" aria-label="전체 메뉴">
-                <div class="site-mega__inner">
-                    <div class="site-mega__column">
-                        <a href="menu.html">전체메뉴</a>
-                        <a href="menu.html">신메뉴</a>
-                        <a href="menu.html">케이크</a>
-                        <a href="menu.html">디저트</a>
-                        <a href="menu.html">선물세트</a>
-                    </div>
-                    <div class="site-mega__column"><a href="store.html">매장찾기</a></div>
-                    <div class="site-mega__column">
-                        <a href="brand.html">한스소개</a>
-                        <a href="brand.html#brand-history">한스이야기</a>
-                    </div>
-                    <div class="site-mega__column"><a href="event.html">이벤트</a></div>
-                    <div class="site-mega__column"><a href="special.html">스페셜케이크 안내</a></div>
-                </div>
-            </div>
-        </header>
-<main>
-<section class="menu-page-visual"><div class="menu-page-visual__inner"><p class="menu-eyebrow">HANS CAKE · MENU</p><h1>Sweet moments,<br><em>HANS MENU</em></h1><p>한스의 케이크와 디저트로<br>오늘의 작은 행복을 만나보세요.</p><div class="menu-page-visual__image" role="img" aria-label="메뉴 대표 이미지 교체 영역"><span>MENU VISUAL IMAGE</span></div></div></section>
-<section class="menu-catalog" aria-labelledby="catalog-title"><div class="menu-catalog__heading"><p class="menu-eyebrow">OUR COLLECTION</p><h2 id="catalog-title">Hans <em>Menu</em></h2><p>한스에서 만날 수 있는 대표 메뉴를 소개합니다.</p></div>
-<div class="menu-filter" role="group" aria-label="메뉴 종류 필터"><button class="is-active" type="button" data-filter="all" aria-pressed="true">전체</button><button type="button" data-filter="cake" aria-pressed="false">케이크</button><button type="button" data-filter="dessert" aria-pressed="false">디저트</button></div>
-<div class="menu-product-grid">
-<article class="menu-product" data-category="cake"><a class="menu-product__detail-link" href="menu-detail.html?item=strawberry" aria-label="딸기 생크림 케이크 상세정보"><a class="menu-product__detail-link" href="menu-detail.html?item=cake-menu" aria-label="메뉴 상세정보"><a class="menu-product__detail-link" href="menu-detail.html?item=season-cake" aria-label="메뉴 상세정보"><a class="menu-product__detail-link" href="menu-detail.html?item=dessert-menu" aria-label="메뉴 상세정보"><div class="menu-product__image"><span>CAKE IMAGE</span></div></a></a></a></a><p class="menu-product__type">CAKE</p><h3><a class="menu-product__name-link" href="menu-detail.html?item=strawberry">딸기 생크림 케이크</a></h3><p>부드러운 화이트 시트와 달콤한 커스터드 크림, 새콤한 산딸기 콩포트가 어우러진 케이크</p></article>
-<article class="menu-product" data-category="dessert"><a class="menu-product__detail-link" href="menu-detail.html?item=almond-chocolate" aria-label="아몬드 쇼콜라 상세정보"><div class="menu-product__image"><span>DESSERT IMAGE</span></div></a><p class="menu-product__type">DESSERT</p><h3><a class="menu-product__name-link" href="menu-detail.html?item=almond-chocolate">아몬드 쇼콜라</a></h3><p>품질 좋은 초콜릿으로 정성을 담아 만든 수제 초콜릿</p></article>
-<article class="menu-product" data-category="dessert"><a class="menu-product__detail-link" href="menu-detail.html?item=almond-delight" aria-label="아몬드 딜라이트 상세정보"><div class="menu-product__image"><span>DESSERT IMAGE</span></div></a><p class="menu-product__type">DESSERT</p><h3><a class="menu-product__name-link" href="menu-detail.html?item=almond-delight">아몬드 딜라이트</a></h3><p>고소한 아몬드와 버터향이 가득한 고급스러운 쿠키</p></article>
-<article class="menu-product" data-category="cake"><div class="menu-product__image"><span>CAKE IMAGE</span></div><p class="menu-product__type">CAKE</p><h3><a class="menu-product__name-link" href="menu-detail.html?item=cake-menu">케이크 메뉴</a></h3><p>제품 이미지와 상세 설명을 추가할 수 있는 영역입니다.</p></article>
-<article class="menu-product" data-category="cake"><div class="menu-product__image"><span>CAKE IMAGE</span></div><p class="menu-product__type">CAKE</p><h3><a class="menu-product__name-link" href="menu-detail.html?item=season-cake">시즌 케이크</a></h3><p>시즌별 케이크 메뉴를 소개하는 영역입니다.</p></article>
-<article class="menu-product" data-category="dessert"><a class="menu-product__detail-link" href="menu-detail.html?item=dessert-menu" aria-label="디저트 메뉴 상세정보"><div class="menu-product__image"><span>DESSERT IMAGE</span></div></a><p class="menu-product__type">DESSERT</p><h3><a class="menu-product__name-link" href="menu-detail.html?item=dessert-menu">디저트 메뉴</a></h3><p>디저트 메뉴의 제품 정보가 들어갈 영역입니다.</p></article>
-</div>
-<div class="menu-product-grid menu-product-grid--more" id="menu-more-items" hidden>
-<article class="menu-product" data-category="cake"><div class="menu-product__image"><span>CAKE IMAGE</span></div><p class="menu-product__type">CAKE</p><h3><a class="menu-product__name-link" href="menu-detail.html?item=strawberry">생크림 케이크</a></h3><p>부드러운 크림과 촉촉한 시트가 어우러진 케이크</p></article>
-<article class="menu-product" data-category="cake"><div class="menu-product__image"><span>CAKE IMAGE</span></div><p class="menu-product__type">CAKE</p><h3><a class="menu-product__name-link" href="menu-detail.html?item=season-cake">과일 케이크</a></h3><p>신선한 과일을 담아낸 달콤한 케이크</p></article>
-<article class="menu-product" data-category="dessert"><div class="menu-product__image"><span>DESSERT IMAGE</span></div><p class="menu-product__type">DESSERT</p><h3><a class="menu-product__name-link" href="menu-detail.html?item=almond-delight">쿠키 &amp; 디저트</a></h3><p>티타임에 함께 즐기기 좋은 디저트</p></article>
-</div><div class="menu-more-wrap"><button type="button" class="menu-more-button" id="menu-more-button" aria-expanded="false" aria-controls="menu-more-items">메뉴 더보기 <span aria-hidden="true">＋</span></button></div>
-<p class="menu-catalog__notice">※ 메뉴 구성 및 제품 정보는 실제 운영 자료 확인 후 업데이트해 주세요.</p></section>
+/* tabs */
+.tabs{display:flex;max-width:1240px;margin:0 auto;background:var(--box)}
+.tab{flex:1;padding:18px 0;border:0;background:none;font-size:16px;color:var(--ink);transition:background .2s,color .2s}
+.tab:hover{background:var(--pink-soft)}
+.tab.on{background:var(--pink);color:#fff;font-weight:700}
 
-</main><footer class="site-footer"><div class="site-footer__inner"><div class="site-footer__company"><a class="site-footer__logo" href="#top" aria-label="HANS 홈"><img src="img/footer.png" alt="HANS CAKE"></a><div class="site-footer__info"><p>케이크로 전하는 특별한 순간, HANS</p><p>제품 및 매장 정보는 한스케이크 공식 홈페이지에서 확인하실 수 있습니다.</p><p>HANS CAKE&nbsp; | &nbsp;브랜드 및 매장 안내</p><p class="site-footer__copyright">Copyright 2011 HANS CAKE. All Rights Reserved.</p></div></div><nav class="site-footer__nav" aria-label="푸터 메뉴"><a href="menu.html">Menu</a><a href="store.html">Store</a><a href="brand.html">Hans Story</a><a href="index.html#event">Event</a><a href="special.html">Special</a><a class="site-footer__privacy" href="#">개인정보처리방침</a></nav></div></footer></div><button class="to-top" type="button" aria-label="맨 위로 이동"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button><script src="js/menu.js"></script></body></html>
+/* section title */
+.sec-title{text-align:center;font-size:28px;font-weight:500;margin-bottom:48px}
+.sec-title span{display:inline-block;padding-bottom:8px;border-bottom:2px solid var(--ink)}
+
+/* image box (공통) */
+.thumb{position:relative;aspect-ratio:1/1;background:var(--box);border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.thumb::before{content:'이미지 등록 예정';position:absolute;font-size:13px;color:#B9A8A8}
+.thumb img{position:relative;width:100%;height:100%;object-fit:cover}
+
+/* best */
+.best{max-width:1240px;margin:0 auto;padding:80px 24px 40px}
+.best-list{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;text-align:center}
+.best-list .thumb{width:78%;margin:0 auto 24px;border-radius:50%;overflow:visible}
+.best-list .thumb img{border-radius:50%}
+.best-list .thumb::before{width:100%;text-align:center}
+.badge{position:absolute;top:-6px;right:-6px;z-index:2;width:76px;height:76px;border-radius:50%;background:var(--pink);color:#fff;font-style:normal;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center}
+.best-list strong{display:block;font-size:20px;font-weight:600}
+.best-list span{font-size:14px;color:var(--sub)}
+.best-list a:hover strong{color:var(--pink)}
+
+/* all menu grid */
+.all{background:var(--cream);padding:80px 24px 72px}
+.all .sec-title,.grid,.notice{max-width:1240px;margin-left:auto;margin-right:auto}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px 24px}
+.grid li[hidden]{display:none}
+.grid .thumb{margin-bottom:16px;border:1px solid var(--line);transition:transform .25s}
+.grid a:hover .thumb{transform:translateY(-6px)}
+.grid strong{display:block;font-size:17px;font-weight:600}
+.grid p{margin-top:4px;font-size:14px;color:var(--sub);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.notice{margin-top:40px;text-align:right;font-size:13px;color:var(--sub)}
+
+/* footer */
+.footer{text-align:center;padding:48px 24px;background:var(--ink);color:#fff}
+.slogan{font-size:18px;margin-bottom:20px}
+.footer nav{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 24px;margin-bottom:20px;font-size:14px;color:#D9C9C9}
+.footer small{font-size:12px;color:#A99999}
+
+/* responsive */
+@media (max-width:900px){
+  .header{flex-wrap:wrap;gap:12px}
+  .gnb{order:3;width:100%;justify-content:space-between;gap:12px;font-size:14px}
+  .best-list{gap:16px}
+  .best-list .thumb{width:90%}
+  .badge{width:52px;height:52px;font-size:12px}
+  .best-list strong{font-size:15px}
+  .best-list span{display:none}
+  .grid{grid-template-columns:repeat(2,1fr);gap:28px 16px}
+}
