@@ -7,6 +7,8 @@
   <title>MENU | HANS CAKE</title>
   <link rel="stylesheet" href="../css/default.css">
   <link rel="stylesheet" href="../font/css/pretendardvariable.css">
+  <link rel="stylesheet" href="../npm/swiper/swiper-bundle.min.css">
+  <script src="../npm/swiper/swiper-bundle.min.js"></script>
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/menu.css">
 </head>
@@ -31,14 +33,29 @@
   </header>
 
   <main>
-    <section class="menu-hero">
+    <section class="menu-hero hero-sec" aria-label="한스 메뉴 소개">
+      <div class="swiper menu-hero__swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="img/hero_01.png" alt="한스 메뉴 대표 이미지"></div>
+          <div class="swiper-slide"><img src="img/hero.png" alt="한스 케이크 브랜드 이미지"></div>
+          <div class="swiper-slide"><img src="img/cake.png" alt="한스 케이크 이미지"></div>
+        </div>
+      </div>
+      <div class="menu-hero__shade" aria-hidden="true"></div>
       <div class="menu-hero__copy">
         <p class="menu-eyebrow">HANS CAKE · MENU</p>
         <h1>오늘을 더 달콤하게,<br><em>HANS MENU</em></h1>
         <p>정성을 담아 만든 케이크와 디저트로<br>일상에 작은 행복을 더해보세요.</p>
         <a class="menu-hero__link" href="#menu-list">메뉴 둘러보기 <span aria-hidden="true">↓</span></a>
       </div>
-      <div class="menu-hero__visual" aria-hidden="true"><span>Sweet<br>Moments</span></div>
+      <div class="hero-controls menu-hero__controls">
+        <div class="swiper-scrollbar menu-hero__scrollbar" aria-label="슬라이드 진행 상태"></div>
+        <div class="swiper-pagination menu-hero__pagination" aria-label="현재 슬라이드"></div>
+        <div class="hero-arrows">
+          <button type="button" class="menu-hero-prev" aria-label="이전 슬라이드"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18 9 12l6-6"/></svg></button>
+          <button type="button" class="menu-hero-next" aria-label="다음 슬라이드"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+        </div>
+      </div>
     </section>
 
     <section class="menu-best section-shell" aria-labelledby="menu-best-title">
