@@ -179,3 +179,81 @@
 .menu-product[hidden]{
   display:none !important;
 }
+
+
+/* MENU HERO: 문구와 슬라이드 컨트롤의 세로 공간 분리 */
+.menu-hero .hero-copy{
+  top:auto;
+  right:auto;
+  bottom:20px;
+  left:13.5%;
+  width:min(72%,900px);
+  padding:0 0 128px;
+  text-align:left;
+  transform:none;
+  z-index:4;
+}
+.menu-hero .hero-copy h1{
+  font-size:clamp(32px,4vw,56px);
+  line-height:1.08;
+  text-shadow:0 3px 18px rgba(0,0,0,.28);
+}
+.menu-hero .hero-copy p{
+  max-width:620px;
+  margin-top:16px;
+  font-size:clamp(14px,1.1vw,18px);
+  line-height:1.55;
+  text-shadow:0 2px 12px rgba(0,0,0,.35);
+}
+.menu-hero .swiper::after{
+  position:absolute;
+  z-index:2;
+  inset:0;
+  content:"";
+  pointer-events:none;
+  background:linear-gradient(to top,rgba(0,0,0,.45),rgba(0,0,0,0) 60%);
+}
+.menu-hero .hero-controls{
+  z-index:5;
+  bottom:20px;
+}
+@media(max-width:1024px){
+  .menu-hero .hero-copy{
+    bottom:8px;
+    left:var(--section-x-mo);
+    width:min(82%,760px);
+    padding-bottom:120px;
+  }
+  .menu-hero .hero-controls{bottom:8px}
+}
+@media(max-width:600px){
+  .menu-hero .swiper{height: min(82svh,760px); min-height:560px}
+  .menu-hero .hero-copy{
+    bottom:8px;
+    left:20px;
+    width:calc(100% - 40px);
+    padding-bottom:112px;
+    text-align:left;
+  }
+  .menu-hero .hero-copy h1{
+    font-size:clamp(30px,8vw,42px);
+    line-height:1.1;
+  }
+  .menu-hero .hero-copy p{
+    max-width:100%;
+    margin-top:12px;
+    font-size:13px;
+    line-height:1.5;
+  }
+  .menu-hero .hero-controls{
+    right:20px;
+    bottom:8px;
+    left:20px;
+    gap:10px;
+  }
+  .menu-hero .hero-arrows .hero-prev,
+  .menu-hero .hero-arrows .hero-next{
+    width:34px;
+    height:34px;
+  }
+}
