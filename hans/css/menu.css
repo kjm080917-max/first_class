@@ -314,3 +314,33 @@
     padding: 56px 24px;
   }
 }
+
+
+/* 전체 메뉴 6번째 안내 카드: 더보기로 5개 메뉴가 펼쳐졌을 때 전체 탭에서만 표시 */
+.menu-page:has(.menu-filter button[data-filter="all"].is-active)
+#menu-product-grid:has(+ .menu-more-wrap #menu-more-button[aria-expanded="true"])::after {
+  content: "새로운 메뉴가 준비 중이에요";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+  padding: 24px;
+  border: 1px dashed var(--color-cream);
+  border-radius: 14px;
+  color: var(--text-secondary);
+  background: transparent;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.6;
+  text-align: center;
+}
+.menu-page .menu-filter button:hover:not(.is-active) {
+  border-color: var(--color-cream);
+  background: var(--color-light-gray);
+  color: var(--text-primary);
+}
+.menu-page .menu-more-wrap button:hover {
+  border-color: var(--color-brand-orange);
+  background: var(--color-warm-gray);
+  color: var(--color-white);
+}
