@@ -1,13 +1,21 @@
 /* 메뉴 상세 페이지 전용 스타일 */
+:root {
+  --menu-detail-header-height: 90px;
+}
+
 .menu-detail {
+  display: flex;
+  flex-direction: column;
   width: min(calc(100% - 48px), 1200px);
-  margin: 130px auto 112px;
+  min-height: calc(100vh - var(--menu-detail-header-height));
+  min-height: calc(100svh - var(--menu-detail-header-height));
+  margin: 0 auto;
 }
 .menu-detail__breadcrumb {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 32px;
+  margin: auto 0 20px;
   color: var(--text-secondary);
   font-size: 13px;
 }
@@ -20,17 +28,24 @@
   grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
   align-items: center;
   gap: clamp(40px, 6vw, 84px);
+  margin-bottom: auto;
 }
 .menu-detail__visual-wrap {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-width: 0;
 }
 .menu-detail__visual {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  min-height: 420px;
+  width: auto;
+  max-width: 100%;
+  height: min(calc(100vh - var(--menu-detail-header-height) - 160px), 560px);
+  height: min(calc(100svh - var(--menu-detail-header-height) - 160px), 560px);
+  min-height: 0;
   aspect-ratio: 4 / 5;
   overflow: hidden;
   border-radius: 16px;
@@ -42,7 +57,8 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center 60%;
 }
 .menu-detail__visual img[src=""] { display: none; }
 .menu-detail__arrow {
@@ -50,8 +66,8 @@
   z-index: 2;
   top: 50%;
   display: grid;
-  width: 46px;
-  height: 46px;
+  width: 48px;
+  height: 48px;
   place-items: center;
   padding: 0;
   transform: translateY(-50%);
@@ -67,18 +83,24 @@
 .menu-detail__arrow--prev { left: 16px; }
 .menu-detail__arrow--next { right: 16px; }
 .menu-detail__arrow:hover {
-  background: var(--color-brand-orange);
-  color: var(--color-white);
+  background: rgba(255, 255, 255, 1);
+  color: var(--text-primary);
 }
-.menu-detail__arrow[hidden],
+.menu-detail__arrow:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 3px;
+}
 .menu-detail__dots[hidden] {
   display: none !important;
 }
 .menu-detail__dots {
+  position: absolute;
+  right: 0;
+  bottom: -24px;
+  left: 0;
   display: flex;
   justify-content: center;
   gap: 8px;
-  margin-top: 16px;
 }
 .menu-detail__dots button {
   width: 8px;
@@ -97,10 +119,10 @@
   flex-direction: column;
   justify-content: center;
   min-width: 0;
-  padding: 28px 0;
+  padding: 8px 0;
 }
 .menu-detail__type {
-  margin: 0 0 12px;
+  margin: 0 0 8px;
   color: var(--text-brand);
   font-size: 14px;
   font-weight: 700;
@@ -116,39 +138,39 @@
   word-break: keep-all;
 }
 .menu-detail__english {
-  margin: 8px 0 0;
+  margin: 6px 0 0;
   color: var(--text-secondary);
   font-size: 13px;
   line-height: 1.5;
 }
 .menu-detail__description {
-  margin: 22px 0 0;
+  margin: 14px 0 0;
   color: var(--color-warm-gray);
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 15px;
+  line-height: 1.6;
   word-break: keep-all;
 }
 .menu-detail__recommend {
-  margin-top: 26px;
+  margin-top: 16px;
 }
 .menu-detail__recommend h2,
 .menu-detail__facts-wrap h2 {
-  margin: 0 0 12px;
+  margin: 0 0 8px;
   color: var(--text-primary);
   font-size: 15px;
   font-weight: 700;
 }
 .menu-detail__recommend ul {
   display: grid;
-  gap: 7px;
+  gap: 4px;
   margin: 0;
   padding-left: 19px;
   color: var(--text-secondary);
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 .menu-detail__facts-wrap {
-  margin-top: 26px;
+  margin-top: 16px;
 }
 .menu-detail__facts {
   margin: 0;
@@ -158,7 +180,7 @@
   display: grid;
   grid-template-columns: minmax(112px, .34fr) minmax(0, 1fr);
   gap: 16px;
-  padding: 12px 0;
+  padding: 7px 0;
   border-bottom: 1px solid var(--color-cream);
 }
 .menu-detail__facts dt {
@@ -168,9 +190,9 @@
 .menu-detail__facts dd {
   margin: 0;
   color: var(--text-primary);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.4;
   text-align: right;
   word-break: keep-all;
 }
@@ -179,9 +201,9 @@
   align-items: center;
   align-self: flex-start;
   justify-content: center;
-  min-height: 48px;
-  margin-top: 28px;
-  padding: 0 22px;
+  min-height: 44px;
+  margin-top: 16px;
+  padding: 0 20px;
   border: 1px solid var(--color-brand-orange);
   border-radius: 999px;
   background: var(--color-white);
@@ -196,8 +218,8 @@
   color: var(--color-white);
 }
 .menu-detail__related {
-  margin-top: 112px;
-  padding-top: 72px;
+  margin-top: 96px;
+  padding: 72px 0 80px;
   border-top: 1px solid var(--color-cream);
 }
 .menu-detail__related-heading {
@@ -279,16 +301,29 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
 }
+@media (max-width: 1024px) {
+  :root {
+    --menu-detail-header-height: 60px;
+  }
+}
 @media (max-width: 900px) {
   .menu-detail {
+    display: block;
+    width: min(calc(100% - 48px), 760px);
+    min-height: 0;
     margin: 112px auto 80px;
+  }
+  .menu-detail__breadcrumb {
+    margin: 0 0 22px;
   }
   .menu-detail__content {
     grid-template-columns: 1fr;
     gap: 32px;
+    margin-bottom: 0;
   }
   .menu-detail__visual {
-    min-height: 0;
+    width: 100%;
+    height: auto;
     max-height: 620px;
     aspect-ratio: 4 / 3;
   }
@@ -298,6 +333,14 @@
   .menu-detail__related {
     margin-top: 76px;
     padding-top: 56px;
+  }
+}
+@media (max-height: 699px) and (min-width: 901px) {
+  .menu-detail__visual {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    aspect-ratio: 4 / 5;
   }
 }
 @media (max-width: 600px) {
@@ -314,6 +357,12 @@
   .menu-detail__visual {
     aspect-ratio: 1 / 1;
   }
+  .menu-detail__arrow {
+    width: 48px;
+    height: 48px;
+  }
+  .menu-detail__arrow--prev { left: 12px; }
+  .menu-detail__arrow--next { right: 12px; }
   .menu-detail__info h1 {
     font-size: clamp(28px, 7vw, 34px);
     line-height: 1.25;
@@ -329,7 +378,7 @@
   .menu-detail__facts > div {
     grid-template-columns: 108px minmax(0, 1fr);
     gap: 10px;
-    padding: 11px 0;
+    padding: 7px 0;
   }
   .menu-detail__facts dd {
     font-size: 14px;
