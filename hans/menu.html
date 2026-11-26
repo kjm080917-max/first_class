@@ -3,123 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="한스케이크 메뉴를 소개합니다.">
+  <meta name="description" content="한스케이크의 다양한 케이크와 디저트 메뉴를 만나보세요.">
   <title>MENU | HANS CAKE</title>
+  <link rel="stylesheet" href="../css/default.css">
+  <link rel="stylesheet" href="../font/css/pretendardvariable.css">
+  <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/menu.css">
 </head>
 <body>
+<div id="wrap">
+  <header class="site-header">
+    <div class="site-header__bar"><div class="site-header__inner">
+      <a class="site-header__logo" href="index.html"><img src="/first_class/hans/img/logo.png" alt="HANS 케이크 로고"></a>
+      <nav class="site-nav" id="site-nav" aria-label="주요 메뉴">
+        <a class="is-current" href="menu.html">MENU</a><a href="store.html">STORE</a><a href="brand.html">HANS STORY</a><a href="event.html">EVENT</a><a href="special.html">SPECIAL</a>
+      </nav>
+      <div class="site-header__links"><a href="store.html">매장찾기</a><a href="franchise.html">가맹문의</a></div>
+      <button class="site-header__toggle" type="button" aria-label="메뉴 열기" aria-controls="site-nav" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div></div>
+    <div class="site-mega" aria-label="전체 메뉴"><div class="site-mega__inner">
+      <div class="site-mega__column"><a href="menu.html">전체메뉴</a><a href="menu.html">신메뉴</a><a href="menu.html">케이크</a><a href="menu.html">디저트</a><a href="menu.html">선물세트</a></div>
+      <div class="site-mega__column"><a href="store.html">매장찾기</a></div>
+      <div class="site-mega__column"><a href="brand.html">한스소개</a><a href="brand.html#brand-history">한스이야기</a></div>
+      <div class="site-mega__column"><a href="event.html">이벤트</a></div>
+      <div class="site-mega__column"><a href="special.html">스페셜케이크 안내</a></div>
+    </div></div>
+  </header>
 
-<header class="header">
-  <a href="index.html" class="logo"><img src="img/logo.png" alt="HANS 케이크 로고"></a>
-  <nav class="gnb" aria-label="주요 메뉴">
-    <a href="menu.html" class="on">MENU</a>
-    <a href="store.html">STORE</a>
-    <a href="brand.html">HANS STORY</a>
-    <a href="event.html">EVENT</a>
-    <a href="special.html">SPECIAL</a>
-  </nav>
-  <div class="util">
-    <a href="store.html">매장찾기</a>
-    <a href="franchise.html">가맹문의</a>
-  </div>
-</header>
+  <main>
+    <section class="menu-hero">
+      <div class="menu-hero__copy">
+        <p class="menu-eyebrow">HANS CAKE · MENU</p>
+        <h1>오늘을 더 달콤하게,<br><em>HANS MENU</em></h1>
+        <p>정성을 담아 만든 케이크와 디저트로<br>일상에 작은 행복을 더해보세요.</p>
+        <a class="menu-hero__link" href="#menu-list">메뉴 둘러보기 <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="menu-hero__visual" aria-hidden="true"><span>Sweet<br>Moments</span></div>
+    </section>
 
-<main>
-  <section class="page-title">
-    <h1>MENU</h1>
-    <p>한스의 케이크와 디저트로 오늘의 작은 행복을 만나보세요.</p>
-  </section>
+    <section class="menu-best section-shell" aria-labelledby="menu-best-title">
+      <div class="menu-section-heading">
+        <p class="menu-eyebrow">HANS PICK</p>
+        <h2 id="menu-best-title">한스의 <em>추천 메뉴</em></h2>
+        <p>많은 사랑을 받는 메뉴를 먼저 만나보세요.</p>
+      </div>
+      <div class="menu-best__grid">
+        <article class="menu-best-card"><a href="#menu-list"><div class="menu-thumb"><img src="img/menu/strawberry.png" alt="딸기 생크림 케이크" onerror="this.remove()"><span>BEST 01</span></div><div class="menu-card-copy"><p>CAKE</p><h3>딸기 생크림 케이크</h3><span>Strawberry Cream Cake</span></div></a></article>
+        <article class="menu-best-card"><a href="#menu-list"><div class="menu-thumb"><img src="img/menu/almond-chocolate.png" alt="아몬드 쇼콜라" onerror="this.remove()"><span>BEST 02</span></div><div class="menu-card-copy"><p>DESSERT</p><h3>아몬드 쇼콜라</h3><span>Almond Chocolat</span></div></a></article>
+        <article class="menu-best-card"><a href="#menu-list"><div class="menu-thumb"><img src="img/menu/season-cake.png" alt="시즌 케이크" onerror="this.remove()"><span>BEST 03</span></div><div class="menu-card-copy"><p>SEASON</p><h3>시즌 케이크</h3><span>Season Cake</span></div></a></article>
+      </div>
+    </section>
 
-  <div class="tabs" role="tablist">
-    <button class="tab on" data-filter="all" role="tab">전체</button>
-    <button class="tab" data-filter="cake" role="tab">케이크</button>
-    <button class="tab" data-filter="dessert" role="tab">디저트</button>
-    <button class="tab" data-filter="gift" role="tab">선물세트</button>
-  </div>
+    <section class="menu-list-section" id="menu-list" aria-labelledby="menu-list-title">
+      <div class="section-shell">
+        <div class="menu-section-heading menu-section-heading--center">
+          <p class="menu-eyebrow">ALL HANS MENU</p>
+          <h2 id="menu-list-title">한스 <em>전체 메뉴</em></h2>
+          <p>취향에 맞는 달콤한 메뉴를 골라보세요.</p>
+        </div>
+        <div class="menu-filter" role="group" aria-label="메뉴 카테고리 필터">
+          <button type="button" class="is-active" data-filter="all" aria-pressed="true">전체</button>
+          <button type="button" data-filter="cake" aria-pressed="false">케이크</button>
+          <button type="button" data-filter="dessert" aria-pressed="false">디저트</button>
+          <button type="button" data-filter="gift" aria-pressed="false">선물세트</button>
+        </div>
+        <ul class="menu-product-grid">
+          <li class="menu-product" data-category="cake"><a href="menu-detail.html?item=strawberry"><div class="menu-thumb"><img src="img/menu/strawberry.png" alt="딸기 생크림 케이크" onerror="this.remove()"></div><div class="menu-card-copy"><p>CAKE</p><h3>딸기 생크림 케이크</h3><span>부드러운 시트와 커스터드 크림, 산딸기 콩포트</span></div></a></li>
+          <li class="menu-product" data-category="dessert"><a href="menu-detail.html?item=almond-chocolate"><div class="menu-thumb"><img src="img/menu/almond-chocolate.png" alt="아몬드 쇼콜라" onerror="this.remove()"></div><div class="menu-card-copy"><p>DESSERT</p><h3>아몬드 쇼콜라</h3><span>좋은 초콜릿으로 정성껏 만든 수제 초콜릿</span></div></a></li>
+          <li class="menu-product" data-category="dessert"><a href="menu-detail.html?item=almond-delight"><div class="menu-thumb"><img src="img/menu/almond-delight.png" alt="아몬드 딜라이트" onerror="this.remove()"></div><div class="menu-card-copy"><p>DESSERT</p><h3>아몬드 딜라이트</h3><span>고소한 아몬드와 버터향이 가득한 쿠키</span></div></a></li>
+          <li class="menu-product" data-category="cake"><a href="menu-detail.html?item=season-cake"><div class="menu-thumb"><img src="img/menu/season-cake.png" alt="시즌 케이크" onerror="this.remove()"></div><div class="menu-card-copy"><p>SEASON</p><h3>시즌 케이크</h3><span>계절 과일로 만드는 한정 케이크</span></div></a></li>
+        </ul>
+        <ul class="menu-product-grid menu-more-items" id="menu-more-items" hidden>
+          <li class="menu-product" data-category="cake"><a href="menu-detail.html?item=cake-menu"><div class="menu-thumb"><img src="img/menu/cake-menu.png" alt="케이크 메뉴" onerror="this.remove()"></div><div class="menu-card-copy"><p>CAKE</p><h3>케이크 메뉴</h3><span>한스의 다양한 케이크 메뉴</span></div></a></li>
+          <li class="menu-product" data-category="dessert"><a href="menu-detail.html?item=dessert-menu"><div class="menu-thumb"><img src="img/menu/dessert-menu.png" alt="디저트 메뉴" onerror="this.remove()"></div><div class="menu-card-copy"><p>DESSERT</p><h3>디저트 메뉴</h3><span>커피와 함께 즐기기 좋은 디저트</span></div></a></li>
+          <li class="menu-product" data-category="gift"><a href="menu-detail.html?item=gift-set"><div class="menu-thumb"><img src="img/menu/gift-set.png" alt="선물세트" onerror="this.remove()"></div><div class="menu-card-copy"><p>GIFT</p><h3>선물세트</h3><span>소중한 사람에게 전하는 달콤한 선물</span></div></a></li>
+          <li class="menu-product" data-category="gift"><a href="menu-detail.html?item=gift-cookie"><div class="menu-thumb"><img src="img/menu/gift-cookie.png" alt="쿠키 선물세트" onerror="this.remove()"></div><div class="menu-card-copy"><p>GIFT</p><h3>쿠키 선물세트</h3><span>정성을 담아 준비한 쿠키 선물</span></div></a></li>
+        </ul>
+        <div class="menu-more-wrap"><button type="button" id="menu-more-button" aria-expanded="false" aria-controls="menu-more-items">메뉴 더보기 <span aria-hidden="true">＋</span></button></div>
+        <p class="menu-notice">※ 메뉴 이미지 및 제품 정보는 실제 판매 자료에 맞게 업데이트해 주세요.</p>
+      </div>
+    </section>
+  </main>
 
-  <section class="best">
-    <h2 class="sec-title"><span>추천메뉴</span></h2>
-    <ul class="best-list">
-      <li>
-        <a href="menu-detail.html?item=strawberry">
-          <div class="thumb round"><img src="img/menu/strawberry.png" alt="딸기 생크림 케이크" onerror="this.remove()"><em class="badge">BEST</em></div>
-          <strong>딸기 생크림 케이크</strong>
-          <span>Strawberry Cream Cake</span>
-        </a>
-      </li>
-      <li>
-        <a href="menu-detail.html?item=almond-chocolate">
-          <div class="thumb round"><img src="img/menu/almond-chocolate.png" alt="아몬드 쇼콜라" onerror="this.remove()"><em class="badge">BEST</em></div>
-          <strong>아몬드 쇼콜라</strong>
-          <span>Almond Chocolat</span>
-        </a>
-      </li>
-      <li>
-        <a href="menu-detail.html?item=season-cake">
-          <div class="thumb round"><img src="img/menu/season-cake.png" alt="시즌 케이크" onerror="this.remove()"><em class="badge">BEST</em></div>
-          <strong>시즌 케이크</strong>
-          <span>Season Cake</span>
-        </a>
-      </li>
-    </ul>
-  </section>
-
-  <section class="all">
-    <h2 class="sec-title"><span>전체메뉴</span></h2>
-    <ul class="grid">
-      <li data-cat="cake">
-        <a href="menu-detail.html?item=strawberry">
-          <div class="thumb"><img src="img/menu/strawberry.png" alt="" onerror="this.remove()"></div>
-          <strong>딸기 생크림 케이크</strong>
-          <p>부드러운 시트와 커스터드 크림, 산딸기 콩포트</p>
-        </a>
-      </li>
-      <li data-cat="dessert">
-        <a href="menu-detail.html?item=almond-chocolate">
-          <div class="thumb"><img src="img/menu/almond-chocolate.png" alt="" onerror="this.remove()"></div>
-          <strong>아몬드 쇼콜라</strong>
-          <p>좋은 초콜릿으로 정성껏 만든 수제 초콜릿</p>
-        </a>
-      </li>
-      <li data-cat="dessert">
-        <a href="menu-detail.html?item=almond-delight">
-          <div class="thumb"><img src="img/menu/almond-delight.png" alt="" onerror="this.remove()"></div>
-          <strong>아몬드 딜라이트</strong>
-          <p>고소한 아몬드와 버터향이 가득한 쿠키</p>
-        </a>
-      </li>
-      <li data-cat="cake">
-        <a href="menu-detail.html?item=season-cake">
-          <div class="thumb"><img src="img/menu/season-cake.png" alt="" onerror="this.remove()"></div>
-          <strong>시즌 케이크</strong>
-          <p>계절 과일로 만드는 한정 케이크</p>
-        </a>
-      </li>
-      <li data-cat="cake">
-        <a href="menu-detail.html?item=cake-menu">
-          <div class="thumb"><img src="img/menu/cake-menu.png" alt="" onerror="this.remove()"></div>
-          <strong>케이크 메뉴</strong>
-          <p>제품 설명을 입력하세요</p>
-        </a>
-      </li>
-      <li data-cat="dessert">
-        <a href="menu-detail.html?item=dessert-menu">
-          <div class="thumb"><img src="img/menu/dessert-menu.png" alt="" onerror="this.remove()"></div>
-          <strong>디저트 메뉴</strong>
-          <p>제품 설명을 입력하세요</p>
-        </a>
-      </li>
-      <li data-cat="gift">
-        <a href="menu-detail.html?item=gift-set">
-          <div class="thumb"><img src="img/menu/gift-set.png" alt="" onerror="this.remove()"></div>
-          <strong>선물세트</strong>
-          <p>제품 설명을 입력하세요</p>
-        </a>
-      </li>
-      <li data-cat="gift">
-        <a href="menu-detail.html?item=gift-cookie">
-          <div class="thumb"><img src="img/menu/gift-cookie.png" alt="" onerror="this.remove()"></div>
-          <strong>쿠키 선물세트</strong>
-          <p>제품 설명을 입력하세요</p>
-        </a>
-      </li>
+  <footer class="site-footer"><div class="site-footer__inner"><div class="site-footer__company"><a class="site-footer__logo" href="index.html" aria-label="HANS 홈"><img src="img/footer.png" alt="HANS CAKE"></a><div class="site-footer__info"><p>케이크로 전하는 특별한 순간, HANS</p><p>제품 및 매장 정보는 한스케이크 공식 홈페이지에서 확인하실 수 있습니다.</p><p>HANS CAKE&nbsp; | &nbsp;브랜드 및 매장 안내</p><p class="site-footer__copyright">Copyright 2011 HANS CAKE. All Rights Reserved.</p></div></div><nav class="site-footer__nav" aria-label="푸터 메뉴"><a class="is-current" href="menu.html">Menu</a><a href="store.html">Store</a><a href="brand.html">Hans Story</a><a href="event.html">Event</a><a href="special.html">Special</a><a class="site-footer__privacy" href="#">개인정보처리방침</a></nav></div></footer>
+</div>
+<button class="to-top" type="button" aria-label="맨 위로 이동"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<script src="js/menu.js"></script>
+</body>
+</html>
