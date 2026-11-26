@@ -7,7 +7,7 @@ const moreButton=document.querySelector('#menu-more-button'),moreItems=document.
 if(moreButton&&moreItems){moreButton.addEventListener('click',()=>{const expanded=moreButton.getAttribute('aria-expanded')==='true';moreButton.setAttribute('aria-expanded',String(!expanded));moreItems.hidden=expanded;moreButton.innerHTML=expanded?'메뉴 더보기 <span aria-hidden="true">＋</span>':'메뉴 접기 <span aria-hidden="true">－</span>';if(!expanded)moreItems.scrollIntoView({behavior:'smooth',block:'start'})})}
 const topButton=document.querySelector('.to-top');if(topButton){const update=()=>topButton.classList.toggle('is-show',window.scrollY>600);window.addEventListener('scroll',update,{passive:true});update();topButton.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}))}
 
-// 메뉴 페이지 HERO 슬라이더
+// 메뉴 페이지 HERO 슬라이더: 메인 페이지와 같은 Swiper 컨트롤
 const menuHeroSlider=document.querySelector('.menu-hero__swiper');
 if(menuHeroSlider&&typeof Swiper!=='undefined'){
   new Swiper(menuHeroSlider,{
@@ -23,11 +23,18 @@ if(menuHeroSlider&&typeof Swiper!=='undefined'){
     },
     pagination:{
       el:'.menu-hero__pagination',
-      type:'fraction'
+      type:'fraction',
+      formatFractionCurrent:number=>number,
+      formatFractionTotal:number=>number,
+      renderFraction:(currentClass,totalClass)=>
+        '<span class="'+currentClass+'"></span>'+
+        '<span class="fraction-divider"> | </span>'+
+        '<span class="'+totalClass+'"></span>'
     },
     scrollbar:{
       el:'.menu-hero__scrollbar',
-      draggable:true
+      draggable:true,
+      hide:false
     }
   });
 }
