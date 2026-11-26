@@ -74,3 +74,4 @@
 .menu-product[hidden]{
   display:none !important;
 }
+.menu-section-heading h2 .menu-heading-accent{font-style:normal;color:var(--color-brand-orange)}
