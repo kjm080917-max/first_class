@@ -18,11 +18,70 @@
 <div class="site-mega__column"><a href="store.html">매장찾기</a></div><div class="site-mega__column"><a href="brand.html">한스소개</a><a href="brand.html#brand-history">한스이야기</a></div><div class="site-mega__column"><a href="event.html">이벤트</a></div><div class="site-mega__column"><a href="special.html">스페셜케이크 안내</a></div>
 </div></div></header>
 <main>
-<section class="store-hero"><div class="store-hero__inner"><p class="store-eyebrow">HANS CAKE · STORE</p><h1>Find your<br><em>HANS STORE</em></h1><p>달콤한 케이크가 필요할 때,<br>가까운 한스 매장을 찾아보세요.</p><a class="store-hero__link" href="#store-search">매장 찾기 <span aria-hidden="true">↓</span></a></div><div class="store-hero__visual" aria-hidden="true"><span>STORE</span></div></section>
-<section class="store-search section-wrap" id="store-search"><div class="store-heading"><p class="store-eyebrow">STORE SEARCH</p><h2>가까운 매장을<br><em>찾아보세요</em></h2><p>지역 또는 매장명을 입력해 매장 정보를 확인할 수 있습니다.</p></div>
-<div class="store-search__panel"><label for="store-keyword">지역 / 매장명</label><div class="store-search__form"><input id="store-keyword" type="search" placeholder="예: 강남, 분당, 매장명"><button id="store-search-button" type="button">검색하기 <span aria-hidden="true">↗</span></button></div><p class="store-search__hint">검색어를 입력하면 등록된 매장 목록에서 찾아볼 수 있습니다.</p></div>
-<div class="store-results"><div class="store-results__top"><h3>매장 안내</h3><p id="store-count" aria-live="polite">매장 정보를 준비 중입니다.</p></div><div class="store-results__grid" id="store-list"><article class="store-empty"><span>HANS STORE</span><h3>매장 정보 업데이트 예정</h3><p>정확한 매장명과 주소, 운영시간은 공식 자료 확인 후 등록해 주세요.</p></article></div><p class="store-notice">※ 현재는 매장찾기 화면 시안입니다. 실제 매장 데이터 및 지도 서비스는 추후 연결이 필요합니다.</p></section>
-<section class="store-bottom"><div><p class="store-eyebrow">HANS PARTNER</p><h2>한스와 함께할<br><em>파트너를 찾습니다.</em></h2></div><a href="franchise.html">가맹 문의하기 <span aria-hidden="true">↗</span></a></section>
+<section class="store-page section-wrap" id="store-search">
+  <header class="store-page__heading">
+    <h1>매장찾기</h1>
+    <p>내 주변 한스 매장을 찾아보세요!</p>
+  </header>
+
+  <nav class="store-tabs" aria-label="매장 관련 메뉴">
+    <a class="is-active" href="store.html" aria-current="page">매장찾기</a>
+    <a href="franchise.html">고객문의</a>
+  </nav>
+
+  <div class="store-finder">
+    <aside class="store-panel" aria-label="매장 목록">
+      <div class="store-panel__top">
+        <h2>한스 매장찾기</h2>
+        <button class="store-search-icon" id="store-search-button" type="button" aria-label="매장 검색">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
+        </button>
+      </div>
+      <label class="store-search-field" for="store-keyword">
+        <span class="sr-only">매장명 또는 지역 검색</span>
+        <input id="store-keyword" type="search" placeholder="매장명 또는 지역을 검색하세요">
+      </label>
+      <div class="store-filters">
+        <label><span class="sr-only">정렬 방식</span>
+          <select id="store-sort">
+            <option value="registered">등록순</option>
+            <option value="region">지역순</option>
+          </select>
+        </label>
+        <label><span class="sr-only">지역 선택</span>
+          <select id="store-region">
+            <option value="all">전체 지역</option>
+            <option value="서울">서울</option>
+            <option value="경기">경기</option>
+            <option value="인천">인천</option>
+            <option value="부산">부산</option>
+            <option value="대전">대전</option>
+          </select>
+        </label>
+      </div>
+      <p class="store-list-count" id="store-count" aria-live="polite">매장 목록을 불러오는 중입니다.</p>
+      <div class="store-list" id="store-list"></div>
+      <nav class="store-pagination" id="store-pagination" aria-label="매장 목록 페이지"></nav>
+    </aside>
+
+    <section class="store-map-panel" aria-label="매장 위치 지도">
+      <!-- 지도 API 연결 위치: 지도 SDK 로드 후 아래 #map 요소에 지도를 초기화하세요. -->
+      <div id="map" class="store-map">
+        <div class="store-map__fallback" id="map-fallback">
+          <span class="store-map__pin" aria-hidden="true">●</span>
+          <strong>지도를 불러올 수 없습니다</strong>
+          <p>지도 서비스 연결 후 매장 위치를 확인할 수 있습니다.</p>
+        </div>
+      </div>
+      <div class="store-map__selection" id="store-map-selection" aria-live="polite">
+        <span>선택한 매장</span>
+        <strong>목록에서 매장을 선택해 주세요.</strong>
+        <p>지도 API 연결 전에는 위치 이동 및 마커 기능이 표시되지 않습니다.</p>
+      </div>
+    </section>
+  </div>
+  <p class="store-data-notice">※ 화면 확인을 위한 예시 데이터이며 실제 한스케이크 매장 정보가 아닙니다.</p>
+</section>
 </main>
 <footer class="site-footer"><div class="site-footer__inner"><div class="site-footer__company"><a class="site-footer__logo" href="index.html" aria-label="HANS 홈"><img src="img/footer.png" alt="HANS CAKE"></a><div class="site-footer__info"><p>케이크로 전하는 특별한 순간, HANS</p><p>제품 및 매장 정보는 한스케이크 공식 홈페이지에서 확인하실 수 있습니다.</p><p>HANS CAKE&nbsp; | &nbsp;브랜드 및 매장 안내</p><p class="site-footer__copyright">Copyright 2011 HANS CAKE. All Rights Reserved.</p></div></div><nav class="site-footer__nav" aria-label="푸터 메뉴"><a href="menu.html">Menu</a><a class="is-current" href="store.html">Store</a><a href="brand.html">Hans Story</a><a href="index.html#event">Event</a><a href="special.html">Special</a><a class="site-footer__privacy" href="#">개인정보처리방침</a></nav></div></footer></div>
 <button class="to-top" type="button" aria-label="맨 위로 이동"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button><script src="js/store.js"></script></body></html>
