@@ -26,3 +26,31 @@
   height:auto;
   object-fit:contain;
 }
+
+
+/* 이미지 비율이 달라져도 화살표는 이미지 좌우 중앙에 고정 */
+.menu-detail__visual-wrap{
+  position:relative;
+  display:block;
+  min-width:0;
+}
+.menu-detail__visual-wrap .menu-detail__visual{
+  width:100%;
+  min-width:0;
+}
+.menu-detail__arrow{
+  position:absolute;
+  top:50%;
+  z-index:3;
+  flex:none;
+  transform:translateY(-50%);
+}
+.menu-detail__arrow:hover{
+  transform:translateY(-50%) scale(1.06);
+}
+.menu-detail__arrow--prev{left:16px}
+.menu-detail__arrow--next{right:16px}
+@media(max-width:760px){
+  .menu-detail__arrow--prev{left:10px}
+  .menu-detail__arrow--next{right:10px}
+}
