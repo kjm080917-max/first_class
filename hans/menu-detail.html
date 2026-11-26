@@ -138,6 +138,12 @@
     imageIndex=(index+product.images.length)%product.images.length;
     const src=product.images[imageIndex];
     visual.innerHTML='<img src="'+src+'" alt="'+product.name+'">';
+    const productImage=visual.querySelector("img");
+    productImage.addEventListener("error",()=>{
+      visual.textContent="제품 이미지를 준비 중입니다";
+      visual.classList.add("menu-detail__visual--empty");
+    },{once:true});
+    visual.classList.remove("menu-detail__visual--empty");
     visual.setAttribute("aria-label",product.name+" 이미지 "+(imageIndex+1));
     dots.innerHTML=product.images.map((_,i)=>'<button type="button" aria-label="이미지 '+(i+1)+' 보기" aria-current="'+(i===imageIndex?'true':'false')+'" data-index="'+i+'"></button>').join("");
     const hasMultiple=product.images.length>1;
@@ -155,7 +161,7 @@
   const related=order.filter(id=>id!==key).slice(0,3);
   $("related-products").innerHTML=related.map(id=>{
     const item=products[id];
-    return '<article class="menu-detail__related-card"><a href="menu-detail.html?item='+id+'"><div class="menu-detail__related-image"><img src="'+item.images[0]+'" alt="'+item.name+'"></div><div class="menu-detail__related-copy"><p>'+item.category+'</p><h3>'+item.name+'</h3><span>'+item.description.split(".")[0]+'</span></div></a></article>';
+    return '<article class="menu-detail__related-card"><a href="menu-detail.html?item='+id+'"><div class="menu-detail__related-image"><img src="'+item.images[0]+'" alt="'+item.name+'" onerror="this.style.display=\'none\';this.parentElement.textContent=\'이미지 준비 중\'"></div><div class="menu-detail__related-copy"><p>'+item.category+'</p><h3>'+item.name+'</h3><span>'+item.description.split(".")[0]+'</span></div></a></article>';
   }).join("");
   document.title=product.name+" | HANS CAKE";
 })();
