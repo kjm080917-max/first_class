@@ -139,3 +139,32 @@
   .menu-hero .hero-copy p{font-size:14px}
   .menu-hero .menu-hero__link{margin-top:18px}
 }
+
+
+/* 전체 메뉴 6종 구성: 데스크톱 3열, 태블릿·모바일 2열 */
+.menu-product-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:28px 22px;
+}
+.menu-product .menu-thumb{
+  aspect-ratio:4/3;
+  background:#f7f3f0;
+}
+.menu-product .menu-thumb img{
+  z-index:1;
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .45s ease;
+}
+.menu-product:hover .menu-thumb img{transform:scale(1.045)}
+.menu-product .menu-card-copy{min-height:132px}
+@media(max-width:900px){
+  .menu-product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+}
+@media(max-width:600px){
+  .menu-product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 10px}
+  .menu-product .menu-thumb{aspect-ratio:1/1}
+  .menu-product .menu-card-copy{min-height:120px}
+}
