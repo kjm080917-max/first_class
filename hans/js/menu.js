@@ -6,3 +6,28 @@ filterButtons.forEach(button=>button.addEventListener('click',()=>{const filter=
 const moreButton=document.querySelector('#menu-more-button'),moreItems=document.querySelector('#menu-more-items');
 if(moreButton&&moreItems){moreButton.addEventListener('click',()=>{const expanded=moreButton.getAttribute('aria-expanded')==='true';moreButton.setAttribute('aria-expanded',String(!expanded));moreItems.hidden=expanded;moreButton.innerHTML=expanded?'메뉴 더보기 <span aria-hidden="true">＋</span>':'메뉴 접기 <span aria-hidden="true">－</span>';if(!expanded)moreItems.scrollIntoView({behavior:'smooth',block:'start'})})}
 const topButton=document.querySelector('.to-top');if(topButton){const update=()=>topButton.classList.toggle('is-show',window.scrollY>600);window.addEventListener('scroll',update,{passive:true});update();topButton.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}))}
+
+// 메뉴 페이지 HERO 슬라이더
+const menuHeroSlider=document.querySelector('.menu-hero__swiper');
+if(menuHeroSlider&&typeof Swiper!=='undefined'){
+  new Swiper(menuHeroSlider,{
+    direction:'horizontal',
+    loop:true,
+    speed:700,
+    autoplay:window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      ? false
+      : {delay:5000,disableOnInteraction:false,pauseOnMouseEnter:true},
+    navigation:{
+      nextEl:'.menu-hero-next',
+      prevEl:'.menu-hero-prev'
+    },
+    pagination:{
+      el:'.menu-hero__pagination',
+      type:'fraction'
+    },
+    scrollbar:{
+      el:'.menu-hero__scrollbar',
+      draggable:true
+    }
+  });
+}
