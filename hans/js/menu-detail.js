@@ -1,4 +1,7 @@
 const menuDetails={
+ "xmas-fraisier":{type:"CHRISTMAS CAKE",title:"X-mas 스트로베리 프레지에",description:"크리스마스 시즌을 더욱 특별하게 만들어 줄 스트로베리 프레지에 케이크.",image:"img/sp_cake02.png"},
+ "xmas-ganache":{type:"CHRISTMAS CAKE",title:"X-mas 사각가나슈 S",description:"연말의 달콤한 순간을 함께하는 크리스마스 사각가나슈 케이크.",image:"img/sp_cake03.png"},
+ "xmas-strawberry":{type:"CHRISTMAS CAKE",title:"X-mas 한스 딸기생크림 S",description:"한스의 딸기 생크림 케이크로 완성하는 따뜻한 크리스마스 테이블.",image:"img/sp_cake04.png"},
  strawberry:{type:"CAKE",title:"딸기 생크림 케이크",description:"부드러운 화이트 시트와 달콤한 커스터드 크림, 새콤한 산딸기 콩포트가 어우러진 케이크."},
  "almond-chocolate":{type:"DESSERT",title:"아몬드 쇼콜라",description:"품질 좋은 초콜릿으로 정성을 담아 만든 수제 초콜릿."},
  "almond-delight":{type:"DESSERT",title:"아몬드 딜라이트",description:"고소한 아몬드와 버터향이 가득한 고급스러운 쿠키."},
@@ -11,8 +14,10 @@ const item=menuDetails[key]||menuDetails.strawberry;
 document.getElementById("detail-type").textContent=item.type;
 document.getElementById("detail-title").textContent=item.title;
 document.getElementById("detail-description").textContent=item.description;
+const detailVisual=document.getElementById("detail-image");
+if(item.image&&detailVisual){detailVisual.innerHTML=`<img src="${item.image}" alt="${item.title}">`;detailVisual.setAttribute("aria-label",item.title);detailVisual.classList.add("has-product-image");}
 document.title=item.title+" | HANS CAKE";
-const menuOrder=["strawberry","almond-chocolate","almond-delight","cake-menu","season-cake","dessert-menu"];
+const menuOrder=["xmas-fraisier","xmas-ganache","xmas-strawberry","strawberry","almond-chocolate","almond-delight","cake-menu","season-cake","dessert-menu"];
 const moveMenu=(direction)=>{const current=menuOrder.indexOf(key);const next=(current+direction+menuOrder.length)%menuOrder.length;location.href="menu-detail.html?item="+menuOrder[next]};
 document.querySelector(".menu-detail__arrow--prev")?.addEventListener("click",()=>moveMenu(-1));
 document.querySelector(".menu-detail__arrow--next")?.addEventListener("click",()=>moveMenu(1));
