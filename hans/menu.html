@@ -78,7 +78,26 @@
 </main>
 <script>
 (function(){
+  var xmas=[
+    {id:'xmas-fraisier',name:'X-mas 스트로베리 프레지에',en:'X-mas Strawberry Fraisier',img:'img/sp_cake02.png'},
+    {id:'xmas-ganache',name:'X-mas 사각가나슈 S',en:'X-mas Square Ganache S',img:'img/sp_cake03.png'},
+    {id:'xmas-strawberry',name:'X-mas 한스 딸기생크림 S',en:'X-mas HANS Strawberry Cream S',img:'img/sp_cake04.png'},
+    {id:'xmas-cheese-tart-mini',name:'X-mas 딸기 치즈 타르트 mini',en:'X-mas Strawberry Cheese Tart Mini',img:'img/sp_cake05.png'}
+  ];
+  var products=[
+    {id:'almond-delight',cat:'dessert',label:'쿠키',name:'아몬드 딜라이트',desc:'고소한 아몬드가 어우러진 바삭한 쿠키',img:'img/img01.png'},
+    {id:'almond-chocolate',cat:'dessert',label:'초콜릿',name:'아몬드 쇼콜라',desc:'진한 초콜릿의 풍미를 담은 아몬드 초콜릿',img:'img/img02.png'},
+    {id:'carrot-cake',cat:'cake',label:'케이크',name:'당근케이크',desc:'당근의 은은한 풍미와 부드러운 크림이 어우러진 케이크',img:'img/img03.png'},
+    {id:'valrhona-mini',cat:'cake',label:'케이크',name:'발로나초코 mini',desc:'진한 발로나 초콜릿의 풍미를 담은 미니 케이크',img:'img/img04.png'},
+    {id:'strawberry',cat:'cake',label:'케이크',name:'딸기 생크림 케이크',desc:'부드러운 시트와 산뜻한 딸기가 어우러진 케이크',img:'img/img05.png'},
+    {id:'white-mango-cream',cat:'cake',label:'케이크',name:'화이트망고 생크림',desc:'화이트망고의 달콤하고 산뜻한 풍미를 담은 생크림 케이크',img:'img/img08.png'},
+    {id:'roll-cake',cat:'cake',label:'롤',name:'롤케이크',desc:'부드러운 시트와 크림이 어우러진 롤 케이크',img:'img/img_09.png'}
+  ];
+  var $=function(id){return document.getElementById(id);};
+  var makeImg=function(src){return '<img src="'+src+'" alt="" onerror="this.remove()">';};
+  var detail=function(id){return 'menu-detail.html?item='+id;};
   var heroSlides=document.querySelectorAll('.hero-sec .swiper-slide:not(.swiper-slide-duplicate)');
+document.querySelectorAll('.hero-sec .swiper-slide:not(.swiper-slide-duplicate)');
   var heroCopy=document.querySelector('.hero-copy');
   var heroTimer;
   function updateHeroCopy(index){
