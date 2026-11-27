@@ -151,12 +151,12 @@ if (form) {
     };
 
     // TODO: 실제 서비스 오픈 전 상담 신청 API 또는 관리 시트 연동 필요
-    console.log("[가맹 상담 신청 - 데모]", application);
+    console.log("[가맹 상담 신청]", application);
 
     isSubmitting = true;
     submitButton.disabled = true;
     submitButton.textContent = "접수 처리 중...";
-    feedback.textContent = "상담 신청이 접수되었습니다. (현재는 화면 확인용으로 실제 전송되지는 않습니다.)";
+    feedback.textContent = "온라인 접수 기능은 아직 연결되지 않았습니다. 전화 상담을 이용해 주세요.";
 
     window.setTimeout(() => {
       isSubmitting = false;
