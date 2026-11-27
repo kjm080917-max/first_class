@@ -35,33 +35,10 @@
 
 <main class="mn">
   <div class="visual hero-sec" id="top">
-  <div class="hero-copy" aria-live="polite">
-    <h1>HANS STORY</h1>
-    <p>케이크는 언제부터 우리에게 ‘힐링푸드’가 되었을까요?</p>
-  </div>
-  <div class="swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide" data-title="HANS STORY" data-desc="케이크는 언제부터 우리에게 ‘힐링푸드’가 되었을까요?">
-        <img src="img/hero.png" alt="한스 스토리 케이크 이미지" class="pc">
-        <img src="img/hero_m.jpg" alt="한스 스토리 케이크 이미지" class="mo">
-      </div>
-      <div class="swiper-slide" data-title="HANS CAKE" data-desc="한스케이크 생크림 딸기 케이크">
-        <img src="img/jeminai.png" alt="한스 생크림 딸기 케이크" class="pc">
-        <img src="img/jeminai_m.jpg" alt="한스 생크림 딸기 케이크" class="mo">
-      </div>
-      <div class="swiper-slide" data-title="HANS MENU" data-desc="정성을 담아 만든 한스의 케이크">
-        <img src="img/cake.png" alt="정성을 담아 만든 한스의 케이크" class="pc">
-        <img src="img/cake_m.png" alt="정성을 담아 만든 한스의 케이크" class="mo">
-      </div>
-    </div>
-    <div class="hero-controls">
-      <div class="swiper-scrollbar" aria-label="슬라이드 진행 상태"></div>
-      <div class="swiper-pagination" aria-label="현재 슬라이드"></div>
-      <div class="hero-arrows">
-        <button type="button" class="hero-prev" aria-label="이전 슬라이드"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18 9 12l6-6"/></svg></button>
-        <button type="button" class="hero-next" aria-label="다음 슬라이드"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></button>
-      </div>
-    </div>
+  <img class="menu-hero-image" src="img/hero.png" alt="한스 케이크와 디저트">
+  <div class="hero-copy">
+    <h1>HANS MENU</h1>
+    <p>연말을 더 달콤하게, 정성을 담아 만든 케이크와 디저트</p>
   </div>
 </div>
   <section class="mn__section"><div class="mn__inner">
@@ -96,36 +73,6 @@
   var $=function(id){return document.getElementById(id);};
   var makeImg=function(src){return '<img src="'+src+'" alt="" onerror="this.remove()">';};
   var detail=function(id){return 'menu-detail.html?item='+id;};
-  var heroSlides=document.querySelectorAll('.hero-sec .swiper-slide:not(.swiper-slide-duplicate)');
-document.querySelectorAll('.hero-sec .swiper-slide:not(.swiper-slide-duplicate)');
-  var heroCopy=document.querySelector('.hero-copy');
-  var heroTimer;
-  function updateHeroCopy(index){
-    var slide=heroSlides[index];
-    if(!slide||!heroCopy)return;
-    clearTimeout(heroTimer);
-    heroTimer=setTimeout(function(){
-      if(slide.dataset.title)heroCopy.querySelector('h1').textContent=slide.dataset.title;
-      if(slide.dataset.desc)heroCopy.querySelector('p').textContent=slide.dataset.desc;
-    },350);
-  }
-  new Swiper('.hero-sec > .swiper',{
-    direction:'horizontal',
-    loop:true,
-    autoplay:window.matchMedia('(prefers-reduced-motion: reduce)').matches?false:{delay:5000,disableOnInteraction:false,pauseOnMouseEnter:true},
-    on:{slideChange:function(sw){updateHeroCopy(sw.realIndex);}},
-    navigation:{nextEl:'.hero-next',prevEl:'.hero-prev'},
-    pagination:{
-      el:'.swiper-pagination',
-      type:'fraction',
-      formatFractionCurrent:function(number){return number;},
-      formatFractionTotal:function(number){return number;},
-      renderFraction:function(currentClass,totalClass){
-        return '<span class="'+currentClass+'"></span><span class="fraction-divider"> | </span><span class="'+totalClass+'"></span>';
-      }
-    },
-    scrollbar:{el:'.hero-sec .swiper-scrollbar',draggable:true,hide:false}
-  });
   $('mnXmasGrid').innerHTML=xmas.map(function(p){return '<a class="mn-xmas__card" href="'+detail(p.id)+'"><div class="mn-xmas__image">'+makeImg(p.img)+'<span class="mn-xmas__badge">NEW</span></div><div class="mn-xmas__copy"><small>시즌</small><h3>'+p.name+'</h3><p>'+p.en+'</p></div></a>';}).join('');
   var categories=[['all','전체'],['cake','케이크'],['dessert','디저트'],['gift','선물세트']];
   $('mnTabs').innerHTML=categories.map(function(c,i){return '<button type="button" class="mn-tab'+(i===0?' is-active':'')+'" data-category="'+c[0]+'">'+c[1]+'</button>';}).join('');
