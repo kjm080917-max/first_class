@@ -32,63 +32,7 @@
     </div></div>
   </header>
 
-  <style>
-.mn{--mn-orange:#f15a3b;--mn-ink:#171514;--mn-muted:#77716d;--mn-paper:#faf8f6;padding-top:90px;color:var(--mn-ink);background:#fff}
-.mn *{box-sizing:border-box}
-.mn a{color:inherit;text-decoration:none}
-.mn img{display:block;width:100%}
-.mn__inner{width:min(1080px,calc(100% - 48px));margin:0 auto}
-.mn__heading{text-align:center;margin-bottom:42px}
-.mn__heading small{display:block;margin-bottom:10px;font-size:11px;color:#777}
-.mn__heading h2{font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-.055em;line-height:1.25}
-.mn__heading h2 em{font-style:normal;color:var(--mn-orange)}
-.mn__heading p{margin-top:12px;font-size:12px;color:var(--mn-muted)}
-.mn-hero{position:relative;height:clamp(320px,39vw,520px);overflow:hidden;background:#ddd}
-.mn-hero__slides,.mn-hero__slide{position:absolute;inset:0}
-.mn-hero__slide{opacity:0;transition:opacity .7s}
-.mn-hero__slide.is-active{opacity:1}
-.mn-hero__slide img{height:100%;object-fit:cover;object-position:center}
-.mn-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.36),transparent 55%);pointer-events:none}
-.mn-hero__copy{position:absolute;z-index:2;left:20px;right:20px;bottom:66px;text-align:center;color:#fff}
-.mn-hero__copy h1{font-size:clamp(38px,6vw,66px);font-weight:800;letter-spacing:-.045em;line-height:1}
-.mn-hero__copy p{margin-top:16px;font-size:13px;font-weight:600}
-.mn-hero__controls{position:absolute;z-index:3;left:50%;bottom:20px;display:flex;align-items:center;gap:12px;width:min(560px,calc(100% - 48px));transform:translateX(-50%);color:#fff;font-size:10px}
-.mn-hero__progress{height:1px;flex:1;background:rgba(255,255,255,.55)}
-.mn-hero__progress span{display:block;width:0;height:100%;background:#fff}
-.mn-hero__controls button{padding:0;border:0;background:none;color:#fff;font-size:17px;cursor:pointer}
-.mn__section{padding:48px 0 70px}
-.mn-xmas__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-.mn-xmas__card{min-width:0}
-.mn-xmas__image{position:relative;overflow:hidden;aspect-ratio:1.28/1;background:#f2efeb}
-.mn-xmas__image img{height:100%;object-fit:cover;transition:transform .4s}
-.mn-xmas__card:hover img{transform:scale(1.04)}
-.mn-xmas__badge{position:absolute;top:10px;left:10px;padding:5px 8px;border-radius:20px;background:#38352f;color:#fff;font-size:9px;font-weight:700}
-.mn-xmas__copy{padding:12px 3px 0}
-.mn-xmas__copy small{font-size:10px;color:#777}
-.mn-xmas__copy h3{margin-top:6px;font-size:13px;font-weight:750;line-height:1.4}
-.mn-xmas__copy p{margin-top:5px;font-size:10px;line-height:1.5;color:var(--mn-muted)}
-.mn-products{padding:52px 0 66px;background:var(--mn-paper)}
-.mn-products .mn__heading{margin-bottom:28px}
-.mn-tabs{display:flex;justify-content:center;gap:7px;margin-bottom:20px}
-.mn-tab{min-width:56px;padding:8px 14px;border:1px solid #e8e3df;border-radius:20px;background:#fff;color:#555;font-size:10px;cursor:pointer}
-.mn-tab.is-active{border-color:var(--mn-orange);background:var(--mn-orange);color:#fff}
-.mn-product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.mn-product[hidden]{display:none}
-.mn-product{min-width:0;overflow:hidden;background:#fff}
-.mn-product__image{display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;background:#fff}
-.mn-product__image img{width:100%;height:100%;padding:22px;object-fit:contain}
-.mn-product__copy{padding:14px 16px 18px}
-.mn-product__copy small{font-size:10px;color:#777}
-.mn-product__copy h3{margin-top:5px;font-size:13px;font-weight:750}
-.mn-product__copy p{margin-top:5px;font-size:10px;line-height:1.5;color:var(--mn-muted)}
-.mn-more-wrap{display:flex;justify-content:center;margin-top:24px}
-.mn-more{display:inline-flex;align-items:center;gap:16px;padding:9px 17px;border:1px solid #efb2a5;border-radius:22px;background:transparent;color:var(--mn-orange);font-size:10px;cursor:pointer}
-.mn-more:hover{background:var(--mn-orange);color:#fff}
-.mn-note{margin-top:14px;text-align:right;font-size:9px;color:#8c8580}
-@media(max-width:900px){.mn{padding-top:60px}.mn__section{padding:42px 0 54px}.mn-xmas__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 14px}.mn-product-grid{gap:12px}.mn__heading{margin-bottom:30px}}
-@media(max-width:600px){.mn__inner{width:calc(100% - 32px)}.mn-hero{height:420px}.mn-hero__copy{bottom:72px}.mn-hero__copy h1{font-size:42px}.mn-hero__copy p{font-size:11px}.mn__heading h2{font-size:26px}.mn__heading p{font-size:11px;line-height:1.6}.mn-xmas__grid{gap:18px 10px}.mn-xmas__copy h3{font-size:12px}.mn-xmas__copy p{font-size:9px}.mn-products{padding:44px 0 50px}.mn-tabs{gap:5px}.mn-tab{min-width:0;padding:8px 12px;font-size:9px}.mn-product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.mn-product__copy{padding:11px}.mn-product__copy h3{font-size:12px}.mn-product__copy p{font-size:9px}}
-@media(prefers-reduced-motion:reduce){.mn *{transition:none!important}}
-</style>
+
 <main class="mn">
   <section class="mn-hero" aria-label="한스 메뉴 슬라이드">
     <div class="mn-hero__slides" id="mnHeroSlides"></div>
@@ -104,7 +48,7 @@
     <div class="mn-tabs" id="mnTabs" role="group" aria-label="메뉴 카테고리"></div>
     <div class="mn-product-grid" id="mnProductGrid"></div>
     <div class="mn-more-wrap"><button class="mn-more" type="button" id="mnMore">메뉴 더보기 <span>＋</span></button></div>
-    <p class="mn-note">※ 메뉴 이미지 및 제품 정보는 실제 판매 제품에 맞게 업데이트해 주세요.</p>
+    <!-- ※ 메뉴 이미지 및 제품 정보는 실제 판매 제품에 맞게 업데이트해 주세요. -->
   </div></section>
 </main>
 <script>
