@@ -132,19 +132,28 @@
 }
 
 
-/* 제품 디자인 그룹의 장식용 숫자 배지를 간결한 포인트 라인으로 변경 */
+/* 제품 디자인 그룹을 설명하는 텍스트 라벨 */
 .brand-design-group__title>span {
-  display:block;
-  flex:0 0 34px;
-  width:34px;
-  height:4px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
+  width:auto;
+  min-width:74px;
+  height:34px;
+  padding:0 12px;
   border-radius:999px;
   background:var(--color-brand-orange);
+  color:#fff;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.06em;
 }
 @media(max-width:600px) {
   .brand-design-group__title>span {
-    flex-basis:28px;
-    width:28px;
-    height:4px;
+    min-width:66px;
+    height:30px;
+    padding:0 9px;
+    font-size:10px;
   }
 }
