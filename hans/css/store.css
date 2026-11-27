@@ -9,7 +9,7 @@
 .store-page__heading h1{margin:0;color:var(--text-primary);font-size:clamp(28px,3vw,40px);font-weight:800;letter-spacing:-.04em}
 .store-page__heading p{margin:10px 0 0;color:var(--text-secondary);font-size:14px}
 .store-finder{
-  margin-top:40px;display:grid;grid-template-columns:350px minmax(0,1fr);height:660px;overflow:hidden;border:1px solid rgba(75,71,70,.1);background:var(--color-white)}
+  margin-top:40px;display:grid;grid-template-columns:350px minmax(0,1fr);height:660px;overflow:hidden;border:1px solid rgba(75,71,70,.1);border-radius:14px;background:var(--color-white)}
 .store-panel{display:flex;min-width:0;flex-direction:column;border-right:1px solid rgba(75,71,70,.14);background:var(--color-white)}
 .store-panel__top{display:flex;align-items:center;justify-content:space-between;min-height:54px;padding:0 18px;border-bottom:1px solid rgba(75,71,70,.14)}
 .store-panel__top h2{margin:0;color:var(--text-primary);font-size:17px;font-weight:800}
