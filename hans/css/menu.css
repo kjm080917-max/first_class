@@ -278,3 +278,11 @@
 @media (prefers-reduced-motion: reduce) {
   .menu-page .mn *, .menu-page .mn *::before, .menu-page .mn *::after { transition: none !important; }
 }
+
+
+/* 메인 페이지와 동일한 히어로 영역 사용 */
+.menu-page .mn { padding-top: 0; }
+.menu-page .hero-sec { margin-top: 90px; }
+@media (max-width: 1024px) {
+  .menu-page .hero-sec { margin-top: 60px; }
+}
