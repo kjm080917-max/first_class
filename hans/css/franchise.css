@@ -1,4 +1,242 @@
-/* FRANCHISE page extension — HANS Design System */.franchise-visual{position:relative;min-height:clamp(540px,65vw,740px);margin-top:90px;background:var(--color-peach);overflow:hidden;display:flex;align-items:center}.franchise-visual__copy{position:relative;z-index:1;width:min(calc(100% - 48px),1400px);margin:auto;padding:90px 0}.franchise-eyebrow{margin:0 0 20px;color:var(--text-brand);font-size:13px;font-weight:800;letter-spacing:.12em}.franchise-visual h1{margin:0;font-size:clamp(60px,8vw,120px);font-weight:800;line-height:.95;letter-spacing:-.06em}.franchise-visual h1 em,.franchise-section-title h2 em{color:var(--text-brand);font-style:normal}.franchise-visual__copy>p:last-child{margin:28px 0 0;font-size:clamp(18px,2vw,26px);line-height:1.6;font-weight:500;word-break:keep-all}.franchise-visual__image{position:absolute;inset:0 0 0 48%;display:flex;justify-content:center;align-items:center;background:var(--color-cream);color:var(--text-secondary);font-size:12px;letter-spacing:.12em}.franchise-visual__image:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--color-peach),transparent 60%)}.franchise-section-title h2{margin:0;font-size:clamp(42px,5vw,72px);font-weight:800;letter-spacing:-.04em;line-height:1.15}.franchise-section-title>p:last-child{margin:20px 0 0;color:var(--text-secondary);font-size:16px;line-height:1.6}.franchise-section-title--center{text-align:center}.franchise-intro__text{max-width:660px;margin:48px 0 0 auto}.franchise-intro__text>p:first-child{margin:0;font-size:clamp(20px,2.5vw,30px);font-weight:600;line-height:1.6;word-break:keep-all}.franchise-caution{margin:24px 0 0;padding:18px 20px;background:var(--color-peach);color:var(--text-secondary);font-size:14px;line-height:1.7;word-break:keep-all}.franchise-process{margin-top:0;padding-top:130px;background:var(--color-bage)}.franchise-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:56px 0 0;padding:0;list-style:none}.franchise-steps li{padding:28px 24px;background:#fff}.franchise-steps li>span{color:var(--text-brand);font-size:14px;font-weight:800}.franchise-steps h3{margin:24px 0 10px;font-size:22px;font-weight:800}.franchise-steps p{margin:0;color:var(--text-secondary);font-size:14px;line-height:1.7;word-break:keep-all}.franchise-form{max-width:850px;margin:48px auto 0}.franchise-form__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 20px}.franchise-field{display:flex;flex-direction:column;gap:10px}.franchise-field--wide{grid-column:1/-1}.franchise-field label{font-size:14px;font-weight:700}.franchise-field label span{color:var(--text-brand)}.franchise-field input,.franchise-field textarea{width:100%;padding:16px;border:1px solid var(--color-cream);border-radius:0;background:#fff;color:var(--text-primary);font:15px inherit}.franchise-field input:focus,.franchise-field textarea:focus{outline:2px solid var(--color-brand-orange);outline-offset:2px}.franchise-field textarea{resize:vertical}.franchise-consent{display:flex;align-items:center;gap:10px;margin:28px 0;color:var(--text-secondary);font-size:14px}.franchise-consent input{accent-color:var(--color-brand-orange)}.franchise-submit{display:flex;align-items:center;justify-content:space-between;width:100%;padding:18px 24px;border:0;background:var(--color-brand-orange);color:#fff;font-size:15px;font-weight:700;cursor:pointer}.franchise-submit:focus-visible{outline:2px solid var(--color-brand-orange);outline-offset:4px}.franchise-form__note{margin:16px 0 0;color:#888;font-size:13px;line-height:1.6;word-break:keep-all}.franchise-form__feedback{margin:14px 0 0;color:var(--text-brand);font-size:14px;font-weight:600}.franchise-form__feedback:empty{display:none}@media(max-width:1024px){.franchise-process{padding-top:90px}.franchise-visual{margin-top:60px;min-height:620px}.franchise-visual__image{inset:0 0 0 24%}.franchise-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.franchise-visual{min-height:560px;align-items:flex-end}.franchise-visual__copy{padding:40px 0 90px}.franchise-visual__image{inset:0 0 28%}.franchise-visual__image:after{background:linear-gradient(0deg,var(--color-peach),transparent 65%)}.franchise-visual h1{font-size:clamp(52px,15vw,82px)}.franchise-steps{grid-template-columns:1fr;margin-top:36px}.franchise-steps li{padding:24px}.franchise-steps h3{margin-top:16px}.franchise-section-title h2{font-size:42px}.franchise-intro__text{margin-top:32px}.franchise-form__grid{grid-template-columns:1fr;gap:20px}.franchise-field--wide{grid-column:auto}}
-/* 메인 페이지의 둥근 모서리 스타일을 서브페이지에도 적용 */
-.franchise-visual,.franchise-visual__image,.franchise-process{border-radius:24px;overflow:hidden}
-.franchise-submit,.franchise-bottom-cta a{border-radius:999px}
+/* FRANCHISE INQUIRY — HANS 기존 Pretendard 및 공통 컬러 토큰 사용 */
+.franchise-inquiry {
+  padding-top: 90px;
+  color: var(--text-primary);
+  font-family: "Pretendard Variable", sans-serif;
+}
+.inquiry-promo {
+  padding: 58px 24px;
+  background: #f5f2ec;
+}
+.inquiry-promo__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(330px, 390px);
+  align-items: center;
+  gap: clamp(36px, 6vw, 88px);
+  width: min(100%, 1120px);
+  margin: 0 auto;
+}
+.inquiry-promo__copy { min-width: 0; }
+.inquiry-deadline {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  margin: 0 0 18px;
+  padding: 5px 12px;
+  border: 1px solid #ff9aab;
+  border-radius: 999px;
+  color: #ed5579;
+  background: rgba(255,255,255,.5);
+  font-size: 12px;
+  font-weight: 600;
+}
+.inquiry-promo__copy h1 {
+  margin: 0;
+  color: #222;
+  font-size: clamp(34px, 4vw, 48px);
+  font-weight: 800;
+  line-height: 1.24;
+  letter-spacing: -.055em;
+}
+.inquiry-promo__copy h1 em { color: #f45b80; font-style: normal; }
+.inquiry-promo__description {
+  max-width: 610px;
+  margin: 20px 0 0;
+  color: #655f5c;
+  font-size: 14px;
+  line-height: 1.85;
+  word-break: keep-all;
+}
+.inquiry-promo__description span { display: block; margin-top: 5px; }
+.inquiry-promo__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 25px;
+}
+.inquiry-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0 19px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform .2s ease, background .2s ease;
+}
+.inquiry-button:hover { transform: translateY(-2px); }
+.inquiry-button--primary { color: #fff; background: #ff6689; box-shadow: 0 5px 13px rgba(244,91,128,.2); }
+.inquiry-button--primary strong { font-size: 12px; }
+.inquiry-button--secondary { border-color: #e8deda; color: #302b29; background: #fff; }
+
+.support-card {
+  padding: 25px 24px 21px;
+  border: 1px solid #eee5e1;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(52,38,31,.07);
+}
+.support-card__cost {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0e9e6;
+  color: #655f5c;
+  font-size: 12px;
+}
+.support-card__cost p { display: flex; align-items: center; gap: 8px; margin: 0; white-space: nowrap; }
+.support-card__cost del { color: #aaa; font-size: 11px; }
+.support-card__cost strong { color: #272321; font-size: 16px; font-weight: 800; }
+.support-card h2 { margin: 17px 0 10px; font-size: 15px; font-weight: 800; }
+.support-card__items {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid #ffd5df;
+  border-radius: 10px;
+  background: #fff5f7;
+  list-style: none;
+}
+.support-card__items li {
+  display: grid;
+  grid-template-columns: 58px minmax(0,1fr) auto;
+  align-items: center;
+  gap: 7px;
+  min-height: 26px;
+  font-size: 10px;
+}
+.support-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 20px;
+  padding: 0 5px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.support-tag--discount { background: #ff7c9a; }
+.support-tag--hans { background: #ef476f; }
+.support-tag--card { background: #3b55a5; }
+.support-tag--bank { background: #078f91; }
+.support-card__items li span { color: #554d4a; line-height: 1.4; }
+.support-card__items li strong { color: #f04470; font-size: 11px; font-weight: 800; white-space: nowrap; }
+.support-card__total {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 4px;
+  margin: 15px 0 8px;
+  color: #f04470;
+}
+.support-card__total span { margin-right: 4px; font-size: 12px; font-weight: 700; }
+.support-card__total strong { font-size: clamp(30px,3vw,38px); font-weight: 800; letter-spacing: -.05em; line-height: 1; }
+.support-card__total b { font-size: 12px; }
+.support-card__notice { margin: 0; color: #99918d; font-size: 9px; line-height: 1.65; word-break: keep-all; }
+
+.inquiry-form-section { padding: 42px 20px 78px; background: #fff; }
+.inquiry-form { display: grid; gap: 17px; width: min(100%, 560px); margin: 0 auto; }
+.inquiry-field { display: flex; min-width: 0; flex-direction: column; gap: 7px; padding: 0; border: 0; }
+.inquiry-field label, .inquiry-phone legend, .inquiry-consent__title {
+  color: #33302f;
+  font-size: 12px;
+  font-weight: 600;
+}
+.inquiry-field label span, .inquiry-phone legend span, .inquiry-consent__title span { color: #f05b7d; }
+.inquiry-field input, .inquiry-field select {
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  outline: none;
+  background: #f3f3f3;
+  color: #333;
+  font-family: inherit;
+  font-size: 13px;
+}
+.inquiry-field input::placeholder { color: #aaa; }
+.inquiry-field input:focus, .inquiry-field select:focus {
+  border-color: #ff9aab;
+  background: #fff;
+  outline: 2px solid rgba(255,102,137,.12);
+}
+.inquiry-phone__inputs { display: grid; grid-template-columns: 1fr 10px 1fr 10px 1fr; align-items: center; gap: 6px; }
+.inquiry-phone__inputs input { min-width: 0; text-align: center; }
+.inquiry-phone__inputs>span { color: #b6b0ad; text-align: center; }
+.field-error { min-height: 0; margin: 0; color: #e84d70; font-size: 11px; line-height: 1.4; }
+.field-error:empty { display: none; }
+.inquiry-field [aria-invalid="true"] { border-color: #ed6684; background: #fffafb; }
+.inquiry-consent { margin-top: 2px; }
+.inquiry-consent__title { margin: 0 0 7px; }
+.inquiry-consent__text {
+  max-height: 112px;
+  overflow-y: auto;
+  padding: 12px;
+  background: #f2f2f2;
+  color: #514c49;
+  font-size: 10px;
+  line-height: 1.7;
+  overscroll-behavior: contain;
+}
+.inquiry-consent__text p + p { margin-top: 4px; }
+.inquiry-consent__check { display: flex; align-items: center; gap: 7px; margin-top: 9px; color: #5c5653; font-size: 11px; cursor: pointer; }
+.inquiry-consent__check input {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  margin: 0;
+  accent-color: #f45b80;
+}
+.inquiry-submit {
+  width: 100%;
+  min-height: 44px;
+  margin-top: 1px;
+  border: 0;
+  border-radius: 4px;
+  background: #ff969b;
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+.inquiry-submit:hover:not(:disabled) { background: #f27687; }
+.inquiry-submit:disabled { opacity: .65; cursor: wait; }
+.inquiry-submit:focus-visible { outline: 2px solid #e84d70; outline-offset: 3px; }
+.inquiry-feedback { margin: 0; color: #e84d70; font-size: 12px; line-height: 1.6; text-align: center; }
+.inquiry-feedback:empty { display: none; }
+
+@media (max-width: 768px) {
+  .franchise-inquiry { padding-top: 60px; }
+  .inquiry-promo { padding: 38px 20px; }
+  .inquiry-promo__inner { grid-template-columns: 1fr; gap: 28px; }
+  .inquiry-promo__copy h1 { font-size: clamp(32px, 8vw, 42px); }
+  .inquiry-promo__description { font-size: 13px; }
+  .inquiry-promo__actions { display: grid; grid-template-columns: 1fr; }
+  .inquiry-button { width: 100%; min-height: 46px; }
+  .support-card { width: min(100%, 440px); margin: 0 auto; }
+  .inquiry-form-section { padding: 32px 20px 60px; }
+  .inquiry-form { gap: 16px; }
+}
+@media (max-width: 380px) {
+  .support-card { padding: 20px 15px 17px; }
+  .support-card__items li { grid-template-columns: 54px minmax(0,1fr) auto; gap: 5px; font-size: 9px; }
+  .support-card__items li strong { font-size: 10px; }
+  .support-card__cost { font-size: 11px; }
+  .inquiry-phone__inputs { gap: 4px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .inquiry-button, .inquiry-submit { transition: none; }
+}
