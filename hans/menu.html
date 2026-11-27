@@ -34,11 +34,36 @@
 
 
 <main class="mn">
-  <section class="mn-hero" aria-label="한스 메뉴 슬라이드">
-    <div class="mn-hero__slides" id="mnHeroSlides"></div>
-    <div class="mn-hero__copy"><h1>HANS MENU</h1><p>연말을 더 달콤하게, 정성을 담아 만든 케이크와 디저트</p></div>
-    <div class="mn-hero__controls"><div class="mn-hero__progress"><span id="mnHeroProgress"></span></div><span id="mnHeroCount">1 | 3</span><button type="button" id="mnHeroPrev" aria-label="이전 슬라이드">‹</button><button type="button" id="mnHeroNext" aria-label="다음 슬라이드">›</button></div>
-  </section>
+  <div class="visual hero-sec" id="top">
+  <div class="hero-copy" aria-live="polite">
+    <h1>HANS STORY</h1>
+    <p>케이크는 언제부터 우리에게 ‘힐링푸드’가 되었을까요?</p>
+  </div>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" data-title="HANS STORY" data-desc="케이크는 언제부터 우리에게 ‘힐링푸드’가 되었을까요?">
+        <img src="img/hero.png" alt="한스 스토리 케이크 이미지" class="pc">
+        <img src="img/hero_m.jpg" alt="한스 스토리 케이크 이미지" class="mo">
+      </div>
+      <div class="swiper-slide" data-title="HANS CAKE" data-desc="한스케이크 생크림 딸기 케이크">
+        <img src="img/jeminai.png" alt="한스 생크림 딸기 케이크" class="pc">
+        <img src="img/jeminai_m.jpg" alt="한스 생크림 딸기 케이크" class="mo">
+      </div>
+      <div class="swiper-slide" data-title="HANS MENU" data-desc="정성을 담아 만든 한스의 케이크">
+        <img src="img/cake.png" alt="정성을 담아 만든 한스의 케이크" class="pc">
+        <img src="img/cake_m.png" alt="정성을 담아 만든 한스의 케이크" class="mo">
+      </div>
+    </div>
+    <div class="hero-controls">
+      <div class="swiper-scrollbar" aria-label="슬라이드 진행 상태"></div>
+      <div class="swiper-pagination" aria-label="현재 슬라이드"></div>
+      <div class="hero-arrows">
+        <button type="button" class="hero-prev" aria-label="이전 슬라이드"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 18 9 12l6-6"/></svg></button>
+        <button type="button" class="hero-next" aria-label="다음 슬라이드"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></button>
+      </div>
+    </div>
+  </div>
+</div>
   <section class="mn__section"><div class="mn__inner">
     <div class="mn__heading"><small>한스 크리스마스</small><h2>연말의 달콤한 순간, <em>한스와 함께</em></h2><p>소중한 사람들과 함께하는 연말, 한스케이크의 크리스마스 케이크로 특별한 순간을 만들어보세요.</p></div>
     <div class="mn-xmas__grid" id="mnXmasGrid"></div>
@@ -53,37 +78,35 @@
 </main>
 <script>
 (function(){
-  var hero=['img/hero_01.png','img/hero.png','img/cake.png'];
-  var xmas=[
-    {id:'xmas-fraisier',name:'X-mas 스트로베리 프레지에',en:'X-mas Strawberry Fraisier',img:'img/sp_cake02.png'},
-    {id:'xmas-ganache',name:'X-mas 사각가나슈 S',en:'X-mas Square Ganache S',img:'img/sp_cake03.png'},
-    {id:'xmas-strawberry',name:'X-mas 한스 딸기생크림 S',en:'X-mas HANS Strawberry Cream S',img:'img/sp_cake04.png'},
-    {id:'xmas-cheese-tart-mini',name:'X-mas 딸기 치즈 타르트 mini',en:'X-mas Strawberry Cheese Tart Mini',img:'img/sp_cake05.png'}
-  ];
-  var products=[
-    {id:'almond-delight',cat:'dessert',label:'쿠키',name:'아몬드 딜라이트',desc:'고소한 아몬드가 어우러진 바삭한 쿠키',img:'img/img01.png'},
-    {id:'almond-chocolate',cat:'dessert',label:'초콜릿',name:'아몬드 쇼콜라',desc:'진한 초콜릿의 풍미를 담은 아몬드 초콜릿',img:'img/img02.png'},
-    {id:'carrot-cake',cat:'cake',label:'케이크',name:'당근케이크',desc:'당근의 은은한 풍미와 부드러운 크림이 어우러진 케이크',img:'img/img03.png'},
-    {id:'valrhona-mini',cat:'cake',label:'케이크',name:'발로나초코 mini',desc:'진한 발로나 초콜릿의 풍미를 담은 미니 케이크',img:'img/img04.png'},
-    {id:'strawberry',cat:'cake',label:'케이크',name:'딸기 생크림 케이크',desc:'부드러운 시트와 산뜻한 딸기가 어우러진 케이크',img:'img/img05.png'},
-    {id:'white-mango-cream',cat:'cake',label:'케이크',name:'화이트망고 생크림',desc:'화이트망고의 달콤하고 산뜻한 풍미를 담은 생크림 케이크',img:'img/img08.png'},
-    {id:'roll-cake',cat:'cake',label:'롤',name:'롤케이크',desc:'부드러운 시트와 크림이 어우러진 롤 케이크',img:'img/img_09.png'}
-  ];
-  var $=function(id){return document.getElementById(id)};
-  var makeImg=function(src){return '<img src="'+src+'" alt="" onerror="this.remove()">';};
-  var detail=function(id){return 'menu-detail.html?item='+id;};
-  $('mnHeroSlides').innerHTML=hero.map(function(src,i){return '<div class="mn-hero__slide'+(i===0?' is-active':'')+'">'+makeImg(src)+'</div>';}).join('');
-  var slides=[].slice.call(document.querySelectorAll('.mn-hero__slide')),current=0,interval,delay=5000;
-  function showSlide(index){
-    current=(index+slides.length)%slides.length;
-    slides.forEach(function(s,i){s.classList.toggle('is-active',i===current);});
-    $('mnHeroCount').textContent=(current+1)+' | '+slides.length;
-    var bar=$('mnHeroProgress');bar.style.transition='none';bar.style.width='0';void bar.offsetWidth;bar.style.transition='width '+delay+'ms linear';bar.style.width='100%';
-    clearTimeout(interval);interval=setTimeout(function(){showSlide(current+1);},delay);
+  var heroSlides=document.querySelectorAll('.hero-sec .swiper-slide:not(.swiper-slide-duplicate)');
+  var heroCopy=document.querySelector('.hero-copy');
+  var heroTimer;
+  function updateHeroCopy(index){
+    var slide=heroSlides[index];
+    if(!slide||!heroCopy)return;
+    clearTimeout(heroTimer);
+    heroTimer=setTimeout(function(){
+      if(slide.dataset.title)heroCopy.querySelector('h1').textContent=slide.dataset.title;
+      if(slide.dataset.desc)heroCopy.querySelector('p').textContent=slide.dataset.desc;
+    },350);
   }
-  $('mnHeroPrev').addEventListener('click',function(){showSlide(current-1);});
-  $('mnHeroNext').addEventListener('click',function(){showSlide(current+1);});
-  showSlide(0);
+  new Swiper('.hero-sec > .swiper',{
+    direction:'horizontal',
+    loop:true,
+    autoplay:window.matchMedia('(prefers-reduced-motion: reduce)').matches?false:{delay:5000,disableOnInteraction:false,pauseOnMouseEnter:true},
+    on:{slideChange:function(sw){updateHeroCopy(sw.realIndex);}},
+    navigation:{nextEl:'.hero-next',prevEl:'.hero-prev'},
+    pagination:{
+      el:'.swiper-pagination',
+      type:'fraction',
+      formatFractionCurrent:function(number){return number;},
+      formatFractionTotal:function(number){return number;},
+      renderFraction:function(currentClass,totalClass){
+        return '<span class="'+currentClass+'"></span><span class="fraction-divider"> | </span><span class="'+totalClass+'"></span>';
+      }
+    },
+    scrollbar:{el:'.hero-sec .swiper-scrollbar',draggable:true,hide:false}
+  });
   $('mnXmasGrid').innerHTML=xmas.map(function(p){return '<a class="mn-xmas__card" href="'+detail(p.id)+'"><div class="mn-xmas__image">'+makeImg(p.img)+'<span class="mn-xmas__badge">NEW</span></div><div class="mn-xmas__copy"><small>시즌</small><h3>'+p.name+'</h3><p>'+p.en+'</p></div></a>';}).join('');
   var categories=[['all','전체'],['cake','케이크'],['dessert','디저트'],['gift','선물세트']];
   $('mnTabs').innerHTML=categories.map(function(c,i){return '<button type="button" class="mn-tab'+(i===0?' is-active':'')+'" data-category="'+c[0]+'">'+c[1]+'</button>';}).join('');
