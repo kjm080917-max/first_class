@@ -315,3 +315,146 @@
   background: var(--color-warm-gray);
   color: var(--color-white);
 }
+
+/* 한스 전체 메뉴 카드 그리드 정리 */
+.menu-page .menu-list-section .menu-product-grid {
+  display: grid;
+  width: min(1200px, 100%);
+  margin-inline: auto;
+  padding-inline: 24px;
+  box-sizing: border-box;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 28px;
+}
+
+.menu-page .menu-list-section .menu-product {
+  display: flex;
+  min-width: 0;
+  height: 100%;
+  border: 1px solid var(--color-light-gray);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--color-white);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.menu-page .menu-list-section .menu-product > a {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.menu-page .menu-list-section .menu-product:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(34, 34, 34, .045);
+}
+
+.menu-page .menu-list-section .menu-product .menu-thumb {
+  position: relative;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  box-sizing: border-box;
+  padding: 24px;
+  overflow: hidden;
+  border-radius: 0;
+  background: var(--color-white);
+}
+
+.menu-page .menu-list-section .menu-product .menu-thumb::before {
+  content: none;
+}
+
+.menu-page .menu-list-section .menu-product .menu-thumb img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  transition: transform .25s ease;
+}
+
+.menu-page .menu-list-section .menu-product .menu-card-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  padding: 20px 24px 24px;
+  gap: 7px;
+}
+
+.menu-page .menu-list-section .menu-product .menu-card-copy > p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+.menu-page .menu-list-section .menu-product .menu-card-copy h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+
+.menu-page .menu-list-section .menu-product .menu-card-copy > span {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.55;
+  word-break: keep-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.menu-page .menu-list-section .menu-more-items {
+  margin-top: 28px;
+}
+
+@media (max-width: 900px) {
+  .menu-page .menu-list-section .menu-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-page .menu-list-section .menu-product-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding-inline: 24px;
+  }
+
+  .menu-page .menu-list-section .menu-product .menu-thumb {
+    aspect-ratio: 1 / 1;
+    padding: 24px;
+  }
+
+  .menu-page .menu-list-section .menu-product .menu-card-copy {
+    padding: 20px 24px 24px;
+  }
+
+  .menu-page .menu-list-section .menu-product .menu-card-copy h3 {
+    font-size: 18px;
+  }
+
+  .menu-page .menu-list-section .menu-product .menu-card-copy > span {
+    font-size: 14px;
+  }
+}
