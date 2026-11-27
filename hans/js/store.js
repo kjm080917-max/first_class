@@ -1,6 +1,9 @@
-// STORE 페이지: 예시 매장 데이터와 목록 UI
-// 아래 매장명·주소·전화번호는 화면 구현을 위한 가상 데이터이며 실제 매장 정보가 아닙니다.
-// 실제 매장 정보로 교체할 때 공식 자료를 확인하고 lat/lng에 실제 좌표를 입력하세요.
+// STORE 페이지: 매장 목록 + Kakao 지도
+// Kakao Developers에서 발급한 JavaScript 키만 입력하세요.
+const KAKAO_JS_KEY = '여기에_JavaScript키';
+
+// 아래 매장명·주소·전화번호는 화면 구성을 위한 가상 데이터입니다.
+// 실제 매장 정보로 교체할 때는 공식 자료로 확인한 정확한 도로명주소를 입력하세요.
 const stores = [
   { region:"서울", name:"한스 강남 예시점", address:"서울 강남구 (예시 주소)", phone:"02-000-0001", image:"", lat:null, lng:null },
   { region:"서울", name:"한스 잠실 예시점", address:"서울 송파구 (예시 주소)", phone:"02-000-0002", image:"", lat:null, lng:null },
@@ -22,9 +25,18 @@ const storeCount = document.querySelector("#store-count");
 const storeList = document.querySelector("#store-list");
 const pagination = document.querySelector("#store-pagination");
 const mapSelection = document.querySelector("#store-map-selection");
+const mapElement = document.querySelector("#map");
+const mapFallback = document.querySelector("#map-fallback");
 const itemsPerPage = 10;
 let currentPage = 1;
 let selectedStore = null;
+let kakaoMap = null;
+let geocoder = null;
+let infoWindow = null;
+let mapReady = false;
+let mapFailed = false;
+const addressCache = new Map();
+const markerByStore = new Map();
 
 const getFilteredStores = () => {
   const keyword = (searchInput?.value || "").trim().toLocaleLowerCase("ko");
@@ -40,25 +52,163 @@ const getFilteredStores = () => {
   return result;
 };
 
-const showSelectedStore = store => {
-  selectedStore = store;
-  if (!mapSelection) return;
-  mapSelection.replaceChildren();
-  const label = document.createElement("span");
-  label.textContent = "선택한 매장";
+const setMapFallback = (message, detail = "") => {
+  if (!mapFallback) return;
+  mapFallback.hidden = false;
+  mapFallback.innerHTML = "";
+  const strong = document.createElement("strong");
+  strong.textContent = message;
+  const paragraph = document.createElement("p");
+  paragraph.textContent = detail || "JavaScript 키와 등록 도메인, SDK 연결 상태를 확인해 주세요.";
+  mapFallback.append(strong, paragraph);
+};
+
+const isTemporaryAddress = address =>
+  /예시|임시|OO구|OO로|00/.test(address);
+
+const getCoordinates = address => {
+  if (addressCache.has(address)) return addressCache.get(address);
+  const request = new Promise(resolve => {
+    if (isTemporaryAddress(address)) {
+      resolve(null);
+      return;
+    }
+    geocoder.addressSearch(address, (result, status) => {
+      if (status === kakao.maps.services.Status.OK && result[0]) {
+        resolve({
+          lat: Number(result[0].y),
+          lng: Number(result[0].x)
+        });
+      } else {
+        resolve(null);
+      }
+    });
+  });
+  addressCache.set(address, request);
+  return request;
+};
+
+const makeInfoContent = store => {
+  const wrap = document.createElement("div");
+  wrap.className = "store-map-info";
   const name = document.createElement("strong");
   name.textContent = store.name;
   const address = document.createElement("p");
   address.textContent = store.address;
   const phone = document.createElement("p");
   phone.textContent = "전화번호: " + store.phone;
-  const note = document.createElement("p");
-  note.textContent = "지도 API 연결 후 이 매장의 좌표로 이동하고 마커를 강조 표시합니다.";
-  mapSelection.append(label, name, address, phone, note);
-  storeList?.querySelectorAll(".store-card").forEach(card => {
-    card.classList.toggle("is-selected", Number(card.dataset.storeIndex) === stores.indexOf(store));
-    card.setAttribute("aria-pressed", String(Number(card.dataset.storeIndex) === stores.indexOf(store)));
+  const link = document.createElement("a");
+  const marker = markerByStore.get(store);
+  const position = marker?.getPosition();
+  if (position) {
+    link.href = "https://map.kakao.com/link/to/" +
+      encodeURIComponent(store.name) + "," + position.getLat() + "," + position.getLng();
+  } else {
+    link.href = "#";
+  }
+  link.target = "_blank";
+  link.rel = "noopener";
+  link.textContent = "길찾기";
+  wrap.append(name, address, phone, link);
+  return wrap;
+};
+
+const openStoreInfo = store => {
+  const marker = markerByStore.get(store);
+  if (!mapReady || !marker || !infoWindow) return;
+  infoWindow.close();
+  infoWindow.setContent(makeInfoContent(store));
+  infoWindow.open(kakaoMap, marker);
+  kakaoMap.panTo(marker.getPosition());
+  showSelectedStore(store, false);
+};
+
+const showSelectedStore = (store, moveMap = true) => {
+  selectedStore = store;
+  if (mapSelection) {
+    mapSelection.replaceChildren();
+    const label = document.createElement("span");
+    label.textContent = "선택한 매장";
+    const name = document.createElement("strong");
+    name.textContent = store.name;
+    const address = document.createElement("p");
+    address.textContent = store.address;
+    const phone = document.createElement("p");
+    phone.textContent = "전화번호: " + store.phone;
+    mapSelection.append(label, name, address, phone);
+  }
+  if (moveMap) openStoreInfo(store);
+  syncSelectedCard();
+};
+
+const syncSelectedCard = () => {
+  if (!storeList) return;
+  storeList.querySelectorAll(".store-card").forEach(card => {
+    const isSelected = Number(card.dataset.storeIndex) === stores.indexOf(selectedStore);
+    card.classList.toggle("is-selected", isSelected);
+    card.setAttribute("aria-pressed", String(isSelected));
   });
+};
+
+const updateVisibleMarkers = async () => {
+  if (!mapReady || mapFailed) return;
+  const filtered = getFilteredStores();
+  if (!filtered.length) {
+    markerByStore.forEach(marker => marker.setMap(null));
+    return;
+  }
+
+  const located = [];
+  for (const store of filtered) {
+    const coordinates = await getCoordinates(store.address);
+    const existingMarker = markerByStore.get(store);
+
+    if (!coordinates) {
+      if (existingMarker) existingMarker.setMap(null);
+      console.warn("[Kakao 지도] 주소를 좌표로 변환하지 못했습니다:", store.name, store.address,
+        isTemporaryAddress(store.address) ? "(임시 주소이므로 실제 주소로 교체해야 합니다.)" : "");
+      continue;
+    }
+
+    store.lat = coordinates.lat;
+    store.lng = coordinates.lng;
+    let marker = existingMarker;
+    if (!marker) {
+      marker = new kakao.maps.Marker({
+        map: null,
+        position: new kakao.maps.LatLng(coordinates.lat, coordinates.lng),
+        title: store.name
+      });
+      markerByStore.set(store, marker);
+      kakao.maps.event.addListener(marker, "click", () => {
+        const currentResults = getFilteredStores();
+        const index = currentResults.indexOf(store);
+        if (index < 0) return;
+        currentPage = Math.floor(index / itemsPerPage) + 1;
+        renderStores();
+        storeList?.querySelector('[data-store-index="' + stores.indexOf(store) + '"]')?.scrollIntoView({
+          behavior: "smooth", block: "nearest"
+        });
+        openStoreInfo(store);
+      });
+    }
+    marker.setPosition(new kakao.maps.LatLng(coordinates.lat, coordinates.lng));
+    marker.setMap(kakaoMap);
+    located.push(marker);
+  }
+
+  markerByStore.forEach((marker, store) => {
+    if (!filtered.includes(store)) marker.setMap(null);
+  });
+
+  if (located.length > 1) {
+    const bounds = new kakao.maps.LatLngBounds();
+    located.forEach(marker => bounds.extend(marker.getPosition()));
+    kakaoMap.setBounds(bounds);
+  } else if (located.length === 1) {
+    kakaoMap.setCenter(located[0].getPosition());
+    kakaoMap.setLevel(4);
+  }
 };
 
 const renderPagination = totalPages => {
@@ -80,9 +230,7 @@ const renderPagination = totalPages => {
   addButton("‹", Math.max(1, currentPage - 1), currentPage === 1);
   const first = Math.max(1, Math.min(currentPage - 2, totalPages - 4));
   const last = Math.min(totalPages, first + 4);
-  for (let page = first; page <= last; page += 1) {
-    addButton(String(page), page, false, page === currentPage);
-  }
+  for (let page = first; page <= last; page += 1) addButton(String(page), page, false, page === currentPage);
   addButton("›", Math.min(totalPages, currentPage + 1), currentPage === totalPages);
 };
 
@@ -135,11 +283,13 @@ const renderStores = () => {
     });
   }
   renderPagination(totalPages);
+  syncSelectedCard();
 };
 
 const applyFilters = () => {
   currentPage = 1;
   renderStores();
+  updateVisibleMarkers();
 };
 searchButton?.addEventListener("click", () => {
   searchInput?.focus();
@@ -148,6 +298,55 @@ searchButton?.addEventListener("click", () => {
 searchInput?.addEventListener("input", applyFilters);
 sortSelect?.addEventListener("change", applyFilters);
 regionSelect?.addEventListener("change", applyFilters);
+
+const loadKakaoMap = () => {
+  if (!mapElement) return;
+  if (!KAKAO_JS_KEY || KAKAO_JS_KEY === "여기에_JavaScript키") {
+    mapFailed = true;
+    console.error("[Kakao 지도] JavaScript 키가 입력되지 않았습니다. store.js 상단의 KAKAO_JS_KEY를 설정하세요.");
+    setMapFallback("지도를 불러올 수 없습니다", "store.js 상단에 JavaScript 키를 입력해 주세요.");
+    return;
+  }
+
+  const script = document.createElement("script");
+  script.src = "https://dapi.kakao.com/v2/maps/sdk.js?appkey=" +
+    encodeURIComponent(KAKAO_JS_KEY) + "&libraries=services&autoload=false";
+  script.async = true;
+  script.onload = () => {
+    if (!window.kakao?.maps?.load) {
+      mapFailed = true;
+      console.error("[Kakao 지도] SDK는 로드됐지만 kakao.maps.load를 찾을 수 없습니다. 키와 도메인 설정을 확인하세요.");
+      setMapFallback("지도를 불러올 수 없습니다");
+      return;
+    }
+    window.kakao.maps.load(async () => {
+      try {
+        kakaoMap = new kakao.maps.Map(mapElement, {
+          center: new kakao.maps.LatLng(37.5665, 126.9780),
+          level: 8
+        });
+        geocoder = new kakao.maps.services.Geocoder();
+        infoWindow = new kakao.maps.InfoWindow({ removable: true });
+        const zoomControl = new kakao.maps.ZoomControl();
+        kakaoMap.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+        kakaoMap.setZoomable(true);
+        mapReady = true;
+        if (mapFallback) mapFallback.hidden = true;
+        await updateVisibleMarkers();
+      } catch (error) {
+        mapFailed = true;
+        console.error("[Kakao 지도] 지도 초기화 중 오류가 발생했습니다. JavaScript 키, 도메인, SDK 설정을 확인하세요.", error);
+        setMapFallback("지도를 불러올 수 없습니다");
+      }
+    });
+  };
+  script.onerror = error => {
+    mapFailed = true;
+    console.error("[Kakao 지도] SDK 스크립트를 불러오지 못했습니다. 네트워크, JavaScript 키, 등록 도메인을 확인하세요.", error);
+    setMapFallback("지도를 불러올 수 없습니다");
+  };
+  document.head.append(script);
+};
 
 const header = document.querySelector(".site-header");
 const toggle = document.querySelector(".site-header__toggle");
@@ -171,3 +370,4 @@ if (topButton) {
 }
 
 renderStores();
+loadKakaoMap();
