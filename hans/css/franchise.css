@@ -329,3 +329,90 @@
   .support-card__cost { flex-wrap: wrap; }
   .inquiry-phone__inputs { gap: .375rem; }
 }
+
+
+/* 창업 상담 사전 안내 카드 */
+.inquiry-guide {
+  padding: clamp(2rem, 3vw, 2.75rem);
+}
+.inquiry-guide__eyebrow {
+  margin: 0 0 1rem;
+  color: #c65b18;
+  font-size: .8125rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+.inquiry-guide h2 {
+  margin: 0;
+  color: #292625;
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  line-height: 1.35;
+  font-weight: 800;
+  letter-spacing: -.045em;
+}
+.inquiry-guide h2 em {
+  color: #e87524;
+  font-style: normal;
+}
+.inquiry-guide__description {
+  margin: 1rem 0 1.75rem;
+  color: #666;
+  font-size: .9375rem;
+  line-height: 1.7;
+  word-break: keep-all;
+}
+.inquiry-guide__list {
+  display: grid;
+  gap: .875rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.inquiry-guide__list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 4.25rem;
+  padding: .75rem 1rem;
+  border: 1px solid #f0e5dc;
+  border-radius: .75rem;
+  background: #fffaf6;
+}
+.inquiry-guide__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex: 0 0 2.25rem;
+  border-radius: 50%;
+  background: #e87524;
+  color: #fff;
+  font-size: .8125rem;
+  font-weight: 800;
+}
+.inquiry-guide__list li strong {
+  display: block;
+  color: #393432;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.inquiry-guide__list li p {
+  margin: .25rem 0 0;
+  color: #77706d;
+  font-size: .875rem;
+  line-height: 1.45;
+}
+.inquiry-guide__note {
+  margin: 1.25rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid #eee9e6;
+  color: #817a76;
+  font-size: .8125rem;
+  line-height: 1.6;
+}
+@media (max-width: 48rem) {
+  .inquiry-guide { padding: 1.5rem; }
+  .inquiry-guide__list { gap: .625rem; }
+  .inquiry-guide__list li { min-height: 3.75rem; padding: .625rem .75rem; }
+}
