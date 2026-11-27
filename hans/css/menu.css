@@ -1,1507 +1,171 @@
-.section-shell{width:min(1240px,calc(100% - 48px));margin-inline:auto}
-.menu-best{padding-block:130px}
-.menu-section-heading h2{margin:10px 0 0;font-size:clamp(40px,5vw,68px);font-weight:800;line-height:1.15;letter-spacing:-.045em}
-.menu-section-heading>p:last-child{margin-top:18px;color:var(--text-secondary);font-size:17px;line-height:1.7}
-.menu-best__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:58px}
-.menu-best-card{min-width:0;background:var(--color-white);border:1px solid #f0eae6;border-radius:18px;overflow:hidden;transition:transform .25s,box-shadow .25s}
-.menu-best-card:hover{transform:translateY(-6px);box-shadow:0 16px 36px rgba(70,48,35,.08)}
-.menu-thumb{position:relative;display:flex;align-items:center;justify-content:center;aspect-ratio:4/3;overflow:hidden;background:var(--color-bage);color:var(--text-secondary)}
-.menu-thumb:before{position:absolute;content:"HANS CAKE";font-size:12px;font-weight:700;letter-spacing:.12em;opacity:.65}
-.menu-thumb img{position:relative;width:100%;height:100%;object-fit:cover}
-.menu-best-card .menu-thumb span{position:absolute;top:18px;left:18px;padding:8px 12px;border-radius:999px;background:var(--color-brand-orange);color:#fff;font-size:11px;font-weight:800;letter-spacing:.08em}
-.menu-card-copy{padding:24px 26px 28px}
-.menu-card-copy>p{margin:0 0 9px;color:var(--text-brand);font-size:11px;font-weight:800;letter-spacing:.12em}
-.menu-card-copy h3{margin:0 0 8px;font-size:21px;font-weight:800;letter-spacing:-.03em}
-.menu-card-copy>span{display:block;color:var(--text-secondary);font-size:14px;line-height:1.65;word-break:keep-all}
-.menu-list-section{padding:120px 0 130px;background:var(--color-bage)}
-.menu-section-heading--center{text-align:center}
-.menu-filter{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:48px 0 42px}
-.menu-filter button{min-width:112px;padding:13px 22px;border:1px solid #e4d9d1;border-radius:999px;background:var(--color-white);color:var(--text-secondary);font-size:14px;font-weight:700;transition:background .2s,color .2s,border-color .2s}
-.menu-filter button:hover,.menu-filter button.is-active{border-color:var(--color-brand-orange);background:var(--color-brand-orange);color:#fff}
-.menu-product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px 20px}
-.menu-product[hidden]{display:none !important}
-.menu-product{min-width:0;background:var(--color-white);border-radius:14px;overflow:hidden;transition:transform .25s,box-shadow .25s}
-.menu-product:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(70,48,35,.08)}
-.menu-product .menu-thumb{aspect-ratio:1/1}
-.menu-product .menu-card-copy{padding:20px 20px 24px}
-.menu-product .menu-card-copy h3{font-size:17px}
-.menu-product .menu-card-copy>span{font-size:13px}
-.menu-more-items{margin-top:28px}
-.menu-more-wrap{display:flex;justify-content:center;margin-top:48px}
-.menu-more-wrap button{display:inline-flex;align-items:center;gap:26px;padding:15px 26px;border:1px solid var(--color-brand-orange);border-radius:999px;color:var(--text-brand);font-size:14px;font-weight:700;transition:background .2s,color .2s}
-.menu-more-wrap button:hover{background:var(--color-brand-orange);color:#fff}
-.menu-notice{margin-top:30px;color:var(--text-secondary);font-size:13px;line-height:1.7;text-align:right}
-@media(max-width:900px){.menu-best{padding-block:90px}.menu-best__grid{gap:16px}.menu-card-copy{padding:20px}.menu-card-copy h3{font-size:18px}.menu-product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.menu-list-section{padding:90px 0}}
-@media(max-width:600px){.menu-best{padding-block:70px}.menu-best__grid{grid-template-columns:1fr;gap:18px;margin-top:36px}.menu-best-card{display:grid;grid-template-columns:42% 1fr}.menu-best-card .menu-thumb{height:100%;aspect-ratio:auto;min-height:150px}.menu-best-card .menu-thumb span{top:10px;left:10px;font-size:9px}.menu-card-copy{align-self:center;padding:18px}.menu-card-copy h3{font-size:17px}.menu-card-copy>span{font-size:12px}.menu-list-section{padding:70px 0}.menu-filter{gap:7px;margin:34px 0 28px}.menu-filter button{min-width:0;padding:11px 17px;font-size:13px}.menu-product-grid{gap:14px 10px}.menu-product .menu-card-copy{padding:15px 13px 18px}.menu-product .menu-card-copy h3{font-size:15px}.menu-product .menu-card-copy>span{font-size:12px}.menu-more-wrap{margin-top:34px}.menu-notice{text-align:left}}
+/* =========================================================
+   HANS MENU — Editorial redesign
+   메뉴 페이지 전용 스타일
+   ========================================================= */
 
+.menu-page{
+  --menu-ink:#292522;
+  --menu-muted:#77716c;
+  --menu-line:#e9e2dc;
+  --menu-paper:#f7f4f0;
+  --menu-orange:#ff552e;
+  --menu-width:1240px;
+  color:var(--menu-ink);
+  overflow-x:hidden;
+}
+.menu-page main{width:100%;max-width:none}
+.menu-page a{text-decoration:none}
+.menu-page button{font:inherit}
 
+/* HERO */
+.menu-page .menu-hero{position:relative;margin-top:90px;overflow:hidden;background:#292522}
+.menu-page .menu-hero .swiper{height:min(690px,68vw);min-height:480px}
+.menu-page .menu-hero .swiper-slide{overflow:hidden}
+.menu-page .menu-hero .swiper-slide img{display:block;width:100%;height:100%;object-fit:cover}
+.menu-page .menu-hero .swiper:after{position:absolute;z-index:2;inset:0;content:"";pointer-events:none;background:linear-gradient(90deg,rgba(20,17,15,.55),rgba(20,17,15,.08) 72%),linear-gradient(0deg,rgba(20,17,15,.2),transparent 45%)}
+.menu-page .hero-copy{top:52%;left:max(7.5%,calc((100% - var(--menu-width))/2));width:min(82%,var(--menu-width));text-align:left;transform:translateY(-50%)}
+.menu-page .hero-copy h1{font-size:clamp(56px,8vw,112px);font-weight:800;letter-spacing:-.065em;line-height:.95}
+.menu-page .hero-copy p{margin-top:24px;font-size:clamp(16px,1.5vw,21px);font-weight:500;letter-spacing:-.02em}
+.menu-page .menu-hero__controls{right:max(7.5%,calc((100% - var(--menu-width))/2));left:max(7.5%,calc((100% - var(--menu-width))/2));bottom:28px}
+.menu-page .menu-hero__scrollbar{background:rgba(255,255,255,.35)}
+.menu-page .menu-hero__scrollbar .swiper-scrollbar-drag{background:var(--menu-orange)}
+.menu-page .menu-hero__pagination{font-variant-numeric:tabular-nums}
 
-/* 전체 메뉴 6종 구성: 데스크톱 3열, 태블릿·모바일 2열 */
-.menu-product-grid{
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:28px 22px;
-}
-.menu-product .menu-thumb{
-  aspect-ratio:4/3;
-  background:#f7f3f0;
-}
-.menu-product .menu-thumb img{
-  z-index:1;
-  display:block;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:transform .45s ease;
-}
-.menu-product:hover .menu-thumb img{transform:scale(1.045)}
-.menu-product .menu-card-copy{min-height:132px}
-@media(max-width:900px){
-  .menu-product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+/* Shared section heading */
+.menu-page .xmas__inner,.menu-page .menu-list-section__inner{width:min(var(--menu-width),calc(100% - 64px));margin-inline:auto}
+.menu-page .menu-section-heading h2{margin:0;color:var(--menu-ink);font-size:clamp(38px,5vw,66px);font-weight:800;line-height:1.08;letter-spacing:-.065em}
+.menu-page .menu-section-heading h2 em{color:var(--menu-orange);font-style:normal}
+.menu-page .menu-eyebrow{margin:0 0 18px;color:var(--menu-orange);font-size:11px;font-weight:800;letter-spacing:.2em}
+.menu-page .menu-section-heading>p:last-child{margin:18px 0 0;color:var(--menu-muted);font-size:15px;line-height:1.8;word-break:keep-all}
+
+/* Seasonal collection */
+.menu-page .xmas{width:100%;padding:112px 0 120px;background:var(--menu-paper)}
+.menu-page .menu-section-heading--split{display:flex;align-items:flex-end;justify-content:space-between;gap:36px}
+.menu-page .menu-section-heading--split>p{margin:0 0 5px;color:var(--menu-muted);font-size:15px;line-height:1.9;text-align:right;word-break:keep-all}
+.menu-page .menu-best__grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:22px;margin-top:54px;align-items:stretch}
+.menu-page .menu-best-card{min-width:0;overflow:hidden;border:1px solid rgba(60,45,35,.08);border-radius:4px;background:#fff;transition:transform .3s ease,box-shadow .3s ease}
+.menu-page .menu-best-card:hover{transform:translateY(-5px);box-shadow:0 18px 42px rgba(45,34,26,.09)}
+.menu-page .menu-best-card>a{display:flex;height:100%;color:inherit}
+.menu-page .menu-best-card--featured>a{flex-direction:column}
+.menu-page .menu-best-card .menu-thumb{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;margin:0;background:#eee8e2;aspect-ratio:1.2/1}
+.menu-page .menu-best-card--featured .menu-thumb{flex:1;min-height:360px;aspect-ratio:auto}
+.menu-page .menu-best-card .menu-thumb:before{content:none}
+.menu-page .menu-best-card .menu-thumb img{position:relative;z-index:1;display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.menu-page .menu-best-card:hover .menu-thumb img{transform:scale(1.045)}
+.menu-page .menu-best-card--featured .menu-thumb>span{position:absolute;z-index:2;top:22px;left:22px;padding:9px 13px;background:var(--menu-orange);color:#fff;font-size:10px;font-weight:800;letter-spacing:.12em}
+.menu-page .menu-best-card .menu-card-copy{display:flex;flex-direction:column;align-items:flex-start;padding:26px 30px 30px}
+.menu-page .menu-best-card .menu-card-copy>p{margin:0 0 10px;color:var(--menu-orange);font-size:10px;font-weight:800;letter-spacing:.16em}
+.menu-page .menu-best-card .menu-card-copy h3{margin:0;color:var(--menu-ink);font-size:clamp(19px,2vw,25px);font-weight:750;letter-spacing:-.045em;line-height:1.35;word-break:keep-all}
+.menu-page .menu-best-card .menu-card-copy>span{display:block;margin-top:8px;color:var(--menu-muted);font-size:13px;line-height:1.6;word-break:keep-all}
+.menu-page .menu-best-card .menu-card-copy>b{display:flex;align-items:center;gap:16px;margin-top:22px;color:var(--menu-ink);font-size:12px;font-weight:700}
+.menu-page .menu-best-card .menu-card-copy>b i{color:var(--menu-orange);font-size:17px;font-style:normal;transition:transform .2s}
+.menu-page .menu-best-card:hover .menu-card-copy>b i{transform:translate(3px,-3px)}
+.menu-page .menu-best__side{display:grid;grid-template-rows:repeat(3,minmax(0,1fr));gap:14px;min-height:100%}
+.menu-page .menu-best-card--compact>a{display:grid;grid-template-columns:42% minmax(0,1fr);align-items:stretch}
+.menu-page .menu-best-card--compact .menu-thumb{height:100%;min-height:0;aspect-ratio:auto}
+.menu-page .menu-best-card--compact .menu-card-copy{justify-content:center;padding:18px 22px}
+.menu-page .menu-best-card--compact .menu-card-copy h3{font-size:clamp(16px,1.5vw,19px)}
+.menu-page .menu-best-card--compact .menu-card-copy>span{font-size:12px}
+.menu-page .menu-best-card--compact .menu-card-copy>b{margin-top:13px;font-size:11px}
+
+/* Product catalog */
+.menu-page .menu-list-section{width:100%;padding:120px 0 132px;background:#fff}
+.menu-page .menu-section-heading--center{text-align:center}
+.menu-page .menu-catalog-tools{display:flex;align-items:center;justify-content:space-between;gap:24px;margin:54px 0 28px;padding-bottom:18px;border-bottom:1px solid var(--menu-line)}
+.menu-page .menu-filter{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0}
+.menu-page .menu-filter button{display:flex;align-items:center;gap:9px;padding:10px 16px;border:1px solid transparent;border-radius:2px;background:transparent;color:#8a837e;font-size:10px;font-weight:800;letter-spacing:.12em;cursor:pointer;transition:color .2s,border-color .2s,background .2s}
+.menu-page .menu-filter button span{font-size:13px;font-weight:600;letter-spacing:-.03em}
+.menu-page .menu-filter button:hover{color:var(--menu-orange)}
+.menu-page .menu-filter button.is-active{border-color:var(--menu-orange);background:var(--menu-orange);color:#fff}
+.menu-page .menu-catalog-note{margin:0;color:#a49b94;font-size:10px;font-weight:700;letter-spacing:.16em}
+.menu-page .menu-product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:42px 22px;margin:0;padding:0;list-style:none}
+.menu-page .menu-product{min-width:0;background:#fff}
+.menu-page .menu-product[hidden]{display:none!important}
+.menu-page .menu-product>a{display:block;height:100%;color:inherit}
+.menu-page .menu-product .menu-thumb{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;margin:0;background:#f5f2ef;aspect-ratio:1/1}
+.menu-page .menu-product .menu-thumb:before{content:none}
+.menu-page .menu-product .menu-thumb img{position:relative;z-index:1;display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.menu-page .menu-product:hover .menu-thumb img{transform:scale(1.055)}
+.menu-page .menu-product__number{position:absolute;z-index:2;top:14px;left:14px;color:rgba(41,37,34,.58);font-size:10px;font-weight:800;letter-spacing:.12em}
+.menu-page .menu-product .menu-card-copy{padding:20px 2px 0}
+.menu-page .menu-product .menu-card-copy>p{margin:0 0 9px;color:var(--menu-orange);font-size:10px;font-weight:800;letter-spacing:.14em}
+.menu-page .menu-product .menu-card-copy h3{margin:0;color:var(--menu-ink);font-size:20px;font-weight:750;letter-spacing:-.045em;line-height:1.35}
+.menu-page .menu-product .menu-card-copy>span{display:block;margin-top:8px;color:var(--menu-muted);font-size:13px;line-height:1.65;word-break:keep-all}
+.menu-page .menu-product .menu-card-copy>b{display:flex;align-items:center;gap:12px;margin-top:17px;color:var(--menu-ink);font-size:11px;font-weight:700}
+.menu-page .menu-product .menu-card-copy>b i{color:var(--menu-orange);font-size:16px;font-style:normal;transition:transform .2s}
+.menu-page .menu-product:hover .menu-card-copy>b i{transform:translate(3px,-3px)}
+.menu-page .menu-more-items{margin-top:42px}
+.menu-page .menu-more-wrap{display:flex;justify-content:center;margin-top:62px}
+.menu-page .menu-more-wrap button{display:inline-flex;align-items:center;gap:36px;min-width:220px;justify-content:space-between;padding:17px 22px;border:1px solid var(--menu-ink);border-radius:2px;background:transparent;color:var(--menu-ink);font-size:12px;font-weight:700;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.menu-page .menu-more-wrap button:hover{border-color:var(--menu-orange);background:var(--menu-orange);color:#fff}
+.menu-page .menu-more-wrap button span{font-size:18px;font-weight:400}
+
+/* Focus */
+.menu-page a:focus-visible,.menu-page button:focus-visible{outline:2px solid var(--menu-orange);outline-offset:4px}
+
+/* Responsive */
+@media(max-width:1024px){
+ .menu-page .menu-hero{margin-top:60px}
+ .menu-page .menu-hero .swiper{height:68vw;min-height:440px}
+ .menu-page .hero-copy{left:6%;width:88%}
+ .menu-page .menu-hero__controls{right:6%;left:6%}
+ .menu-page .xmas{padding:86px 0 92px}
+ .menu-page .xmas__inner,.menu-page .menu-list-section__inner{width:calc(100% - 48px)}
+ .menu-page .menu-best__grid{grid-template-columns:1fr;gap:16px;margin-top:38px}
+ .menu-page .menu-best-card--featured>a{display:grid;grid-template-columns:1.05fr .95fr;min-height:310px}
+ .menu-page .menu-best-card--featured .menu-thumb{min-height:0;height:100%}
+ .menu-page .menu-best-card--featured .menu-card-copy{justify-content:center}
+ .menu-page .menu-best__side{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:1fr;gap:12px}
+ .menu-page .menu-best-card--compact>a{display:flex;flex-direction:column}
+ .menu-page .menu-best-card--compact .menu-thumb{height:auto;aspect-ratio:1/1}
+ .menu-page .menu-best-card--compact .menu-card-copy{padding:16px}
+ .menu-page .menu-best-card--compact .menu-card-copy h3{font-size:16px}
+ .menu-page .menu-best-card--compact .menu-card-copy>span{font-size:11px}
+ .menu-page .menu-best-card--compact .menu-card-copy>b{margin-top:12px}
+ .menu-page .menu-list-section{padding:88px 0 100px}
+ .menu-page .menu-product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 18px}
 }
 @media(max-width:600px){
-  .menu-product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 10px}
-  .menu-product .menu-thumb{aspect-ratio:1/1}
-  .menu-product .menu-card-copy{min-height:120px}
-}
-
-
-/* 필터링된 메뉴 카드가 Grid 공간을 차지하지 않도록 보장 */
-.menu-product-grid{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  grid-auto-flow:row;
-}
-.menu-product[hidden]{
-  display:none !important;
-}
-.menu-section-heading h2 .menu-heading-accent{font-style:normal;color:var(--color-brand-orange)}
-
-
-/* =====================================================
-   MENU 페이지 디자인 통일 (menu.html 전용)
-   ===================================================== */
-.menu-page {
-  --menu-title-size: clamp(36px, 4vw, 58px);
-  --menu-card-title-size: 19px;
-  --menu-body-size: 15px;
-  --menu-label-size: 13px;
-}
-.menu-page .section-shell {
-  width: min(1200px, calc(100% - 48px));
-  margin-inline: auto;
-}
-.menu-page .site-header__inner {
-  width: min(1200px, calc(100% - 48px));
-}
-.menu-page .hero-copy {
-  width: min(1200px, calc(100% - 48px));
-}
-.menu-page .menu-best {
-  padding: 96px 0;
-}
-.menu-page .menu-list-section {
-  padding: 96px 0;
-  background: color-mix(in srgb, var(--color-bage) 38%, var(--color-white));
-}
-.menu-page .menu-section-heading--center {
-  text-align: center;
-}
-.menu-page .menu-section-heading h2 {
-  font-size: var(--menu-title-size);
-  letter-spacing: -0.02em;
-}
-.menu-page .menu-section-heading > p:last-child {
-  color: var(--text-secondary);
-  font-size: var(--menu-body-size);
-}
-.menu-page .menu-eyebrow {
-  margin: 0;
-  color: var(--text-secondary);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0;
-}
-.menu-page .menu-best__grid {
-  margin-top: 48px;
-}
-.menu-page .menu-best__grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-.menu-page .menu-best-card,
-.menu-page .menu-product {
-  border: 1px solid var(--color-light-gray);
-  border-radius: 14px;
-  background: var(--color-white);
-  box-shadow: none;
-}
-.menu-page .menu-best-card:hover,
-.menu-page .menu-product:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 22px rgba(34, 34, 34, .045);
-}
-.menu-page .menu-best-card .menu-thumb span {
-  background: var(--color-warm-gray);
-  color: var(--color-white);
-}
-.menu-page .menu-card-copy > p {
-  margin-bottom: 9px;
-  color: var(--text-secondary);
-  font-size: var(--menu-label-size);
-  font-weight: 700;
-  letter-spacing: 0;
-}
-.menu-page .menu-card-copy h3 {
-  font-size: var(--menu-card-title-size);
-  letter-spacing: -0.02em;
-}
-.menu-page .menu-card-copy > span {
-  color: var(--text-secondary);
-  font-size: var(--menu-body-size);
-  line-height: 1.65;
-}
-.menu-page .menu-product-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px 22px;
-}
-.menu-page .menu-product .menu-thumb {
-  box-sizing: border-box;
-  aspect-ratio: 4 / 3;
-  padding: 20px;
-  background: color-mix(in srgb, var(--color-bage) 45%, var(--color-white));
-}
-.menu-page .menu-product .menu-thumb img {
-  z-index: 1;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transition: transform .4s ease;
-}
-.menu-page .menu-product .menu-card-copy {
-  min-height: 132px;
-  padding: 20px 20px 24px;
-}
-.menu-page .menu-product .menu-card-copy > p {
-  font-size: var(--menu-label-size);
-}
-.menu-page .menu-product .menu-card-copy h3 {
-  font-size: var(--menu-card-title-size);
-}
-.menu-page .menu-product .menu-card-copy > span {
-  font-size: var(--menu-body-size);
-}
-.menu-page .menu-filter button {
-  border-radius: 999px;
-}
-.menu-page .menu-filter button.is-active {
-  border-color: var(--color-brand-orange);
-  background: var(--color-brand-orange);
-  color: var(--color-white);
-}
-.menu-page .menu-more-wrap button {
-  border-color: var(--color-brand-orange);
-}
-.menu-page .menu-notice {
-  font-size: 14px;
-}
-.menu-page .menu-product-grid::after {
-  content: none;
-}
-.menu-page #menu-more-button[aria-expanded="true"] ~ .menu-notice {
-  margin-top: 30px;
-}
-.menu-page .site-footer {
-  min-height: 0;
-  padding: 96px 24px;
-  background: var(--color-black);
-  color: rgba(140, 140, 140, .85);
-}
-.menu-page .site-footer__inner {
-  width: min(1200px, 100%);
-  max-width: 1200px;
-  margin-inline: auto;
-}
-.menu-page .site-footer__logo {
-  justify-content: flex-start;
-}
-@media (max-width: 900px) {
-  .menu-page .menu-best__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .menu-page .menu-best,
-  .menu-page .menu-list-section {
-    padding: 64px 0;
-  }
-  .menu-page .menu-product-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px 16px;
-  }
-  .menu-page .menu-card-copy > span {
-    font-size: 14px;
-  }
-  .menu-page .site-footer {
-    padding: 64px 24px;
-  }
-}
-@media (max-width: 600px) {
-  .menu-page .section-shell,
-  .menu-page .site-header__inner,
-  .menu-page .hero-copy {
-    width: calc(100% - 48px);
-  }
-  .menu-page .menu-best,
-  .menu-page .menu-list-section {
-    padding: 64px 0;
-  }
-  .menu-page .menu-best__grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    margin-top: 32px;
-  }
-  .menu-page .menu-best-card {
-    display: grid;
-    grid-template-columns: 42% 1fr;
-  }
-  .menu-page .menu-best-card .menu-thumb {
-    min-height: 150px;
-    height: 100%;
-    aspect-ratio: auto;
-  }
-  .menu-page .menu-card-copy {
-    padding: 16px;
-  }
-  .menu-page .menu-card-copy h3,
-  .menu-page .menu-product .menu-card-copy h3 {
-    font-size: 16px;
-  }
-  .menu-page .menu-card-copy > span,
-  .menu-page .menu-product .menu-card-copy > span {
-    font-size: 14px;
-  }
-  .menu-page .menu-product-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .menu-page .menu-product .menu-thumb {
-    aspect-ratio: 4 / 3;
-    padding: 20px;
-  }
-  .menu-page .menu-product .menu-card-copy {
-    min-height: 0;
-    padding: 16px;
-  }
-  .menu-page .menu-filter {
-    gap: 7px;
-    margin: 32px 0 28px;
-  }
-  .menu-page .menu-filter button {
-    min-width: 0;
-    padding: 11px 16px;
-    font-size: 13px;
-  }
-  .menu-page .site-footer {
-    padding: 56px 24px;
-  }
-}
-
-
-.menu-page .menu-filter button:hover:not(.is-active) {
-  border-color: var(--color-cream);
-  background: var(--color-light-gray);
-  color: var(--text-primary);
-}
-.menu-page .menu-more-wrap button:hover {
-  border-color: var(--color-brand-orange);
-  background: var(--color-warm-gray);
-  color: var(--color-white);
-}
-
-/* 한스 전체 메뉴 카드 그리드 정리 */
-.menu-page .menu-list-section .menu-product-grid {
-  display: grid;
-  width: min(1200px, 100%);
-  margin-inline: auto;
-  padding-inline: 24px;
-  box-sizing: border-box;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  align-items: stretch;
-  gap: 28px;
-}
-
-.menu-page .menu-list-section .menu-product {
-  display: flex;
-  min-width: 0;
-  height: 100%;
-  border: 1px solid var(--color-light-gray);
-  border-radius: 16px;
-  overflow: hidden;
-  background: var(--color-white);
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.menu-page .menu-list-section .menu-product > a {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  min-width: 0;
-  color: inherit;
-  text-decoration: none;
-}
-
-.menu-page .menu-list-section .menu-product:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(34, 34, 34, .045);
-}
-
-.menu-page .menu-list-section .menu-product .menu-thumb {
-  position: relative;
-  display: flex;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  box-sizing: border-box;
-  padding: 24px;
-  overflow: hidden;
-  border-radius: 0;
-  background: var(--color-white);
-}
-
-.menu-page .menu-list-section .menu-product .menu-thumb::before {
-  content: none;
-}
-
-.menu-page .menu-list-section .menu-product .menu-thumb img {
-  position: relative;
-  z-index: 1;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  mix-blend-mode: multiply;
-  transition: transform .25s ease;
-}
-
-.menu-page .menu-list-section .menu-product .menu-card-copy {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  min-height: 0;
-  padding: 20px 24px 24px;
-  gap: 7px;
-}
-
-.menu-page .menu-list-section .menu-product .menu-card-copy > p {
-  margin: 0;
-  color: var(--text-secondary);
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 1.4;
-  letter-spacing: 0;
-}
-
-.menu-page .menu-list-section .menu-product .menu-card-copy h3 {
-  margin: 0;
-  color: var(--text-primary);
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1.4;
-  letter-spacing: -0.02em;
-}
-
-.menu-page .menu-list-section .menu-product .menu-card-copy > span {
-  display: -webkit-box;
-  overflow: hidden;
-  margin: 0;
-  color: var(--text-secondary);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.55;
-  word-break: keep-all;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-}
-
-.menu-page .menu-list-section .menu-more-items {
-  margin-top: 28px;
-}
-
-@media (max-width: 900px) {
-  .menu-page .menu-list-section .menu-product-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-  }
-}
-
-@media (max-width: 600px) {
-  .menu-page .menu-list-section .menu-product-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    padding-inline: 24px;
-  }
-
-  .menu-page .menu-list-section .menu-product .menu-thumb {
-    aspect-ratio: 1 / 1;
-    padding: 24px;
-  }
-
-  .menu-page .menu-list-section .menu-product .menu-card-copy {
-    padding: 20px 24px 24px;
-  }
-
-  .menu-page .menu-list-section .menu-product .menu-card-copy h3 {
-    font-size: 18px;
-  }
-
-  .menu-page .menu-list-section .menu-product .menu-card-copy > span {
-    font-size: 14px;
-  }
-}
-
-/* =====================================================
-   메뉴 페이지 비주얼 아이덴티티 정리
-   헤더·푸터·히어로 슬라이드·필터 스크립트는 기존 구조 유지
-   ===================================================== */
-
-/* 1. 타이포그래피 */
-.menu-page .menu-section-heading h2 {
-  margin-top: 10px;
-  color: #2b2420;
-  font-size: clamp(28px, 3vw, 40px);
-  font-weight: 600;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
-}
-.menu-page .menu-eyebrow {
-  margin: 0;
-  color: var(--text-secondary);
-  font-size: 14px;
-  font-weight: 400;
-}
-.menu-page .menu-section-heading > p:last-child {
-  margin-top: 14px;
-  color: #4b4746;
-  font-size: 15px;
-  line-height: 1.7;
-}
-.menu-page .menu-card-copy h3,
-.menu-page .menu-product .menu-card-copy h3 {
-  color: #2b2420;
-  font-size: 17px;
-  font-weight: 600;
-}
-.menu-page .menu-section-heading h2,
-.menu-page .menu-best-card .menu-card-copy h3 {
-  font-family: inherit;
-}
-
-/* 2. 색 사용 줄이기 */
-.menu-page .menu-list-section .menu-section-heading h2,
-.menu-page .menu-list-section .menu-section-heading h2 .menu-heading-accent {
-  color: #2b2420;
-}
-.menu-page .menu-best .menu-heading-accent {
-  color: var(--color-brand-orange);
-}
-.menu-page .menu-best-card .menu-thumb span {
-  background: var(--color-warm-gray);
-  color: var(--color-white);
-}
-.menu-page .menu-best-card .menu-card-copy,
-.menu-page .menu-product .menu-card-copy {
-  color: #2b2420;
-}
-
-/* 3. 텍스트형 필터 탭 */
-.menu-page .menu-filter {
-  justify-content: center;
-  align-items: center;
-  gap: 32px;
-  margin: 48px 0;
-}
-.menu-page .menu-filter button {
-  min-width: 0;
-  padding: 0 0 10px;
-  border: 0;
-  border-bottom: 2px solid transparent;
-  border-radius: 0;
-  background: transparent;
-  color: var(--text-secondary);
-  font-size: 15px;
-  font-weight: 500;
-  transition: color .2s ease, border-color .2s ease;
-}
-.menu-page .menu-filter button:hover {
-  border-color: transparent;
-  background: transparent;
-  color: #2b2420;
-}
-.menu-page .menu-filter button.is-active {
-  border-color: var(--color-brand-orange);
-  background: transparent;
-  color: #2b2420;
-  font-weight: 700;
-}
-
-/* 4. 크리스마스 대표 + 서브 카드 구성 */
-.menu-page .menu-best {
-  padding: 88px 0;
-  background: var(--color-bage);
-}
-.menu-page .menu-best__grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
-  align-items: stretch;
-  gap: 28px;
-  margin-top: 48px;
-}
-.menu-page .menu-best-card {
-  min-width: 0;
-  overflow: hidden;
-  border: 1px solid var(--color-light-gray);
-  border-radius: 16px;
-  background: var(--color-white);
-  box-shadow: none;
-}
-.menu-page .menu-best-card > a {
-  display: flex;
-  height: 100%;
-  color: inherit;
-}
-.menu-page .menu-best-card--featured {
-  position: relative;
-  min-height: 100%;
-}
-.menu-page .menu-best-card--featured > a {
-  position: relative;
-  display: block;
-  min-height: 100%;
-}
-.menu-page .menu-best-card--featured .menu-thumb {
-  height: 100%;
-  min-height: 520px;
-  aspect-ratio: 4 / 5;
-  background: var(--color-white);
-}
-.menu-page .menu-best-card--featured .menu-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.menu-page .menu-best-card--featured .menu-thumb::after {
-  position: absolute;
-  z-index: 1;
-  inset: 35% 0 0;
-  content: "";
-  background: linear-gradient(to bottom, transparent, rgba(34, 34, 34, .78));
-  pointer-events: none;
-}
-.menu-page .menu-best-card--featured .menu-thumb span {
-  z-index: 2;
-}
-.menu-page .menu-best-card--featured .menu-card-copy {
-  position: absolute;
-  z-index: 2;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 28px;
-  color: var(--color-white);
-}
-.menu-page .menu-best-card--featured .menu-card-copy > p,
-.menu-page .menu-best-card--featured .menu-card-copy h3,
-.menu-page .menu-best-card--featured .menu-card-copy > span {
-  color: var(--color-white);
-}
-.menu-page .menu-best-card--featured .menu-card-copy h3 {
-  font-size: clamp(20px, 2vw, 28px);
-  font-weight: 600;
-}
-.menu-page .menu-best__side {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  min-width: 0;
-}
-.menu-page .menu-best-card--compact {
-  flex: 1;
-  min-height: 0;
-}
-.menu-page .menu-best-card--compact > a {
-  flex-direction: row;
-  align-items: stretch;
-}
-.menu-page .menu-best-card--compact .menu-thumb {
-  flex: 0 0 38%;
-  min-width: 0;
-  min-height: 150px;
-  aspect-ratio: 4 / 3;
-  background: var(--color-white);
-}
-.menu-page .menu-best-card--compact .menu-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  padding: 12px;
-}
-.menu-page .menu-best-card--compact .menu-card-copy {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  padding: 18px 22px;
-}
-.menu-page .menu-best-card--compact .menu-card-copy > p {
-  margin: 0 0 6px;
-  font-size: 13px;
-  font-weight: 500;
-}
-.menu-page .menu-best-card--compact .menu-card-copy h3 {
-  margin: 0 0 6px;
-  font-size: 17px;
-  font-weight: 600;
-}
-.menu-page .menu-best-card--compact .menu-card-copy > span {
-  font-size: 13px;
-}
-.menu-page .menu-best-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(34, 34, 34, .05);
-}
-
-/* 5. 전체 메뉴 카드 */
-.menu-page .menu-list-section {
-  padding: 88px 0;
-  background: var(--color-white);
-}
-.menu-page .menu-list-section .menu-product-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  align-items: stretch;
-  gap: 28px;
-  margin-inline: auto;
-  padding: 0;
-}
-.menu-page .menu-list-section .menu-product {
-  display: flex;
-  min-width: 0;
-  height: 100%;
-  overflow: hidden;
-  border: 1px solid var(--color-light-gray);
-  border-radius: 14px;
-  background: var(--color-white);
-  box-shadow: none;
-  transition: transform .25s ease;
-}
-.menu-page .menu-list-section .menu-product:hover {
-  transform: translateY(-3px);
-  box-shadow: none;
-}
-.menu-page .menu-list-section .menu-product > a {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  min-width: 0;
-}
-.menu-page .menu-list-section .menu-product .menu-thumb {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  padding: 12px;
-  background: var(--color-bage);
-}
-.menu-page .menu-list-section .menu-product .menu-thumb::before {
-  content: none;
-}
-.menu-page .menu-list-section .menu-product .menu-thumb img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  mix-blend-mode: multiply;
-}
-.menu-page .menu-list-section .menu-product .menu-card-copy {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: 7px;
-  min-height: 0;
-  padding: 20px 20px 22px;
-}
-.menu-page .menu-list-section .menu-product .menu-card-copy > p {
-  margin: 0;
-  color: var(--text-secondary);
-  font-size: 13px;
-  font-weight: 500;
-}
-.menu-page .menu-list-section .menu-product .menu-card-copy h3 {
-  margin: 0;
-  color: #2b2420;
-  font-size: 17px;
-  font-weight: 600;
-}
-.menu-page .menu-list-section .menu-product .menu-card-copy > span {
-  display: -webkit-box;
-  overflow: hidden;
-  margin: 0;
-  color: #4b4746;
-  font-size: 14px;
-  line-height: 1.55;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-}
-
-/* 6. 히어로 */
-.menu-page .menu-hero .swiper::after {
-  background: linear-gradient(to top, rgba(34, 34, 34, .58), rgba(34, 34, 34, .08) 58%, transparent);
-}
-.menu-page .menu-hero .hero-copy {
-  top: 76%;
-  left: max(24px, calc((100% - 1200px) / 2));
-  width: min(1200px, calc(100% - 48px));
-  text-align: left;
-  transform: translateY(-50%);
-}
-.menu-page .menu-hero .hero-copy h1 {
-  color: var(--color-white);
-  font-size: clamp(32px, 3.5vw, 52px);
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-}
-
-/* 7. 섹션 간격과 반응형 */
-.menu-page .menu-best,
-.menu-page .menu-list-section {
-  padding-top: 88px;
-  padding-bottom: 88px;
-}
-.menu-page .menu-best__grid,
-.menu-page .menu-list-section .menu-product-grid {
-  margin-top: 48px;
-}
-@media (max-width: 1200px) {
-  .menu-page .menu-list-section .menu-product-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-@media (max-width: 900px) {
-  .menu-page .menu-best,
-  .menu-page .menu-list-section {
-    padding-top: 64px;
-    padding-bottom: 64px;
-  }
-  .menu-page .menu-best__grid {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 18px;
-  }
-  .menu-page .menu-best-card--featured .menu-thumb {
-    min-height: 460px;
-  }
-  .menu-page .menu-best__side {
-    gap: 14px;
-  }
-  .menu-page .menu-best-card--compact .menu-thumb {
-    flex-basis: 40%;
-    min-height: 130px;
-  }
-  .menu-page .menu-best-card--compact .menu-card-copy {
-    padding: 14px;
-  }
-  .menu-page .menu-list-section .menu-product-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-  }
-}
-@media (max-width: 600px) {
-  .menu-page .menu-best,
-  .menu-page .menu-list-section {
-    padding-top: 64px;
-    padding-bottom: 64px;
-  }
-  .menu-page .menu-best__grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .menu-page .menu-best-card--featured .menu-thumb {
-    min-height: 0;
-    aspect-ratio: 4 / 5;
-  }
-  .menu-page .menu-best__side {
-    gap: 12px;
-  }
-  .menu-page .menu-best-card--compact .menu-thumb {
-    flex-basis: 38%;
-    min-height: 120px;
-  }
-  .menu-page .menu-best-card--compact .menu-card-copy {
-    padding: 14px 16px;
-  }
-  .menu-page .menu-filter {
-    gap: 22px;
-    margin: 36px 0;
-  }
-  .menu-page .menu-filter button {
-    padding-bottom: 8px;
-    font-size: 14px;
-  }
-  .menu-page .menu-list-section .menu-product-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .menu-page .menu-list-section .menu-product .menu-thumb {
-    aspect-ratio: 1 / 1;
-    padding: 12px;
-  }
-  .menu-page .menu-list-section .menu-product .menu-card-copy {
-    padding: 18px 20px 20px;
-  }
-}
-
-/* =====================================================
-   마감 정리: 전체 폭 섹션 / 정렬 / 카드 높이 / 반응형
-   ===================================================== */
-
-/* 1. 섹션 배경은 viewport 전체, 내부 콘텐츠는 1200px */
-.menu-page .menu-best,
-.menu-page .menu-list-section {
-  width: 100%;
-}
-.menu-page .menu-best {
-  margin-top: 0;
-  background: var(--color-bage);
-}
-.menu-page .menu-best__inner,
-.menu-page .menu-list-section > .section-shell {
-  width: min(1200px, calc(100% - 48px));
-  max-width: 1200px;
-  margin-inline: auto;
-}
-.menu-page .menu-list-section {
-  background: var(--color-white);
-}
-
-/* 2. 전체 메뉴: 4개 먼저 표시, 나머지는 기존 더보기 기능으로 */
-.menu-page .menu-list-section .menu-product-grid {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-auto-flow: row;
-  justify-content: start;
-  gap: 24px;
-}
-.menu-page .menu-list-section .menu-more-items {
-  margin-top: 24px;
-}
-
-/* 3. 크리스마스 작은 카드: 대표 카드 높이를 3등분 */
-.menu-page .menu-best__grid {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 24px;
-  align-items: stretch;
-  margin-top: 40px;
-}
-.menu-page .menu-best-card--featured .menu-thumb {
-  min-height: 0;
-  height: 100%;
-  aspect-ratio: 4 / 5;
-}
-.menu-page .menu-best__side {
-  display: grid;
-  grid-template-rows: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-  min-height: 0;
-}
-.menu-page .menu-best-card--compact {
-  height: 100%;
-  min-height: 0;
-  overflow: hidden;
-}
-.menu-page .menu-best-card--compact > a {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  min-height: 0;
-  flex-direction: row;
-  align-items: stretch;
-}
-.menu-page .menu-best-card--compact .menu-thumb {
-  position: relative;
-  flex: 0 0 40%;
-  width: 40%;
-  height: 100%;
-  min-height: 0;
-  aspect-ratio: auto;
-  overflow: hidden;
-  border-radius: 0;
-}
-.menu-page .menu-best-card--compact .menu-thumb img {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  object-fit: cover;
-}
-.menu-page .menu-best-card--compact .menu-thumb span {
-  top: 12px;
-  left: 12px;
-  z-index: 2;
-  padding: 6px 9px;
-  font-size: 11px;
-}
-.menu-page .menu-best-card--compact .menu-card-copy {
-  position: relative;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 6px;
-  min-width: 0;
-  padding: 18px 24px;
-}
-.menu-page .menu-best-card--compact .menu-card-copy > p {
-  margin: 0;
-  color: var(--text-secondary);
-  font-size: 13px;
-  font-weight: 500;
-}
-.menu-page .menu-best-card--compact .menu-card-copy h3 {
-  margin: 0;
-  color: var(--text-primary);
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1.4;
-}
-.menu-page .menu-best-card--compact .menu-card-copy > span:not(.menu-card-more) {
-  color: var(--text-secondary);
-  font-size: 14px;
-  line-height: 1.45;
-}
-.menu-page .menu-best-card--compact .menu-card-copy .menu-card-more {
-  align-self: flex-end;
-  margin-top: 8px;
-  color: var(--text-secondary);
-  font-size: 14px;
-  transition: color .2s ease;
-}
-.menu-page .menu-best-card--compact > a:hover .menu-card-more {
-  color: var(--color-brand-orange);
-}
-
-/* 4. 히어로 / 섹션 제목 / 필터의 왼쪽 시작선 통일 */
-.menu-page .menu-section-heading--center {
-  text-align: left;
-}
-.menu-page .menu-section-heading h2 {
-  text-align: left;
-}
-.menu-page .menu-filter {
-  justify-content: flex-start;
-  margin: 32px 0 0;
-}
-.menu-page .menu-best__grid {
-  margin-top: 40px;
-}
-.menu-page .menu-list-section .menu-product-grid {
-  margin-top: 40px;
-}
-.menu-page .menu-hero .hero-copy {
-  left: max(24px, calc((100% - 1200px) / 2));
-  width: min(1200px, calc(100% - 48px));
-  top: 70%;
-  transform: translateY(-50%);
-}
-.menu-page .menu-hero .swiper::after {
-  background: linear-gradient(
-    to top,
-    rgba(34, 34, 34, .42),
-    rgba(34, 34, 34, .06) 45%,
-    transparent 72%
-  );
-}
-.menu-page .menu-hero .hero-controls {
-  left: max(24px, calc((100% - 1200px) / 2));
-  right: max(24px, calc((100% - 1200px) / 2));
-  width: auto;
-  margin-inline: 0;
-}
-.menu-page .menu-hero .menu-hero__scrollbar {
-  margin-right: 40px;
-}
-
-/* 5. 개발용 안내 문구는 HTML에서 제거 */
-
-/* 6. 히어로 문구와 진행 컨트롤 사이 여백 */
-.menu-page .menu-hero .hero-copy {
-  padding-bottom: 40px;
-}
-
-/* 7. 섹션 여백 통일 */
-.menu-page .menu-best,
-.menu-page .menu-list-section {
-  padding-top: 88px;
-  padding-bottom: 88px;
-}
-
-@media (max-width: 1200px) {
-  .menu-page .menu-list-section .menu-product-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 900px) {
-  .menu-page .menu-best,
-  .menu-page .menu-list-section {
-    padding-top: 64px;
-    padding-bottom: 64px;
-  }
-  .menu-page .menu-best__grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  .menu-page .menu-best-card--featured .menu-thumb {
-    aspect-ratio: 4 / 5;
-  }
-  .menu-page .menu-best__side {
-    grid-template-rows: repeat(3, minmax(160px, auto));
-    gap: 24px;
-  }
-  .menu-page .menu-best-card--compact {
-    min-height: 160px;
-  }
-  .menu-page .menu-list-section .menu-product-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-  }
-  .menu-page .menu-hero .hero-copy {
-    top: 70%;
-  }
-}
-
-@media (max-width: 600px) {
-  .menu-page .menu-best,
-  .menu-page .menu-list-section {
-    padding-top: 64px;
-    padding-bottom: 64px;
-  }
-  .menu-page .menu-best__grid,
-  .menu-page .menu-list-section .menu-product-grid {
-    margin-top: 40px;
-  }
-  .menu-page .menu-best__side {
-    grid-template-rows: none;
-    gap: 16px;
-  }
-  .menu-page .menu-best-card--compact {
-    min-height: 150px;
-  }
-  .menu-page .menu-best-card--compact .menu-thumb {
-    flex-basis: 40%;
-    width: 40%;
-    min-height: 150px;
-  }
-  .menu-page .menu-best-card--compact .menu-card-copy {
-    padding: 14px 16px;
-  }
-  .menu-page .menu-best-card--compact .menu-card-copy h3 {
-    font-size: 16px;
-  }
-  .menu-page .menu-best-card--compact .menu-card-copy > span:not(.menu-card-more) {
-    font-size: 12px;
-  }
-  .menu-page .menu-list-section .menu-product-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .menu-page .menu-filter {
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  .menu-page .menu-hero .hero-copy {
-    top: 70%;
-    padding-bottom: 40px;
-  }
-  .menu-page .menu-hero .hero-controls {
-    left: 24px;
-    right: 24px;
-  }
-}
-
-/* 크리스마스 섹션 전체 폭 및 내부 컨테이너 보정 */
-.menu-page main {
-  width: 100%;
-  max-width: none;
-}
-.menu-page .xmas,
-.menu-page .menu-list-section {
-  display: block;
-  position: relative;
-  width: 100%;
-  max-width: none;
-  margin-inline: 0;
-  box-sizing: border-box;
-}
-.menu-page .xmas {
-  background: var(--color-bage);
-  padding: 88px 0;
-}
-.menu-page .xmas__inner,
-.menu-page .menu-list-section__inner {
-  width: min(1200px, calc(100% - 48px));
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0;
-  box-sizing: border-box;
-}
-.menu-page .menu-list-section {
-  background: var(--color-white);
-  padding: 88px 0;
-}
-.menu-page .xmas .menu-best__grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  align-items: stretch;
-  gap: 24px;
-  margin-top: 40px;
-}
-.menu-page .xmas .menu-best-card--featured {
-  min-width: 0;
-  height: 100%;
-  overflow: hidden;
-  border-radius: 16px;
-}
-.menu-page .xmas .menu-best-card--featured .menu-thumb {
-  width: 100%;
-  height: 100%;
-  min-height: 0;
-  aspect-ratio: 4 / 5;
-}
-.menu-page .xmas .menu-best__side {
-  display: grid;
-  grid-template-rows: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-  min-height: 0;
-}
-.menu-page .xmas .menu-best-card--compact {
-  height: 100%;
-  min-height: 0;
-  overflow: hidden;
-  border: 1px solid var(--color-light-gray);
-  border-radius: 16px;
-}
-.menu-page .xmas .menu-best-card--compact > a {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  width: 100%;
-  height: 100%;
-  min-height: 0;
-}
-.menu-page .xmas .menu-best-card--compact .menu-thumb {
-  position: relative;
-  flex: 0 0 40%;
-  width: 40%;
-  height: 100%;
-  min-height: 0;
-  margin: 0;
-  padding: 0;
-  aspect-ratio: auto;
-  overflow: hidden;
-  border-radius: 0;
-}
-.menu-page .xmas .menu-best-card--compact .menu-thumb img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  object-fit: cover;
-}
-.menu-page .xmas .menu-best-card--compact .menu-thumb span {
-  top: 12px;
-  left: 12px;
-  z-index: 2;
-}
-.menu-page .xmas .menu-best-card--compact .menu-card-copy {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 6px;
-  min-width: 0;
-  padding: 18px 24px;
-}
-.menu-page .xmas .menu-best-card--compact .menu-card-copy > p {
-  margin: 0;
-  color: var(--text-secondary);
-  font-size: 13px;
-  font-weight: 500;
-}
-.menu-page .xmas .menu-best-card--compact .menu-card-copy h3 {
-  margin: 0;
-  color: var(--text-primary);
-  font-size: 18px;
-  font-weight: 600;
-}
-.menu-page .xmas .menu-best-card--compact .menu-card-copy > span:not(.menu-card-more) {
-  color: var(--text-secondary);
-  font-size: 14px;
-}
-.menu-page .xmas .menu-best-card--compact .menu-card-more {
-  display: none;
-}
-@media (max-width: 900px) {
-  .menu-page .xmas,
-  .menu-page .menu-list-section {
-    padding: 64px 0;
-  }
-  .menu-page .xmas .menu-best__grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  .menu-page .xmas .menu-best__side {
-    grid-template-rows: repeat(3, minmax(160px, auto));
-    gap: 24px;
-  }
-  .menu-page .xmas .menu-best-card--compact {
-    min-height: 160px;
-  }
-  .menu-page .xmas .menu-best-card--compact .menu-thumb {
-    flex-basis: 40%;
-    width: 40%;
-    min-height: 160px;
-  }
-}
-@media (max-width: 600px) {
-  .menu-page .xmas__inner,
-  .menu-page .menu-list-section__inner {
-    width: calc(100% - 48px);
-  }
-}
-
-
-/* =====================================================
-   메인 페이지 디자인 시스템과 통일 (menu 페이지 전용)
-   ===================================================== */
-
-/* 1. 섹션 제목: index.html의 Hans Menu / News & Event 기준 */
-.menu-page .xmas,
-.menu-page .menu-list-section {
-  padding: 150px 0 112px;
-}
-.menu-page .menu-section-heading--center,
-.menu-page .menu-section-heading h2,
-.menu-page .menu-section-heading > p:last-child {
-  text-align: center;
-}
-.menu-page .menu-section-heading h2 {
-  margin: 0;
-  color: var(--text-brand);
-  font-size: var(--fs-title);
-  font-weight: var(--fw-title);
-  line-height: 1.2;
-  letter-spacing: -0.03em;
-}
-.menu-page .menu-section-heading h2 .menu-heading-accent {
-  color: var(--color-brand-orange);
-}
-.menu-page .menu-eyebrow {
-  position: relative;
-  margin: 0 0 36px;
-  color: var(--color-brand-orange);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: .4em;
-  text-indent: .4em;
-  text-align: center;
-}
-.menu-page .menu-section-heading > p:last-child {
-  margin: 20px auto 0;
-  color: var(--text-primary);
-  font-size: 15px;
-  line-height: 1.7;
-}
-.menu-page .menu-filter {
-  justify-content: center;
-  margin: 48px auto 0;
-}
-.menu-page .menu-best__grid,
-.menu-page .menu-list-section .menu-product-grid {
-  margin-top: 48px;
-}
-
-/* 2. 히어로: 메인과 동일한 중앙 카피/타이틀/컨트롤 위치 */
-.menu-page .menu-hero .swiper::after {
-  background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,.15) 70%);
-}
-.menu-page .menu-hero .hero-copy {
-  top: 76%;
-  left: 50%;
-  width: min(90%, 1100px);
-  padding: 0 0 40px;
-  text-align: center;
-  transform: translate(-50%, -50%);
-}
-.menu-page .menu-hero .hero-copy h1 {
-  margin: 0;
-  color: var(--color-white);
-  font-size: clamp(42px, 6.25vw, 120px);
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: .01em;
-}
-.menu-page .menu-hero .hero-copy p {
-  margin: 20px 0 0;
-  color: var(--color-white);
-  font-size: clamp(16px, 1.25vw, 24px);
-  font-weight: 700;
-  line-height: 1.5;
-  letter-spacing: .02em;
-  text-shadow: 0 2px 12px rgba(0,0,0,.5);
-}
-.menu-page .menu-hero .hero-controls {
-  right: 13.5%;
-  bottom: 20px;
-  left: 13.5%;
-  width: auto;
-  margin: 0;
-  gap: 16px;
-}
-.menu-page .menu-hero .menu-hero__scrollbar {
-  margin-right: 0;
-}
-
-/* 3. 메인과 동일한 매장찾기/가맹문의 배너는 main.css 공통 스타일 재사용 */
-
-/* 4. 크리스마스 카드: 동일한 외곽선/그림자와 세로 정렬 */
-.menu-page .xmas .menu-best-card {
-  border: 1px solid var(--color-light-gray);
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(34, 34, 34, .05);
-}
-.menu-page .xmas .menu-best-card--compact .menu-card-copy {
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 8px;
-  padding: 18px 24px;
-}
-.menu-page .xmas .menu-best-card--compact .menu-card-main {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  min-width: 0;
-  gap: 6px;
-}
-.menu-page .xmas .menu-best-card--compact .menu-card-more {
-  display: block;
-  align-self: flex-end;
-  margin: 0;
-  padding-right: 0;
-  color: var(--text-secondary);
-  font-size: 14px;
-  white-space: nowrap;
-  transition: color .2s ease;
-}
-.menu-page .xmas .menu-best-card--compact > a:hover .menu-card-more {
-  color: var(--color-brand-orange);
-}
-.menu-page .xmas .menu-best-card--featured,
-.menu-page .xmas .menu-best-card--compact {
-  box-shadow: 0 6px 18px rgba(34, 34, 34, .05);
-}
-.menu-page .xmas .menu-best-card--compact .menu-thumb {
-  flex: 0 0 40%;
-  width: 40%;
-}
-
-/* 5. 전체 메뉴 카드: 제품 이미지 확대 및 글자 가독성 */
-.menu-page .menu-list-section .menu-product .menu-thumb {
-  aspect-ratio: 1 / 1;
-  padding: 12px;
-}
-.menu-page .menu-list-section .menu-product .menu-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-.menu-page .menu-list-section .menu-product .menu-card-copy h3 {
-  font-size: 18px;
-}
-.menu-page .menu-list-section .menu-product .menu-card-copy > p {
-  font-size: 14px;
-}
-.menu-page .menu-list-section .menu-product .menu-card-copy > span {
-  font-size: 15px;
-}
-
-@media (max-width: 1024px) {
-  .menu-page .xmas,
-  .menu-page .menu-list-section {
-    padding: 150px 0 112px;
-  }
-}
-@media (max-width: 900px) {
-  .menu-page .xmas,
-  .menu-page .menu-list-section {
-    padding: 96px 0 80px;
-  }
-  .menu-page .menu-hero .hero-controls {
-    right: 24px;
-    left: 24px;
-  }
-  .menu-page .xmas .menu-best-card--compact .menu-card-copy {
-    padding: 14px 20px;
-  }
-}
-@media (max-width: 600px) {
-  .menu-page .xmas,
-  .menu-page .menu-list-section {
-    padding: 76px 0 64px;
-  }
-  .menu-page .menu-section-heading h2 {
-    font-size: var(--fs-title);
-  }
-  .menu-page .menu-eyebrow {
-    margin-bottom: 28px;
-    font-size: 12px;
-    letter-spacing: .3em;
-  }
-  .menu-page .menu-filter {
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 36px;
-  }
-  .menu-page .menu-hero .hero-copy {
-    top: 72%;
-    width: calc(100% - 40px);
-    padding-bottom: 44px;
-  }
-  .menu-page .menu-hero .hero-copy h1 {
-    font-size: clamp(38px, 10vw, 52px);
-  }
-  .menu-page .menu-hero .hero-copy p {
-    font-size: 15px;
-  }
-  .menu-page .menu-best__grid,
-  .menu-page .menu-list-section .menu-product-grid {
-    margin-top: 36px;
-  }
-  .menu-page .xmas .menu-best-card--compact .menu-card-copy {
-    padding: 12px 16px;
-  }
-  .menu-page .xmas .menu-best-card--compact .menu-card-copy h3 {
-    font-size: 16px;
-  }
-  .menu-page .xmas .menu-best-card--compact .menu-card-copy > span:not(.menu-card-more) {
-    font-size: 12px;
-  }
-  .menu-page .xmas .menu-best-card--compact .menu-card-more {
-    font-size: 12px;
-  }
+ .menu-page .menu-hero .swiper{height:78vh;min-height:460px}
+ .menu-page .hero-copy{top:55%;left:24px;width:calc(100% - 48px)}
+ .menu-page .hero-copy h1{font-size:clamp(48px,13vw,72px)}
+ .menu-page .hero-copy p{max-width:300px;margin-top:16px;font-size:14px;line-height:1.7}
+ .menu-page .menu-hero__controls{right:24px;left:24px;bottom:18px}
+ .menu-page .xmas{padding:68px 0 72px}
+ .menu-page .xmas__inner,.menu-page .menu-list-section__inner{width:calc(100% - 40px)}
+ .menu-page .menu-section-heading--split{display:block}
+ .menu-page .menu-section-heading h2{font-size:clamp(38px,11vw,54px)}
+ .menu-page .menu-section-heading--split>p{margin-top:18px;text-align:left;font-size:13px}
+ .menu-page .menu-section-heading>p:last-child{font-size:13px}
+ .menu-page .menu-best__grid{margin-top:30px}
+ .menu-page .menu-best-card--featured>a{display:flex;flex-direction:column}
+ .menu-page .menu-best-card--featured .menu-thumb{min-height:0;aspect-ratio:1.15/1}
+ .menu-page .menu-best-card .menu-card-copy{padding:20px}
+ .menu-page .menu-best-card .menu-card-copy h3{font-size:19px}
+ .menu-page .menu-best__side{grid-template-columns:1fr;gap:10px}
+ .menu-page .menu-best-card--compact>a{display:grid;grid-template-columns:38% minmax(0,1fr);min-height:130px}
+ .menu-page .menu-best-card--compact .menu-thumb{height:100%;aspect-ratio:auto}
+ .menu-page .menu-best-card--compact .menu-card-copy{padding:14px}
+ .menu-page .menu-best-card--compact .menu-card-copy>p{font-size:9px}
+ .menu-page .menu-best-card--compact .menu-card-copy h3{font-size:15px}
+ .menu-page .menu-best-card--compact .menu-card-copy>span{font-size:11px}
+ .menu-page .menu-best-card--compact .menu-card-copy>b{margin-top:9px;font-size:10px}
+ .menu-page .menu-list-section{padding:72px 0 80px}
+ .menu-page .menu-catalog-tools{display:block;margin:34px 0 22px}
+ .menu-page .menu-filter{gap:4px}
+ .menu-page .menu-filter button{gap:5px;padding:9px 10px;font-size:9px}
+ .menu-page .menu-filter button span{font-size:11px}
+ .menu-page .menu-catalog-note{margin-top:16px;font-size:9px}
+ .menu-page .menu-product-grid{gap:28px 12px}
+ .menu-page .menu-product .menu-card-copy{padding-top:13px}
+ .menu-page .menu-product .menu-card-copy>p{font-size:8px}
+ .menu-page .menu-product .menu-card-copy h3{font-size:15px}
+ .menu-page .menu-product .menu-card-copy>span{font-size:11px;line-height:1.55}
+ .menu-page .menu-product .menu-card-copy>b{margin-top:12px;font-size:10px}
+ .menu-page .menu-more-wrap{margin-top:42px}
+ .menu-page .menu-more-wrap button{min-width:190px;padding:14px 18px}
+}
+@media(prefers-reduced-motion:reduce){
+ .menu-page .menu-best-card,.menu-page .menu-thumb img,.menu-page .menu-card-copy>b i,.menu-page .menu-more-wrap button{transition:none!important}
+ .menu-page .menu-best-card:hover,.menu-page .menu-product:hover .menu-thumb img{transform:none}
 }
