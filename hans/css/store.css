@@ -85,3 +85,7 @@ html { scroll-padding-top: var(--header-height); }
 @media (max-width: 600px) {
   .store-page { padding-top: calc(var(--header-height) + 24px); }
 }
+
+
+/* 이전 배포본 또는 캐시된 HTML에 남아 있는 매장찾기/고객문의 탭 숨김 */
+.store-tabs { display: none !important; }
