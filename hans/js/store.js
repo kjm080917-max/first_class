@@ -2,20 +2,8 @@
 // Kakao Developers에서 발급한 JavaScript 키만 입력하세요.
 const KAKAO_JS_KEY = '여기에_JavaScript키';
 
-// 아래 매장명·주소·전화번호는 화면 구성을 위한 가상 데이터입니다.
-// 실제 매장 정보로 교체할 때는 공식 자료로 확인한 정확한 도로명주소를 입력하세요.
-const stores = [
-  { region:"서울", name:"한스 강남 예시점", address:"서울 강남구 (예시 주소)", phone:"02-000-0001", image:"", lat:null, lng:null },
-  { region:"서울", name:"한스 잠실 예시점", address:"서울 송파구 (예시 주소)", phone:"02-000-0002", image:"", lat:null, lng:null },
-  { region:"서울", name:"한스 홍대 예시점", address:"서울 마포구 (예시 주소)", phone:"02-000-0003", image:"", lat:null, lng:null },
-  { region:"경기", name:"한스 분당 예시점", address:"경기 성남시 분당구 (예시 주소)", phone:"031-000-0001", image:"", lat:null, lng:null },
-  { region:"경기", name:"한스 수원 예시점", address:"경기 수원시 (예시 주소)", phone:"031-000-0002", image:"", lat:null, lng:null },
-  { region:"경기", name:"한스 일산 예시점", address:"경기 고양시 일산동구 (예시 주소)", phone:"031-000-0003", image:"", lat:null, lng:null },
-  { region:"인천", name:"한스 송도 예시점", address:"인천 연수구 (예시 주소)", phone:"032-000-0001", image:"", lat:null, lng:null },
-  { region:"인천", name:"한스 부평 예시점", address:"인천 부평구 (예시 주소)", phone:"032-000-0002", image:"", lat:null, lng:null },
-  { region:"부산", name:"한스 해운대 예시점", address:"부산 해운대구 (예시 주소)", phone:"051-000-0001", image:"", lat:null, lng:null },
-  { region:"대전", name:"한스 둔산 예시점", address:"대전 서구 (예시 주소)", phone:"042-000-0001", image:"", lat:null, lng:null }
-];
+// 공식 매장 정보가 확인되면 이 배열에 등록합니다.
+const stores = [];
 
 const searchInput = document.querySelector("#store-keyword");
 const searchButton = document.querySelector("#store-search-button");
@@ -246,7 +234,7 @@ const renderStores = () => {
   if (!visible.length) {
     const empty = document.createElement("p");
     empty.className = "store-list__empty";
-    empty.textContent = "검색 결과가 없습니다. 지역이나 매장명을 다시 확인해 주세요.";
+    empty.textContent = "등록된 매장 정보가 없습니다.";
     storeList.append(empty);
   } else {
     visible.forEach(store => {
