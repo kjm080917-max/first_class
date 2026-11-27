@@ -78,3 +78,19 @@
  .store-map__selection{right:10px;bottom:10px;left:10px}
  .store-data-notice{text-align:left;line-height:1.6}
 }
+
+
+/* 헤더와 본문 제목이 겹치지 않도록 상단 여백 확보 */
+.store-page {
+  padding-top: 150px;
+}
+@media (max-width: 900px) {
+  .store-page {
+    padding-top: 130px;
+  }
+}
+@media (max-width: 600px) {
+  .store-page {
+    padding-top: 110px;
+  }
+}
