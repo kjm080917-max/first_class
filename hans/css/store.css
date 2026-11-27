@@ -108,3 +108,17 @@ html { scroll-padding-top: var(--header-height); }
 @media(max-width:600px) {
   .store-map-panel { height:360px; }
 }
+
+
+/* 카카오맵 인포윈도우 내부 콘텐츠 */
+.store-map-info {
+  min-width:190px;
+  padding:10px 12px;
+  color:var(--text-primary);
+  font-family:inherit;
+  font-size:12px;
+  line-height:1.55;
+}
+.store-map-info strong { display:block; margin-bottom:5px; font-size:13px; font-weight:800; }
+.store-map-info p { margin:2px 0; color:var(--text-secondary); }
+.store-map-info a { display:inline-block; margin-top:7px; color:var(--text-brand); font-weight:700; text-decoration:underline; }
