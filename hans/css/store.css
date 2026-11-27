@@ -79,18 +79,16 @@
  .store-data-notice{text-align:left;line-height:1.6}
 }
 
-
-/* 헤더와 본문 제목이 겹치지 않도록 상단 여백 확보 */
-.store-page {
-  padding-top: 150px;
+/* 고정 헤더 높이를 반영한 본문 시작 위치 및 앵커 스크롤 여백 */
+:root { --header-height: 90px; }
+html { scroll-padding-top: var(--header-height); }
+.store-page { padding-top: calc(var(--header-height) + 40px); }
+@media (max-width: 1024px) {
+  :root { --header-height: 60px; }
 }
 @media (max-width: 900px) {
-  .store-page {
-    padding-top: 130px;
-  }
+  .store-page { padding-top: calc(var(--header-height) + 40px); }
 }
 @media (max-width: 600px) {
-  .store-page {
-    padding-top: 110px;
-  }
+  .store-page { padding-top: calc(var(--header-height) + 24px); }
 }
