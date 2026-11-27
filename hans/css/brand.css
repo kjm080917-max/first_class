@@ -79,3 +79,54 @@
   .brand-bottom-cta a{padding:16px 20px}
 }
 @media(prefers-reduced-motion:reduce){.brand-reveal,.brand-bottom-cta a{transition:none}.brand-reveal{opacity:1;transform:none}}
+
+
+/* 브랜드 가치 및 제품 디자인 콘텐츠 */
+.brand-eyebrow{margin:0 0 14px;color:var(--text-brand);font-size:13px;font-weight:800;letter-spacing:.12em}
+.brand-story__heading{margin:0 auto 52px;text-align:center}
+.brand-story__heading h2{margin:0;color:var(--text-primary);font-size:clamp(32px,4vw,48px);font-weight:800;line-height:1.3;letter-spacing:-.045em}
+.brand-story__heading h2 em{color:var(--text-brand);font-style:normal}
+.brand-story__heading>p:last-child{margin:18px 0 0;color:var(--text-secondary);font-size:15px;line-height:1.8;word-break:keep-all}
+.brand-story__content{grid-template-columns:minmax(300px,.9fr) minmax(0,1.1fr);align-items:start;gap:clamp(40px,6vw,76px)}
+.brand-story__image{aspect-ratio:4/5;max-height:620px}
+.brand-story__image img{object-fit:cover}
+.brand-story__text{max-width:none}
+.brand-story__item{padding:0 0 24px;margin:0 0 24px;border-bottom:1px solid var(--color-bage)}
+.brand-story__item:last-child{padding-bottom:0;margin-bottom:0;border-bottom:0}
+.brand-story__item h3{margin:0 0 10px;color:var(--text-primary);font-size:20px;font-weight:800;letter-spacing:-.035em}
+.brand-story__item .brand-story__paragraph{margin:0;font-size:14px;line-height:1.9}
+.brand-design{padding-top:24px}
+.brand-design__heading{max-width:650px;margin:0 0 52px}
+.brand-design__heading h2{margin:0;font-size:clamp(38px,5vw,64px);font-weight:800;line-height:1.15;letter-spacing:-.05em}
+.brand-design__heading h2 em{color:var(--text-brand);font-style:normal}
+.brand-design__groups{display:grid;gap:56px}
+.brand-design-group__title{display:flex;align-items:center;gap:20px;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--color-cream)}
+.brand-design-group__title>span{display:grid;place-items:center;flex:0 0 48px;width:48px;height:48px;border-radius:50%;background:var(--color-brand-orange);color:#fff;font-size:15px;font-weight:800}
+.brand-design-group__title h3{margin:0;color:var(--text-primary);font-size:23px;font-weight:800;letter-spacing:.015em}
+.brand-design-group__title p{margin:6px 0 0;color:var(--text-secondary);font-size:14px}
+.brand-design__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.brand-design__grid article{min-height:170px;padding:24px;background:var(--color-white);border:1px solid rgba(75,71,70,.09);border-radius:14px}
+.brand-design__grid h4{margin:0 0 12px;color:var(--text-primary);font-size:17px;font-weight:800;line-height:1.45;word-break:keep-all}
+.brand-design__grid p{margin:0;color:var(--text-secondary);font-size:13px;line-height:1.8;word-break:keep-all}
+@media(max-width:900px){
+ .brand-story__heading{margin-bottom:36px}
+ .brand-story__content{grid-template-columns:1fr;gap:32px}
+ .brand-story__image{width:min(100%,520px);justify-self:center;aspect-ratio:5/4}
+ .brand-design__grid{grid-template-columns:1fr;gap:12px}
+ .brand-design__grid article{min-height:0}
+}
+@media(max-width:600px){
+ .brand-story__heading h2{font-size:30px}
+ .brand-story__heading>p:last-child{font-size:13px}
+ .brand-story__image{aspect-ratio:4/5}
+ .brand-story__item h3{font-size:18px}
+ .brand-design{padding-top:0}
+ .brand-design__heading{margin-bottom:36px}
+ .brand-design__heading h2{font-size:38px}
+ .brand-design__group{gap:36px}
+ .brand-design-group__title{gap:14px}
+ .brand-design-group__title>span{flex-basis:40px;width:40px;height:40px}
+ .brand-design-group__title h3{font-size:18px}
+ .brand-design-group__title p{font-size:12px;line-height:1.6}
+ .brand-design__grid article{padding:20px}
+}
