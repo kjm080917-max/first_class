@@ -33,116 +33,88 @@
   </header>
 
   <style>
-.mn{--o:var(--color-brand-orange,#ff5a2d);--ink:#2b2420;--sub:#6f6560;--line:#e8e0db;--cream:#f8f4f1;--green:#2d3a2c;
-  padding-top:90px;color:var(--ink);background:#fff}
+.mn{--mn-orange:#f15a3b;--mn-ink:#171514;--mn-muted:#77716d;--mn-paper:#faf8f6;padding-top:90px;color:var(--mn-ink);background:#fff}
 .mn *{box-sizing:border-box}
 .mn a{color:inherit;text-decoration:none}
-.mn ul{list-style:none;margin:0;padding:0}
-.mn img{display:block}
-.mn__in{max-width:1200px;margin:0 auto;padding:0 24px}
-.mn__sec{padding:96px 0}
-.mn__title{text-align:center;margin-bottom:48px}
-.mn__title small{display:block;font-size:14px;color:var(--o);font-weight:600;margin-bottom:10px}
-.mn__title h2{font-size:clamp(28px,3.2vw,42px);font-weight:800;letter-spacing:-.02em;line-height:1.3}
-.mn__title h2 em{font-style:normal;color:var(--o)}
-.mn__title p{margin-top:12px;color:var(--sub);font-size:16px}
-.mn-hero{position:relative;height:clamp(420px,52vw,680px);overflow:hidden;background:#222}
-.mn-hero__slide{position:absolute;inset:0;opacity:0;transition:opacity .8s}
-.mn-hero__slide.on{opacity:1}
-.mn-hero__slide img{width:100%;height:100%;object-fit:cover}
-.mn-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.6),rgba(0,0,0,.1) 65%);pointer-events:none}
-.mn-hero__txt{position:absolute;z-index:2;left:0;right:0;bottom:96px;text-align:center;color:#fff;padding:0 24px}
-.mn-hero__txt h1{font-size:clamp(32px,4vw,56px);font-weight:800;letter-spacing:-.02em;text-shadow:0 2px 16px rgba(0,0,0,.35)}
-.mn-hero__txt p{margin-top:12px;font-size:clamp(15px,1.5vw,19px);text-shadow:0 2px 12px rgba(0,0,0,.5)}
-.mn-hero__ctl{position:absolute;z-index:3;left:0;right:0;bottom:32px}
-.mn-hero__ctl .mn__in{display:flex;align-items:center;gap:20px;color:#fff;font-size:14px}
-.mn-hero__bar{flex:1;height:2px;background:rgba(255,255,255,.35)}
-.mn-hero__bar i{display:block;height:100%;width:0;background:#fff}
-.mn-hero__btn{width:40px;height:40px;border:1px solid rgba(255,255,255,.6);border-radius:50%;background:transparent;color:#fff;font-size:16px;cursor:pointer}
-.mn-hero__btn:hover{background:rgba(255,255,255,.2)}
-.mn-xmas{background:var(--green);color:#fff}
-.mn-xmas .mn__title p{color:#d6dcd3}
-.mn-xmas .mn__title small{color:#ffb59e}
-.mn-xmas__grid{display:grid;grid-template-columns:1.1fr 1fr;gap:24px}
-.mn-big{position:relative;display:block;border-radius:20px;overflow:hidden;min-height:560px;background:#1f2a1e}
-.mn-big img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.mn-big:hover img{transform:scale(1.04)}
-.mn-big::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65),rgba(0,0,0,0) 55%)}
-.mn-big__txt{position:absolute;z-index:2;left:32px;right:32px;bottom:32px}
-.mn-big__txt span{font-size:14px;color:#ffd9cc}
-.mn-big__txt h3{margin-top:6px;font-size:28px;font-weight:700}
-.mn-big__txt p{margin-top:8px;font-size:15px;color:#e8e8e8}
-.mn-small{display:grid;grid-template-rows:repeat(3,1fr);gap:24px}
-.mn-sm{display:grid;grid-template-columns:40% 1fr;border-radius:20px;overflow:hidden;background:#fff;color:var(--ink);transition:transform .25s}
-.mn-sm:hover{transform:translateY(-4px)}
-.mn-sm__img{position:relative;background:var(--cream)}
-.mn-sm__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.mn-sm__txt{display:flex;flex-direction:column;padding:24px;min-width:0}
-.mn-sm__txt span{font-size:13px;color:var(--sub)}
-.mn-sm__txt h3{margin-top:6px;font-size:19px;font-weight:700}
-.mn-sm__txt p{margin-top:6px;font-size:14px;color:var(--sub)}
-.mn-sm__txt b{margin-top:auto;align-self:flex-end;font-size:14px;font-weight:600}
-.mn-sm:hover b{color:var(--o)}
-.mn-badge{position:absolute;z-index:2;top:14px;left:14px;padding:5px 12px;border-radius:999px;background:#2b2420;color:#fff;font-size:12px;font-weight:700}
-.mn-tabs{display:flex;justify-content:center;gap:36px;margin-bottom:40px}
-.mn-tab{padding:8px 2px;border:0;border-bottom:2px solid transparent;background:none;font:inherit;font-size:17px;color:var(--sub);cursor:pointer}
-.mn-tab:hover{color:var(--ink)}
-.mn-tab.on{color:var(--ink);font-weight:700;border-color:var(--o)}
-.mn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 24px}
-.mn-card{display:block;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;transition:transform .25s,border-color .25s}
-.mn-card:hover{transform:translateY(-4px);border-color:#d9cdc6}
-.mn-card__img{position:relative;aspect-ratio:1/1;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:12px;color:#b9a8a8}
-.mn-card__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:14px;mix-blend-mode:multiply}
-.mn-card__txt{padding:20px 22px 24px}
-.mn-card__txt span{font-size:13px;color:var(--sub)}
-.mn-card__txt h3{margin-top:4px;font-size:18px;font-weight:700}
-.mn-card__txt p{margin-top:6px;font-size:14px;color:var(--sub);line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.mn-soon{display:flex;align-items:center;justify-content:center;min-height:300px;border:1px dashed #cfc3bc;border-radius:18px;color:#9a8e88;font-size:14px;text-align:center;padding:24px}
-.mn-empty{grid-column:1/-1;text-align:center;padding:60px 0;color:var(--sub)}
-.mn-card[hidden],.mn-soon[hidden]{display:none}
-@media (max-width:1100px){.mn-grid{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:1024px){.mn{padding-top:60px}}
-@media (max-width:900px){
-  .mn__sec{padding:64px 0}
-  .mn-xmas__grid{grid-template-columns:1fr}
-  .mn-big{min-height:420px}
-  .mn-small{grid-template-rows:none}
-  .mn-sm{min-height:150px}
-  .mn-grid{grid-template-columns:repeat(2,1fr);gap:16px}
-  .mn-hero__txt{bottom:84px}
-}
-@media (max-width:600px){.mn-grid{grid-template-columns:1fr}.mn-tabs{gap:22px}.mn-tab{font-size:15px}}
-@media (prefers-reduced-motion:reduce){.mn *{transition:none!important}}
+.mn img{display:block;width:100%}
+.mn__inner{width:min(1080px,calc(100% - 48px));margin:0 auto}
+.mn__heading{text-align:center;margin-bottom:42px}
+.mn__heading small{display:block;margin-bottom:10px;font-size:11px;color:#777}
+.mn__heading h2{font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-.055em;line-height:1.25}
+.mn__heading h2 em{font-style:normal;color:var(--mn-orange)}
+.mn__heading p{margin-top:12px;font-size:12px;color:var(--mn-muted)}
+.mn-hero{position:relative;height:clamp(320px,39vw,520px);overflow:hidden;background:#ddd}
+.mn-hero__slides,.mn-hero__slide{position:absolute;inset:0}
+.mn-hero__slide{opacity:0;transition:opacity .7s}
+.mn-hero__slide.is-active{opacity:1}
+.mn-hero__slide img{height:100%;object-fit:cover;object-position:center}
+.mn-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.36),transparent 55%);pointer-events:none}
+.mn-hero__copy{position:absolute;z-index:2;left:20px;right:20px;bottom:66px;text-align:center;color:#fff}
+.mn-hero__copy h1{font-size:clamp(38px,6vw,66px);font-weight:800;letter-spacing:-.045em;line-height:1}
+.mn-hero__copy p{margin-top:16px;font-size:13px;font-weight:600}
+.mn-hero__controls{position:absolute;z-index:3;left:50%;bottom:20px;display:flex;align-items:center;gap:12px;width:min(560px,calc(100% - 48px));transform:translateX(-50%);color:#fff;font-size:10px}
+.mn-hero__progress{height:1px;flex:1;background:rgba(255,255,255,.55)}
+.mn-hero__progress span{display:block;width:0;height:100%;background:#fff}
+.mn-hero__controls button{padding:0;border:0;background:none;color:#fff;font-size:17px;cursor:pointer}
+.mn__section{padding:48px 0 70px}
+.mn-xmas__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.mn-xmas__card{min-width:0}
+.mn-xmas__image{position:relative;overflow:hidden;aspect-ratio:1.28/1;background:#f2efeb}
+.mn-xmas__image img{height:100%;object-fit:cover;transition:transform .4s}
+.mn-xmas__card:hover img{transform:scale(1.04)}
+.mn-xmas__badge{position:absolute;top:10px;left:10px;padding:5px 8px;border-radius:20px;background:#38352f;color:#fff;font-size:9px;font-weight:700}
+.mn-xmas__copy{padding:12px 3px 0}
+.mn-xmas__copy small{font-size:10px;color:#777}
+.mn-xmas__copy h3{margin-top:6px;font-size:13px;font-weight:750;line-height:1.4}
+.mn-xmas__copy p{margin-top:5px;font-size:10px;line-height:1.5;color:var(--mn-muted)}
+.mn-products{padding:52px 0 66px;background:var(--mn-paper)}
+.mn-products .mn__heading{margin-bottom:28px}
+.mn-tabs{display:flex;justify-content:center;gap:7px;margin-bottom:20px}
+.mn-tab{min-width:56px;padding:8px 14px;border:1px solid #e8e3df;border-radius:20px;background:#fff;color:#555;font-size:10px;cursor:pointer}
+.mn-tab.is-active{border-color:var(--mn-orange);background:var(--mn-orange);color:#fff}
+.mn-product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.mn-product[hidden]{display:none}
+.mn-product{min-width:0;overflow:hidden;background:#fff}
+.mn-product__image{display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;background:#fff}
+.mn-product__image img{width:100%;height:100%;padding:22px;object-fit:contain}
+.mn-product__copy{padding:14px 16px 18px}
+.mn-product__copy small{font-size:10px;color:#777}
+.mn-product__copy h3{margin-top:5px;font-size:13px;font-weight:750}
+.mn-product__copy p{margin-top:5px;font-size:10px;line-height:1.5;color:var(--mn-muted)}
+.mn-more-wrap{display:flex;justify-content:center;margin-top:24px}
+.mn-more{display:inline-flex;align-items:center;gap:16px;padding:9px 17px;border:1px solid #efb2a5;border-radius:22px;background:transparent;color:var(--mn-orange);font-size:10px;cursor:pointer}
+.mn-more:hover{background:var(--mn-orange);color:#fff}
+.mn-note{margin-top:14px;text-align:right;font-size:9px;color:#8c8580}
+@media(max-width:900px){.mn{padding-top:60px}.mn__section{padding:42px 0 54px}.mn-xmas__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 14px}.mn-product-grid{gap:12px}.mn__heading{margin-bottom:30px}}
+@media(max-width:600px){.mn__inner{width:calc(100% - 32px)}.mn-hero{height:420px}.mn-hero__copy{bottom:72px}.mn-hero__copy h1{font-size:42px}.mn-hero__copy p{font-size:11px}.mn__heading h2{font-size:26px}.mn__heading p{font-size:11px;line-height:1.6}.mn-xmas__grid{gap:18px 10px}.mn-xmas__copy h3{font-size:12px}.mn-xmas__copy p{font-size:9px}.mn-products{padding:44px 0 50px}.mn-tabs{gap:5px}.mn-tab{min-width:0;padding:8px 12px;font-size:9px}.mn-product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.mn-product__copy{padding:11px}.mn-product__copy h3{font-size:12px}.mn-product__copy p{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.mn *{transition:none!important}}
 </style>
-
 <main class="mn">
-  <section class="mn-hero" aria-label="한스 메뉴 소개">
-    <div id="mnSlides"></div>
-    <div class="mn-hero__txt"><h1>HANS MENU</h1><p>연말을 더 달콤하게, 정성을 담아 만든 케이크와 디저트</p></div>
-    <div class="mn-hero__ctl"><div class="mn__in">
-      <div class="mn-hero__bar"><i id="mnBar"></i></div><span id="mnNum">1 | 3</span>
-      <button class="mn-hero__btn" id="mnPrev" aria-label="이전">&lsaquo;</button>
-      <button class="mn-hero__btn" id="mnNext" aria-label="다음">&rsaquo;</button>
-    </div></div>
+  <section class="mn-hero" aria-label="한스 메뉴 슬라이드">
+    <div class="mn-hero__slides" id="mnHeroSlides"></div>
+    <div class="mn-hero__copy"><h1>HANS MENU</h1><p>연말을 더 달콤하게, 정성을 담아 만든 케이크와 디저트</p></div>
+    <div class="mn-hero__controls"><div class="mn-hero__progress"><span id="mnHeroProgress"></span></div><span id="mnHeroCount">1 | 3</span><button type="button" id="mnHeroPrev" aria-label="이전 슬라이드">‹</button><button type="button" id="mnHeroNext" aria-label="다음 슬라이드">›</button></div>
   </section>
-  <section class="mn__sec mn-xmas"><div class="mn__in">
-    <div class="mn__title"><small>한스 크리스마스</small><h2>연말의 달콤한 순간, <em>한스와 함께</em></h2><p>소중한 사람들과 함께하는 연말, 한스케이크의 크리스마스 케이크로 특별한 순간을 만들어보세요.</p></div>
-    <div class="mn-xmas__grid" id="mnXmas"></div>
+  <section class="mn__section"><div class="mn__inner">
+    <div class="mn__heading"><small>한스 크리스마스</small><h2>연말의 달콤한 순간, <em>한스와 함께</em></h2><p>소중한 사람들과 함께하는 연말, 한스케이크의 크리스마스 케이크로 특별한 순간을 만들어보세요.</p></div>
+    <div class="mn-xmas__grid" id="mnXmasGrid"></div>
   </div></section>
-  <section class="mn__sec"><div class="mn__in">
-    <div class="mn__title"><small>한스 전체 메뉴</small><h2>오늘의 달콤함을 <em>골라보세요</em></h2><p>한스가 준비한 케이크와 디저트를 만나보세요.</p></div>
-    <div class="mn-tabs" id="mnTabs" role="tablist"></div><div class="mn-grid" id="mnGrid"></div>
+  <section class="mn__section mn-products"><div class="mn__inner">
+    <div class="mn__heading"><small>한스 전체 메뉴</small><h2>한스 <em>전체 메뉴</em></h2><p>취향에 맞는 달콤한 메뉴를 골라보세요.</p></div>
+    <div class="mn-tabs" id="mnTabs" role="group" aria-label="메뉴 카테고리"></div>
+    <div class="mn-product-grid" id="mnProductGrid"></div>
+    <div class="mn-more-wrap"><button class="mn-more" type="button" id="mnMore">메뉴 더보기 <span>＋</span></button></div>
+    <p class="mn-note">※ 메뉴 이미지 및 제품 정보는 실제 판매 제품에 맞게 업데이트해 주세요.</p>
   </div></section>
 </main>
-
 <script>
 (function(){
   var hero=['img/hero_01.png','img/hero.png','img/cake.png'];
   var xmas=[
-    {id:'xmas-fraisier',name:'X-mas 스트로베리 프레지에',desc:'딸기의 산뜻함과 부드러운 크림이 어우러진 시즌 케이크',img:'img/sp_cake02.png'},
-    {id:'xmas-ganache',name:'X-mas 사각가나슈 S',desc:'진한 초콜릿의 깊은 풍미',img:'img/sp_cake03.png'},
-    {id:'xmas-strawberry',name:'X-mas 한스 딸기생크림 S',desc:'딸기와 생크림의 클래식한 조화',img:'img/sp_cake04.png'},
-    {id:'xmas-cheese-tart-mini',name:'X-mas 딸기 치즈 타르트 mini',desc:'작지만 특별한 한입의 즐거움',img:'img/sp_cake05.png'}
+    {id:'xmas-fraisier',name:'X-mas 스트로베리 프레지에',en:'X-mas Strawberry Fraisier',img:'img/sp_cake02.png'},
+    {id:'xmas-ganache',name:'X-mas 사각가나슈 S',en:'X-mas Square Ganache S',img:'img/sp_cake03.png'},
+    {id:'xmas-strawberry',name:'X-mas 한스 딸기생크림 S',en:'X-mas HANS Strawberry Cream S',img:'img/sp_cake04.png'},
+    {id:'xmas-cheese-tart-mini',name:'X-mas 딸기 치즈 타르트 mini',en:'X-mas Strawberry Cheese Tart Mini',img:'img/sp_cake05.png'}
   ];
   var products=[
     {id:'almond-delight',cat:'dessert',label:'쿠키',name:'아몬드 딜라이트',desc:'고소한 아몬드가 어우러진 바삭한 쿠키',img:'img/img01.png'},
@@ -154,33 +126,38 @@
     {id:'roll-cake',cat:'cake',label:'롤',name:'롤케이크',desc:'부드러운 시트와 크림이 어우러진 롤 케이크',img:'img/img_09.png'}
   ];
   var $=function(id){return document.getElementById(id)};
-  var link=function(id){return 'menu-detail.html?item='+id};
-  var pic=function(src){return '<img src="'+src+'" alt="" onerror="this.remove()">';};
-  var cur=0,timer,DUR=5000;
-  $('mnSlides').innerHTML=hero.map(function(s,i){return '<div class="mn-hero__slide'+(i?'':' on')+'">'+pic(s)+'</div>';}).join('');
-  var slides=document.querySelectorAll('.mn-hero__slide');
-  function go(n){
-    cur=(n+slides.length)%slides.length;
-    slides.forEach(function(s,i){s.classList.toggle('on',i===cur);});
-    $('mnNum').textContent=(cur+1)+' | '+slides.length;
-    var b=$('mnBar');b.style.transition='none';b.style.width='0';void b.offsetWidth;b.style.transition='width '+DUR+'ms linear';b.style.width='100%';
-    clearTimeout(timer);timer=setTimeout(function(){go(cur+1);},DUR);
+  var makeImg=function(src){return '<img src="'+src+'" alt="" onerror="this.remove()">';};
+  var detail=function(id){return 'menu-detail.html?item='+id;};
+  $('mnHeroSlides').innerHTML=hero.map(function(src,i){return '<div class="mn-hero__slide'+(i===0?' is-active':'')+'">'+makeImg(src)+'</div>';}).join('');
+  var slides=[].slice.call(document.querySelectorAll('.mn-hero__slide')),current=0,interval,delay=5000;
+  function showSlide(index){
+    current=(index+slides.length)%slides.length;
+    slides.forEach(function(s,i){s.classList.toggle('is-active',i===current);});
+    $('mnHeroCount').textContent=(current+1)+' | '+slides.length;
+    var bar=$('mnHeroProgress');bar.style.transition='none';bar.style.width='0';void bar.offsetWidth;bar.style.transition='width '+delay+'ms linear';bar.style.width='100%';
+    clearTimeout(interval);interval=setTimeout(function(){showSlide(current+1);},delay);
   }
-  $('mnPrev').onclick=function(){go(cur-1);};$('mnNext').onclick=function(){go(cur+1);};go(0);
-  var big=xmas[0];
-  $('mnXmas').innerHTML='<a class="mn-big" href="'+link(big.id)+'">'+pic(big.img)+'<span class="mn-badge">NEW</span><div class="mn-big__txt"><span>시즌 스페셜</span><h3>'+big.name+'</h3><p>'+big.desc+'</p></div></a>'+
-    '<div class="mn-small">'+xmas.slice(1).map(function(x){return '<a class="mn-sm" href="'+link(x.id)+'"><div class="mn-sm__img">'+pic(x.img)+'<span class="mn-badge">NEW</span></div><div class="mn-sm__txt"><span>시즌</span><h3>'+x.name+'</h3><p>'+x.desc+'</p><b>자세히 보기 →</b></div></a>';}).join('')+'</div>';
-  var tabs=[['all','전체'],['cake','케이크'],['dessert','디저트'],['gift','선물세트']];
-  $('mnTabs').innerHTML=tabs.map(function(t,i){return '<button class="mn-tab'+(i?'':' on')+'" role="tab" data-c="'+t[0]+'">'+t[1]+'</button>';}).join('');
-  $('mnGrid').innerHTML=products.map(function(p){return '<a class="mn-card" data-c="'+p.cat+'" href="'+link(p.id)+'"><div class="mn-card__img">'+pic(p.img)+'HANS</div><div class="mn-card__txt"><span>'+p.label+'</span><h3>'+p.name+'</h3><p>'+p.desc+'</p></div></a>';}).join('')+
-    '<div class="mn-soon" id="mnSoon">새로운 메뉴가 준비 중이에요</div><div class="mn-empty" id="mnEmpty" hidden>이 카테고리의 메뉴가 곧 준비돼요.</div>';
+  $('mnHeroPrev').addEventListener('click',function(){showSlide(current-1);});
+  $('mnHeroNext').addEventListener('click',function(){showSlide(current+1);});
+  showSlide(0);
+  $('mnXmasGrid').innerHTML=xmas.map(function(p){return '<a class="mn-xmas__card" href="'+detail(p.id)+'"><div class="mn-xmas__image">'+makeImg(p.img)+'<span class="mn-xmas__badge">NEW</span></div><div class="mn-xmas__copy"><small>시즌</small><h3>'+p.name+'</h3><p>'+p.en+'</p></div></a>';}).join('');
+  var categories=[['all','전체'],['cake','케이크'],['dessert','디저트'],['gift','선물세트']];
+  $('mnTabs').innerHTML=categories.map(function(c,i){return '<button type="button" class="mn-tab'+(i===0?' is-active':'')+'" data-category="'+c[0]+'">'+c[1]+'</button>';}).join('');
+  var expanded=false,active='all';
+  function renderProducts(){
+    var shown=active==='all'?(expanded?products:products.slice(0,3)):products.filter(function(p){return p.cat===active;});
+    $('mnProductGrid').innerHTML=shown.map(function(p){return '<a class="mn-product" href="'+detail(p.id)+'" data-category="'+p.cat+'"><div class="mn-product__image">'+makeImg(p.img)+'</div><div class="mn-product__copy"><small>'+p.label+'</small><h3>'+p.name+'</h3><p>'+p.desc+'</p></div></a>';}).join('');
+    $('mnMore').hidden=active!=='all'||products.length<=3;
+    $('mnMore').innerHTML=expanded?'메뉴 접기 <span>－</span>':'메뉴 더보기 <span>＋</span>';
+  }
   $('mnTabs').addEventListener('click',function(e){
-    var b=e.target.closest('[data-c]');if(!b)return;
-    document.querySelectorAll('.mn-tab').forEach(function(t){t.classList.toggle('on',t===b);});
-    var c=b.dataset.c,n=0;
-    document.querySelectorAll('.mn-card').forEach(function(card){var show=(c==='all'||card.dataset.c===c);card.hidden=!show;if(show)n++;});
-    $('mnSoon').hidden=(c!=='all');$('mnEmpty').hidden=(n>0);
+    var button=e.target.closest('[data-category]');if(!button)return;
+    active=button.dataset.category;expanded=false;
+    document.querySelectorAll('.mn-tab').forEach(function(b){b.classList.toggle('is-active',b===button);});
+    renderProducts();
   });
+  $('mnMore').addEventListener('click',function(){expanded=!expanded;renderProducts();});
+  renderProducts();
 })();
 </script>
 
