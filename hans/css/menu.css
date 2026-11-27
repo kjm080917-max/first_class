@@ -458,3 +458,405 @@
     font-size: 14px;
   }
 }
+
+/* =====================================================
+   메뉴 페이지 비주얼 아이덴티티 정리
+   헤더·푸터·히어로 슬라이드·필터 스크립트는 기존 구조 유지
+   ===================================================== */
+
+/* 1. 타이포그래피 */
+.menu-page .menu-section-heading h2 {
+  margin-top: 10px;
+  color: #2b2420;
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+.menu-page .menu-eyebrow {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 400;
+}
+.menu-page .menu-section-heading > p:last-child {
+  margin-top: 14px;
+  color: #4b4746;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.menu-page .menu-card-copy h3,
+.menu-page .menu-product .menu-card-copy h3 {
+  color: #2b2420;
+  font-size: 17px;
+  font-weight: 600;
+}
+.menu-page .menu-section-heading h2,
+.menu-page .menu-best-card .menu-card-copy h3 {
+  font-family: inherit;
+}
+
+/* 2. 색 사용 줄이기 */
+.menu-page .menu-list-section .menu-section-heading h2,
+.menu-page .menu-list-section .menu-section-heading h2 .menu-heading-accent {
+  color: #2b2420;
+}
+.menu-page .menu-best .menu-heading-accent {
+  color: var(--color-brand-orange);
+}
+.menu-page .menu-best-card .menu-thumb span {
+  background: var(--color-warm-gray);
+  color: var(--color-white);
+}
+.menu-page .menu-best-card .menu-card-copy,
+.menu-page .menu-product .menu-card-copy {
+  color: #2b2420;
+}
+
+/* 3. 텍스트형 필터 탭 */
+.menu-page .menu-filter {
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  margin: 48px 0;
+}
+.menu-page .menu-filter button {
+  min-width: 0;
+  padding: 0 0 10px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 15px;
+  font-weight: 500;
+  transition: color .2s ease, border-color .2s ease;
+}
+.menu-page .menu-filter button:hover {
+  border-color: transparent;
+  background: transparent;
+  color: #2b2420;
+}
+.menu-page .menu-filter button.is-active {
+  border-color: var(--color-brand-orange);
+  background: transparent;
+  color: #2b2420;
+  font-weight: 700;
+}
+
+/* 4. 크리스마스 대표 + 서브 카드 구성 */
+.menu-page .menu-best {
+  padding: 88px 0;
+  background: var(--color-bage);
+}
+.menu-page .menu-best__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 28px;
+  margin-top: 48px;
+}
+.menu-page .menu-best-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--color-light-gray);
+  border-radius: 16px;
+  background: var(--color-white);
+  box-shadow: none;
+}
+.menu-page .menu-best-card > a {
+  display: flex;
+  height: 100%;
+  color: inherit;
+}
+.menu-page .menu-best-card--featured {
+  position: relative;
+  min-height: 100%;
+}
+.menu-page .menu-best-card--featured > a {
+  position: relative;
+  display: block;
+  min-height: 100%;
+}
+.menu-page .menu-best-card--featured .menu-thumb {
+  height: 100%;
+  min-height: 520px;
+  aspect-ratio: 4 / 5;
+  background: var(--color-white);
+}
+.menu-page .menu-best-card--featured .menu-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.menu-page .menu-best-card--featured .menu-thumb::after {
+  position: absolute;
+  z-index: 1;
+  inset: 35% 0 0;
+  content: "";
+  background: linear-gradient(to bottom, transparent, rgba(34, 34, 34, .78));
+  pointer-events: none;
+}
+.menu-page .menu-best-card--featured .menu-thumb span {
+  z-index: 2;
+}
+.menu-page .menu-best-card--featured .menu-card-copy {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 28px;
+  color: var(--color-white);
+}
+.menu-page .menu-best-card--featured .menu-card-copy > p,
+.menu-page .menu-best-card--featured .menu-card-copy h3,
+.menu-page .menu-best-card--featured .menu-card-copy > span {
+  color: var(--color-white);
+}
+.menu-page .menu-best-card--featured .menu-card-copy h3 {
+  font-size: clamp(20px, 2vw, 28px);
+  font-weight: 600;
+}
+.menu-page .menu-best__side {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+.menu-page .menu-best-card--compact {
+  flex: 1;
+  min-height: 0;
+}
+.menu-page .menu-best-card--compact > a {
+  flex-direction: row;
+  align-items: stretch;
+}
+.menu-page .menu-best-card--compact .menu-thumb {
+  flex: 0 0 38%;
+  min-width: 0;
+  min-height: 150px;
+  aspect-ratio: 4 / 3;
+  background: var(--color-white);
+}
+.menu-page .menu-best-card--compact .menu-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 12px;
+}
+.menu-page .menu-best-card--compact .menu-card-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  padding: 18px 22px;
+}
+.menu-page .menu-best-card--compact .menu-card-copy > p {
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.menu-page .menu-best-card--compact .menu-card-copy h3 {
+  margin: 0 0 6px;
+  font-size: 17px;
+  font-weight: 600;
+}
+.menu-page .menu-best-card--compact .menu-card-copy > span {
+  font-size: 13px;
+}
+.menu-page .menu-best-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(34, 34, 34, .05);
+}
+
+/* 5. 전체 메뉴 카드 */
+.menu-page .menu-list-section {
+  padding: 88px 0;
+  background: var(--color-white);
+}
+.menu-page .menu-list-section .menu-product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 28px;
+  margin-inline: auto;
+  padding: 0;
+}
+.menu-page .menu-list-section .menu-product {
+  display: flex;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--color-light-gray);
+  border-radius: 14px;
+  background: var(--color-white);
+  box-shadow: none;
+  transition: transform .25s ease;
+}
+.menu-page .menu-list-section .menu-product:hover {
+  transform: translateY(-3px);
+  box-shadow: none;
+}
+.menu-page .menu-list-section .menu-product > a {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+.menu-page .menu-list-section .menu-product .menu-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  padding: 12px;
+  background: var(--color-bage);
+}
+.menu-page .menu-list-section .menu-product .menu-thumb::before {
+  content: none;
+}
+.menu-page .menu-list-section .menu-product .menu-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+.menu-page .menu-list-section .menu-product .menu-card-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 7px;
+  min-height: 0;
+  padding: 20px 20px 22px;
+}
+.menu-page .menu-list-section .menu-product .menu-card-copy > p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+}
+.menu-page .menu-list-section .menu-product .menu-card-copy h3 {
+  margin: 0;
+  color: #2b2420;
+  font-size: 17px;
+  font-weight: 600;
+}
+.menu-page .menu-list-section .menu-product .menu-card-copy > span {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 0;
+  color: #4b4746;
+  font-size: 14px;
+  line-height: 1.55;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* 6. 히어로 */
+.menu-page .menu-hero .swiper::after {
+  background: linear-gradient(to top, rgba(34, 34, 34, .58), rgba(34, 34, 34, .08) 58%, transparent);
+}
+.menu-page .menu-hero .hero-copy {
+  top: 76%;
+  left: max(24px, calc((100% - 1200px) / 2));
+  width: min(1200px, calc(100% - 48px));
+  text-align: left;
+  transform: translateY(-50%);
+}
+.menu-page .menu-hero .hero-copy h1 {
+  color: var(--color-white);
+  font-size: clamp(32px, 3.5vw, 52px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+/* 7. 섹션 간격과 반응형 */
+.menu-page .menu-best,
+.menu-page .menu-list-section {
+  padding-top: 88px;
+  padding-bottom: 88px;
+}
+.menu-page .menu-best__grid,
+.menu-page .menu-list-section .menu-product-grid {
+  margin-top: 48px;
+}
+@media (max-width: 1200px) {
+  .menu-page .menu-list-section .menu-product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 900px) {
+  .menu-page .menu-best,
+  .menu-page .menu-list-section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  .menu-page .menu-best__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 18px;
+  }
+  .menu-page .menu-best-card--featured .menu-thumb {
+    min-height: 460px;
+  }
+  .menu-page .menu-best__side {
+    gap: 14px;
+  }
+  .menu-page .menu-best-card--compact .menu-thumb {
+    flex-basis: 40%;
+    min-height: 130px;
+  }
+  .menu-page .menu-best-card--compact .menu-card-copy {
+    padding: 14px;
+  }
+  .menu-page .menu-list-section .menu-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .menu-page .menu-best,
+  .menu-page .menu-list-section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  .menu-page .menu-best__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .menu-page .menu-best-card--featured .menu-thumb {
+    min-height: 0;
+    aspect-ratio: 4 / 5;
+  }
+  .menu-page .menu-best__side {
+    gap: 12px;
+  }
+  .menu-page .menu-best-card--compact .menu-thumb {
+    flex-basis: 38%;
+    min-height: 120px;
+  }
+  .menu-page .menu-best-card--compact .menu-card-copy {
+    padding: 14px 16px;
+  }
+  .menu-page .menu-filter {
+    gap: 22px;
+    margin: 36px 0;
+  }
+  .menu-page .menu-filter button {
+    padding-bottom: 8px;
+    font-size: 14px;
+  }
+  .menu-page .menu-list-section .menu-product-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .menu-page .menu-list-section .menu-product .menu-thumb {
+    aspect-ratio: 1 / 1;
+    padding: 12px;
+  }
+  .menu-page .menu-list-section .menu-product .menu-card-copy {
+    padding: 18px 20px 20px;
+  }
+}
