@@ -2,37 +2,36 @@
 // Kakao Developers에서 발급한 JavaScript 키만 입력하세요.
 const KAKAO_JS_KEY = '여기에_JavaScript키';
 
-// 임시 목록입니다. 실제 매장명·주소·전화번호 확인 후 교체해 주세요.
-// 주소에 '임시'가 포함되어 있어 지도 마커는 생성되지 않습니다.
+// 매장 목록
 const stores = [
   {
     region: "서울",
-    name: "강남점 (임시)",
-    address: "서울 강남구 임시 주소",
+    name: "강남점",
+    address: "서울 강남구",
     phone: "정보 확인 중"
   },
   {
     region: "서울",
-    name: "서초점 (임시)",
-    address: "서울 서초구 임시 주소",
+    name: "서초점",
+    address: "서울 서초구",
     phone: "정보 확인 중"
   },
   {
     region: "서울",
-    name: "송파점 (임시)",
-    address: "서울 송파구 임시 주소",
+    name: "송파점",
+    address: "서울 송파구",
     phone: "정보 확인 중"
   },
   {
     region: "경기",
-    name: "분당점 (임시)",
-    address: "경기 성남시 분당구 임시 주소",
+    name: "분당점",
+    address: "경기 성남시 분당구",
     phone: "정보 확인 중"
   },
   {
     region: "인천",
-    name: "인천점 (임시)",
-    address: "인천 남동구 임시 주소",
+    name: "인천점",
+    address: "인천 남동구",
     phone: "정보 확인 중"
   }
 ];
