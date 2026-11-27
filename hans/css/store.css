@@ -89,3 +89,22 @@ html { scroll-padding-top: var(--header-height); }
 
 /* 이전 배포본 또는 캐시된 HTML에 남아 있는 매장찾기/고객문의 탭 숨김 */
 .store-tabs { display: none !important; }
+
+
+/* Kakao 지도 SDK가 실제 지도 영역을 채우도록 설정 */
+.store-map { display:block; }
+.store-map__fallback {
+  position:absolute;
+  inset:0;
+  z-index:2;
+  justify-content:center;
+  background:var(--color-light-gray);
+}
+.store-map__fallback[hidden] { display:none; }
+.store-map__selection { z-index:3; }
+@media(max-width:900px) {
+  .store-map-panel { height:360px; }
+}
+@media(max-width:600px) {
+  .store-map-panel { height:360px; }
+}
