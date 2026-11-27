@@ -23,9 +23,9 @@
 .menu-page .menu-hero .swiper-slide{overflow:hidden}
 .menu-page .menu-hero .swiper-slide img{display:block;width:100%;height:100%;object-fit:cover}
 .menu-page .menu-hero .swiper:after{position:absolute;z-index:2;inset:0;content:"";pointer-events:none;background:linear-gradient(90deg,rgba(20,17,15,.55),rgba(20,17,15,.08) 72%),linear-gradient(0deg,rgba(20,17,15,.2),transparent 45%)}
-.menu-page .hero-copy{top:52%;left:max(7.5%,calc((100% - var(--menu-width))/2));width:min(82%,var(--menu-width));text-align:left;transform:translateY(-50%)}
-.menu-page .hero-copy h1{font-size:clamp(56px,8vw,112px);font-weight:800;letter-spacing:-.065em;line-height:.95}
-.menu-page .hero-copy p{margin-top:24px;font-size:clamp(16px,1.5vw,21px);font-weight:500;letter-spacing:-.02em}
+.menu-page .menu-hero .hero-copy{top:52%;left:max(7.5%,calc((100% - var(--menu-width))/2));width:min(82%,var(--menu-width));text-align:left;transform:translateY(-50%)}
+.menu-page .menu-hero .hero-copy h1{font-size:clamp(56px,8vw,112px);font-weight:800;letter-spacing:-.065em;line-height:.95}
+.menu-page .menu-hero .hero-copy p{margin-top:24px;font-size:clamp(16px,1.5vw,21px);font-weight:500;letter-spacing:-.02em}
 .menu-page .menu-hero__controls{right:max(7.5%,calc((100% - var(--menu-width))/2));left:max(7.5%,calc((100% - var(--menu-width))/2));bottom:28px}
 .menu-page .menu-hero__scrollbar{background:rgba(255,255,255,.35)}
 .menu-page .menu-hero__scrollbar .swiper-scrollbar-drag{background:var(--menu-orange)}
@@ -107,7 +107,7 @@
 @media(max-width:1024px){
  .menu-page .menu-hero{margin-top:60px}
  .menu-page .menu-hero .swiper{height:68vw;min-height:440px}
- .menu-page .hero-copy{left:6%;width:88%}
+ .menu-page .menu-hero .hero-copy{left:6%;width:88%}
  .menu-page .menu-hero__controls{right:6%;left:6%}
  .menu-page .xmas{padding:86px 0 92px}
  .menu-page .xmas__inner,.menu-page .menu-list-section__inner{width:calc(100% - 48px)}
@@ -127,9 +127,9 @@
 }
 @media(max-width:600px){
  .menu-page .menu-hero .swiper{height:78vh;min-height:460px}
- .menu-page .hero-copy{top:55%;left:24px;width:calc(100% - 48px)}
- .menu-page .hero-copy h1{font-size:clamp(48px,13vw,72px)}
- .menu-page .hero-copy p{max-width:300px;margin-top:16px;font-size:14px;line-height:1.7}
+ .menu-page .menu-hero .hero-copy{top:55%;left:24px;width:calc(100% - 48px)}
+ .menu-page .menu-hero .hero-copy h1{font-size:clamp(48px,13vw,72px)}
+ .menu-page .menu-hero .hero-copy p{max-width:300px;margin-top:16px;font-size:14px;line-height:1.7}
  .menu-page .menu-hero__controls{right:24px;left:24px;bottom:18px}
  .menu-page .xmas{padding:68px 0 72px}
  .menu-page .xmas__inner,.menu-page .menu-list-section__inner{width:calc(100% - 40px)}
