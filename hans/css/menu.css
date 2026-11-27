@@ -169,3 +169,112 @@
  .menu-page .menu-best-card,.menu-page .menu-thumb img,.menu-page .menu-card-copy>b i,.menu-page .menu-more-wrap button{transition:none!important}
  .menu-page .menu-best-card:hover,.menu-page .menu-product:hover .menu-thumb img{transform:none}
 }
+
+
+/* =========================================================
+   MENU PAGE — reference layout
+   메뉴 전용 .mn 계열 스타일
+   ========================================================= */
+.menu-page .mn {
+  --mn-orange: var(--menu-orange);
+  --mn-paper: var(--menu-paper);
+  --mn-ink: var(--menu-ink);
+  --mn-muted: var(--menu-muted);
+  width: 100%;
+  padding-top: 90px;
+  color: var(--mn-ink);
+  background: #fff;
+  box-sizing: border-box;
+}
+.menu-page .mn *,
+.menu-page .mn *::before,
+.menu-page .mn *::after { box-sizing: border-box; }
+.menu-page .mn a { color: inherit; text-decoration: none; }
+.menu-page .mn img { display: block; max-width: 100%; }
+.menu-page .mn__inner { width: min(1200px, calc(100% - 48px)); margin: 0 auto; }
+.menu-page .mn__heading { margin: 0 0 42px; text-align: center; }
+.menu-page .mn__heading small { display: block; margin: 0 0 12px; color: var(--mn-muted); font-size: 14px; font-weight: 400; }
+.menu-page .mn__heading h2 { margin: 0; color: var(--mn-ink); font-size: clamp(32px, 3.6vw, 48px); font-weight: 800; letter-spacing: -.055em; line-height: 1.25; }
+.menu-page .mn__heading h2 em { color: var(--mn-orange); font-style: normal; }
+.menu-page .mn__heading p { margin: 14px 0 0; color: var(--mn-muted); font-size: 15px; line-height: 1.6; }
+
+/* 1. Hero slider */
+.menu-page .mn-hero { position: relative; height: clamp(480px, 38vw, 560px); overflow: hidden; background: var(--menu-ink); }
+.menu-page .mn-hero__slides,
+.menu-page .mn-hero__slide { position: absolute; inset: 0; }
+.menu-page .mn-hero__slide { opacity: 0; transition: opacity .7s ease; }
+.menu-page .mn-hero__slide.is-active { opacity: 1; }
+.menu-page .mn-hero__slide img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.menu-page .mn-hero::after { position: absolute; z-index: 1; inset: 0; content: ""; pointer-events: none; background: linear-gradient(to top, rgba(0,0,0,.5), rgba(0,0,0,0) 60%); }
+.menu-page .mn-hero__copy { position: absolute; z-index: 2; right: 24px; bottom: 116px; left: 24px; color: #fff; text-align: center; }
+.menu-page .mn-hero__copy h1 { margin: 0; color: #fff; font-size: clamp(40px, 5vw, 72px); font-weight: 800; letter-spacing: -.035em; line-height: 1.05; }
+.menu-page .mn-hero__copy p { margin: 18px 0 0; color: #fff; font-size: clamp(16px, 1.4vw, 20px); font-weight: 700; line-height: 1.5; }
+.menu-page .mn-hero__controls { position: absolute; z-index: 3; right: 0; bottom: 24px; left: 0; display: flex; align-items: center; gap: 14px; width: min(1200px, calc(100% - 48px)); margin: 0 auto; color: #fff; font-size: 12px; }
+.menu-page .mn-hero__progress { flex: 1; height: 1px; overflow: hidden; background: rgba(255,255,255,.42); }
+.menu-page .mn-hero__progress span { display: block; width: 0; height: 100%; background: #fff; }
+.menu-page .mn-hero__controls button { padding: 0 2px; border: 0; background: transparent; color: #fff; font-size: 22px; line-height: 1; cursor: pointer; }
+
+/* 2. Christmas collection */
+.menu-page .mn__section { padding: 96px 0; background: #fff; }
+.menu-page .mn-xmas__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.menu-page .mn-xmas__card { display: block; min-width: 0; overflow: hidden; border: 1px solid var(--menu-line); border-radius: 16px; background: #fff; box-shadow: 0 5px 18px rgba(41,37,34,.055); transition: transform .25s ease, box-shadow .25s ease; }
+.menu-page .mn-xmas__card:hover { transform: translateY(-5px); box-shadow: 0 12px 26px rgba(41,37,34,.1); }
+.menu-page .mn-xmas__image { position: relative; overflow: hidden; aspect-ratio: 4 / 3; background: var(--mn-paper); }
+.menu-page .mn-xmas__image img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+.menu-page .mn-xmas__card:hover .mn-xmas__image img { transform: scale(1.035); }
+.menu-page .mn-xmas__badge { position: absolute; top: 12px; left: 12px; padding: 6px 11px; border-radius: 999px; background: var(--menu-ink); color: #fff; font-size: 11px; font-weight: 700; }
+.menu-page .mn-xmas__copy { padding: 16px 16px 18px; }
+.menu-page .mn-xmas__copy small { color: var(--mn-muted); font-size: 13px; }
+.menu-page .mn-xmas__copy h3 { margin: 7px 0 0; color: var(--mn-ink); font-size: 18px; font-weight: 800; line-height: 1.4; word-break: keep-all; }
+.menu-page .mn-xmas__copy p { display: -webkit-box; overflow: hidden; margin: 7px 0 0; color: var(--mn-muted); font-size: 14px; line-height: 1.5; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+
+/* 3. All menu */
+.menu-page .mn-products { width: 100%; padding: 96px 0; background: var(--mn-paper); }
+.menu-page .mn-products .mn__heading { margin-bottom: 32px; }
+.menu-page .mn-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 0 0 28px; }
+.menu-page .mn-tab { min-width: 72px; padding: 10px 20px; border: 1px solid var(--menu-line); border-radius: 999px; background: #fff; color: var(--mn-ink); font: inherit; font-size: 14px; cursor: pointer; transition: background .2s ease, border-color .2s ease, color .2s ease; }
+.menu-page .mn-tab.is-active { border-color: var(--mn-orange); background: var(--mn-orange); color: #fff; font-weight: 700; }
+.menu-page .mn-product-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.menu-page .mn-product[hidden] { display: none !important; }
+.menu-page .mn-product { display: block; min-width: 0; overflow: hidden; border-radius: 16px; background: #fff; box-shadow: none; }
+.menu-page .mn-product__image { display: flex; align-items: center; justify-content: center; aspect-ratio: 1 / 1; overflow: hidden; background: #fff; }
+.menu-page .mn-product__image img { width: 100%; height: 100%; padding: 24px; object-fit: contain; }
+.menu-page .mn-product__copy { padding: 0 22px 24px; }
+.menu-page .mn-product__copy small { color: var(--mn-muted); font-size: 13px; }
+.menu-page .mn-product__copy h3 { margin: 7px 0 0; color: var(--mn-ink); font-size: 18px; font-weight: 800; line-height: 1.4; }
+.menu-page .mn-product__copy p { margin: 7px 0 0; color: var(--mn-muted); font-size: 14px; line-height: 1.55; }
+.menu-page .mn-more-wrap { display: flex; justify-content: center; margin-top: 32px; }
+.menu-page .mn-more { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 44px; padding: 10px 22px; border: 1px solid var(--mn-orange); border-radius: 999px; background: #fff; color: var(--mn-orange); font: inherit; font-size: 14px; cursor: pointer; transition: background .2s ease, color .2s ease; }
+.menu-page .mn-more:hover { background: var(--mn-orange); color: #fff; }
+.menu-page .mn-more[hidden] { display: none !important; }
+
+@media (max-width: 1024px) {
+  .menu-page .mn { padding-top: 60px; }
+  .menu-page .mn__section, .menu-page .mn-products { padding: 72px 0; }
+}
+@media (max-width: 900px) {
+  .menu-page .mn-xmas__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .menu-page .mn-product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .menu-page .mn-hero { height: 500px; }
+}
+@media (max-width: 600px) {
+  .menu-page .mn__inner { width: calc(100% - 32px); }
+  .menu-page .mn-hero { height: 440px; }
+  .menu-page .mn-hero__copy { bottom: 112px; }
+  .menu-page .mn-hero__copy p { margin-top: 14px; font-size: 15px; }
+  .menu-page .mn-hero__controls { bottom: 20px; width: calc(100% - 32px); }
+  .menu-page .mn__section, .menu-page .mn-products { padding: 60px 0; }
+  .menu-page .mn__heading { margin-bottom: 30px; }
+  .menu-page .mn__heading h2 { font-size: clamp(28px, 7vw, 36px); }
+  .menu-page .mn__heading p { font-size: 14px; }
+  .menu-page .mn-xmas__grid { gap: 14px; }
+  .menu-page .mn-xmas__copy { padding: 12px; }
+  .menu-page .mn-xmas__copy h3 { font-size: 15px; }
+  .menu-page .mn-xmas__copy p { font-size: 12px; }
+  .menu-page .mn-product-grid { grid-template-columns: 1fr; gap: 16px; }
+  .menu-page .mn-product__image img { padding: 24px; }
+  .menu-page .mn-product__copy { padding: 0 20px 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .menu-page .mn *, .menu-page .mn *::before, .menu-page .mn *::after { transition: none !important; }
+}
