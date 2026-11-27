@@ -286,3 +286,56 @@
 @media (max-width: 1024px) {
   .menu-page .hero-sec { margin-top: 60px; }
 }
+
+
+/* 메뉴 페이지 히어로: 슬라이드 없이 단일 이미지 */
+.menu-page .hero-sec {
+  position: relative;
+  height: clamp(480px, 38vw, 560px);
+  margin-top: 90px;
+  overflow: hidden;
+  background: var(--menu-ink);
+}
+.menu-page .hero-sec .menu-hero-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.menu-page .hero-sec::after {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(0,0,0,.5), rgba(0,0,0,0) 60%);
+}
+.menu-page .hero-sec .hero-copy {
+  z-index: 2;
+  top: auto;
+  bottom: 64px;
+  left: 50%;
+  width: min(90%, 1200px);
+  transform: translateX(-50%);
+  text-align: center;
+}
+.menu-page .hero-sec .hero-copy h1 {
+  color: #fff;
+  font-size: clamp(40px, 5vw, 72px);
+  font-weight: 800;
+}
+.menu-page .hero-sec .hero-copy p {
+  margin-top: 16px;
+  color: #fff;
+  font-size: clamp(15px, 1.4vw, 20px);
+  font-weight: 700;
+}
+@media (max-width: 1024px) {
+  .menu-page .hero-sec { margin-top: 60px; }
+}
+@media (max-width: 600px) {
+  .menu-page .hero-sec { height: 440px; }
+  .menu-page .hero-sec .hero-copy { bottom: 48px; }
+  .menu-page .hero-sec .hero-copy p { font-size: 14px; }
+}
