@@ -302,9 +302,18 @@ regionSelect?.addEventListener("change", applyFilters);
 const loadKakaoMap = () => {
   if (!mapElement) return;
   if (!KAKAO_JS_KEY || KAKAO_JS_KEY === "여기에_JavaScript키") {
+    // 임시 표시용 OpenStreetMap: 카카오 키가 없을 때 서울 중심의 일반 지도를 보여줍니다.
+    // 실제 매장 위치나 매장별 마커를 나타내는 지도는 아닙니다.
     mapFailed = true;
-    console.error("[Kakao 지도] JavaScript 키가 입력되지 않았습니다. store.js 상단의 KAKAO_JS_KEY를 설정하세요.");
-    setMapFallback("지도를 불러올 수 없습니다", "store.js 상단에 JavaScript 키를 입력해 주세요.");
+    console.warn("[지도 안내] 카카오 JavaScript 키가 없어 임시 OpenStreetMap을 표시합니다. 실제 매장 위치는 표시되지 않습니다.");
+    const temporaryMap = document.createElement("iframe");
+    temporaryMap.className = "store-map__temporary";
+    temporaryMap.title = "임시 지도 - 서울 중심";
+    temporaryMap.src = "https://www.openstreetmap.org/export/embed.html?bbox=126.90%2C37.50%2C127.08%2C37.62&layer=mapnik&marker=37.5665%2C126.9780";
+    temporaryMap.loading = "lazy";
+    temporaryMap.referrerPolicy = "no-referrer-when-downgrade";
+    mapElement.append(temporaryMap);
+    if (mapFallback) mapFallback.hidden = true;
     return;
   }
 
