@@ -1,6 +1,7 @@
 /* 창업문의 페이지 */
 .franchise-inquiry {
-  padding-top: 0;
+  /* 고정 헤더에 가려지지 않도록 본문 시작 여백 확보 */
+  padding-top: 90px;
   color: #292625;
   font-family: "Pretendard Variable", sans-serif;
   font-size: 1rem;
@@ -309,6 +310,7 @@
   .support-card { max-width: 100%; }
 }
 @media (max-width: 48rem) {
+  .franchise-inquiry { padding-top: 60px; }
   .inquiry-page-heading { padding: 2rem 1.25rem 1.5rem; }
   .inquiry-promo { padding: 3.5rem 1.25rem; }
   .inquiry-promo__copy h1 { font-size: clamp(2.25rem, 8vw, 2.75rem); }
