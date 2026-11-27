@@ -124,6 +124,9 @@
 .menu-page .menu-best__grid {
   margin-top: 48px;
 }
+.menu-page .menu-best__grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
 .menu-page .menu-best-card,
 .menu-page .menu-product {
   border: 1px solid var(--color-light-gray);
@@ -222,6 +225,9 @@
   justify-content: flex-start;
 }
 @media (max-width: 900px) {
+  .menu-page .menu-best__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .menu-page .menu-best,
   .menu-page .menu-list-section {
     padding: 64px 0;
