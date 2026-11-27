@@ -2,3 +2,6 @@
 /* 메인 페이지의 둥근 모서리 스타일을 서브페이지에도 적용 */
 .special-visual,.special-visual__image,.special-card,.special-card__image,.special-order,.special-faq__list{border-radius:24px;overflow:hidden}
 .special-button,.special-cta a{border-radius:999px}
+
+/* 스페셜 케이크 카드 이미지 */
+.special-card__image img{display:block;width:100%;height:100%;object-fit:cover;}
