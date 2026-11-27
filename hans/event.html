@@ -23,6 +23,7 @@
   </div>
   <div class="event-card-grid" id="event-card-grid" aria-live="polite"></div>
   <nav class="event-pagination" id="event-pagination" aria-label="이벤트 페이지 이동"></nav>
+
 </section>
 </main>
 
@@ -30,7 +31,15 @@
 <button class="to-top" type="button" aria-label="맨 위로 이동"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button><script>
 (() => {
   // 이미지 파일이 준비된 e01.png~e07.png 이벤트만 표시합니다.
-  const events = [];
+  const events = [
+    { id: "event-01", status: "ongoing", title: "크리스마스 케이크 사전예약 이벤트", period: "기간 미정", image: "img/e01.png" },
+    { id: "event-02", status: "ongoing", title: "연말을 함께하는 한스 시즌 케이크", period: "기간 미정", image: "img/e02.png" },
+    { id: "event-03", status: "ongoing", title: "SNS 케이크 후기 이벤트", period: "기간 미정", image: "img/e03.png" },
+    { id: "event-04", status: "ongoing", title: "소중한 날을 위한 생일 케이크 이벤트", period: "기간 미정", image: "img/e04.png" },
+    { id: "event-05", status: "ended", title: "봄날의 딸기 케이크 프로모션", period: "기간 미정", image: "img/e05.png" },
+    { id: "event-06", status: "ended", title: "달콤한 디저트 함께하기 이벤트", period: "기간 미정", image: "img/e06.png" },
+    { id: "event-07", status: "ended", title: "가정의 달 케이크 이벤트", period: "기간 미정", image: "img/e07.png" },
+  ];
 
   const pageSize = 6;
   const grid = document.getElementById("event-card-grid");
@@ -45,11 +54,6 @@
 
   function renderCards() {
     const filteredEvents = getFilteredEvents();
-    if (!filteredEvents.length) {
-      grid.innerHTML = '<p class="event-empty">등록된 이벤트가 없습니다.</p>';
-      pagination.replaceChildren();
-      return;
-    }
     const pageCount = Math.max(1, Math.ceil(filteredEvents.length / pageSize));
     currentPage = Math.min(currentPage, pageCount);
     const visibleEvents = filteredEvents.slice((currentPage - 1) * pageSize, currentPage * pageSize);
@@ -60,6 +64,7 @@
       return `
         <a class="event-card" href="event-detail.html?id=${encodeURIComponent(event.id)}">
           <div class="event-card__image">
+            <span class="event-card__placeholder">이미지 등록 예정</span>
             <img src="${event.image}" alt="${event.title}" loading="lazy">
           </div>
           <div class="event-card__content">
