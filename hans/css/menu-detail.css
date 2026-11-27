@@ -425,3 +425,12 @@ html { scroll-padding-top: var(--header-height); }
     font-size: 13px;
   }
 }
+
+/* 중간 화면에서 기존 초기화 규칙보다 우선해 헤더 여백 유지 */
+@media (max-width: 900px) {
+  .menu-detail__primary { padding-top: calc(var(--header-height) + 40px); }
+}
+@media (max-width: 600px) {
+  .menu-detail { margin-top: 0; }
+  .menu-detail__primary { padding-top: calc(var(--header-height) + 24px); }
+}
