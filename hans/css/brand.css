@@ -130,3 +130,21 @@
  .brand-design-group__title p{font-size:12px;line-height:1.6}
  .brand-design__grid article{padding:20px}
 }
+
+
+/* 제품 디자인 그룹의 장식용 숫자 배지를 간결한 포인트 라인으로 변경 */
+.brand-design-group__title>span {
+  display:block;
+  flex:0 0 34px;
+  width:34px;
+  height:4px;
+  border-radius:999px;
+  background:var(--color-brand-orange);
+}
+@media(max-width:600px) {
+  .brand-design-group__title>span {
+    flex-basis:28px;
+    width:28px;
+    height:4px;
+  }
+}
